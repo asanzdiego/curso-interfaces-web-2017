@@ -9,28 +9,21 @@ En este apartado:
 
 ## Slides
 
-Principal:
-
-- [SlideShare](http://www.slideshare.net/asanzdiego/responsive-web-design-diseo-web-adaptable)
-
-Alternativas:
-
-- [deck](http://asanzdiego.github.io/curso-interfaces-web-2016/03-rwd/slides/export/rwd-deck-slides.html)
-- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2016/03-rwd/slides/export/rwd-reveal-slides.html)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2016/03-rwd/slides/export/rwd.html)
-- [odt](http://asanzdiego.github.io/curso-interfaces-web-2016/03-rwd/slides/export/rwd.odt)
-- [md](http://asanzdiego.github.io/curso-interfaces-web-2016/03-rwd/slides/md/rwd.md)
+- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd-reveal-slides.html)
+- [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd-reveal-slides-alternative.pdf)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd.html)
+- [md](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/md/rwd.md)
 
 ## Enunciado ejercicios
 
-- [Enunciado ejercicios ODT](https://github.com/asanzdiego/curso-interfaces-web-2016/raw/master/03-rwd/src/ejercicios-rwd.odt)
-- [Enunciado ejercicios PDF](https://github.com/asanzdiego/curso-interfaces-web-2016/raw/master/03-rwd/src/ejercicios-rwd.pdf)
+- [Enunciado ejercicios ODT](https://github.com/asanzdiego/curso-interfaces-web-2017/raw/master/03-rwd/src/ejercicios-rwd.odt)
+- [Enunciado ejercicios PDF](https://github.com/asanzdiego/curso-interfaces-web-2017/raw/master/03-rwd/src/ejercicios-rwd.pdf)
 
 ## Solución ejercicios
 
-- [01-layout-fluido](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/01-layout-fluido)
-- [02-imagenes-fluidas](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/02-imagenes-fluidas)
-- [03-background](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/03-background)
-- [04-desktop-first](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/04-desktop-first)
-- [05-mobile-first](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/05-mobile-first)
-- [06-grid-css](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src/06-grid-css)
+- [01-layout-fluido](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/01-layout-fluido)
+- [02-imagenes-fluidas](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/02-imagenes-fluidas)
+- [03-background](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/03-background)
+- [04-desktop-first](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/04-desktop-first)
+- [05-mobile-first](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/05-mobile-first)
+- [06-grid-css](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src/06-grid-css)

@@ -1,6 +1,6 @@
 % Accesibilidad Web
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -668,10 +668,10 @@
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/src>
 
 ## Bibliografía (I)
 

@@ -1,6 +1,6 @@
 % Usabilidad Web
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -927,10 +927,10 @@
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/01-usabilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/01-usabilidad/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/01-usabilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/01-usabilidad/src>
 
 ## Bibliografía (I)
 

@@ -9,19 +9,12 @@ En este apartado:
 
 ## Slides
 
-Principal:
-
-- [SlideShare](http://www.slideshare.net/asanzdiego/less-un-preprocesador-css)
-
-Alternativas:
-
-- [deck](http://asanzdiego.github.io/curso-interfaces-web-2016/04-preprocesadores-css/04.01-less/slides/export/01-less-deck-slides.html)
-- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2016/04-preprocesadores-css/04.01-less/slides/export/01-less-reveal-slides.html)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2016/04-preprocesadores-css/04.01-less/slides/export/01-less.html)
-- [odt](http://asanzdiego.github.io/curso-interfaces-web-2016/04-preprocesadores-css/04.01-less/slides/export/01-less.odt)
-- [md](http://asanzdiego.github.io/curso-interfaces-web-2016/04-preprocesadores-css/04.01-less/slides/md/01-less.md)
+- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less-reveal-slides.html)
+- [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less-reveal-slides-alternative.pdf)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less.html)
+- [md](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/md/01-less.md)
 
 ## Ejercicios
 
-- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src/ejercicios)
-- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src/solucion)
+- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.01-less/src/ejercicios)
+- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.01-less/src/solucion)

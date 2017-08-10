@@ -1,6 +1,6 @@
 % Responsive Web Design
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -598,10 +598,10 @@ Un Media Query **no sólo nos permite seleccionar el tipo de medio** (all, brail
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src>
 
 ## Bibliografía (I)
 

@@ -13,25 +13,18 @@ En este apartado:
 
 ## Slides
 
-Principal:
-
-- [SlideShare](http://www.slideshare.net/asanzdiego/accesibilidad-web-38637485)
-
-Alternativas:
-
-- [deck](http://asanzdiego.github.io/curso-interfaces-web-2016/01-accesibilidad/slides/export/01-accesibilidad-deck-slides.html)
-- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2016/01-accesibilidad/slides/export/01-accesibilidad-reveal-slides.html)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2016/01-accesibilidad/slides/export/01-accesibilidad.html)
-- [odt](http://asanzdiego.github.io/curso-interfaces-web-2016/01-accesibilidad/slides/export/01-accesibilidad.odt)
-- [md](http://asanzdiego.github.io/curso-interfaces-web-2016/01-accesibilidad/slides/md/01-accesibilidad.md)
+- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad-reveal-slides.html)
+- [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad-reveal-slides-alternative.pdf)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad.html)
+- [md](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/md/01-accesibilidad.md)
 
 ## Enunciado ejercicios
 
-- [Enunciado ejercicios ODT](https://github.com/asanzdiego/curso-interfaces-web-2016/raw/master/02-accesibilidad/src/ejercicios-accesibilidad.odt)
-- [Enunciado ejercicios PDF](https://github.com/asanzdiego/curso-interfaces-web-2016/raw/master/02-accesibilidad/src/ejercicios-accesibilidad.pdf)
+- [Enunciado ejercicios ODT](https://github.com/asanzdiego/curso-interfaces-web-2017/raw/master/02-accesibilidad/src/ejercicios-accesibilidad.odt)
+- [Enunciado ejercicios PDF](https://github.com/asanzdiego/curso-interfaces-web-2017/raw/master/02-accesibilidad/src/ejercicios-accesibilidad.pdf)
 
 ## Solución ejercicios
 
-- [01-informe-WCAG2](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src/01-informe-WCAG2)
-- [02-informe-ATAG](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src/02-informe-ATAG)
-- [03-corregir-codigo](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src/03-corregir-codigo)
+- [01-informe-WCAG2](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/src/01-informe-WCAG2)
+- [02-informe-ATAG](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/src/02-informe-ATAG)
+- [03-corregir-codigo](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/src/03-corregir-codigo)
