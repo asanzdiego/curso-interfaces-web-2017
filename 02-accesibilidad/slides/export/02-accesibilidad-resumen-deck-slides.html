@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" > <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Accesibilidad Web" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Accesibilidad Web</title>
+
+  <!-- deck core css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/core/deck.core.css">
+
+  <!-- deck extensions css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/status/deck.status.css">
+
+  <!-- deck slide theme css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/neon.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  -->
+
+  <!-- deck slide transition css -->
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/fade.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/vertical-slide.css">
+  -->
+
+  <!-- custom css just for this page -->
+  <style>
+    figcaption {
+      display: none;
+      visibility:hidden;
+    }
+
+    #titlepage, #documentauthor, #documentdate {
+      text-align: center;
+    }
+
+    #titlepage {
+      font-size: 5.25em;
+      padding-top: 15%;
+    }
+
+    #documentauthor {
+      font-size: 2.25em;
+    }
+
+    #documentdate {
+      font-size: 1.25em;
+    }
+  </style>
+
+  <!-- modernizr deck js  -->
+  <script src="../lib/deck.js-master/modernizr.custom.js"></script>
+
+</head>
+<body class="deck-container">
+<section class="slide">
+  <h2 id="titlepage">Accesibilidad Web</h2>
+  <h3 id="documentauthor">Adolfo Sanz De Diego</h3>
+  <h4 id="documentdate">Septiembre 2016</h4>
+</section>
+
+<section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="introducción" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción</h1></section><section id="objetivos" class="slide level2">
+<h2><span class="header-section-number">2.1</span> Objetivos</h2>
+<ul>
+<li>La accesibilidad web <strong>no se centra sólo en las personas con discapacidad</strong>, en realidad tiene como objetivo lograr que las páginas web sean utilizables por el máximo número de personas, <strong>independientemente de sus conocimientos o capacidades personales e independientemente de las características técnicas del equipo</strong> utilizado para acceder a la Web.</li>
+</ul>
+</section><section id="destinatarios" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Destinatarios</h2>
+<ul>
+<li><p>La mayoría de los estudios estiman que un <strong>20% de la población tiene algún tipo de discapacidad</strong>, no todas tienen discapacidades que dificultan su acceso a Internet, pero sigue siendo una parte importante de la población.</p></li>
+<li><p>Cada discapacidad requiere de ciertos tipos de adaptaciones, que la mayoría de las veces, <strong>beneficiarán a casi todos, no sólo a las personas con discapacidad</strong>.</p></li>
+</ul>
+</section><section id="desarrolladores" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Desarrolladores</h2>
+<ul>
+<li>La mayoría de los errores de accesibilidad web son <strong>por falta de conocimientos del desarrollador</strong>.</li>
+</ul>
+</section><section id="w3c" class="slide level2">
+<h2><span class="header-section-number">2.4</span> W3C</h2>
+<ul>
+<li>El W3C es un grupo internacional e independiente que define los <strong>protocolos y estándares para la web</strong>, como HTML, CSS, etc.</li>
+</ul>
+</section><section id="wai" class="slide level2">
+<h2><span class="header-section-number">2.5</span> WAI</h2>
+<ul>
+<li>Una de las principales iniciativas del W3C es la <strong>WAI (Web Accessibility Initiative)</strong> que se encarga del desarrollo de normas de accesibilidad.</li>
+</ul>
+</section><section id="wcag" class="slide level2">
+<h2><span class="header-section-number">2.6</span> WCAG</h2>
+<ul>
+<li>Las <strong>WCAG (Web Content Accessibility Guidelines)</strong> o Pautas de Accesibilidad al Contenido en la Web son las principales normas de accesibilidad web.</li>
+</ul>
+</section><section id="wcag-1.0" class="slide level2">
+<h2><span class="header-section-number">2.7</span> WCAG 1.0</h2>
+<ul>
+<li><p>Finalizadas en <strong>1999</strong>, fueron un avance importante.</p></li>
+<li><p>Proporcionaban <strong>14 directrices</strong> y numerosos puntos de control.</p></li>
+<li>Proporcionaban tres prioridades:
+<ul>
+<li><strong>Nivel A</strong> requisitos básico,</li>
+<li><strong>Nivel AA</strong> mejor accesibilidad y la eliminación de importantes barreras,</li>
+<li><strong>Nivel AAA</strong> proporcionaba mejoras a la accesibilidad.</li>
+</ul></li>
+</ul>
+</section><section id="wcag-2.0" class="slide level2">
+<h2><span class="header-section-number">2.8</span> WCAG 2.0</h2>
+<ul>
+<li><p>Se fundamentan en WCAG 1.0, pero introducen algunos cambios significativos.</p></li>
+<li><p>Las pautas están <strong>centradas en principios más que en técnicas</strong>, para que sigan siendo relevantes incluso cuando la tecnología cambie.</p></li>
+<li><p>Sitúa únicamente 4 principios en el nivel superior, las 4 directrices POUR (Servir).</p></li>
+</ul>
+</section><section id="wai-aria-1.0" class="slide level2">
+<h2><span class="header-section-number">2.9</span> WAI-ARIA 1.0</h2>
+<ul>
+<li><p><strong>Accessible Rich Internet Applications</strong></p></li>
+<li><p>Accesibilidad de aplicaciones web enriquecidas con contenido dinámico (eg. widgets, AJAX)</p></li>
+</ul>
+</section><section id="wcag-em-1.0" class="slide level2">
+<h2><span class="header-section-number">2.10</span> WCAG-EM 1.0</h2>
+<ul>
+<li><p><strong>Website Accessibility Conformance Evaluation Methodology</strong></p></li>
+<li><p>Metodología de evaluación de la accesibilidad del contenido de páginas web</p></li>
+</ul>
+</section><section id="atag-2.0" class="slide level2">
+<h2><span class="header-section-number">2.11</span> ATAG 2.0</h2>
+<ul>
+<li><p><strong>Authoring Tool Accessibility Guidelines</strong></p></li>
+<li><p>Accesibilidad de editores de páginas web</p></li>
+</ul>
+</section><section id="uaag-2.0" class="slide level2">
+<h2><span class="header-section-number">2.12</span> UAAG 2.0</h2>
+<ul>
+<li><p><strong>User Agent Accessibility Guidelines</strong></p></li>
+<li><p>Accesibilidad de navegadores web</p></li>
+</ul>
+</section>
+<section id="directrices-pour" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Directrices POUR</h1></section><section id="perceptible" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Perceptible</h2>
+<ul>
+<li>Disponible para los sentidos (visión y audición principalmente), bien a través del navegador o por medio de ayudas técnicas (por ejemplo, <strong>lectores de pantalla, ampliadores de pantalla</strong>, etc.)</li>
+</ul>
+</section><section id="operable" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Operable</h2>
+<ul>
+<li>Los usuarios pueden interactuar con todos los controles y elementos interactivos usando <strong>el ratón, un teclado o un dispositivo de ayuda</strong>.</li>
+</ul>
+</section><section id="comprensible" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Comprensible</h2>
+<ul>
+<li>El contenido es claro y se <strong>limita la confusión y la ambigüedad</strong>.</li>
+</ul>
+</section><section id="robusto" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Robusto</h2>
+<ul>
+<li>Una <strong>amplia gama de dispositivos y tecnologías</strong> puede acceder al contenido.</li>
+</ul>
+</section>
+<section id="problemas-discapacidad" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Problemas discapacidad</h1></section><section id="visual" class="slide level2">
+<h2><span class="header-section-number">4.1</span> Visual</h2>
+<ul>
+<li>Imágenes o elementos multimedia <strong>sin texto alternativo</strong></li>
+<li>Tamaño del <strong>texto muy reducido</strong></li>
+<li>Información basada <strong>exclusivamente en el color</strong></li>
+<li>Combinaciones de <strong>colores con poco contraste</strong></li>
+</ul>
+</section><section id="auditiva" class="slide level2">
+<h2><span class="header-section-number">4.2</span> Auditiva</h2>
+<ul>
+<li>Ausencia de <strong>transcripciones</strong> del audio</li>
+<li>Ausencia de <strong>subtítulos</strong> en vídeos</li>
+<li>Textos <strong>largos y complejos</strong></li>
+<li>Ausencia de <strong>imágenes que complementen</strong> la información textual</li>
+</ul>
+</section><section id="física" class="slide level2">
+<h2><span class="header-section-number">4.3</span> Física</h2>
+<ul>
+<li>Interfaces de usuario que sólo se pueden <strong>utilizar con ratón</strong></li>
+<li>Enlaces y controles de <strong>formulario muy pequeños</strong></li>
+<li>Interfaces de usuario que requieren un <strong>control muy preciso</strong></li>
+<li>Interfaces de usuario con <strong>tiempos de respuesta</strong> por parte del usuario muy pequeños</li>
+</ul>
+</section><section id="cognitiva-y-neurológica" class="slide level2">
+<h2><span class="header-section-number">4.4</span> Cognitiva y neurológica</h2>
+<ul>
+<li>Textos <strong>largos y complejos</strong></li>
+<li>Ausencia de <strong>imágenes que complementen</strong> la información textual</li>
+<li>Ausencia de un <strong>mapa del sitio web</strong></li>
+<li>Ausencia de <strong>descripciones y ayudas</strong> para interpretar los controles de un formulario</li>
+<li><strong>Inconsistencias</strong> entre distintas páginas de un mismo sitio web</li>
+</ul>
+</section><section id="relacionadas-con-el-envejecimiento" class="slide level2">
+<h2><span class="header-section-number">4.5</span> Relacionadas con el envejecimiento</h2>
+<ul>
+<li>Normalmente, problemas relacionados con:
+<ul>
+<li>la discapacidad <strong>visual</strong>,</li>
+<li>la discapacidad <strong>auditiva</strong> y</li>
+<li>la discapacidad <strong>física</strong>.</li>
+</ul></li>
+</ul>
+</section><section id="tecnológica" class="slide level2">
+<h2><span class="header-section-number">4.6</span> Tecnológica</h2>
+<ul>
+<li><strong>Sistemas operativos</strong> antiguos</li>
+<li><strong>Navegadores</strong> alternativos</li>
+<li><strong>Ancho de banda</strong> de comunicación por Internet bajo</li>
+<li>Ausencia de un <strong>plugin</strong> para reproducir ciertos contenidos</li>
+<li>Dispositivo de visualización de <strong>pequeño tamaño</strong>.</li>
+</ul>
+</section>
+<section id="imágenes-y-animaciones" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Imágenes y animaciones</h1></section><section id="use-el-atributo-alt" class="slide level2">
+<h2><span class="header-section-number">5.1</span> Use el atributo alt</h2>
+<ul>
+<li>Para describir la función de cada elemento visual (<strong>IMG, AREA, APPLET e INPUT</strong>).</li>
+</ul>
+</section><section id="ayuda-a-los-usuarios" class="slide level2">
+<h2><span class="header-section-number">5.2</span> Ayuda a los usuarios</h2>
+<ul>
+<li>El <strong>texto alternativo</strong> ayuda a los usuarios:
+<ul>
+<li>que no tengan terminales gráficas,</li>
+<li>cuyos navegadores no soporten formularios,</li>
+<li>con discapacidades visuales,</li>
+<li>que utilicen sintetizadores de voz,</li>
+<li>que hayan configurado sus agentes de usuario para no mostrar imágenes, etc.</li>
+</ul></li>
+</ul>
+</section><section id="no-especificar-texto-alternativo" class="slide level2">
+<h2><span class="header-section-number">5.3</span> No especificar texto alternativo</h2>
+<ul>
+<li><p><strong>cuando las imágenes sólo sirven para dar formato a una página</strong>, por ejemplo, alt=&quot;bola roja&quot; para una imagen que añade una bola roja para decorar un título o un párrafo</p></li>
+<li><p><strong>cuando el texto carezca de significado</strong> (p.ej., &quot;relleno que queda bonito&quot;), pues esto no solamente frustrará a los usuarios, sino que ralentizará a los agentes de usuario que deban convertir texto a salida por voz o Braille.</p></li>
+</ul>
+</section>
+<section id="mapas-de-imagen" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Mapas de imagen</h1></section><section id="qué-son" class="slide level2">
+<h2><span class="header-section-number">6.1</span> ¿Qué son?</h2>
+<ul>
+<li>Los mapas de imágenes permiten a los autores <strong>especificar regiones en una imagen u objeto y asignar una acción</strong> específica a cada región.</li>
+</ul>
+</section><section id="texto-alternativo" class="slide level2">
+<h2><span class="header-section-number">6.2</span> Texto alternativo</h2>
+<ul>
+<li><p>Para que sea accesible, se tiene que proporcionar un <strong>texto alternativo con alt para cada etiqueta &lt;area&gt;</strong>.</p></li>
+<li><p>Como cada zona activa realiza la misma función que un enlace, el texto alternativo tiene que <strong>ser eficaz</strong>, y tiene que <strong>tener sentido cuando se lea fuera de contexto</strong>.</p></li>
+</ul>
+</section>
+<section id="multimedia" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Multimedia</h1></section><section id="poco-accesibles" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Poco accesibles</h2>
+<ul>
+<li>Los elementos multimedia pueden ocasionar problemas de accesibilidad, ya no sólo a las personas con algún tipo de discapacidad, sino a todo el mundo en general, pues, aunque cada ve menos, en muchos casos, requieren la <strong>instalación de plug-in</strong>.</li>
+</ul>
+</section><section id="transcripción-y-subtítulos" class="slide level2">
+<h2><span class="header-section-number">7.2</span> Transcripción y subtítulos</h2>
+<ul>
+<li><p>Se tiene que proporcionar <strong>una transcripción de los diálogos y una descripción de los sonidos</strong>.</p></li>
+<li><p>En el caso de los vídeos también se tiene que proporcionar <strong>una descripción del vídeo en sí (de la imagen)</strong>.</p></li>
+</ul>
+</section><section id="youtube" class="slide level2">
+<h2><span class="header-section-number">7.3</span> YouTube</h2>
+<ul>
+<li><p>YouTube ofrece un sistema para la <strong>inclusión de subtítulos de forma automática</strong>.</p></li>
+<li><p>En YouTube, se puede emplear <strong>&quot;Filtros&quot; de búsqueda</strong> para indicar que se quiere buscar vídeos que tengan subtítulos.</p></li>
+<li><p>YouTube permite añadir subtítulos en diferentes idiomas, y también permite emplear un servicio de <strong>traducción automática</strong> de los subtítulos.</p></li>
+</ul>
+</section>
+<section id="enlaces" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Enlaces</h1></section><section id="fuera-de-contexto" class="slide level2">
+<h2><span class="header-section-number">8.1</span> Fuera de contexto</h2>
+<ul>
+<li><p>Algunos navegadores y algunos programas de ayuda permiten mostrar <strong>la lista de enlaces de una página web</strong>.</p></li>
+<li><p>Para que el enlace tenga sentido en esa lista de enlaces, <strong>el texto del enlace tiene que tener sentido fuera de su contexto</strong>.</p></li>
+</ul>
+</section><section id="evitar-pincha-aquí" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Evitar &quot;Pincha aquí&quot;</h2>
+<ul>
+<li>Intenta <strong>evitar los enlaces tipo &quot;Pincha aquí&quot;</strong>:</li>
+</ul>
+</section><section id="tamaño" class="slide level2">
+<h2><span class="header-section-number">8.3</span> Tamaño</h2>
+<ul>
+<li>Asegúrate que <strong>los enlaces son lo suficiente grandes</strong> para que sea fácil hacer click en ellos.</li>
+</ul>
+</section><section id="importancia-primer-enlace" class="slide level2">
+<h2><span class="header-section-number">8.4</span> Importancia primer enlace</h2>
+<ul>
+<li>El primer enlace va a llevarse la mayor parte de la atención del lector y el mayor porcentaje de clicks.</li>
+<li><strong>Elige tu primer enlace cuidadosamente</strong>.</li>
+<li>Empieza por lo importante y no lo malgastes en una trivialidad.</li>
+</ul>
+</section><section id="no-enlaces-todo" class="slide level2">
+<h2><span class="header-section-number">8.5</span> No enlaces todo</h2>
+<ul>
+<li>Usar demasiados enlaces hace el texto difícil de leer y además devalúa el valor de los enlaces importantes.</li>
+<li>Dedica algo de tiempo a pensar <strong>qué es lo más importante que estás escribiendo y qué puede tener sentido enlazar</strong>.</li>
+</ul>
+</section><section id="no-repitas-los-enlaces" class="slide level2">
+<h2><span class="header-section-number">8.6</span> No repitas los enlaces</h2>
+<ul>
+<li>Si utilizas por primera vez algún término o concepto nuevo puedes enlazar a alguna enciclopedia o diccionario para que el lector encuentre más información si no sabe de qué hablas, pero <strong>hazlo sólo la primera vez, no cada vez que se encuentre el término en la página</strong>.</li>
+</ul>
+</section><section id="mismo-idioma-página" class="slide level2">
+<h2><span class="header-section-number">8.7</span> Mismo idioma página</h2>
+<ul>
+<li>Intenta enlazar en el mismo idioma de la página, y <strong>si tienes que hacerlo, y no es obvio, indica el idioma del enlace</strong> entre paréntesis.</li>
+</ul>
+</section><section id="comportamiento-estándar" class="slide level2">
+<h2><span class="header-section-number">8.8</span> Comportamiento estándar</h2>
+<ul>
+<li><strong>No alteres el comportamiento de los enlaces</strong>, como por ejemplo poner previsualizaciones de la página que enlaza cuando se pasa el ratón por encima.</li>
+</ul>
+</section><section id="los-enlaces-son-enlaces" class="slide level2">
+<h2><span class="header-section-number">8.9</span> Los enlaces son enlaces</h2>
+<ul>
+<li>Dales un estilo distintivo <strong>que no pueda ser confundido</strong> con ningún otro elemento o texto de la página.</li>
+<li>Usa un color único no usado en ninguna otra parte de la página y <strong>considera usar la convención de un enlace subrayado</strong>.</li>
+<li>Usa el <strong>mismo diseño para todos los enlaces</strong> del site.</li>
+</ul>
+</section><section id="no-ofusques-tus-urls" class="slide level2">
+<h2><span class="header-section-number">8.10</span> No ofusques tus URLs</h2>
+<ul>
+<li>Los usuarios pueden querer ver previamente dónde van a ser enviados con tu enlace poniendo el ratón encima y viendo la URL en la barra de estado.</li>
+<li><strong>Evita utilizar redirecciones y servicios acortadores de URLs</strong> que hacen la URL totalmente opaca.</li>
+</ul>
+</section><section id="comprueba-los-enlaces" class="slide level2">
+<h2><span class="header-section-number">8.11</span> Comprueba los enlaces</h2>
+<ul>
+<li>Visítalos antes de enlazar, copia correctamente la URL y una vez publicado <strong>recuerda pulsarlos para comprobar</strong> que funcionan correctamente.</li>
+<li>No hay nada más frustrante en la Red que un enlace mal puesto o estropeado.</li>
+</ul>
+</section>
+<section id="organización-de-las-páginas" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Organización de las páginas</h1></section><section id="elementos-estructurales" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Elementos estructurales</h2>
+<ul>
+<li>Las páginas web tienen que estar correctamente estructuradas.</li>
+<li>Para ello, se tienen que <strong>emplear las etiquetas de HTML que definen la estructura de una página</strong>, como son: &lt;title&gt;, &lt;h1&gt;, &lt;h2&gt;, ..., &lt;ul&gt;, &lt;ol&gt;, &lt;p&gt;, &lt;blockquote&gt;.</li>
+</ul>
+</section><section id="title-i" class="slide level2">
+<h2><span class="header-section-number">9.2</span> title (I)</h2>
+<ul>
+<li><p>Toda página web debe tener un título <strong>descriptivo pero a la vez breve</strong> definido con <strong>la etiqueta &lt;title&gt; que resuma el contenido o la función</strong> de la página.</p></li>
+<li><p>Es conveniente <strong>incluir el nombre del sitio web</strong> para definir el contexto de la página.</p></li>
+</ul>
+</section><section id="title-ii" class="slide level2">
+<h2><span class="header-section-number">9.3</span> title (II)</h2>
+<ul>
+<li>El título de la página se emplea:
+<ul>
+<li>en los <strong>marcadores de los navegadores</strong>,</li>
+<li>en los <strong>resultados que muestran los buscadores</strong>,</li>
+<li>y suele ser el <strong>texto que se comparte en las redes sociales</strong>.</li>
+</ul></li>
+</ul>
+</section><section id="title-iii" class="slide level2">
+<h2><span class="header-section-number">9.4</span> title (III)</h2>
+<ul>
+<li><p>El título de la página <strong>es lo primero que leen los lectores de pantalla</strong>.</p></li>
+<li><p>Como se lee en todas las páginas, <strong>debe ser corto y no debe ser el mismo en todas las páginas</strong>.</p></li>
+</ul>
+</section><section id="encabezados-i" class="slide level2">
+<h2><span class="header-section-number">9.5</span> Encabezados (I)</h2>
+<ul>
+<li>El contenido de las páginas se tiene que estructurar con las <strong>etiquetas de encabezado &lt;h1&gt;, &lt;h2&gt;, ...</strong></li>
+</ul>
+</section><section id="encabezados-ii" class="slide level2">
+<h2><span class="header-section-number">9.6</span> Encabezados (II)</h2>
+<ul>
+<li>La mayoría de los lectores de pantalla y algunos navegadores permiten al usuario desplazarse dentro de una página web &quot;saltando&quot; de un encabezado a otro encabezado, lo <strong>permite llegar de una forma más rápida a la información que se busca</strong>.</li>
+</ul>
+</section><section id="encabezados-iii" class="slide level2">
+<h2><span class="header-section-number">9.7</span> Encabezados (III)</h2>
+<ul>
+<li><p>Utiliza <strong>un único encabezado &lt;h1&gt; para el título principal</strong> de la página web.</p></li>
+<li><p>Utiliza <strong>diferentes encabezados &lt;h2&gt; para cada apartado principal</strong> de la página.</p></li>
+<li><p>Emplea <strong>el resto de encabezados (&lt;h3&gt; ... &lt;6&gt;) para añadir mayor nivel de detalle</strong> en la estructura de la página.</p></li>
+</ul>
+</section><section id="encabezados-iv" class="slide level2">
+<h2><span class="header-section-number">9.8</span> Encabezados (IV)</h2>
+<ul>
+<li>Se consistente en el uso de los encabezados: por ejemplo, <strong>no pases de &lt;h2&gt; a &lt;h4&gt; sin utilizar &lt;h3&gt;</strong>.</li>
+</ul>
+</section><section id="encabezados-v" class="slide level2">
+<h2><span class="header-section-number">9.9</span> Encabezados (V)</h2>
+<ul>
+<li><p>Si no quieres que se vean los encabezados en un navegador visual, <strong>utiliza CSS para esconderlos</strong>.</p></li>
+<li><p>Para ello, <strong>no utilices display: none;</strong> si no desplaza el encabezado fuera del área de visualización con posicionamiento absoluto, por ejemplo, <strong>position: absolute; top: -500px;</strong>.</p></li>
+</ul>
+</section><section id="maquetación" class="slide level2">
+<h2><span class="header-section-number">9.10</span> Maquetación</h2>
+<ul>
+<li><p>Muchos desarrolladores de páginas web emplean las etiquetas &lt;div&gt; y &lt;span&gt; para definir encabezados de sección y estructurar el contenido, sin embargo, estas etiquetas <strong>&lt;div&gt; y &lt;span&gt; no proporcionan contenido semántico</strong>, por lo que se debe evitar su uso.</p></li>
+<li><p>En una página web <strong>nunca se deben utilizar las tablas para maquetar</strong>, ya que suponen un grave problema de accesibilidad.</p></li>
+</ul>
+</section><section id="html5" class="slide level2">
+<h2><span class="header-section-number">9.11</span> HTML5</h2>
+<ul>
+<li>Sin perder de vista todo lo mencionado anteriormente, <strong>se pueden empezar a usar las nuevas etiquetas semánticas y estructurales de HTML5</strong>: &lt;header&gt;, &lt;hgroup&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt; o &lt;footer&gt;.</li>
+</ul>
+</section><section id="header" class="slide level2">
+<h2><span class="header-section-number">9.12</span> header</h2>
+<ul>
+<li><p>La etiqueta <strong>&lt;header&gt; se usa para marcar un grupo de elementos de introducción o de navegación</strong> dentro de una sección o documento.</p></li>
+<li><p>El uso de la etiqueta <strong>&lt;header&gt; no está restringido a una por documento</strong>:</p></li>
+</ul>
+</section><section id="hgroup" class="slide level2">
+<h2><span class="header-section-number">9.13</span> hgroup</h2>
+<ul>
+<li><p>La etiqueta <strong>&lt;hgroup&gt; se usa para agrupar un conjunto de elementos de encabezado</strong> (&lt;h1&gt;–&lt;h6&gt;).</p></li>
+<li><p>El uso más típico de esta etiqueta es para <strong>agrupar el título de la página con su eslogan</strong>.</p></li>
+</ul>
+</section><section id="nav" class="slide level2">
+<h2><span class="header-section-number">9.14</span> nav</h2>
+<ul>
+<li><p>La etiqueta <strong>&lt;nav&gt; se usa para marcar la navegación</strong> de la página web.</p></li>
+<li><p>Esta etiqueta <strong>no debe ser usada para marcar todos los grupos de enlaces</strong>, únicamente los bloques principales de navegación por la página.</p></li>
+</ul>
+</section><section id="article" class="slide level2">
+<h2><span class="header-section-number">9.15</span> article</h2>
+<ul>
+<li><p>La etiqueta <strong>&lt;article&gt; se usa para marcar contenido independiente que tendría sentido fuera del contexto de la página actual y que podría sindicarse</strong>, por ejemplo: una noticia, un artículo en un blog o un comentario.</p></li>
+<li><p>Normalmente un &lt;article&gt; podrá además tener de su propio contenido, también una cabecera (&lt;header&gt;) y posiblemente un pie (&lt;footer&gt;).</p></li>
+</ul>
+</section><section id="section" class="slide level2">
+<h2><span class="header-section-number">9.16</span> section</h2>
+<ul>
+<li><p>La etiqueta <strong>&lt;section&gt; se usa para marcar una sección genérica</strong> de un documento o aplicación, típicamente con un encabezado (&lt;header&gt;).</p></li>
+<li><p>Sólo se debería usar &lt;section&gt; para contenido independiente al que se podría poner un encabezado y que no sea susceptible de ir marcado con &lt;article&gt;, &lt;aside&gt; o &lt;nav&gt;.</p></li>
+</ul>
+</section><section id="aside" class="slide level2">
+<h2><span class="header-section-number">9.17</span> aside</h2>
+<ul>
+<li>La etiqueta <strong>&lt;aside&gt; se usa para marcar un trozo de contenido que está relacionado con el contenido de la página web, pero que no es parte del mismo</strong>. Ejemplos de uso serían: glosario de términos, grupos de enlaces a páginas relacionadas, barras laterales, ...</li>
+</ul>
+</section><section id="footer" class="slide level2">
+<h2><span class="header-section-number">9.18</span> footer</h2>
+<ul>
+<li>La etiqueta <strong>&lt;footer&gt; se usa para marcar el pie de una sección o documento</strong> y que contiene información sobre el mismo como el autor, licencia, términos de uso, ...</li>
+</ul>
+</section>
+<section id="figuras-y-diagramas" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Figuras y diagramas</h1></section><section id="longdesc" class="slide level2">
+<h2><span class="header-section-number">10.1</span> longdesc</h2>
+<ul>
+<li>Nos podemos encontrar con el caso de tener una imagen a la que haya que asociarle un texto alternativo, pero dicho <strong>texto sea excesivamente largo</strong>, para esas ocasiones está el atributo longdesc.</li>
+</ul>
+</section>
+<section id="scripts" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Scripts</h1></section><section id="poco-accesibles-1" class="slide level2">
+<h2><span class="header-section-number">11.1</span> Poco accesibles</h2>
+<ul>
+<li><p>Algunos de los navegadores que emplean las personas discapacitadas <strong>no son capaces de interpretar el código de JavaScript</strong> o algunos elementos multimedia como applets u objetos que requieren de un plug-in.</p></li>
+<li><p>Por regla general, <strong>el HTML Dinámico no funcionará con un navegador no visual y no será accesible</strong>.</p></li>
+<li><p>La solución es lograr que una página web funcione correctamente <strong>sin necesidad de tener que ejecutar el código JavaScript</strong>.</p></li>
+</ul>
+</section><section id="capas" class="slide level2">
+<h2><span class="header-section-number">11.2</span> Capas</h2>
+<ul>
+<li>Separar contenido (HTML), de presentación (CSS), de comportamiento (Javascript)</li>
+</ul>
+<figure>
+<img src="../img/html5-css3-javascript.jpg" alt="Separación de contenido, presentación y comportamiento" /><figcaption>Separación de contenido, presentación y comportamiento</figcaption>
+</figure>
+</section>
+<section id="frames" class="titleslide slide level1"><h1><span class="header-section-number">12</span> Frames</h1></section><section id="poco-accesibles-2" class="slide level2">
+<h2><span class="header-section-number">12.1</span> Poco accesibles</h2>
+<ul>
+<li><p>Los frames son un elemento del HTML que <strong>siempre han causado problemas</strong>.</p>
+<ul>
+<li>no se puede enlazar a una combinación particular de marcos,</li>
+<li>no se llevan bien con los buscadores,</li>
+<li>se puede llegar a una situación de múltiples marcos anidados, etc.</li>
+</ul></li>
+</ul>
+</section><section id="evitar-uso" class="slide level2">
+<h2><span class="header-section-number">12.2</span> Evitar uso</h2>
+<ul>
+<li><p>De cara a lograr la máxima accesibilidad posible, es mejor <strong>evitar el uso de marcos</strong>.</p></li>
+<li><p>Hoy en día, existen diferentes técnicas para incluir automáticamente un elemento, como un menú de navegación o un pie de página en un lugar determinado de todas las páginas, con lo que se consigue la misma función que con el uso de marcos pero sin sus inconvenientes.</p></li>
+</ul>
+</section>
+<section id="tablas" class="titleslide slide level1"><h1><span class="header-section-number">13</span> Tablas</h1></section><section id="difíciles-de-entender" class="slide level2">
+<h2><span class="header-section-number">13.1</span> Difíciles de entender</h2>
+<ul>
+<li><p>Una tabla de datos es <strong>muy difícil de entender si sólo se puede ver un dato aislado</strong> cada vez, que es el problema que sufren los usuarios que emplean navegadores no visuales.</p></li>
+<li><p>Para evitar este problema, se tienen que <strong>etiquetar correctamente</strong> las tablas.</p></li>
+</ul>
+</section><section id="caption" class="slide level2">
+<h2><span class="header-section-number">13.2</span> caption</h2>
+<ul>
+<li>Poner <strong>un título que proporcione una descripción breve en la etiqueta &lt;caption&gt;</strong>, justo después de la etiqueta &lt;table&gt;.</li>
+</ul>
+</section><section id="summary" class="slide level2">
+<h2><span class="header-section-number">13.3</span> summary</h2>
+<ul>
+<li>Poner <strong>un resumen que complemente al título en el atributo summary</strong> de la etiqueta &lt;table&gt;:
+<ul>
+<li>con la estructura de la tabla (número de fílas, número de columnas)</li>
+<li>con la descripción de los encabezamientos</li>
+<li>con la relación que guarda la tabla con el resto de la página, etc.</li>
+</ul></li>
+</ul>
+</section><section id="th" class="slide level2">
+<h2><span class="header-section-number">13.4</span> th</h2>
+<ul>
+<li>Definir los <strong>encabezados tanto verticales como horizontales con la etiqueta &lt;th&gt;</strong>.</li>
+</ul>
+</section>
+<section id="formularios" class="titleslide slide level1"><h1><span class="header-section-number">14</span> Formularios</h1></section><section id="label" class="slide level2">
+<h2><span class="header-section-number">14.1</span> label</h2>
+<ul>
+<li>Asegúrate de que cada elemento de un formulario tiene asociada una <strong>etiqueta &lt;label&gt;</strong>.</li>
+</ul>
+</section>
+<section id="elementos-repetitivos" class="titleslide slide level1"><h1><span class="header-section-number">15</span> Elementos repetitivos</h1></section><section id="problema" class="slide level2">
+<h2><span class="header-section-number">15.1</span> Problema</h2>
+<ul>
+<li>Suele ser molesto <strong>cuando se navega con un lector de pantalla que cada vez que se recarga una página vuelve a repetir de nuevo la cabecera</strong> que suele ser idéntica.</li>
+</ul>
+</section><section id="solución" class="slide level2">
+<h2><span class="header-section-number">15.2</span> Solución</h2>
+<ul>
+<li>Proporciona un método (por ejemplo un enlace <strong>&quot;Saltar al contenido&quot;</strong> en la parte superior de la página) que permita saltarse la navegación u otros elementos que se repiten en cada página.</li>
+</ul>
+</section>
+<section id="validadores" class="titleslide slide level1"><h1><span class="header-section-number">16</span> Validadores</h1></section><section id="de-html" class="slide level2">
+<h2><span class="header-section-number">16.1</span> De HTML</h2>
+<ul>
+<li>W3C Markup Validation Service
+<ul>
+<li><a href="http://validator.w3.org" class="uri">http://validator.w3.org</a></li>
+</ul></li>
+<li>WDG HTML Validator
+<ul>
+<li><a href="http://www.htmlhelp.com/tools/validator" class="uri">http://www.htmlhelp.com/tools/validator</a></li>
+</ul></li>
+</ul>
+</section><section id="de-css" class="slide level2">
+<h2><span class="header-section-number">16.2</span> De CSS</h2>
+<ul>
+<li>W3C CSS Validation Service
+<ul>
+<li><a href="http://jigsaw.w3.org/css-validator" class="uri">http://jigsaw.w3.org/css-validator</a></li>
+</ul></li>
+<li>WDG CSS Check
+<ul>
+<li><a href="http://www.htmlhelp.com/tools/csscheck" class="uri">http://www.htmlhelp.com/tools/csscheck</a></li>
+</ul></li>
+</ul>
+</section><section id="de-enlaces" class="slide level2">
+<h2><span class="header-section-number">16.3</span> De enlaces</h2>
+<ul>
+<li>W3C Link Checker
+<ul>
+<li><a href="http://validator.w3.org/checklink" class="uri">http://validator.w3.org/checklink</a></li>
+</ul></li>
+<li>WDG Link Valet
+<ul>
+<li><a href="http://www.htmlhelp.com/tools/valet" class="uri">http://www.htmlhelp.com/tools/valet</a></li>
+</ul></li>
+<li>Link Checker
+<ul>
+<li><a href="http://wummel.github.io/linkchecker" class="uri">http://wummel.github.io/linkchecker</a></li>
+</ul></li>
+</ul>
+</section><section id="otros-validadores" class="slide level2">
+<h2><span class="header-section-number">16.4</span> Otros validadores</h2>
+<ul>
+<li>W3C mobileOK Checker
+<ul>
+<li><a href="http://validator.w3.org/mobile" class="uri">http://validator.w3.org/mobile</a></li>
+</ul></li>
+<li>W3C Feed Validation Service
+<ul>
+<li><a href="http://validator.w3.org/feed" class="uri">http://validator.w3.org/feed</a></li>
+</ul></li>
+<li>W3C Semantic Data Extractor
+<ul>
+<li><a href="http://www.w3.org/2003/12/semantic-extractor.html" class="uri">http://www.w3.org/2003/12/semantic-extractor.html</a></li>
+</ul></li>
+</ul>
+</section><section id="unificados" class="slide level2">
+<h2><span class="header-section-number">16.5</span> Unificados</h2>
+<ul>
+<li>W3C Unicorn
+<ul>
+<li><a href="http://validator.w3.org/unicorn" class="uri">http://validator.w3.org/unicorn</a></li>
+</ul></li>
+</ul>
+</section><section id="accesibilidad-i" class="slide level2">
+<h2><span class="header-section-number">16.6</span> Accesibilidad (I)</h2>
+<ul>
+<li>Checkers</li>
+<li><p><a href="http://checkers.eiii.eu" class="uri">http://checkers.eiii.eu</a></p></li>
+<li>TAW</li>
+<li><p><a href="http://www.tawdis.net/" class="uri">http://www.tawdis.net/</a></p></li>
+<li>AChecker
+<ul>
+<li><a href="http://achecker.ca/checker" class="uri">http://achecker.ca/checker</a></li>
+</ul></li>
+</ul>
+</section><section id="accesibilidad-ii" class="slide level2">
+<h2><span class="header-section-number">16.7</span> Accesibilidad (II)</h2>
+<ul>
+<li>eXaminator
+<ul>
+<li><a href="http://examinator.ws" class="uri">http://examinator.ws</a></li>
+</ul></li>
+<li>CynthiaSays
+<ul>
+<li><a href="http://www.cynthiasays.com" class="uri">http://www.cynthiasays.com</a></li>
+</ul></li>
+<li>Nibbler
+<ul>
+<li><a href="http://nibbler.silktide.com" class="uri">http://nibbler.silktide.com</a></li>
+</ul></li>
+</ul>
+</section><section id="accesibilidad-iii" class="slide level2">
+<h2><span class="header-section-number">16.8</span> Accesibilidad (III)</h2>
+<ul>
+<li>WAVE Web Accessibility Tool
+<ul>
+<li><a href="http://wave.webaim.org" class="uri">http://wave.webaim.org</a></li>
+</ul></li>
+<li>WAVE Web Accessibility Toolbar for Firefox
+<ul>
+<li><a href="http://wave.webaim.org/toolbar" class="uri">http://wave.webaim.org/toolbar</a></li>
+</ul></li>
+<li>Tingtun Checker
+<ul>
+<li><a href="http://accessibility.tingtun.no/en/pagecheck2.0" class="uri">http://accessibility.tingtun.no/en/pagecheck2.0</a></li>
+</ul></li>
+</ul>
+</section><section id="accesibilidad-iv" class="slide level2">
+<h2><span class="header-section-number">16.9</span> Accesibilidad (IV)</h2>
+<ul>
+<li>Functional Accessibility Evaluator
+<ul>
+<li><a href="http://fae20.cita.illinois.edu" class="uri">http://fae20.cita.illinois.edu</a></li>
+</ul></li>
+<li>SortSite - Accessibility Checker and Validator
+<ul>
+<li><a href="http://www.powermapper.com/products/sortsite/checks/accessibility-checks.htmlhelp" class="uri">http://www.powermapper.com/products/sortsite/checks/accessibility-checks.htmlhelp</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="otras-herramientas" class="titleslide slide level1"><h1><span class="header-section-number">17</span> Otras Herramientas</h1></section><section id="plugins" class="slide level2">
+<h2><span class="header-section-number">17.1</span> Plugins</h2>
+<ul>
+<li>Web Developer, no ofrece <strong>muchísima información útil</strong> para comprobar que una página web es accesible.
+<ul>
+<li><a href="https://addons.mozilla.org/es/firefox/addon/web-developer/" class="uri">https://addons.mozilla.org/es/firefox/addon/web-developer/</a></li>
+<li>Ver explicación: <a href="http://accesibilidadweb.dlsi.ua.es/?menu=hr-webdevelopertoolbar" class="uri">http://accesibilidadweb.dlsi.ua.es/?menu=hr-webdevelopertoolbar</a></li>
+</ul></li>
+<li>Fangs Screen Reader Emulator, <strong>emula el comportamiento que tendría un lector de pantallas</strong>.
+<ul>
+<li><a href="https://addons.mozilla.org/en-us/firefox/addon/fangs-screen-reader-emulator" class="uri">https://addons.mozilla.org/en-us/firefox/addon/fangs-screen-reader-emulator</a></li>
+</ul></li>
+</ul>
+</section><section id="colores" class="slide level2">
+<h2><span class="header-section-number">17.2</span> Colores</h2>
+<ul>
+<li>Accessibility Color Wheel
+<ul>
+<li><a href="http://gmazzocato.altervista.org/colorwheel/wheel.php" class="uri">http://gmazzocato.altervista.org/colorwheel/wheel.php</a></li>
+</ul></li>
+<li>Colorblind Web Page Filter
+<ul>
+<li><a href="http://colorfilter.wickline.org" class="uri">http://colorfilter.wickline.org</a></li>
+</ul></li>
+<li>Check My Colours
+<ul>
+<li><a href="http://www.checkmycolours.com" class="uri">http://www.checkmycolours.com</a></li>
+</ul></li>
+</ul>
+</section><section id="paletas-de-colores" class="slide level2">
+<h2><span class="header-section-number">17.3</span> Paletas de colores</h2>
+<ul>
+<li>Paletton
+<ul>
+<li><a href="http://paletton.com" class="uri">http://paletton.com</a></li>
+</ul></li>
+<li>Color Palette Generator
+<ul>
+<li><a href="http://www.degraeve.com/color-palette" class="uri">http://www.degraeve.com/color-palette</a></li>
+</ul></li>
+</ul>
+</section><section id="tiempo-de-carga" class="slide level2">
+<h2><span class="header-section-number">17.4</span> Tiempo de carga</h2>
+<ul>
+<li>Load Impact
+<ul>
+<li><a href="http://loadimpact.com" class="uri">http://loadimpact.com</a></li>
+</ul></li>
+<li>Pingdom Website Speed Test
+<ul>
+<li><a href="http://tools.pingdom.com/fpt" class="uri">http://tools.pingdom.com/fpt</a></li>
+</ul></li>
+<li>Site Speed
+<ul>
+<li><a href="http://sitespeed.me" class="uri">http://sitespeed.me</a></li>
+</ul></li>
+<li>Web Page Analyzer
+<ul>
+<li><a href="http://www.webpageanalyzer.com" class="uri">http://www.webpageanalyzer.com</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">18</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">18.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">18.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-i" class="slide level2">
+<h2><span class="header-section-number">18.3</span> Bibliografía (I)</h2>
+<ul>
+<li>Página de Accesibilidad Web de la Universidad de Alicante
+<ul>
+<li><a href="http://accesibilidadweb.dlsi.ua.es" class="uri">http://accesibilidadweb.dlsi.ua.es</a></li>
+</ul></li>
+<li>Traducción: Pautas de Accesibilidad para el Contenido Web (WCAG) 2.0
+<ul>
+<li><a href="http://www.sidar.org/traducciones/wcag20/es" class="uri">http://www.sidar.org/traducciones/wcag20/es</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-ii" class="slide level2">
+<h2><span class="header-section-number">18.4</span> Bibliografía (II)</h2>
+<ul>
+<li>Enlazar es importante
+<ul>
+<li><a href="http://www.microsiervos.com/archivo/weblogs/enlazar-es-importante-3.html" class="uri">http://www.microsiervos.com/archivo/weblogs/enlazar-es-importante-3.html</a></li>
+</ul></li>
+<li>Enlaces para “leer más” que sean simples y accesibles
+<ul>
+<li><a href="http://www.torresburriel.com/weblog/2005/10/22/enlaces-para-leer-mas-que-sean-simples-y-accesibles" class="uri">http://www.torresburriel.com/weblog/2005/10/22/enlaces-para-leer-mas-que-sean-simples-y-accesibles</a></li>
+</ul></li>
+<li>Javascript no obstructivo, Manual de buenas maneras
+<ul>
+<li><a href="http://www.anieto2k.com/2006/10/15/javascript-no-obstructivo-manual-de-buenas-maneras" class="uri">http://www.anieto2k.com/2006/10/15/javascript-no-obstructivo-manual-de-buenas-maneras</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-iii" class="slide level2">
+<h2><span class="header-section-number">18.5</span> Bibliografía (III)</h2>
+<ul>
+<li>HTML5: Nuevas etiquetas semánticas y estructurales
+<ul>
+<li><a href="http://www.arumeinformatica.es/blog/html5-nuevas-etiquetas-semanticas-y-estructurales" class="uri">http://www.arumeinformatica.es/blog/html5-nuevas-etiquetas-semanticas-y-estructurales</a></li>
+</ul></li>
+<li>HTML y Accesibilidad: el atributo longdesc en imágenes
+<ul>
+<li><a href="http://blog.outbook.es/desarrollo-web/html-y-accesibilidad-el-atributo-longdesc-en-imagenes" class="uri">http://blog.outbook.es/desarrollo-web/html-y-accesibilidad-el-atributo-longdesc-en-imagenes</a></li>
+</ul></li>
+<li>Nuevos tipos de input en HTML5
+<ul>
+<li><a href="http://www.htmlcinco.com/nuevos-tipos-de-input-en-html5" class="uri">http://www.htmlcinco.com/nuevos-tipos-de-input-en-html5</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-iv" class="slide level2">
+<h2><span class="header-section-number">18.6</span> Bibliografía (IV)</h2>
+<ul>
+<li>Lectores de pantalla
+<ul>
+<li><a href="http://es.wikipedia.org/wiki/Lector_de_pantalla" class="uri">http://es.wikipedia.org/wiki/Lector_de_pantalla</a></li>
+</ul></li>
+<li>Validadores y herramientas de accesibilidad y usabilidad
+<ul>
+<li><a href="http://www.usableyaccesible.com/recurso_misvalidadores.php" class="uri">http://www.usableyaccesible.com/recurso_misvalidadores.php</a></li>
+</ul></li>
+<li>Web Accessibility Evaluation Tools: Overview
+<ul>
+<li><a href="http://www.w3.org/WAI/ER/tools/Overview.html" class="uri">http://www.w3.org/WAI/ER/tools/Overview.html</a></li>
+</ul></li>
+</ul>
+</section>
+
+<!--footer id="footer">
+  <h4 class="author"> Adolfo Sanz De Diego  - Septiembre 2016</h4>
+</footer-->
+
+<!-- deck goto extension html -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck navigation extension html -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck status extension html -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- jquery  -->
+<script src="../lib/deck.js-master/jquery.min.js"></script>
+
+<!-- deck core js  -->
+<script src="../lib/deck.js-master/core/deck.core.js"></script>
+
+<!-- deck extension js -->
+<script src="../lib/deck.js-master/extensions/goto/deck.goto.js"></script>
+<script src="../lib/deck.js-master/extensions/menu/deck.menu.js"></script>
+<script src="../lib/deck.js-master/extensions/navigation/deck.navigation.js"></script>
+<script src="../lib/deck.js-master/extensions/scale/deck.scale.js"></script>
+<script src="../lib/deck.js-master/extensions/status/deck.status.js"></script>
+<script src="../lib/deck.search.js-master/search/deck.search.js"></script>
+
+<!-- Initialize the deck. -->
+<script>
+$(function() {
+    $.deck('.slide');
+});
+</script>
+
+</body>
+</html>

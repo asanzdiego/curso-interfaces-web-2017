@@ -1,0 +1,15 @@
+@color: red;
+#minamespace {
+	.claro {
+		background-color: lighten(@color, 30%);
+	}
+}
+.claro {
+	background-color: lighten(@color, 10%);
+}
+div {
+	.claro;
+}
+p {
+	#minamespace > .claro;
+}

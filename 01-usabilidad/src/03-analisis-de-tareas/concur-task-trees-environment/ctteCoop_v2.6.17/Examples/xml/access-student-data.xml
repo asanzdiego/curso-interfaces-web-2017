@@ -1,0 +1,243 @@
+<?xml version= '1.0'?>
+<!DOCTYPE TaskModel PUBLIC "http://giove.cnuce.cnr.it/CTTDTD.dtd" "..\..\..\..\..\Documenti\NetBeansProjects\ctte\ctte.config\CTTDTD.dtd">
+
+<TaskModel NameTaskModelID="C:\Documents and Settings\ari\Desktop\hiis tools\ctte\Examples\xml\access-student-data_2_3_3.xml">
+<Task Identifier="AccessStudentData" Category="Abstraction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type>  </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="ProvideRequest" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessStudentData"/>
+  <SiblingRight name="ShowResults"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="EnterParameters" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Disabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="ProvideRequest"/>
+  <SiblingRight name="SubmitRequest"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="EnterName" Category="Interaction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Interleaving"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="EnterParameters"/>
+  <SiblingRight name="EnterDepartment"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="EnterDepartment" Category="Interaction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="EnterParameters"/>
+  <SiblingLeft name="EnterName"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="SubmitRequest" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="ProvideRequest"/>
+  <SiblingLeft name="EnterParameters"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="ShowResults" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessStudentData"/>
+  <SiblingLeft name="ProvideRequest"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+</TaskModel>

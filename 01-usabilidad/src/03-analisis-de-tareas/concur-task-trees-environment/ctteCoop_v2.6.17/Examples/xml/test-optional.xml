@@ -1,0 +1,488 @@
+<?xml version= '1.0'?>
+<!DOCTYPE TaskModel PUBLIC "http://giove.cnuce.cnr.it/CTTDTD.dtd" "..\..\..\..\..\Documenti\NetBeansProjects\ctte\ctte.config\CTTDTD.dtd">
+
+<TaskModel NameTaskModelID="C:\Documents and Settings\ari\Desktop\hiis tools\ctte\Examples\xml\test-optional.xml">
+<Task Identifier="Root" Category="Abstraction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="">
+  <Name>  </Name>
+  <Type> null </Type>
+  <Description>  </Description>
+  <Precondition>  </Precondition>
+  <TimePerformance> 
+   <Max>  </Max>
+   <Min>  </Min>
+   <Average>  </Average>
+  </TimePerformance> 
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="T1" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="Root"/>
+  <SiblingRight name="T2"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T2" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="Root"/>
+  <SiblingLeft name="T1"/>
+  <SiblingRight name="T3"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T3" Category="Abstraction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Disabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="Root"/>
+  <SiblingLeft name="T2"/>
+  <SiblingRight name="T4"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="T31" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingRight name="T32"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T32" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SuspendResume"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingLeft name="T31"/>
+  <SiblingRight name="T33"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T33" Category="User Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingLeft name="T32"/>
+  <SiblingRight name="T34"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="T331" Category="User Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Choice"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T33"/>
+  <SiblingRight name="T332"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T332" Category="User Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T33"/>
+  <SiblingLeft name="T331"/>
+  <SiblingRight name="T333"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T333" Category="User Task" Iterative="false" Optional="true" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T33"/>
+  <SiblingLeft name="T332"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="T34" Category="Interaction Task" Iterative="false" Optional="true" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingLeft name="T33"/>
+  <SiblingRight name="T35"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T35" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Choice"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingLeft name="T34"/>
+  <SiblingRight name="T36"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="T36" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="T3"/>
+  <SiblingLeft name="T35"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="T4" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="Root"/>
+  <SiblingLeft name="T3"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+</TaskModel>

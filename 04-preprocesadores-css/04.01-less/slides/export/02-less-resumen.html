@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Less, un preprocesador CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Less, un preprocesador CSS</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Less, un preprocesador CSS</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Septiembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#ventajas"><span class="toc-section-number">2.2</span> Ventajas</a></li>
+<li><a href="#características"><span class="toc-section-number">2.3</span> Características</a></li>
+</ul></li>
+<li><a href="#usando-less"><span class="toc-section-number">3</span> Usando Less</a><ul>
+<li><a href="#instalación"><span class="toc-section-number">3.1</span> Instalación</a></li>
+<li><a href="#línea-de-comandos"><span class="toc-section-number">3.2</span> Línea de comandos</a></li>
+<li><a href="#desde-el-navegador"><span class="toc-section-number">3.3</span> Desde el navegador</a></li>
+</ul></li>
+<li><a href="#características-1"><span class="toc-section-number">4</span> Características</a><ul>
+<li><a href="#variables"><span class="toc-section-number">4.1</span> Variables</a></li>
+<li><a href="#extend"><span class="toc-section-number">4.2</span> Extend</a></li>
+<li><a href="#mixins"><span class="toc-section-number">4.3</span> Mixins</a></li>
+<li><a href="#reglas-anidadas"><span class="toc-section-number">4.4</span> Reglas anidadas</a></li>
+<li><a href="#medias-queries-anidadas"><span class="toc-section-number">4.5</span> Medias Queries anidadas</a></li>
+<li><a href="#operaciones"><span class="toc-section-number">4.6</span> Operaciones</a></li>
+<li><a href="#funciones"><span class="toc-section-number">4.7</span> Funciones</a></li>
+<li><a href="#namespaces"><span class="toc-section-number">4.8</span> Namespaces</a></li>
+<li><a href="#scope"><span class="toc-section-number">4.9</span> Scope</a></li>
+<li><a href="#imports"><span class="toc-section-number">4.10</span> Imports</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">5</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">5.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">5.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">5.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><span class="header-section-number">1</span> El autor</h1>
+<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+<h2 id="algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+<h2 id="donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción"><span class="header-section-number">2</span> Introducción</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Less es un <strong>pre-procesador de CSS</strong>.</p></li>
+<li><p>Añade características como <strong>variables, mixins, funciones, etc</strong>.</p></li>
+</ul>
+<h2 id="ventajas"><span class="header-section-number">2.2</span> Ventajas</h2>
+<ul>
+<li><p>El CSS es así <strong>más fácil de mantener, personalizable y extensible</strong>.</p></li>
+<li><p>Less tiene una <strong>sintaxis parecida a CSS</strong>.</p></li>
+</ul>
+<h2 id="características"><span class="header-section-number">2.3</span> Características</h2>
+<ul>
+<li><p>Less se puede ejecutar <strong>desde NodeJS, desde un navegador, o desde Rhino</strong>.</p></li>
+<li><p>Además <strong>existen muchas herramientas</strong> que permiten compilar los archivos y ver los cambios en caliente.</p></li>
+<li><p>Es el preprocesador que usa Bootstrap 3.0.</p></li>
+</ul>
+<h1 id="usando-less"><span class="header-section-number">3</span> Usando Less</h1>
+<h2 id="instalación"><span class="header-section-number">3.1</span> Instalación</h2>
+<ul>
+<li>La forma más sencilla de instalar Less, es <strong>a través de npm</strong>, el gestor de paquetes de NodeJS:</li>
+</ul>
+<pre><code>$ npm install -g less</code></pre>
+<h2 id="línea-de-comandos"><span class="header-section-number">3.2</span> Línea de comandos</h2>
+<ul>
+<li>Una vez instalado, se puede compilar desde la línea de comandos:</li>
+</ul>
+<pre><code>$ lessc styles.less &gt; styles.css</code></pre>
+<h2 id="desde-el-navegador"><span class="header-section-number">3.3</span> Desde el navegador</h2>
+<ul>
+<li><p>Es la forma más fácil para empezar, pero <strong>no es recomendable usarlo así en producción</strong>.</p></li>
+<li><p>Descargar: <a href="https://github.com/less/less.js/archive/master.zip" class="uri">https://github.com/less/less.js/archive/master.zip</a></p></li>
+<li><p>Enlazar tu archivo less que quieras precompilar, y luego el js de less:</p></li>
+</ul>
+<pre><code>&lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;styles.less&quot; /&gt;
+
+&lt;script src=&quot;less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+<h1 id="características-1"><span class="header-section-number">4</span> Características</h1>
+<h2 id="variables"><span class="header-section-number">4.1</span> Variables</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}</code></pre>
+<ul>
+<li>Les compila a:</li>
+</ul>
+<pre><code>#header {
+  color: #6c94be;
+}</code></pre>
+<ul>
+<li>Nota: las variables <strong>son en realidad &quot;constantes&quot; ya que sólo pueden ser definidas una vez</strong>.</li>
+</ul>
+<h2 id="extend"><span class="header-section-number">4.2</span> Extend</h2>
+<ul>
+<li>Son una forma de <strong>herencia</strong>:</li>
+</ul>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  &amp;:extend(.animal);
+  background-color: brown;
+}</code></pre>
+<h2 id="mixins"><span class="header-section-number">4.3</span> Mixins</h2>
+<ul>
+<li><p>Los Mixins son una forma de <strong>reutilizar propiedades ya definidas</strong>:</p></li>
+<li><p>Imaginemos la clase .bordered:</p></li>
+</ul>
+<pre><code>.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}</code></pre>
+<ul>
+<li>Lo podemos usar así:</li>
+</ul>
+<pre><code>#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}</code></pre>
+<ul>
+<li>Nota: <strong>Además de clases, también se pueden utilizar #ids como mixins</strong>.</li>
+</ul>
+<h2 id="reglas-anidadas"><span class="header-section-number">4.4</span> Reglas anidadas</h2>
+<ul>
+<li>Supongamos que tenemos el siguiente CSS:</li>
+</ul>
+<pre><code>#header {
+  color: black;
+}
+#header a {
+  color: blue;
+}
+#header a:hover {
+  color: red;
+}</code></pre>
+<ul>
+<li>Pues con Less se puede escribir así:</li>
+</ul>
+<pre><code>#header {
+  color: black;
+  a {
+    color: blue;
+    &amp;:hover {
+      color: red;
+    }
+  }
+}</code></pre>
+<ul>
+<li><strong>Se pueden usar pseudo-elementos, y llamar al selector padre actual, con &amp;</strong>:</li>
+</ul>
+<h2 id="medias-queries-anidadas"><span class="header-section-number">4.5</span> Medias Queries anidadas</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@media screen {
+ .screencolor { color: green; }
+}
+@media screen and (min-width: 768px) {
+ .screencolor { color: red; }
+}
+@media tv {
+ .screencolor { color: black; }
+}</code></pre>
+<ul>
+<li>Se podría escribir:</li>
+</ul>
+<pre><code>.screencolor{
+  @media screen {
+    color: green;
+    @media (min-width:768px) {
+      color: red;
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}</code></pre>
+<h2 id="operaciones"><span class="header-section-number">4.6</span> Operaciones</h2>
+<ul>
+<li><p>Less puede hacer operaciones con números, colores o variables.</p></li>
+<li><p>Además <strong>sabe diferenciar cuando es un número o un color</strong>.</p></li>
+</ul>
+<pre><code>@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+@base-color: #888 / 4;
+
+background-color: @base-color + #111;
+height: 100% / 2 + @other;</code></pre>
+<h2 id="funciones"><span class="header-section-number">4.7</span> Funciones</h2>
+<ul>
+<li>Less dispone de una variedad de <strong>funciones matemáticas, que manipulan cadenas, y que transforman los colores</strong>:</li>
+</ul>
+<pre><code>@base: #f04615;
+@list: 200, 500, 1200;
+
+.class {
+  width: extract(@list, 3);
+  color: saturate(@base, 5%);
+  background-color:
+    lighten(@base, 25%);
+}</code></pre>
+<ul>
+<li>El código anterior compila a:</li>
+</ul>
+<pre><code>.class {
+  width: 1200;
+  color: #f6430f;
+  background-color: #f8a58d;
+}</code></pre>
+<h2 id="namespaces"><span class="header-section-number">4.8</span> Namespaces</h2>
+<ul>
+<li><p>A veces, podemos querer <strong>agrupar mixins</strong>, por motivos de organización, o simplemente para encapsularlos.</p></li>
+<li><p>Veamos como podemos agrupar varios mixins:</p></li>
+</ul>
+<pre><code>#bundle {
+  .button {
+    border: 1px solid black;
+    background-color: grey;
+  }
+  .tab { ... }
+  .citation { ... }
+}</code></pre>
+<ul>
+<li>Ahora podemos utilizar el mixin .button que está en el namespace #bundle de esta forma:</li>
+</ul>
+<pre><code>#header a {
+  color: orange;
+  #bundle &gt; .button;
+}</code></pre>
+<h2 id="scope"><span class="header-section-number">4.9</span> Scope</h2>
+<ul>
+<li>Los <strong>ámbitos de las variables</strong> en Less es muy similar a otros lenguajes:</li>
+</ul>
+<pre><code>@var: red;
+
+#page {
+  @var: white;
+  #header {
+    color: @var; // white
+  }
+}</code></pre>
+<h2 id="imports"><span class="header-section-number">4.10</span> Imports</h2>
+<pre><code>// foo.less is imported
+@import &quot;foo&quot;;
+
+// foo.less is imported
+@import &quot;foo.less&quot;;
+
+// foo.php imported as a less file
+@import &quot;foo.php&quot;;
+
+// foo.css imported as a css file
+@import &quot;foo.css&quot;;</code></pre>
+<h1 id="acerca-de"><span class="header-section-number">5</span> Acerca de</h1>
+<h2 id="licencia"><span class="header-section-number">5.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+<h2 id="fuentes"><span class="header-section-number">5.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src</a></li>
+</ul></li>
+</ul>
+<h2 id="bibliografía"><span class="header-section-number">5.3</span> Bibliografía</h2>
+<ul>
+<li>Documentación oficial de Less
+<ul>
+<li><a href="http://lesscss.org" class="uri">http://lesscss.org</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

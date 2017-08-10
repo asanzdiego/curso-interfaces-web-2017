@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT PtsDescription (CttFile, ETSlist, DynamicBehaviour)>
+<!ELEMENT CttFile EMPTY>
+<!ATTLIST CttFile name CDATA #REQUIRED>
+<!ELEMENT ETSlist (ETS+)>
+<!ELEMENT ETS (task+)> 
+<!ATTLIST ETS number CDATA #REQUIRED>
+<!ELEMENT task EMPTY>
+<!ATTLIST task name CDATA #REQUIRED>
+<!ATTLIST task type CDATA #IMPLIED>
+<!ELEMENT 	DynamicBehaviour (Rule*)>
+<!ELEMENT 	Rule (TaskSet, Transition, TaskSet)>
+<!ELEMENT 	TaskSet (#PCDATA) >
+<!ELEMENT 	Transition (Task | ConditionOnTasks)>
+<!ELEMENT 	ConditionOnTasks (BooleanOperator, Transition+)>
+<!ELEMENT 	BooleanOperator EMPTY>
+<!ATTLIST 	BooleanOperator 
+            name   (and | or)  #REQUIRED>
+<!ELEMENT 	Task EMPTY>
+<!ATTLIST 	Task 
+            name   CDATA  #REQUIRED>
+

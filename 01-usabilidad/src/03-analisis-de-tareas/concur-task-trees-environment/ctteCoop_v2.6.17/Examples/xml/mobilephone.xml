@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns:coop="http://giove.isti.cnr.it/cttcoop" xmlns="http://giove.isti.cnr.it/ctt" NameTaskModelID="MobilePhone">
+    <Task Identifier="MobilePhone" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Switch on" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="MobilePhone"/>
+                <SiblingRight name="Handle communication"/>
+            </Task>
+            <Task Identifier="Handle communication" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <TemporalOperator name="Disabling"/>
+                <Parent name="MobilePhone"/>
+                <SiblingLeft name="Switch on"/>
+                <SiblingRight name="SwitchOff"/>
+                <SubTask>
+                    <Task Identifier="Connect" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Handle communication"/>
+                        <SiblingRight name="UsePhone"/>
+                        <SubTask>
+                            <Task Identifier="Display 'Enter PIN'" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="Connect"/>
+<SiblingRight name="Enter PIN"/>
+                            </Task>
+                            <Task Identifier="Enter PIN" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="Connect"/>
+<SiblingLeft name="Display 'Enter PIN'"/>
+<SiblingRight name="Connect to network"/>
+                            </Task>
+                            <Task Identifier="Connect to network" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="Connect"/>
+<SiblingLeft name="Enter PIN"/>
+<SiblingRight name="Show Time-Battery-Connectvity"/>
+                            </Task>
+                            <Task Identifier="Show Time-Battery-Connectvity" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<Parent name="Connect"/>
+<SiblingLeft name="Connect to network"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="UsePhone" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <Parent name="Handle communication"/>
+                        <SiblingLeft name="Connect"/>
+                        <SubTask>
+                            <Task Identifier="Decide Use" Category="user" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="UsePhone"/>
+<SiblingRight name="MakeCall"/>
+                            </Task>
+                            <Task Identifier="MakeCall" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="Choice"/>
+<Parent name="UsePhone"/>
+<SiblingLeft name="Decide Use"/>
+<SiblingRight name="UseOtherFunctions"/>
+<SubTask>
+    <Task Identifier="Select Number" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="MakeCall"/>
+        <SiblingRight name="PressYes"/>
+        <SubTask>
+            <Task Identifier="Number from List" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Select Number"/>
+                <SiblingRight name="NewNumber"/>
+                <SubTask>
+                    <Task Identifier="SelectList" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Number from List"/>
+                        <SiblingRight name="SelectName"/>
+                    </Task>
+                    <Task Identifier="SelectName" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Number from List"/>
+                        <SiblingLeft name="SelectList"/>
+                        <SiblingRight name="EnterName"/>
+                    </Task>
+                    <Task Identifier="EnterName" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Number from List"/>
+                        <SiblingLeft name="SelectName"/>
+                        <SiblingRight name="ShowNumber"/>
+                    </Task>
+                    <Task Identifier="ShowNumber" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <Parent name="Number from List"/>
+                        <SiblingLeft name="EnterName"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="NewNumber" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <Parent name="Select Number"/>
+                <SiblingLeft name="Number from List"/>
+                <SubTask>
+                    <Task Identifier="RecallNumber" Category="user" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="NewNumber"/>
+                        <SiblingRight name="EnterNumber"/>
+                    </Task>
+                    <Task Identifier="EnterNumber" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <Parent name="NewNumber"/>
+                        <SiblingLeft name="RecallNumber"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="PressYes" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="MakeCall"/>
+        <SiblingLeft name="Select Number"/>
+        <SiblingRight name="HaveConversation"/>
+    </Task>
+    <Task Identifier="HaveConversation" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <TemporalOperator name="Disabling"/>
+        <Parent name="MakeCall"/>
+        <SiblingLeft name="PressYes"/>
+        <SiblingRight name="PressNo"/>
+    </Task>
+    <Task Identifier="PressNo" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <Parent name="MakeCall"/>
+        <SiblingLeft name="HaveConversation"/>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="UseOtherFunctions" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<Parent name="UsePhone"/>
+<SiblingLeft name="MakeCall"/>
+<SubTask>
+    <Task Identifier="HandleMessages" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <TemporalOperator name="Choice"/>
+        <Parent name="UseOtherFunctions"/>
+        <SiblingRight name="Tools"/>
+    </Task>
+    <Task Identifier="Tools" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <TemporalOperator name="Choice"/>
+        <Parent name="UseOtherFunctions"/>
+        <SiblingLeft name="HandleMessages"/>
+        <SiblingRight name="Settings"/>
+    </Task>
+    <Task Identifier="Settings" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name</Name>
+        <Parent name="UseOtherFunctions"/>
+        <SiblingLeft name="Tools"/>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="SwitchOff" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <Parent name="MobilePhone"/>
+                <SiblingLeft name="Handle communication"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

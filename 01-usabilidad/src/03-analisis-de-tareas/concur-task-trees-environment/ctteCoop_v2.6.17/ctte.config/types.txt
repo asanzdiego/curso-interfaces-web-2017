@@ -1,0 +1,29 @@
+None
+Search Information
+
+None
+Comparing
+Planning
+Problem_Solving
+
+None
+Comparison
+Feedback
+Generating_Alerts
+Grouping
+Locate
+Overview
+
+None
+Single Selection
+Multiple Selection
+Edit
+Control
+Zooming
+Filtering
+DetailOnDemand
+
+None
+Negotiating
+Notifying
+

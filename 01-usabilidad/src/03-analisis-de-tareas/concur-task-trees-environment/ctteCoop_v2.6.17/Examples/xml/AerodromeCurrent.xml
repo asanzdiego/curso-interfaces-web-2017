@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<coop:COOPConcurTaskTrees xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop">
+    <coop:TaskModelCOOP>
+        <coop:TaskCOOP Identifier="Cooperative Root" Category="cooperation" Iterative="false" Optional="false">
+            <coop:SubTaskCOOP>
+                <coop:TaskCOOP Identifier="Handle the traffic" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Interleaving"/>
+                    <coop:Parent name="Cooperative Root"/>
+                    <coop:SiblingRight name="Coordinate landing"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCOOP Identifier="Coordinate taxiing" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Handle the traffic"/>
+                            <coop:SiblingRight name="Handle clearence"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCOOP Identifier="Req taxing" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Coordinate taxiing"/>
+    <coop:SiblingRight name="Communicating path"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Send taxi request" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="PIL" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnablingInfo"/>
+            <coop:Parent name="Req taxing"/>
+            <coop:SiblingRight name="Receive taxi request"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive taxi request" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="GND" instance=""/>
+            </coop:Connection>
+            <coop:Parent name="Req taxing"/>
+            <coop:SiblingLeft name="Send taxi request"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Communicating path" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Coordinate taxiing"/>
+    <coop:SiblingLeft name="Req taxing"/>
+    <coop:SiblingRight name="Handling warning"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCOOP Identifier="Communicate path at once" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="Choice"/>
+            <coop:Parent name="Communicating path"/>
+            <coop:SiblingRight name="Communicate two-steps path"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send complete path" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="GND" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Communicate path at once"/>
+                    <coop:SiblingRight name="Receive complete path"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive complete path" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Communicate path at once"/>
+                    <coop:SiblingLeft name="Send complete path"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Communicate two-steps path" Category="cooperation" Iterative="false" Optional="false">
+            <coop:Parent name="Communicating path"/>
+            <coop:SiblingLeft name="Communicate path at once"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCOOP Identifier="Communicate first part" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="SequentialEnablingInfo"/>
+                    <coop:Parent name="Communicate two-steps path"/>
+                    <coop:SiblingRight name="Communicate second part"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Send initial path" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="GND" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnablingInfo"/>
+                            <coop:Parent name="Communicate first part"/>
+                            <coop:SiblingRight name="Receive initial path"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Receive initial path" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="PIL" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Communicate first part"/>
+                            <coop:SiblingLeft name="Send initial path"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Communicate second part" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:Parent name="Communicate two-steps path"/>
+                    <coop:SiblingLeft name="Communicate first part"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Send final path" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="GND" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnablingInfo"/>
+                            <coop:Parent name="Communicate second part"/>
+                            <coop:SiblingRight name="Receive final path"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Receive final path" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="PIL" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Communicate second part"/>
+                            <coop:SiblingLeft name="Send final path"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Handling warning" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Coordinate taxiing"/>
+    <coop:SiblingLeft name="Communicating path"/>
+    <coop:SiblingRight name="Approaching destination"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Send warning message to GND" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="PIL" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Handling warning"/>
+            <coop:SiblingRight name="Receive warning message from pilot"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive warning message from pilot" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="GND" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Handling warning"/>
+            <coop:SiblingLeft name="Send warning message to GND"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Approaching destination" Category="cooperation" Iterative="false" Optional="false">
+    <coop:Parent name="Coordinate taxiing"/>
+    <coop:SiblingLeft name="Handling warning"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Comm to GND destination is reached" Category="interaction" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Approaching destination"/>
+            <coop:SiblingRight name="Receive approaching destination"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive approaching destination" Category="interaction" Iterative="false" Optional="false">
+            <coop:Parent name="Approaching destination"/>
+            <coop:SiblingLeft name="Comm to GND destination is reached"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                        <coop:TaskCOOP Identifier="Handle clearence" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:Parent name="Handle the traffic"/>
+                            <coop:SiblingLeft name="Coordinate taxiing"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCOOP Identifier="Support traffic" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="Choice"/>
+    <coop:Parent name="Handle clearence"/>
+    <coop:SiblingRight name="Comm Apron freq"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCOOP Identifier="Comm tower frequency" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Support traffic"/>
+            <coop:SiblingRight name="Passing dep strip"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send Tower freq to pilot" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="GND" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Comm tower frequency"/>
+                    <coop:SiblingRight name="Receive tower frequency"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive tower frequency" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Comm tower frequency"/>
+                    <coop:SiblingLeft name="Send Tower freq to pilot"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Passing dep strip" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Support traffic"/>
+            <coop:SiblingLeft name="Comm tower frequency"/>
+            <coop:SiblingRight name="Req clearence"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Pass strip to TWR" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="GND" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Passing dep strip"/>
+                    <coop:SiblingRight name="Take dep strip"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Take dep strip" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Passing dep strip"/>
+                    <coop:SiblingLeft name="Pass strip to TWR"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Req clearence" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Support traffic"/>
+            <coop:SiblingLeft name="Passing dep strip"/>
+            <coop:SiblingRight name="Comm clearance"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send take off request" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Req clearence"/>
+                    <coop:SiblingRight name="Receive take-off request"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive take-off request" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Req clearence"/>
+                    <coop:SiblingLeft name="Send take off request"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Comm clearance" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Support traffic"/>
+            <coop:SiblingLeft name="Req clearence"/>
+            <coop:SiblingRight name="Comm App/Dep freq"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send clearance to take off" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Comm clearance"/>
+                    <coop:SiblingRight name="Receive TWR clearance"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive TWR clearance" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Comm clearance"/>
+                    <coop:SiblingLeft name="Send clearance to take off"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Comm App/Dep freq" Category="cooperation" Iterative="false" Optional="false">
+            <coop:Parent name="Support traffic"/>
+            <coop:SiblingLeft name="Comm clearance"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send Approach Controller  freq" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Comm App/Dep freq"/>
+                    <coop:SiblingRight name="Receive AppDep frequency"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive AppDep frequency" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Comm App/Dep freq"/>
+                    <coop:SiblingLeft name="Send Approach Controller  freq"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Comm Apron freq" Category="cooperation" Iterative="false" Optional="false">
+    <coop:Parent name="Handle clearence"/>
+    <coop:SiblingLeft name="Support traffic"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Send Apron freq to pilot" Category="interaction" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Comm Apron freq"/>
+            <coop:SiblingRight name="Receive Apron frequency"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive Apron frequency" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="PIL" instance=""/>
+            </coop:Connection>
+            <coop:Parent name="Comm Apron freq"/>
+            <coop:SiblingLeft name="Send Apron freq to pilot"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Coordinate landing" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Interleaving"/>
+                    <coop:Parent name="Cooperative Root"/>
+                    <coop:SiblingLeft name="Handle the traffic"/>
+                    <coop:SiblingRight name="Handling hazards"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCOOP Identifier="Req the clerance" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Coordinate landing"/>
+                            <coop:SiblingRight name="Support landing"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCONN Identifier="Send landing request" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="PIL" instance=""/>
+    </coop:Connection>
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Req the clerance"/>
+    <coop:SiblingRight name="Receive landing request"/>
+</coop:TaskCONN>
+<coop:TaskCONN Identifier="Receive landing request" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="TWR" instance=""/>
+    </coop:Connection>
+    <coop:Parent name="Req the clerance"/>
+    <coop:SiblingLeft name="Send landing request"/>
+</coop:TaskCONN>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                        <coop:TaskCOOP Identifier="Support landing" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:Parent name="Coordinate landing"/>
+                            <coop:SiblingLeft name="Req the clerance"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCOOP Identifier="Ready to land" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="Choice"/>
+    <coop:Parent name="Support landing"/>
+    <coop:SiblingRight name="Not ready to land"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCOOP Identifier="Clear to land" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Ready to land"/>
+            <coop:SiblingRight name="Comm ground feq"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send landing clearance" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Clear to land"/>
+                    <coop:SiblingRight name="Receive TWR clearance"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive TWR clearance" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Clear to land"/>
+                    <coop:SiblingLeft name="Send landing clearance"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Comm ground feq" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Ready to land"/>
+            <coop:SiblingLeft name="Clear to land"/>
+            <coop:SiblingRight name="Passing arr strip"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send ground frequency to pilot" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Comm ground feq"/>
+                    <coop:SiblingRight name="Receive ground frequency"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive ground frequency" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Comm ground feq"/>
+                    <coop:SiblingLeft name="Send ground frequency to pilot"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Passing arr strip" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Ready to land"/>
+            <coop:SiblingLeft name="Comm ground feq"/>
+            <coop:SiblingRight name="Warning"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Pass strip to Ground" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Passing arr strip"/>
+                    <coop:SiblingRight name="Take arr strip"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Take arr strip" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="GND" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Passing arr strip"/>
+                    <coop:SiblingLeft name="Pass strip to Ground"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Warning" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Ready to land"/>
+            <coop:SiblingLeft name="Passing arr strip"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Send Warning message to tower" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="PIL" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Warning"/>
+                    <coop:SiblingRight name="Receive warning from Pilot"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="Receive warning from Pilot" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="TWR" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Warning"/>
+                    <coop:SiblingLeft name="Send Warning message to tower"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Not ready to land" Category="cooperation" Iterative="false" Optional="false">
+    <coop:Parent name="Support landing"/>
+    <coop:SiblingLeft name="Ready to land"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Send go around order to pilot" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="TWR" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Not ready to land"/>
+            <coop:SiblingRight name="Receive instruction from TWR"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive instruction from TWR" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="PIL" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Not ready to land"/>
+            <coop:SiblingLeft name="Send go around order to pilot"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Handling hazards" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:Parent name="Cooperative Root"/>
+                    <coop:SiblingLeft name="Coordinate landing"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Send Warning message to tower" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="PIL" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Handling hazards"/>
+                            <coop:SiblingRight name="Receive rw inspection warning from pilot"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Receive rw inspection warning from pilot" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="TWR" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnablingInfo"/>
+                            <coop:Parent name="Handling hazards"/>
+                            <coop:SiblingLeft name="Send Warning message to tower"/>
+                            <coop:SiblingRight name="Handling conflicts on taxiway"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCOOP Identifier="Handling conflicts on taxiway" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:TemporalOperator name="Choice"/>
+                            <coop:Parent name="Handling hazards"/>
+                            <coop:SiblingLeft name="Receive rw inspection warning from pilot"/>
+                            <coop:SiblingRight name="Handle rw incursion"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCONN Identifier="Send deviation-repairing instruction" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="GND" instance=""/>
+    </coop:Connection>
+    <coop:TemporalOperator name="SequentialEnablingInfo"/>
+    <coop:Parent name="Handling conflicts on taxiway"/>
+    <coop:SiblingRight name="Receive deviation-repairing instruction from GND"/>
+</coop:TaskCONN>
+<coop:TaskCONN Identifier="Receive deviation-repairing instruction from GND" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="PIL" instance=""/>
+    </coop:Connection>
+    <coop:Parent name="Handling conflicts on taxiway"/>
+    <coop:SiblingLeft name="Send deviation-repairing instruction"/>
+</coop:TaskCONN>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                        <coop:TaskCOOP Identifier="Handle rw incursion" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:Parent name="Handling hazards"/>
+                            <coop:SiblingLeft name="Handling conflicts on taxiway"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCOOP Identifier="Looking for agreement" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Handle rw incursion"/>
+    <coop:SiblingRight name="Comm new path"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Ask TWR for agreement" Category="user" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="GND" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Looking for agreement"/>
+            <coop:SiblingRight name="Receive warning from Ground"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive warning from Ground" Category="user" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="TWR" instance=""/>
+            </coop:Connection>
+            <coop:Parent name="Looking for agreement"/>
+            <coop:SiblingLeft name="Ask TWR for agreement"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Comm new path" Category="cooperation" Iterative="false" Optional="false">
+    <coop:Parent name="Handle rw incursion"/>
+    <coop:SiblingLeft name="Looking for agreement"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCONN Identifier="Send deviation-repairing instruction" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="GND" instance=""/>
+            </coop:Connection>
+            <coop:TemporalOperator name="SequentialEnabling"/>
+            <coop:Parent name="Comm new path"/>
+            <coop:SiblingRight name="Receive deviation-repairing instruction from GND"/>
+        </coop:TaskCONN>
+        <coop:TaskCONN Identifier="Receive deviation-repairing instruction from GND" Category="interaction" Iterative="false" Optional="false">
+            <coop:Connection>
+                <coop:Belong name="PIL" instance=""/>
+            </coop:Connection>
+            <coop:Parent name="Comm new path"/>
+            <coop:SiblingLeft name="Send deviation-repairing instruction"/>
+        </coop:TaskCONN>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:TaskModelCOOP>
+    <TaskModel>
+        <Task Identifier="GND_curr" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <SubTask>
+                <Task Identifier="Arrange strip" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="GND_curr"/>
+                    <SiblingRight name="Update current mental picture"/>
+                    <SubTask>
+                        <Task Identifier="Arrange dep strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Arrange strip"/>
+                            <SiblingRight name="Arrange arr strip"/>
+                            <SubTask>
+<Task Identifier="Take dep strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Arrange dep strip"/>
+    <SiblingRight name="Put dep strip in dep bay"/>
+</Task>
+<Task Identifier="Put dep strip in dep bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Arrange dep strip"/>
+    <SiblingLeft name="Take dep strip"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Arrange arr strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Arrange strip"/>
+                            <SiblingLeft name="Arrange dep strip"/>
+                            <SubTask>
+<Task Identifier="Take arr strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Arrange arr strip"/>
+    <SiblingRight name="Put arr strip in arr bay"/>
+</Task>
+<Task Identifier="Put arr strip in arr bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Arrange arr strip"/>
+    <SiblingLeft name="Take arr strip"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Update current mental picture" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="GND_curr"/>
+                    <SiblingLeft name="Arrange strip"/>
+                    <SiblingRight name="Handle traffic"/>
+                    <SubTask>
+                        <Task Identifier="Collect data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Update current mental picture"/>
+                            <SiblingRight name="Check conformance"/>
+                            <SubTask>
+<Task Identifier="Monitor strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Synchronization"/>
+    <Parent name="Collect data"/>
+    <SiblingRight name="Monitor taxiways"/>
+</Task>
+<Task Identifier="Monitor taxiways" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Synchronization"/>
+    <Parent name="Collect data"/>
+    <SiblingLeft name="Monitor strip"/>
+    <SiblingRight name="Monitor radar"/>
+</Task>
+<Task Identifier="Monitor radar" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Collect data"/>
+    <SiblingLeft name="Monitor taxiways"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Check conformance" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Update current mental picture"/>
+                            <SiblingLeft name="Collect data"/>
+                            <SiblingRight name="Anticipate conflicts"/>
+                            <SubTask>
+<Task Identifier="Verify conformance" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Check conformance"/>
+    <SiblingRight name="Detect no conformance"/>
+</Task>
+<Task Identifier="Detect no conformance" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Check conformance"/>
+    <SiblingLeft name="Verify conformance"/>
+    <SiblingRight name="Update mental picture"/>
+    <SubTask>
+        <Task Identifier="Detect deviation" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Detect no conformance"/>
+            <SiblingRight name="Handle repairing action"/>
+        </Task>
+        <Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Detect no conformance"/>
+            <SiblingLeft name="Detect deviation"/>
+            <SubTask>
+                <Task Identifier="Plan deviation-repairing strategy" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handle repairing action"/>
+                    <SiblingRight name="Send deviation-repairing instruction"/>
+                </Task>
+                <Task Identifier="Send deviation-repairing instruction" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handle repairing action"/>
+                    <SiblingLeft name="Plan deviation-repairing strategy"/>
+                    <SiblingRight name="Update strip"/>
+                </Task>
+                <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="Handle repairing action"/>
+                    <SiblingLeft name="Send deviation-repairing instruction"/>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Update mental picture" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Check conformance"/>
+    <SiblingLeft name="Detect no conformance"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Anticipate conflicts" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Update current mental picture"/>
+                            <SiblingLeft name="Check conformance"/>
+                            <SubTask>
+<Task Identifier="Identify possible future conflict" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Anticipate conflicts"/>
+    <SiblingRight name="Handle repairing action"/>
+</Task>
+<Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Anticipate conflicts"/>
+    <SiblingLeft name="Identify possible future conflict"/>
+    <SiblingRight name="Update mental picture"/>
+</Task>
+<Task Identifier="Update mental picture" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Anticipate conflicts"/>
+    <SiblingLeft name="Handle repairing action"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Handle traffic" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <Parent name="GND_curr"/>
+                    <SiblingLeft name="Update current mental picture"/>
+                    <SubTask>
+                        <Task Identifier="Manage traffic" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Synchronization"/>
+                            <Parent name="Handle traffic"/>
+                            <SiblingRight name="Control"/>
+                            <SubTask>
+<Task Identifier="Receive taxi request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage traffic"/>
+    <SiblingRight name="Handle strip"/>
+</Task>
+<Task Identifier="Handle strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage traffic"/>
+    <SiblingLeft name="Receive taxi request"/>
+    <SiblingRight name="Plan action"/>
+    <SubTask>
+        <Task Identifier="Find the strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Handle strip"/>
+            <SiblingRight name="Rearrange strip in the bay"/>
+        </Task>
+        <Task Identifier="Rearrange strip in the bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Handle strip"/>
+            <SiblingLeft name="Find the strip"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Plan action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Manage traffic"/>
+    <SiblingLeft name="Handle strip"/>
+    <SubTask>
+        <Task Identifier="Make routing decision" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Plan action"/>
+            <SiblingRight name="Implement action"/>
+            <SubTask>
+                <Task Identifier="Collect data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Make routing decision"/>
+                    <SiblingRight name="Identify possible paths"/>
+                </Task>
+                <Task Identifier="Identify possible paths" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Make routing decision"/>
+                    <SiblingLeft name="Collect data"/>
+                    <SiblingRight name="Select the best path"/>
+                </Task>
+                <Task Identifier="Select the best path" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Make routing decision"/>
+                    <SiblingLeft name="Identify possible paths"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Implement action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Plan action"/>
+            <SiblingLeft name="Make routing decision"/>
+            <SubTask>
+                <Task Identifier="Guidance" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Implement action"/>
+                    <SiblingRight name="Handover"/>
+                    <SubTask>
+                        <Task Identifier="Comm path to pilot" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Guidance"/>
+                            <SiblingRight name="Receive approaching destination"/>
+                            <SubTask>
+<Task Identifier="Communicate complete path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Comm path to pilot"/>
+    <SiblingRight name="Communicate partial path"/>
+    <SubTask>
+        <Task Identifier="Send complete path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Communicate complete path"/>
+            <SiblingRight name="Update strip"/>
+        </Task>
+        <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Communicate complete path"/>
+            <SiblingLeft name="Send complete path"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Communicate partial path" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Comm path to pilot"/>
+    <SiblingLeft name="Communicate complete path"/>
+    <SubTask>
+        <Task Identifier="Send initial path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Communicate partial path"/>
+            <SiblingRight name="Update strip"/>
+        </Task>
+        <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Communicate partial path"/>
+            <SiblingLeft name="Send initial path"/>
+            <SiblingRight name="Waiting for event"/>
+        </Task>
+        <Task Identifier="Waiting for event" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Communicate partial path"/>
+            <SiblingLeft name="Update strip"/>
+            <SiblingRight name="Send final path"/>
+            <SubTask>
+                <Task Identifier="Wait for event" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Disabling"/>
+                    <Parent name="Waiting for event"/>
+                    <SiblingRight name="Realise event occurs"/>
+                </Task>
+                <Task Identifier="Realise event occurs" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Waiting for event"/>
+                    <SiblingLeft name="Wait for event"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Send final path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <Parent name="Communicate partial path"/>
+            <SiblingLeft name="Waiting for event"/>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Receive approaching destination" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Guidance"/>
+                            <SiblingLeft name="Comm path to pilot"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Handover" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Implement action"/>
+                    <SiblingLeft name="Guidance"/>
+                    <SubTask>
+                        <Task Identifier="Pass control to TWR" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Handover"/>
+                            <SiblingRight name="Pass control to Apron"/>
+                            <SubTask>
+<Task Identifier="Send Tower freq to pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Pass control to TWR"/>
+    <SiblingRight name="Pass strip to TWR"/>
+</Task>
+<Task Identifier="Pass strip to TWR" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Pass control to TWR"/>
+    <SiblingLeft name="Send Tower freq to pilot"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Pass control to Apron" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Handover"/>
+                            <SiblingLeft name="Pass control to TWR"/>
+                            <SubTask>
+<Task Identifier="Send Apron freq to pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Pass control to Apron"/>
+    <SiblingRight name="Pass strip to Apron"/>
+</Task>
+<Task Identifier="Pass strip to Apron" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Pass control to Apron"/>
+    <SiblingLeft name="Send Apron freq to pilot"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Control" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Handle traffic"/>
+                            <SiblingLeft name="Manage traffic"/>
+                            <SubTask>
+<Task Identifier="Receive warning message from pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Control"/>
+    <SiblingRight name="Handle conficts on rw and tw"/>
+</Task>
+<Task Identifier="Handle conficts on rw and tw" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Control"/>
+    <SiblingLeft name="Receive warning message from pilot"/>
+    <SubTask>
+        <Task Identifier="Handling runway incursion" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="Choice"/>
+            <Parent name="Handle conficts on rw and tw"/>
+            <SiblingRight name="Handling conflict on taxiway"/>
+            <SubTask>
+                <Task Identifier="Locate rw incursion" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handling runway incursion"/>
+                    <SiblingRight name="Ask TWR for agreement"/>
+                </Task>
+                <Task Identifier="Ask TWR for agreement" Category="user" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handling runway incursion"/>
+                    <SiblingLeft name="Locate rw incursion"/>
+                    <SiblingRight name="Handle repairing action"/>
+                </Task>
+                <Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Handling runway incursion"/>
+                    <SiblingLeft name="Ask TWR for agreement"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Handling conflict on taxiway" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Handle conficts on rw and tw"/>
+            <SiblingLeft name="Handling runway incursion"/>
+            <SubTask>
+                <Task Identifier="Locate conflict on tw" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handling conflict on taxiway"/>
+                    <SiblingRight name="Handle repairing action"/>
+                </Task>
+                <Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Handling conflict on taxiway"/>
+                    <SiblingLeft name="Locate conflict on tw"/>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </TaskModel>
+    <TaskModel>
+        <Task Identifier="Pil_curr" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+            <SubTask>
+                <Task Identifier="Departing Pilot" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Choice"/>
+                    <Parent name="Pil_curr"/>
+                    <SiblingRight name="Arriving Pilot"/>
+                    <SubTask>
+                        <Task Identifier="Perform startup procedure" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Departing Pilot"/>
+                            <SiblingRight name="Taxiing"/>
+                        </Task>
+                        <Task Identifier="Taxiing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Departing Pilot"/>
+                            <SiblingLeft name="Perform startup procedure"/>
+                            <SiblingRight name="Preparing to take off"/>
+                            <SubTask>
+<Task Identifier="Send taxi request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Taxiing"/>
+    <SiblingRight name="Receive path"/>
+</Task>
+<Task Identifier="Receive path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Taxiing"/>
+    <SiblingLeft name="Send taxi request"/>
+    <SubTask>
+        <Task Identifier="Receive the complete path" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="Choice"/>
+            <Parent name="Receive path"/>
+            <SiblingRight name="Receive two-parts path"/>
+            <SubTask>
+                <Task Identifier="Receive complete path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Receive the complete path"/>
+                    <SiblingRight name="Reaching destination"/>
+                </Task>
+                <Task Identifier="Reaching destination" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Receive the complete path"/>
+                    <SiblingLeft name="Receive complete path"/>
+                    <SubTask>
+                        <Task Identifier="Follow path instructions" Category="application" Iterative="true" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Disabling"/>
+                            <Parent name="Reaching destination"/>
+                            <SiblingRight name="Handling path"/>
+                        </Task>
+                        <Task Identifier="Handling path" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Reaching destination"/>
+                            <SiblingLeft name="Follow path instructions"/>
+                            <SubTask>
+<Task Identifier="Does not follow path instruction" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Handling path"/>
+    <SiblingRight name="Destination reached"/>
+    <SubTask>
+        <Task Identifier="Perform a wrong action" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Does not follow path instruction"/>
+            <SiblingRight name="Error awareness"/>
+        </Task>
+        <Task Identifier="Error awareness" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Does not follow path instruction"/>
+            <SiblingLeft name="Perform a wrong action"/>
+            <SubTask>
+                <Task Identifier="is aware of wrong action performed" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Error awareness"/>
+                    <SiblingRight name="Is not aware of wrong action performed"/>
+                    <SubTask>
+                        <Task Identifier="Analises something got wrong" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="is aware of wrong action performed"/>
+                            <SiblingRight name="Send warning message to GND"/>
+                        </Task>
+                        <Task Identifier="Send warning message to GND" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="is aware of wrong action performed"/>
+                            <SiblingLeft name="Analises something got wrong"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Is not aware of wrong action performed" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Error awareness"/>
+                    <SiblingLeft name="is aware of wrong action performed"/>
+                    <SubTask>
+                        <Task Identifier="Receive deviation-repairing instruction from GND" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Is not aware of wrong action performed"/>
+                            <SiblingRight name="Reaching destination"/>
+                        </Task>
+                        <Task Identifier="Reaching destination" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Is not aware of wrong action performed"/>
+                            <SiblingLeft name="Receive deviation-repairing instruction from GND"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Destination reached" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Handling path"/>
+    <SiblingLeft name="Does not follow path instruction"/>
+    <SubTask>
+        <Task Identifier="Reaches destination" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Destination reached"/>
+            <SiblingRight name="Comm to GND destination is reached"/>
+        </Task>
+        <Task Identifier="Comm to GND destination is reached" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Destination reached"/>
+            <SiblingLeft name="Reaches destination"/>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Receive two-parts path" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Receive path"/>
+            <SiblingLeft name="Receive the complete path"/>
+            <SubTask>
+                <Task Identifier="Receive initial path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Receive two-parts path"/>
+                    <SiblingRight name="Reaching destination"/>
+                </Task>
+                <Task Identifier="Reaching destination" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Receive two-parts path"/>
+                    <SiblingLeft name="Receive initial path"/>
+                    <SiblingRight name="Receive final path"/>
+                </Task>
+                <Task Identifier="Receive final path" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <Parent name="Receive two-parts path"/>
+                    <SiblingLeft name="Reaching destination"/>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Preparing to take off" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Departing Pilot"/>
+                            <SiblingLeft name="Taxiing"/>
+                            <SiblingRight name="Take off"/>
+                            <SubTask>
+<Task Identifier="Receive tower frequency" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Preparing to take off"/>
+    <SiblingRight name="Send take off request"/>
+</Task>
+<Task Identifier="Send take off request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Preparing to take off"/>
+    <SiblingLeft name="Receive tower frequency"/>
+    <SiblingRight name="Wait for clearance"/>
+</Task>
+<Task Identifier="Wait for clearance" Category="user" Iterative="true" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Disabling"/>
+    <Parent name="Preparing to take off"/>
+    <SiblingLeft name="Send take off request"/>
+    <SiblingRight name="Receive TWR clearance"/>
+</Task>
+<Task Identifier="Receive TWR clearance" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <Parent name="Preparing to take off"/>
+    <SiblingLeft name="Wait for clearance"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Take off" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Departing Pilot"/>
+                            <SiblingLeft name="Preparing to take off"/>
+                            <SiblingRight name="Contacting AppDep"/>
+                        </Task>
+                        <Task Identifier="Contacting AppDep" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Departing Pilot"/>
+                            <SiblingLeft name="Take off"/>
+                            <SubTask>
+<Task Identifier="Receive AppDep frequency" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Contacting AppDep"/>
+    <SiblingRight name="First conctat to AppDep"/>
+</Task>
+<Task Identifier="First conctat to AppDep" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Contacting AppDep"/>
+    <SiblingLeft name="Receive AppDep frequency"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Arriving Pilot" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Disabling"/>
+                    <Parent name="Pil_curr"/>
+                    <SiblingLeft name="Departing Pilot"/>
+                    <SiblingRight name="Handle problem"/>
+                    <SubTask>
+                        <Task Identifier="Initiating final approach" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Arriving Pilot"/>
+                            <SiblingRight name="Send landing request"/>
+                        </Task>
+                        <Task Identifier="Send landing request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Arriving Pilot"/>
+                            <SiblingLeft name="Initiating final approach"/>
+                            <SiblingRight name="Handle landing"/>
+                        </Task>
+                        <Task Identifier="Handle landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Arriving Pilot"/>
+                            <SiblingLeft name="Send landing request"/>
+                            <SubTask>
+<Task Identifier="Not OK to landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Handle landing"/>
+    <SiblingRight name="Ok to landing"/>
+    <SubTask>
+        <Task Identifier="handle missed approach" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Not OK to landing"/>
+            <SiblingRight name="Contact AppDep"/>
+            <SubTask>
+                <Task Identifier="Detect a missed approach" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="handle missed approach"/>
+                    <SiblingRight name="Follow special procedure for MA"/>
+                    <SubTask>
+                        <Task Identifier="Realises missed approach by himself" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Detect a missed approach"/>
+                            <SiblingRight name="Receive instruction from TWR"/>
+                        </Task>
+                        <Task Identifier="Receive instruction from TWR" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Detect a missed approach"/>
+                            <SiblingLeft name="Realises missed approach by himself"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Follow special procedure for MA" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="handle missed approach"/>
+                    <SiblingLeft name="Detect a missed approach"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Contact AppDep" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Not OK to landing"/>
+            <SiblingLeft name="handle missed approach"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Ok to landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Handle landing"/>
+    <SiblingLeft name="Not OK to landing"/>
+    <SubTask>
+        <Task Identifier="Receive TWR clearance" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Ok to landing"/>
+            <SiblingRight name="Start landing"/>
+        </Task>
+        <Task Identifier="Start landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Ok to landing"/>
+            <SiblingLeft name="Receive TWR clearance"/>
+            <SiblingRight name="Terminate landing"/>
+            <SubTask>
+                <Task Identifier="Landing" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Start landing"/>
+                    <SiblingRight name="Receive ground frequency"/>
+                </Task>
+                <Task Identifier="Receive ground frequency" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <Parent name="Start landing"/>
+                    <SiblingLeft name="Landing"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Terminate landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Ok to landing"/>
+            <SiblingLeft name="Start landing"/>
+            <SiblingRight name="Taxiing"/>
+            <SubTask>
+                <Task Identifier="Is not able to free the runway" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Terminate landing"/>
+                    <SiblingRight name="Exiting the runway"/>
+                    <SubTask>
+                        <Task Identifier="Realises cannot free runway" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Is not able to free the runway"/>
+                            <SiblingRight name="Send Warning message to tower"/>
+                            <SubTask>
+<Task Identifier="See other vehicle on tw" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Realises cannot free runway"/>
+    <SiblingRight name="Other reasons"/>
+</Task>
+<Task Identifier="Other reasons" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Realises cannot free runway"/>
+    <SiblingLeft name="See other vehicle on tw"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Send Warning message to tower" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Is not able to free the runway"/>
+                            <SiblingLeft name="Realises cannot free runway"/>
+                            <SiblingRight name="Wait for event freeing rw"/>
+                        </Task>
+                        <Task Identifier="Wait for event freeing rw" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Is not able to free the runway"/>
+                            <SiblingLeft name="Send Warning message to tower"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Exiting the runway" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Terminate landing"/>
+                    <SiblingLeft name="Is not able to free the runway"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Taxiing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Ok to landing"/>
+            <SiblingLeft name="Terminate landing"/>
+            <SiblingRight name="Contacting Apron"/>
+        </Task>
+        <Task Identifier="Contacting Apron" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Ok to landing"/>
+            <SiblingLeft name="Taxiing"/>
+            <SubTask>
+                <Task Identifier="Receive Apron frequency" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Contacting Apron"/>
+                    <SiblingRight name="First apron contact"/>
+                </Task>
+                <Task Identifier="First apron contact" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Contacting Apron"/>
+                    <SiblingLeft name="Receive Apron frequency"/>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Handle problem" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Pil_curr"/>
+                    <SiblingLeft name="Arriving Pilot"/>
+                    <SubTask>
+                        <Task Identifier="Receive repairing-deviation instruction" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Handle problem"/>
+                            <SiblingRight name="Follow controller instruction"/>
+                        </Task>
+                        <Task Identifier="Follow controller instruction" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Handle problem"/>
+                            <SiblingLeft name="Receive repairing-deviation instruction"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </TaskModel>
+    <TaskModel>
+        <Task Identifier="TWR_curr" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <SubTask>
+                <Task Identifier="Arrange strip" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="TWR_curr"/>
+                    <SiblingRight name="Update current mental picture"/>
+                    <SubTask>
+                        <Task Identifier="Arrange dep strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Arrange strip"/>
+                            <SiblingRight name="Arrange arr strip"/>
+                            <SubTask>
+<Task Identifier="Take dep strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Arrange dep strip"/>
+    <SiblingRight name="Put strip in dep bay"/>
+</Task>
+<Task Identifier="Put strip in dep bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Arrange dep strip"/>
+    <SiblingLeft name="Take dep strip"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Arrange arr strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Arrange strip"/>
+                            <SiblingLeft name="Arrange dep strip"/>
+                            <SubTask>
+<Task Identifier="Take arr strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnabling"/>
+    <Parent name="Arrange arr strip"/>
+    <SiblingRight name="Put strip in arr bay"/>
+</Task>
+<Task Identifier="Put strip in arr bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Arrange arr strip"/>
+    <SiblingLeft name="Take arr strip"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Update current mental picture" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="TWR_curr"/>
+                    <SiblingLeft name="Arrange strip"/>
+                    <SiblingRight name="Handle traffic"/>
+                    <SubTask>
+                        <Task Identifier="Surveillance" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Update current mental picture"/>
+                            <SiblingRight name="Check conformance"/>
+                            <SubTask>
+<Task Identifier="Monitor strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Synchronization"/>
+    <Parent name="Surveillance"/>
+    <SiblingRight name="Monitor runways"/>
+</Task>
+<Task Identifier="Monitor runways" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Synchronization"/>
+    <Parent name="Surveillance"/>
+    <SiblingLeft name="Monitor strip"/>
+    <SiblingRight name="Monitor radar"/>
+</Task>
+<Task Identifier="Monitor radar" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Surveillance"/>
+    <SiblingLeft name="Monitor runways"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Check conformance" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Update current mental picture"/>
+                            <SiblingLeft name="Surveillance"/>
+                            <SiblingRight name="Anticipate conflicts"/>
+                            <SubTask>
+<Task Identifier="Verify conformance" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Check conformance"/>
+    <SiblingRight name="Detect no conformance"/>
+</Task>
+<Task Identifier="Detect no conformance" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Check conformance"/>
+    <SiblingLeft name="Verify conformance"/>
+    <SiblingRight name="Update mental picture"/>
+    <SubTask>
+        <Task Identifier="Detect deviation" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Detect no conformance"/>
+            <SiblingRight name="Handle repairing action"/>
+        </Task>
+        <Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Detect no conformance"/>
+            <SiblingLeft name="Detect deviation"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Update mental picture" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Check conformance"/>
+    <SiblingLeft name="Detect no conformance"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Anticipate conflicts" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Update current mental picture"/>
+                            <SiblingLeft name="Check conformance"/>
+                            <SubTask>
+<Task Identifier="Identify possible future conflict" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Anticipate conflicts"/>
+    <SiblingRight name="Handle repairing action"/>
+</Task>
+<Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Anticipate conflicts"/>
+    <SiblingLeft name="Identify possible future conflict"/>
+    <SiblingRight name="Update mental picture"/>
+</Task>
+<Task Identifier="Update mental picture" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Anticipate conflicts"/>
+    <SiblingLeft name="Handle repairing action"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Handle traffic" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <Parent name="TWR_curr"/>
+                    <SiblingLeft name="Update current mental picture"/>
+                    <SubTask>
+                        <Task Identifier="Manage Traffic" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Synchronization"/>
+                            <Parent name="Handle traffic"/>
+                            <SiblingRight name="Handle hazardous situation"/>
+                            <SubTask>
+<Task Identifier="Manage take-off" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Manage Traffic"/>
+    <SiblingRight name="Manage landing"/>
+    <SubTask>
+        <Task Identifier="Receive take-off request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage take-off"/>
+            <SiblingRight name="Handle strip"/>
+        </Task>
+        <Task Identifier="Handle strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage take-off"/>
+            <SiblingLeft name="Receive take-off request"/>
+            <SiblingRight name="Calculate separation"/>
+            <SubTask>
+                <Task Identifier="Find the strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Handle strip"/>
+                    <SiblingRight name="Rearrange strip in the bay"/>
+                </Task>
+                <Task Identifier="Rearrange strip in the bay" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Handle strip"/>
+                    <SiblingLeft name="Find the strip"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Calculate separation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage take-off"/>
+            <SiblingLeft name="Handle strip"/>
+            <SiblingRight name="Handle the departure"/>
+            <SubTask>
+                <Task Identifier="Collect data for dep" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Calculate separation"/>
+                    <SiblingRight name="Identify possible separation solutions for depart "/>
+                    <SubTask>
+                        <Task Identifier="Monitor strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Synchronization"/>
+                            <Parent name="Collect data for dep"/>
+                            <SiblingRight name="Monitor runway"/>
+                            <SubTask>
+<Task Identifier="Read assigned runway" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Monitor strip"/>
+    <SiblingRight name="Read aircraft category"/>
+</Task>
+<Task Identifier="Read aircraft category" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Monitor strip"/>
+    <SiblingLeft name="Read assigned runway"/>
+    <SiblingRight name="Read estimated time of departure"/>
+</Task>
+<Task Identifier="Read estimated time of departure" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Monitor strip"/>
+    <SiblingLeft name="Read aircraft category"/>
+    <SiblingRight name="Read SID"/>
+</Task>
+<Task Identifier="Read SID" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Monitor strip"/>
+    <SiblingLeft name="Read estimated time of departure"/>
+    <SiblingRight name="Read slot"/>
+</Task>
+<Task Identifier="Read slot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Monitor strip"/>
+    <SiblingLeft name="Read SID"/>
+    <SiblingRight name="Read other data"/>
+</Task>
+<Task Identifier="Read other data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Monitor strip"/>
+    <SiblingLeft name="Read slot"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Monitor runway" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Synchronization"/>
+                            <Parent name="Collect data for dep"/>
+                            <SiblingLeft name="Monitor strip"/>
+                            <SiblingRight name="Monitor radar"/>
+                        </Task>
+                        <Task Identifier="Monitor radar" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Collect data for dep"/>
+                            <SiblingLeft name="Monitor runway"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Identify possible separation solutions for depart " Category="user" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Disabling"/>
+                    <Parent name="Calculate separation"/>
+                    <SiblingLeft name="Collect data for dep"/>
+                    <SiblingRight name="Select best separation solution for depart"/>
+                </Task>
+                <Task Identifier="Select best separation solution for depart" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Calculate separation"/>
+                    <SiblingLeft name="Identify possible separation solutions for depart "/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Handle the departure" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Manage take-off"/>
+            <SiblingLeft name="Calculate separation"/>
+            <SubTask>
+                <Task Identifier="Send clearance to take off" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="Choice"/>
+                    <Parent name="Handle the departure"/>
+                    <SiblingRight name="Update strip"/>
+                </Task>
+                <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Description>annota sulla strip l'istante di take off</Description>
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Handle the departure"/>
+                    <SiblingLeft name="Send clearance to take off"/>
+                    <SiblingRight name="Send Approach Controller  freq"/>
+                </Task>
+                <Task Identifier="Send Approach Controller  freq" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <Parent name="Handle the departure"/>
+                    <SiblingLeft name="Update strip"/>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Manage landing" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Manage Traffic"/>
+    <SiblingLeft name="Manage take-off"/>
+    <SubTask>
+        <Task Identifier="Receive landing request" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage landing"/>
+            <SiblingRight name="Handle strip"/>
+        </Task>
+        <Task Identifier="Handle strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage landing"/>
+            <SiblingLeft name="Receive landing request"/>
+            <SiblingRight name="Collect data for arriv"/>
+        </Task>
+        <Task Identifier="Collect data for arriv" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Manage landing"/>
+            <SiblingLeft name="Handle strip"/>
+            <SiblingRight name="Decide best solution"/>
+            <SubTask>
+                <Task Identifier="Read strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="Collect data for arriv"/>
+                    <SiblingRight name="Monitor runway"/>
+                    <SubTask>
+                        <Task Identifier="Read assigned runway" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Read strip"/>
+                            <SiblingRight name="Read aircraft category"/>
+                        </Task>
+                        <Task Identifier="Read aircraft category" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Read strip"/>
+                            <SiblingLeft name="Read assigned runway"/>
+                            <SiblingRight name="Read estimated time of arrival"/>
+                        </Task>
+                        <Task Identifier="Read estimated time of arrival" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Read strip"/>
+                            <SiblingLeft name="Read aircraft category"/>
+                            <SiblingRight name="Read other data"/>
+                        </Task>
+                        <Task Identifier="Read other data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Read strip"/>
+                            <SiblingLeft name="Read estimated time of arrival"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Monitor runway" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Synchronization"/>
+                    <Parent name="Collect data for arriv"/>
+                    <SiblingLeft name="Read strip"/>
+                    <SiblingRight name="Monitor radar"/>
+                </Task>
+                <Task Identifier="Monitor radar" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Collect data for arriv"/>
+                    <SiblingLeft name="Monitor runway"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Decide best solution" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnabling"/>
+            <Parent name="Manage landing"/>
+            <SiblingLeft name="Collect data for arriv"/>
+            <SiblingRight name="Handle the arrival"/>
+        </Task>
+        <Task Identifier="Handle the arrival" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Manage landing"/>
+            <SiblingLeft name="Decide best solution"/>
+            <SubTask>
+                <Task Identifier="Clear to land" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Choice"/>
+                    <Parent name="Handle the arrival"/>
+                    <SiblingRight name="Go around"/>
+                    <SubTask>
+                        <Task Identifier="Send landing clearance" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Clear to land"/>
+                            <SiblingRight name="Update strip"/>
+                        </Task>
+                        <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Clear to land"/>
+                            <SiblingLeft name="Send landing clearance"/>
+                            <SiblingRight name="Send ground frequency to pilot"/>
+                        </Task>
+                        <Task Identifier="Send ground frequency to pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Clear to land"/>
+                            <SiblingLeft name="Update strip"/>
+                            <SiblingRight name="Pass strip to Ground"/>
+                        </Task>
+                        <Task Identifier="Pass strip to Ground" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Clear to land"/>
+                            <SiblingLeft name="Send ground frequency to pilot"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Go around" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Handle the arrival"/>
+                    <SiblingLeft name="Clear to land"/>
+                    <SubTask>
+                        <Task Identifier="Send go around order to pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Go around"/>
+                            <SiblingRight name="Update strip"/>
+                        </Task>
+                        <Task Identifier="Update strip" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Go around"/>
+                            <SiblingLeft name="Send go around order to pilot"/>
+                            <SiblingRight name="Coordinate with APP controller"/>
+                        </Task>
+                        <Task Identifier="Coordinate with APP controller" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Go around"/>
+                            <SiblingLeft name="Update strip"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Handle hazardous situation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Handle traffic"/>
+                            <SiblingLeft name="Manage Traffic"/>
+                            <SubTask>
+<Task Identifier="Handle runway inspection" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Handle hazardous situation"/>
+    <SiblingRight name="Handle conficts &amp; emergencies"/>
+    <SubTask>
+        <Task Identifier="Receive rw inspection warning from pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Handle runway inspection"/>
+            <SiblingRight name="Ask rw inspection to driver"/>
+        </Task>
+        <Task Identifier="Ask rw inspection to driver" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Handle runway inspection"/>
+            <SiblingLeft name="Receive rw inspection warning from pilot"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Handle conficts &amp; emergencies" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Handle hazardous situation"/>
+    <SiblingLeft name="Handle runway inspection"/>
+    <SubTask>
+        <Task Identifier="Receive warning msgs" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Handle conficts &amp; emergencies"/>
+            <SiblingRight name="Locate problem"/>
+            <SubTask>
+                <Task Identifier="Receive warning from Ground" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="Interleaving"/>
+                    <Parent name="Receive warning msgs"/>
+                    <SiblingRight name="Receive warning from Pilot"/>
+                </Task>
+                <Task Identifier="Receive warning from Pilot" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <Parent name="Receive warning msgs"/>
+                    <SiblingLeft name="Receive warning from Ground"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Locate problem" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="SequentialEnablingInfo"/>
+            <Parent name="Handle conficts &amp; emergencies"/>
+            <SiblingLeft name="Receive warning msgs"/>
+            <SiblingRight name="Handle repairing action"/>
+            <SubTask>
+                <Task Identifier="Locate conflict" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Choice"/>
+                    <Parent name="Locate problem"/>
+                    <SiblingRight name="Locate emergency"/>
+                </Task>
+                <Task Identifier="Locate emergency" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Locate problem"/>
+                    <SiblingLeft name="Locate conflict"/>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Handle repairing action" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Handle conficts &amp; emergencies"/>
+            <SiblingLeft name="Locate problem"/>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </TaskModel>
+</coop:COOPConcurTaskTrees>

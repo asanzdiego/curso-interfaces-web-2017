@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--           
+ This is the first version of Document Type Definition of the ConcurTaskTrees Notation
+ We have represented the  information contained in a ConcurTaskTrees model by a hierarchical structure
+ The XML Document contains the description of the cooperative part of the task model followed by
+ description relative to each roles involved 
+ We have highlighted this using a specific tag for the cooperative part (TaskModelCOOP) and the role-related part (TaskModel)
+ We have used also different tags to represent the attributes of the cooperative task and of the single-user tasks
+ Each task information is represented by a specific tag element 
+-->
+ 
+<!ELEMENT COOPConcurTaskTrees (TaskModelCOOP, TaskModel+) >
+
+<!-- 
+  Below there are the elements and attributes used to specify the cooperative task model. Some Element are reused also
+  in the single user task model. For example the element "object". 
+  We have used alternatively the element "TaskCOOP" to specify the task with category equal to "cooperation" 
+  and the element "TaskCONN" used only for the basic task in the coopertive tree to indicate the connection  with the single user task model. 
+-->
+
+<!ELEMENT TaskModelCOOP (TaskCOOP) >
+  <!ATTLIST TaskModelCOOP NameTaskModelID CDATA #REQUIRED >
+<!ELEMENT TaskCOOP (Name, Type, Description, Platform*, Precondition, TemporalOperator?, 
+                    TimePerformance, Cooperation, Object*,  
+                    Parent?, SiblingLeft?, SiblingRight?, SubTaskCOOP*) >
+  <!ATTLIST TaskCOOP 
+   Identifier CDATA #REQUIRED 
+   Category (cooperation) #REQUIRED 
+   Iterative (true|false) #REQUIRED 
+   Optional  (true|false) #REQUIRED 
+   Frequency (Low|Medium|High) #REQUIRED >
+ 
+  <!ELEMENT Cooperation (Role+, Cardinality, Comments) >           	
+  <!ELEMENT Role EMPTY >
+    <!ATTLIST Role name CDATA #REQUIRED >
+  <!ELEMENT Cardinality (#PCDATA) >
+  <!ELEMENT Comments (#PCDATA) >
+
+<!ELEMENT SubTaskCOOP (TaskCOOP*, TaskCONN*) >
+<!ELEMENT TaskCONN (Name, Connection, Type, Description, Platform*, Precondition, TemporalOperator?, 
+                    TimePerformance, Object*,
+                    Parent?, SiblingLeft?, SiblingRight?) >
+  <!ATTLIST TaskCONN 
+   Identifier CDATA #REQUIRED 
+   Category (abstraction | user | interaction | application) #REQUIRED 
+   Iterative (true|false) #REQUIRED 
+   Optional  (true|false) #REQUIRED 
+   Frequency (Low|Medium|High) #REQUIRED >
+                     
+  <!ELEMENT Connection (Belong) >  <!-- Used for each connection task in cooperative tree -->
+    <!ELEMENT Belong EMPTY >
+      <!ATTLIST Belong name CDATA #REQUIRED >
+      <!ATTLIST Belong instance CDATA #REQUIRED>
+
+<!--
+  Below there are the elements and attributes used to specify the single user task model (role)
+-->	
+<!ELEMENT TaskModel (Task) >
+ <!ATTLIST TaskModel NameTaskModelID ID #REQUIRED >
+
+<!ELEMENT Task (Name, Type, Description, Platform*, Precondition, TemporalOperator?, TimePerformance, 
+                Parent?, SiblingLeft?, SiblingRight?, Object*, SubTask*) >
+  <!ATTLIST Task 
+   Identifier CDATA #REQUIRED
+   Category (abstraction | user | interaction | application) #REQUIRED
+   Iterative (true | false) #REQUIRED 
+   Optional (true | false) #REQUIRED 
+   PartOfCooperation (true | false) #REQUIRED 
+   Frequency (Low | Medium | High) #REQUIRED >
+
+<!ELEMENT SubTask (Task*) >
+
+<!ELEMENT Name (#PCDATA) >
+<!ELEMENT Type (#PCDATA) >
+<!ELEMENT Description (#PCDATA) >
+<!ELEMENT Platform (#PCDATA) >
+<!ELEMENT Precondition (#PCDATA) >      
+<!ELEMENT TemporalOperator EMPTY >
+  <!ATTLIST TemporalOperator name (SequentialEnabling | Choice | 
+                                 Interleaving | Synchronization | SequentialEnablingInfo |
+                                 Disabling | SuspendResume ) #REQUIRED >
+
+<!ELEMENT TimePerformance (Max, Min, Average) >                                 
+<!ELEMENT Max (#PCDATA) >
+<!ELEMENT Min (#PCDATA) >
+<!ELEMENT Average (#PCDATA) >
+                                                         
+<!ELEMENT Parent EMPTY>
+  <!ATTLIST Parent name CDATA #REQUIRED >
+
+<!ELEMENT SiblingLeft EMPTY>
+  <!ATTLIST SiblingLeft name CDATA #REQUIRED >
+
+<!ELEMENT SiblingRight EMPTY >
+  <!ATTLIST SiblingRight name CDATA #REQUIRED >
+
+<!ELEMENT Object (Platform*, InputAction, OutputAction) >
+<!ATTLIST Object name CDATA #REQUIRED >
+<!ATTLIST Object class (Text | Numerical | Object | Description | Position | null | string |decimal | integer | boolean | date | time) #REQUIRED >
+<!ATTLIST Object type (Perceivable | Application | null)  #REQUIRED >
+<!ATTLIST Object access_mode (Access | Modification | null) #REQUIRED >
+<!ATTLIST Object cardinality (Low | Medium | High | null) #REQUIRED >
+
+<!ELEMENT InputAction EMPTY>
+  <!ATTLIST InputAction 
+    Description CDATA #REQUIRED 
+    From CDATA #REQUIRED >
+
+<!ELEMENT OutputAction EMPTY>
+  <!ATTLIST OutputAction 
+    Description CDATA #REQUIRED 
+    To CDATA #REQUIRED >
+ 

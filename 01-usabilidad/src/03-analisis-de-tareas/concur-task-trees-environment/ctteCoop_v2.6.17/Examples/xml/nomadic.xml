@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns:coop="http://giove.isti.cnr.it/cttcoop" xmlns="http://giove.isti.cnr.it/ctt" NameTaskModelID="Visiting_museum">
+    <Task Identifier="Visiting_museum" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+        <Platform>Desktop</Platform>
+        <SubTask>
+            <Task Identifier="Show_intro" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Visualise</Type>
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="Interleaving"/>
+                <Parent name="Visiting_museum"/>
+                <SiblingRight name="Access_general_info"/>
+            </Task>
+            <Task Identifier="Access_general_info" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Visiting_museum"/>
+                <SiblingLeft name="Show_intro"/>
+                <SiblingRight name="Access_to_museum_artworks"/>
+                <SubTask>
+                    <Task Identifier="Select_access_to_gen_info" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="Medium">
+                        <Type>Control</Type>
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Access_general_info"/>
+                        <SiblingRight name="Show_museum_info"/>
+                    </Task>
+                    <Task Identifier="Show_museum_info" Category="application" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Type>Visualise</Type>
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="Disabling"/>
+                        <Parent name="Access_general_info"/>
+                        <SiblingLeft name="Select_access_to_gen_info"/>
+                        <SiblingRight name="Exit"/>
+                    </Task>
+                    <Task Identifier="Exit" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Type>Control</Type>
+                        <Platform>Desktop</Platform>
+                        <Parent name="Access_general_info"/>
+                        <SiblingLeft name="Show_museum_info"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Access_to_museum_artworks" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="Choice"/>
+                <Parent name="Visiting_museum"/>
+                <SiblingLeft name="Access_general_info"/>
+                <SiblingRight name="Access_to_ticket_reservation"/>
+                <SubTask>
+                    <Task Identifier="Select_access_to_artworks" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="High">
+                        <Type>Control</Type>
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Access_to_museum_artworks"/>
+                        <SiblingRight name="Accessing_works"/>
+                    </Task>
+                    <Task Identifier="Accessing_works" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Platform>Desktop</Platform>
+                        <Parent name="Access_to_museum_artworks"/>
+                        <SiblingLeft name="Select_access_to_artworks"/>
+                        <SubTask>
+                            <Task Identifier="Show_info_on_sections" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Type>Visualise</Type>
+<Platform>Desktop</Platform>
+<TemporalOperator name="Synchronization"/>
+<Parent name="Accessing_works"/>
+<SiblingRight name="Back_to_home"/>
+                            </Task>
+                            <Task Identifier="Back_to_home" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Type>Control</Type>
+<Platform>Desktop</Platform>
+<TemporalOperator name="Choice"/>
+<Parent name="Accessing_works"/>
+<SiblingLeft name="Show_info_on_sections"/>
+<SiblingRight name="Accessing_artwork"/>
+                            </Task>
+                            <Task Identifier="Accessing_artwork" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Platform>Desktop</Platform>
+<Parent name="Accessing_works"/>
+<SiblingLeft name="Back_to_home"/>
+<SubTask>
+    <Task Identifier="Select_section" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Selection/Single_Choice</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="Accessing_artwork"/>
+        <SiblingRight name="Show_section_artworks"/>
+    </Task>
+    <Task Identifier="Show_section_artworks" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Overview</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Accessing_artwork"/>
+        <SiblingLeft name="Select_section"/>
+        <SiblingRight name="Back_to_start"/>
+    </Task>
+    <Task Identifier="Back_to_start" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Control</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="Choice"/>
+        <Parent name="Accessing_artwork"/>
+        <SiblingLeft name="Show_section_artworks"/>
+        <SiblingRight name="showing_artwork_info"/>
+    </Task>
+    <Task Identifier="showing_artwork_info" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Platform>Desktop</Platform>
+        <Parent name="Accessing_artwork"/>
+        <SiblingLeft name="Back_to_start"/>
+        <SubTask>
+            <Task Identifier="Select_artwork" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Selection/Single_Choice</Type>
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="showing_artwork_info"/>
+                <SiblingRight name="Show_artwork_info"/>
+            </Task>
+            <Task Identifier="Show_artwork_info" Category="application" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Visualise</Type>
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="Disabling"/>
+                <Parent name="showing_artwork_info"/>
+                <SiblingLeft name="Select_artwork"/>
+                <SiblingRight name="Close_info"/>
+            </Task>
+            <Task Identifier="Close_info" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Control</Type>
+                <Platform>Desktop</Platform>
+                <TemporalOperator name="Choice"/>
+                <Parent name="showing_artwork_info"/>
+                <SiblingLeft name="Show_artwork_info"/>
+                <SiblingRight name="Reading_review"/>
+            </Task>
+            <Task Identifier="Reading_review" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Platform>Desktop</Platform>
+                <Parent name="showing_artwork_info"/>
+                <SiblingLeft name="Close_info"/>
+                <SubTask>
+                    <Task Identifier="Select_access_to_review" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Type>Control</Type>
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Reading_review"/>
+                        <SiblingRight name="Show_review"/>
+                    </Task>
+                    <Task Identifier="Show_review" Category="application" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Type>Visualise</Type>
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="Disabling"/>
+                        <Parent name="Reading_review"/>
+                        <SiblingLeft name="Select_access_to_review"/>
+                        <SiblingRight name="Close"/>
+                    </Task>
+                    <Task Identifier="Close" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Type>Control</Type>
+                        <Platform>Desktop</Platform>
+                        <Parent name="Reading_review"/>
+                        <SiblingLeft name="Show_review"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Access_to_ticket_reservation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Platform>Desktop</Platform>
+                <Parent name="Visiting_museum"/>
+                <SiblingLeft name="Access_to_museum_artworks"/>
+                <SubTask>
+                    <Task Identifier="Access_to_museum" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Platform>Desktop</Platform>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Access_to_ticket_reservation"/>
+                        <SiblingRight name="Send_request_for_reservation"/>
+                        <SubTask>
+                            <Task Identifier="Select_access_ticket_booking" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="Low">
+<Type>Control</Type>
+<Platform>Desktop</Platform>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="Access_to_museum"/>
+<SiblingRight name="Enter_info_desktop"/>
+                            </Task>
+                            <Task Identifier="Enter_info_desktop" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Platform>Desktop</Platform>
+<TemporalOperator name="Choice"/>
+<Parent name="Access_to_museum"/>
+<SiblingLeft name="Select_access_ticket_booking"/>
+<SiblingRight name="Enter_info_cellphone"/>
+<SubTask>
+    <Task Identifier="EnterName" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Edit</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="Interleaving"/>
+        <Parent name="Enter_info_desktop"/>
+        <SiblingRight name="EnterSurname"/>
+    </Task>
+    <Task Identifier="EnterSurname" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Edit</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="Interleaving"/>
+        <Parent name="Enter_info_desktop"/>
+        <SiblingLeft name="EnterName"/>
+        <SiblingRight name="EnterDayOfVisit"/>
+    </Task>
+    <Task Identifier="EnterDayOfVisit" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Edit</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="Interleaving"/>
+        <Parent name="Enter_info_desktop"/>
+        <SiblingLeft name="EnterSurname"/>
+        <SiblingRight name="EnterCreditCardNumber"/>
+    </Task>
+    <Task Identifier="EnterCreditCardNumber" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Edit</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="Interleaving"/>
+        <Parent name="Enter_info_desktop"/>
+        <SiblingLeft name="EnterDayOfVisit"/>
+        <SiblingRight name="SelectUseOfGuide"/>
+    </Task>
+    <Task Identifier="SelectUseOfGuide" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Selection/Single_Choice</Type>
+        <Platform>Desktop</Platform>
+        <Parent name="Enter_info_desktop"/>
+        <SiblingLeft name="EnterCreditCardNumber"/>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="Enter_info_cellphone" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Parent name="Access_to_museum"/>
+<SiblingLeft name="Enter_info_desktop"/>
+<SubTask>
+    <Task Identifier="Enter_personal_data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Enter_info_cellphone"/>
+        <SiblingRight name="Next"/>
+        <SubTask>
+            <Task Identifier="Enter_name" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Edit</Type>
+                <TemporalOperator name="Interleaving"/>
+                <Parent name="Enter_personal_data"/>
+                <SiblingRight name="Enter_surname"/>
+            </Task>
+            <Task Identifier="Enter_surname" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Edit</Type>
+                <Parent name="Enter_personal_data"/>
+                <SiblingLeft name="Enter_name"/>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="Next" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Control</Type>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Enter_info_cellphone"/>
+        <SiblingLeft name="Enter_personal_data"/>
+        <SiblingRight name="Enter_credit_card_number"/>
+    </Task>
+    <Task Identifier="Enter_credit_card_number" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Edit</Type>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Enter_info_cellphone"/>
+        <SiblingLeft name="Next"/>
+        <SiblingRight name="Add_details"/>
+    </Task>
+    <Task Identifier="Add_details" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Control</Type>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Enter_info_cellphone"/>
+        <SiblingLeft name="Enter_credit_card_number"/>
+        <SiblingRight name="Enter_visit_details"/>
+    </Task>
+    <Task Identifier="Enter_visit_details" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Parent name="Enter_info_cellphone"/>
+        <SiblingLeft name="Add_details"/>
+        <SubTask>
+            <Task Identifier="Enter_day_of_visit" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Edit</Type>
+                <TemporalOperator name="Interleaving"/>
+                <Parent name="Enter_visit_details"/>
+                <SiblingRight name="Select_use_of_guide"/>
+            </Task>
+            <Task Identifier="Select_use_of_guide" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Type>Selection/Single_Choice</Type>
+                <Parent name="Enter_visit_details"/>
+                <SiblingLeft name="Enter_day_of_visit"/>
+            </Task>
+        </SubTask>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Send_request_for_reservation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Platform>Desktop</Platform>
+                        <Parent name="Access_to_ticket_reservation"/>
+                        <SiblingLeft name="Access_to_museum"/>
+                        <SubTask>
+                            <Task Identifier="Cancel" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Type>Control</Type>
+<Platform>Desktop</Platform>
+<TemporalOperator name="Choice"/>
+<Parent name="Send_request_for_reservation"/>
+<SiblingRight name="Sending_request"/>
+                            </Task>
+                            <Task Identifier="Sending_request" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Platform>Desktop</Platform>
+<Parent name="Send_request_for_reservation"/>
+<SiblingLeft name="Cancel"/>
+<SubTask>
+    <Task Identifier="Submit" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Control</Type>
+        <Platform>Desktop</Platform>
+        <TemporalOperator name="SequentialEnabling"/>
+        <Parent name="Sending_request"/>
+        <SiblingRight name="Receive_code"/>
+    </Task>
+    <Task Identifier="Receive_code" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Type>Visualise</Type>
+        <Platform>Desktop</Platform>
+        <Parent name="Sending_request"/>
+        <SiblingLeft name="Submit"/>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

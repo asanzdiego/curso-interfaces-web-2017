@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This is the first version of Document Type Definition of the ConcurTaskTrees Notation --> 
+<!-- We have reported only the semantic datas --> 
+<!ELEMENT TaskModel (Task) >
+<!ATTLIST TaskModel NameTaskModelID CDATA #REQUIRED >
+
+<!ELEMENT Task (Name, Type, Description, Platform*, Precondition?, TemporalOperator?, TimePerformance, 
+                Parent?, SiblingLeft?, SiblingRight?, Object*, SubTask*) >
+<!ATTLIST Task Identifier CDATA #REQUIRED >
+<!ATTLIST Task Category (abstraction | user | interaction | application) #REQUIRED >
+<!ATTLIST Task Iterative (true | false) #REQUIRED >
+<!ATTLIST Task Optional (true | false) #REQUIRED >
+<!ATTLIST Task PartOfCooperation (true | false) #REQUIRED >
+<!ATTLIST Task Frequency CDATA  #REQUIRED >
+<!ELEMENT Name (#PCDATA) >
+<!ELEMENT Type (#PCDATA) >
+<!ELEMENT Description (#PCDATA) >
+
+
+<!ELEMENT Platform (#PCDATA) >
+<!ELEMENT Precondition (#PCDATA) >
+
+<!ELEMENT TemporalOperator EMPTY >
+<!ATTLIST TemporalOperator name (SequentialEnabling | Disabling | Choice | Interleaving | Synchronization | SuspendResume | SequentialEnablingInfo) #IMPLIED >
+
+<!ELEMENT TimePerformance (Max, Min, Average) >
+<!ELEMENT Max (#PCDATA) >
+<!ELEMENT Min (#PCDATA) >
+<!ELEMENT Average (#PCDATA) >
+                             
+<!ELEMENT Parent EMPTY >
+<!ATTLIST Parent name CDATA #REQUIRED >
+<!ELEMENT SiblingLeft EMPTY >
+<!ATTLIST SiblingLeft name CDATA #REQUIRED >
+<!ELEMENT SiblingRight EMPTY >
+<!ATTLIST SiblingRight name CDATA #REQUIRED >
+
+<!ELEMENT Object (Platform*, InputAction, OutputAction) >
+<!ATTLIST Object name CDATA #REQUIRED >  
+<!ATTLIST Object class (Text | Numerical | Graphic | Image | Position | null) #REQUIRED >
+<!ATTLIST Object type (Perceivable | Application | null)  #REQUIRED >
+<!ATTLIST Object access_mode (Access | Modification | null) #REQUIRED >    
+<!ATTLIST Object cardinality (Low | Medium | High | null) #REQUIRED >
+
+<!ELEMENT InputAction EMPTY >
+<!ATTLIST InputAction Description  CDATA #REQUIRED >
+<!ATTLIST InputAction From  CDATA #REQUIRED >
+
+<!ELEMENT OutputAction EMPTY >
+<!ATTLIST OutputAction Description CDATA  #REQUIRED >
+<!ATTLIST OutputAction To CDATA #REQUIRED >
+
+<!ELEMENT SubTask (Task*) >

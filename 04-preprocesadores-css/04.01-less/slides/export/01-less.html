@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Less, un preprocesador CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Less, un preprocesador CSS</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Less, un preprocesador CSS</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Septiembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#ventajas"><span class="toc-section-number">2.2</span> Ventajas</a></li>
+<li><a href="#características"><span class="toc-section-number">2.3</span> Características</a></li>
+</ul></li>
+<li><a href="#usando-less"><span class="toc-section-number">3</span> Usando Less</a><ul>
+<li><a href="#instalación"><span class="toc-section-number">3.1</span> Instalación</a></li>
+<li><a href="#línea-de-comandos"><span class="toc-section-number">3.2</span> Línea de comandos</a></li>
+<li><a href="#desde-el-navegador"><span class="toc-section-number">3.3</span> Desde el navegador</a></li>
+</ul></li>
+<li><a href="#variables"><span class="toc-section-number">4</span> Variables</a><ul>
+<li><a href="#por-qué"><span class="toc-section-number">4.1</span> ¿Por qué?</a></li>
+<li><a href="#selectores"><span class="toc-section-number">4.2</span> Selectores</a></li>
+<li><a href="#urls"><span class="toc-section-number">4.3</span> URLs</a></li>
+<li><a href="#propiedades"><span class="toc-section-number">4.4</span> Propiedades</a></li>
+<li><a href="#nombres-de-las-variables"><span class="toc-section-number">4.5</span> Nombres de las variables</a></li>
+<li><a href="#carga-perezosa"><span class="toc-section-number">4.6</span> Carga perezosa</a></li>
+<li><a href="#ámbitos"><span class="toc-section-number">4.7</span> Ámbitos</a></li>
+</ul></li>
+<li><a href="#extend"><span class="toc-section-number">5</span> Extend</a><ul>
+<li><a href="#caso-de-uso"><span class="toc-section-number">5.1</span> Caso de uso</a></li>
+<li><a href="#reduce-el-tamaño-del-css"><span class="toc-section-number">5.2</span> Reduce el tamaño del CSS</a></li>
+</ul></li>
+<li><a href="#mixins"><span class="toc-section-number">6</span> Mixins</a><ul>
+<li><a href="#qué-son"><span class="toc-section-number">6.1</span> ¿Qué son?</a></li>
+<li><a href="#selectores-1"><span class="toc-section-number">6.2</span> Selectores</a></li>
+<li><a href="#no-exportar-mixins"><span class="toc-section-number">6.3</span> No exportar Mixins</a></li>
+<li><a href="#pseudo-clases"><span class="toc-section-number">6.4</span> Pseudo-clases</a></li>
+<li><a href="#namespaces"><span class="toc-section-number">6.5</span> Namespaces</a></li>
+<li><a href="#important-keyword"><span class="toc-section-number">6.6</span> !Important keyword</a></li>
+</ul></li>
+<li><a href="#mixins-paramétricos"><span class="toc-section-number">7</span> Mixins paramétricos</a><ul>
+<li><a href="#parámetros"><span class="toc-section-number">7.1</span> Parámetros</a></li>
+<li><a href="#valor-por-defecto"><span class="toc-section-number">7.2</span> Valor por defecto</a></li>
+<li><a href="#parámetros-múltiples"><span class="toc-section-number">7.3</span> Parámetros múltiples</a></li>
+<li><a href="#parámetros-con-nombres"><span class="toc-section-number">7.4</span> Parámetros con nombres</a></li>
+<li><a href="#arguments"><span class="toc-section-number">7.5</span> <span class="citation" data-cites="arguments">@arguments</span></a></li>
+<li><a href="#section"><span class="toc-section-number">7.6</span> ...</a></li>
+<li><a href="#rest"><span class="toc-section-number">7.7</span> <span class="citation" data-cites="rest">@rest</span></a></li>
+<li><a href="#pattern-matching"><span class="toc-section-number">7.8</span> Pattern matching</a></li>
+<li><a href="#mixins-como-funciones"><span class="toc-section-number">7.9</span> Mixins como Funciones</a></li>
+</ul></li>
+<li><a href="#mixins-condicionales"><span class="toc-section-number">8</span> Mixins Condicionales</a><ul>
+<li><a href="#sintaxis"><span class="toc-section-number">8.1</span> Sintaxis</a></li>
+<li><a href="#operadores"><span class="toc-section-number">8.2</span> Operadores</a></li>
+<li><a href="#and"><span class="toc-section-number">8.3</span> AND</a></li>
+<li><a href="#coma"><span class="toc-section-number">8.4</span> COMA (,)</a></li>
+<li><a href="#not"><span class="toc-section-number">8.5</span> NOT</a></li>
+<li><a href="#comprobar-tipos"><span class="toc-section-number">8.6</span> Comprobar tipos</a></li>
+<li><a href="#comprobar-unidades"><span class="toc-section-number">8.7</span> Comprobar unidades</a></li>
+<li><a href="#loops"><span class="toc-section-number">8.8</span> Loops</a></li>
+</ul></li>
+<li><a href="#merge"><span class="toc-section-number">9</span> Merge</a><ul>
+<li><a href="#qué-es-1"><span class="toc-section-number">9.1</span> ¿Qué es?</a></li>
+<li><a href="#coma-1"><span class="toc-section-number">9.2</span> Coma</a></li>
+<li><a href="#espacio"><span class="toc-section-number">9.3</span> Espacio</a></li>
+<li><a href="#explicito"><span class="toc-section-number">9.4</span> Explicito</a></li>
+</ul></li>
+<li><a href="#selector-padre"><span class="toc-section-number">10</span> Selector Padre</a><ul>
+<li><a href="#el-operador"><span class="toc-section-number">10.1</span> El operador &amp;</a></li>
+<li><a href="#clases-repetitivas"><span class="toc-section-number">10.2</span> Clases repetitivas</a></li>
+<li><a href="#multiples"><span class="toc-section-number">10.3</span> Multiples &amp;</a></li>
+<li><a href="#cambiar-el-orden"><span class="toc-section-number">10.4</span> Cambiar el orden</a></li>
+<li><a href="#explosión-combinatoria"><span class="toc-section-number">10.5</span> Explosión combinatoria</a></li>
+</ul></li>
+<li><a href="#funciones"><span class="toc-section-number">11</span> Funciones</a><ul>
+<li><a href="#resumen"><span class="toc-section-number">11.1</span> Resumen</a></li>
+<li><a href="#misc-functions"><span class="toc-section-number">11.2</span> Misc Functions</a></li>
+<li><a href="#string-functions"><span class="toc-section-number">11.3</span> String Functions</a></li>
+<li><a href="#list-functions"><span class="toc-section-number">11.4</span> List Functions</a></li>
+<li><a href="#math-functions"><span class="toc-section-number">11.5</span> Math Functions</a></li>
+<li><a href="#type-functions"><span class="toc-section-number">11.6</span> Type Functions</a></li>
+<li><a href="#color-definition-functions"><span class="toc-section-number">11.7</span> Color Definition Functions</a></li>
+<li><a href="#color-channel-functions"><span class="toc-section-number">11.8</span> Color Channel Functions</a></li>
+<li><a href="#color-operation-functions"><span class="toc-section-number">11.9</span> Color Operation Functions</a></li>
+<li><a href="#color-blending-functions"><span class="toc-section-number">11.10</span> Color Blending Functions</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">12</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">12.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">12.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">12.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><span class="header-section-number">1</span> El autor</h1>
+<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+<h2 id="algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+<h2 id="donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción"><span class="header-section-number">2</span> Introducción</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Less es un <strong>pre-procesador de CSS</strong>.</p></li>
+<li><p>Añade características como <strong>variables, mixins, funciones, etc</strong>.</p></li>
+</ul>
+<h2 id="ventajas"><span class="header-section-number">2.2</span> Ventajas</h2>
+<ul>
+<li><p>El CSS es así <strong>más fácil de mantener, personalizable y extensible</strong>.</p></li>
+<li><p>Less tiene una <strong>sintaxis parecida a CSS</strong>.</p></li>
+</ul>
+<h2 id="características"><span class="header-section-number">2.3</span> Características</h2>
+<ul>
+<li><p>Less se puede ejecutar <strong>desde NodeJS, desde un navegador, o desde Rhino</strong>.</p></li>
+<li><p>Además <strong>existen muchas herramientas</strong> que permiten compilar los archivos y ver los cambios en caliente.</p></li>
+<li><p>Es el preprocesador que usa Bootstrap 3.0.</p></li>
+</ul>
+<h1 id="usando-less"><span class="header-section-number">3</span> Usando Less</h1>
+<h2 id="instalación"><span class="header-section-number">3.1</span> Instalación</h2>
+<ul>
+<li>La forma más sencilla de instalar Less, es <strong>a través de npm</strong>, el gestor de paquetes de NodeJS:</li>
+</ul>
+<pre><code>$ npm install -g less</code></pre>
+<h2 id="línea-de-comandos"><span class="header-section-number">3.2</span> Línea de comandos</h2>
+<ul>
+<li>Una vez instalado, se puede compilar desde la línea de comandos:</li>
+</ul>
+<pre><code>$ lessc styles.less &gt; styles.css</code></pre>
+<h2 id="desde-el-navegador"><span class="header-section-number">3.3</span> Desde el navegador</h2>
+<ul>
+<li><p>Es la forma más fácil para empezar, pero <strong>no es recomendable usarlo así en producción</strong>.</p></li>
+<li><p>Descargar: <a href="https://github.com/less/less.js/archive/master.zip" class="uri">https://github.com/less/less.js/archive/master.zip</a></p></li>
+<li><p>Enlazar tu archivo less que quieras precompilar, y luego el js de less:</p></li>
+</ul>
+<pre><code>&lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;styles.less&quot; /&gt;
+
+&lt;script src=&quot;less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+<h1 id="variables"><span class="header-section-number">4</span> Variables</h1>
+<h2 id="por-qué"><span class="header-section-number">4.1</span> ¿Por qué?</h2>
+<ul>
+<li>Las variables se usan <strong>para no tener que repetir constantemente los mismos valores</strong>, con lo que se consigue además un código más fácil de mantener:</li>
+</ul>
+<pre><code>a,
+.link {
+  color: #428bca;
+}
+.widget {
+  color: #fff;
+  background: #428bca;
+}</code></pre>
+<ul>
+<li>Con Less quedaría:</li>
+</ul>
+<pre><code>@color: #428bca
+
+a,
+.link {
+  color: @color;
+}
+.widget {
+  color: #fff;
+  background: @color;
+}</code></pre>
+<h2 id="selectores"><span class="header-section-number">4.2</span> Selectores</h2>
+<ul>
+<li>También se pueden usar <strong>como selectores</strong>:</li>
+</ul>
+<pre><code>@mySelector: banner;
+
+.@{mySelector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}</code></pre>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}</code></pre>
+<h2 id="urls"><span class="header-section-number">4.3</span> URLs</h2>
+<ul>
+<li>También se pueden <strong>usar URLs</strong>:</li>
+</ul>
+<pre><code>@images: &quot;../img&quot;;
+
+body {
+  color: #444;
+  background: url(&quot;@{images}/white-sand.png&quot;);
+}</code></pre>
+<h2 id="propiedades"><span class="header-section-number">4.4</span> Propiedades</h2>
+<ul>
+<li>También se pueden usar <strong>como propiedades</strong>:</li>
+</ul>
+<pre><code>@property: color;
+
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}</code></pre>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.widget {
+  color: #0ee;
+  background-color: #999;
+}</code></pre>
+<h2 id="nombres-de-las-variables"><span class="header-section-number">4.5</span> Nombres de las variables</h2>
+<ul>
+<li>También se pueden usar variables <strong>como nombres de otras variables</strong>:</li>
+</ul>
+<pre><code>@fnord:  &quot;I am fnord.&quot;;
+@var:    &quot;fnord&quot;;
+content: @@var;</code></pre>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>content: &quot;I am fnord.&quot;;</code></pre>
+<h2 id="carga-perezosa"><span class="header-section-number">4.6</span> Carga perezosa</h2>
+<ul>
+<li><p>Las variables <strong>no tienen que ser declaradas antes de ser utilizados</strong>.</p></li>
+<li><p>Eso es válido:</p></li>
+</ul>
+<pre><code>.lazy-eval {
+  width: @var;
+}
+
+@var: @a;
+@a: 9%;</code></pre>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.lazy-eval {
+  width: 9%;
+}</code></pre>
+<h2 id="ámbitos"><span class="header-section-number">4.7</span> Ámbitos</h2>
+<ul>
+<li>Al definir una variable dos veces, <strong>se utiliza la última definición de la variable</strong>:</li>
+</ul>
+<pre><code>@var: 0;
+.class {
+  @var: 1;
+  .brass {
+    @var: 2;
+    three: @var;
+    @var: 3;
+  }
+  one: @var;
+}</code></pre>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.class {
+  one: 1;
+}
+.class .brass {
+  three: 3;
+}</code></pre>
+<h1 id="extend"><span class="header-section-number">5</span> Extend</h1>
+<h2 id="caso-de-uso"><span class="header-section-number">5.1</span> Caso de uso</h2>
+<ul>
+<li>Imagino que tenemos lo siguiente:</li>
+</ul>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}</code></pre>
+<ul>
+<li><p>Y queremos tener un subtipo de animal que sobrescriba la propiedad background-color.</p></li>
+<li><p>Podemos hacer lo siguiente:</p></li>
+</ul>
+<pre><code>&lt;a class=&quot;animal bear&quot;&gt;Bear&lt;/a&gt;</code></pre>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  background-color: brown;
+}</code></pre>
+<ul>
+<li>O podemos simplificar el html y usar extend:</li>
+</ul>
+<pre><code>&lt;a class=&quot;bear&quot;&gt;Bear&lt;/a&gt;</code></pre>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  &amp;:extend(.animal);
+  background-color: brown;
+}</code></pre>
+<h2 id="reduce-el-tamaño-del-css"><span class="header-section-number">5.2</span> Reduce el tamaño del CSS</h2>
+<ul>
+<li>Ejemplo de mixin:</li>
+</ul>
+<pre><code>.my-inline-block() {
+    display: inline-block;
+  font-size: 0;
+}
+.thing1 {
+  .my-inline-block;
+}
+.thing2 {
+  .my-inline-block;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.thing1 {
+  display: inline-block;
+  font-size: 0;
+}
+.thing2 {
+  display: inline-block;
+  font-size: 0;
+}</code></pre>
+<ul>
+<li>Con extends:</li>
+</ul>
+<pre><code>.my-inline-block {
+  display: inline-block;
+  font-size: 0;
+}
+.thing1 {
+  &amp;:extend(.my-inline-block);
+}
+.thing2 {
+  &amp;:extend(.my-inline-block);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.my-inline-block,
+.thing1,
+.thing2 {
+  display: inline-block;
+  font-size: 0;
+}</code></pre>
+<h1 id="mixins"><span class="header-section-number">6</span> Mixins</h1>
+<h2 id="qué-son"><span class="header-section-number">6.1</span> ¿Qué son?</h2>
+<ul>
+<li><p>Los Mixins son una forma de <strong>reutilizar propiedades ya definidas</strong>:</p></li>
+<li><p>Imaginemos la clase .bordered:</p></li>
+</ul>
+<pre><code>.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}</code></pre>
+<ul>
+<li>Lo podemos usar así:</li>
+</ul>
+<pre><code>#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}</code></pre>
+<ul>
+<li>Nota: <strong>Además de clases, también se pueden utilizar #ids como mixins</strong>.</li>
+</ul>
+<h2 id="selectores-1"><span class="header-section-number">6.2</span> Selectores</h2>
+<ul>
+<li>Se pueden hacer Mixins <strong>tanto con selectores de clase como con selectores de identificación</strong>:</li>
+</ul>
+<pre><code>.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a();
+}
+.mixin-id {
+  #b();
+}</code></pre>
+<h2 id="no-exportar-mixins"><span class="header-section-number">6.3</span> No exportar Mixins</h2>
+<ul>
+<li>Si no quieres que el Mixin sea exportado al CSS, <strong>utiliza los paréntesis</strong>:</li>
+</ul>
+<pre><code>.my-mixin {
+  color: black;
+}
+.my-other-mixin() {
+  background: white;
+}
+.class {
+  .my-mixin;
+  .my-other-mixin;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.my-mixin {
+  color: black;
+}
+.class {
+  color: black;
+  background: white;
+}</code></pre>
+<h2 id="pseudo-clases"><span class="header-section-number">6.4</span> Pseudo-clases</h2>
+<ul>
+<li>Los Mixins también soportan <strong>pseudo-clases</strong>:</li>
+</ul>
+<pre><code>.my-hover-mixin() {
+  &amp;:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>button:hover {
+  border: 1px solid red;
+}</code></pre>
+<h2 id="namespaces"><span class="header-section-number">6.5</span> Namespaces</h2>
+<ul>
+<li>Podemos crear un namespace con varios mixins:</li>
+</ul>
+<pre><code>#outer {
+  .inner {
+    color: red;
+  }
+}</code></pre>
+<ul>
+<li>Para llamar al Mixin, los parentesis, el espacio y el &gt; es opcional, así que se puede hacer de todas estas formas:</li>
+</ul>
+<pre><code>#outer &gt; .inner;
+#outer &gt; .inner();
+#outer .inner;
+#outer .inner();
+#outer.inner;
+#outer.inner();</code></pre>
+<h2 id="important-keyword"><span class="header-section-number">6.6</span> !Important keyword</h2>
+<ul>
+<li>Detrás de un Mixin, al compilar pone <strong>todo como importante</strong>:</li>
+</ul>
+<pre><code>.foo () {
+  background: #f5f5f5;
+  color: #fff;
+}
+.unimportant {
+  .foo();
+}
+.important {
+  .foo() !important;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.unimportant {
+  background: #f5f5f5;
+  color: #fff;
+}
+.important {
+  background: #f5f5f5 !important;
+  color: #fff !important;
+}</code></pre>
+<h1 id="mixins-paramétricos"><span class="header-section-number">7</span> Mixins paramétricos</h1>
+<h2 id="parámetros"><span class="header-section-number">7.1</span> Parámetros</h2>
+<p>Los Mixins también puede tomar <strong>parámetros</strong>:</p>
+<pre><code>.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+#header {
+  .border-radius(4px);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>#header {
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}</code></pre>
+<h2 id="valor-por-defecto"><span class="header-section-number">7.2</span> Valor por defecto</h2>
+<ul>
+<li>Los Mixins también puede tomar <strong>parámetros con un valor por defecto</strong>:</li>
+</ul>
+<pre><code>.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+#header {
+  .border-radius;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>#header {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}</code></pre>
+<h2 id="parámetros-múltiples"><span class="header-section-number">7.3</span> Parámetros múltiples</h2>
+<ul>
+<li><p>Los parámetros <strong>se pueden separar por coma (,) o por punto y coma (;)</strong>.</p></li>
+<li><p>Se recomienda el punto y coma (;).</p></li>
+<li><p>La <strong>coma (,) tiene doble sentido: se puede interpretar como un separador de parámetros Mixin o como separador de los elementos de una lista</strong>.</p></li>
+<li><p>Si el compilador encuentra <strong>al menos un punto y coma (;) asume que los argumentos se separan por punto y coma</strong> y los comas pertenecen a listas.</p></li>
+<li><strong>.name(1, 2, 3; something, else)</strong>
+<ul>
+<li>2 parámetros, cada uno es una lista</li>
+</ul></li>
+<li><strong>.name(1, 2, 3)</strong>
+<ul>
+<li>3 parámetros, cada uno contiene un número</li>
+</ul></li>
+<li><strong>.name(1, 2, 3;)</strong>
+<ul>
+<li>1 parámetro, que es una lista</li>
+</ul></li>
+<li><strong>.name(<span class="citation" data-cites="param1">@param1</span>: red, blue;)</strong>
+<ul>
+<li>1 parámetro, con una lista como valor predeterminado</li>
+</ul></li>
+<li><p>Se puede tener varios mixins con <strong>el mismo nombre y el mismo número de parámetros</strong>, pues Less utilizará todos los posibles:</p></li>
+</ul>
+<pre><code>.mixin(@color) {
+  color: @color;
+}
+.mixin(@color; @padding:2) {
+  padding: @padding;
+}
+.mixin(@color; @padding; @margin: 2) {
+  margin: @margin;
+}
+.some .selector div {
+  .mixin(#008000);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.some .selector div {
+  color-1: #008000;
+  padding-2: 2;
+}</code></pre>
+<h2 id="parámetros-con-nombres"><span class="header-section-number">7.4</span> Parámetros con nombres</h2>
+<ul>
+<li>Se pueden usar <strong>parámetros con nombre</strong>:</li>
+</ul>
+<pre><code>.mixin(  @color: black;
+        @margin: 10px;
+       @padding: 20px) {
+  ...
+}
+.class1 {
+  .mixin( @margin: 20px;
+           @color: #33acfe);
+}
+.class2 {
+  .mixin( #efca44;
+         @padding: 40px);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class1 {
+  color: #33acfe;
+  margin: 20px;
+  padding: 20px;
+}
+.class2 {
+  color: #efca44;
+  margin: 10px;
+  padding: 40px;
+}</code></pre>
+<h2 id="arguments"><span class="header-section-number">7.5</span> <span class="citation" data-cites="arguments">@arguments</span></h2>
+<ul>
+<li>Podemos coger <strong>todos los parámetros de entrada juntos</strong>:</li>
+</ul>
+<pre><code>.box-shadow(
+  @x: 0;
+  @y: 0;
+  @blur: 1px;
+  @color: #000) {
+
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+.big-block {
+  .box-shadow(2px; 5px);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.big-block {
+  -webkit-box-shadow:
+     2px 5px 1px #000;
+  -moz-box-shadow:
+     2px 5px 1px #000;
+  box-shadow:
+     2px 5px 1px #000;
+}</code></pre>
+<h2 id="section"><span class="header-section-number">7.6</span> ...</h2>
+<ul>
+<li>Podemos permitir que el Mixin admita <strong>varios parámetros</strong>:</li>
+</ul>
+<pre><code>// matches 0-N arguments
+.mixin(...) {
+
+// matches exactly 0 arguments
+.mixin() {
+
+// matches 0-1 arguments
+.mixin(@a: 1) {
+
+// matches 0-N arguments
+.mixin(@a: 1; ...) {
+
+// matches 1-N arguments
+.mixin(@a; ...) {</code></pre>
+<h2 id="rest"><span class="header-section-number">7.7</span> <span class="citation" data-cites="rest">@rest</span></h2>
+<ul>
+<li>Coge todos los parámetros de ...:</li>
+</ul>
+<pre><code>.mixin(@a; @rest...) {
+
+   /* @rest recoge todos
+   los parámetros
+   después de @a */
+
+   /* @arguments recoge todos
+   los parámetros
+   (incluido @a) */
+}</code></pre>
+<h2 id="pattern-matching"><span class="header-section-number">7.8</span> Pattern matching</h2>
+<ul>
+<li>Si queremos que se ejecute un mixin <strong>dependiendo del valor de una variable</strong>:</li>
+</ul>
+<pre><code>.mixin(dark; @color) {
+  color: darken(@color, 10%);
+}
+.mixin(light; @color) {
+  color: lighten(@color, 10%);
+}
+.mixin(@_; @color) { /* all */
+  display: block;
+}
+
+@switch: light;
+
+.class {
+  .mixin(@switch; #888);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class {
+  color: #a2a2a2;
+  display: block;
+}</code></pre>
+<h2 id="mixins-como-funciones"><span class="header-section-number">7.9</span> Mixins como Funciones</h2>
+<ul>
+<li>Todas las variables definidas en un mixin son visibles y <strong>pueden ser utilizados en el ámbito de donde es llamado</strong>:</li>
+</ul>
+<pre><code>.mixin() {
+  @width:  100%;
+  @height: 200px;
+}
+
+.caller {
+  .mixin();
+  width:  @width;
+  height: @height;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.caller {
+  width:  100%;
+  height: 200px;
+}</code></pre>
+<ul>
+<li>Otro ejemplo:</li>
+</ul>
+<pre><code>.average(@x, @y) {
+  @average: ((@x + @y) / 2);
+}
+
+div {
+
+  // &quot;call&quot; the mixin
+  .average(16px, 50px);
+
+  // use its &quot;return&quot; value
+  padding: @average;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>div {
+  padding: 33px;
+}</code></pre>
+<h1 id="mixins-condicionales"><span class="header-section-number">8</span> Mixins Condicionales</h1>
+<h2 id="sintaxis"><span class="header-section-number">8.1</span> Sintaxis</h2>
+<ul>
+<li>Muy <strong>parecida a las Media Queries</strong>:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (lightness(@a) &gt;= 50%) {
+    background-color: black;
+}
+.mixin (@a)
+  when (lightness(@a) &lt; 50%) {
+    background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}
+.class1 { .mixin(#ddd) }
+.class2 { .mixin(#555) }</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #555;
+}</code></pre>
+<h2 id="operadores"><span class="header-section-number">8.2</span> Operadores</h2>
+<ul>
+<li>Se pueden usar los operadores <strong>&gt;, &gt;=, =, =&lt;, &lt;</strong></li>
+</ul>
+<pre><code>@media: mobile;
+
+.mixin (@a)
+  when (@media = mobile) { ... }
+
+.mixin (@a)
+  when (@media = desktop) { ... }
+
+.max (@a; @b)
+  when (@a &gt; @b) { width: @a }
+
+.max (@a; @b)
+  when (@a &lt; @b) { width: @b }</code></pre>
+<h2 id="and"><span class="header-section-number">8.3</span> AND</h2>
+<ul>
+<li>Como en las Media Queries, usando <strong>AND</strong> todas las sentencias se tienen que cumplir:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (isnumber(@a))
+   and (@a &gt; 0) { ... }</code></pre>
+<h2 id="coma"><span class="header-section-number">8.4</span> COMA (,)</h2>
+<ul>
+<li>Como en las Media Queries, separar sentencias con <strong>comas (,) equivale a un OR</strong>, por lo que se entrará en el Mixin en cuanto se cumpla una de las sentencias:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (@a &gt; 10),
+       (@a &lt; -10) { ... }</code></pre>
+<h2 id="not"><span class="header-section-number">8.5</span> NOT</h2>
+<ul>
+<li>Como en las Media Queries, usando <strong>NOT</strong> se niega una sentencia:</li>
+</ul>
+<pre><code>.mixin (@b)
+  when not (@b &gt; 0) { ... }</code></pre>
+<h2 id="comprobar-tipos"><span class="header-section-number">8.6</span> Comprobar tipos</h2>
+<ul>
+<li><p>Tenemos las siguientes funciones para <strong>comprobar tipos</strong>:</p>
+<ul>
+<li>isnumber</li>
+<li>isstring</li>
+<li>iscolor</li>
+<li>iskeyword</li>
+<li>isurl</li>
+</ul></li>
+</ul>
+<h2 id="comprobar-unidades"><span class="header-section-number">8.7</span> Comprobar unidades</h2>
+<ul>
+<li><p>Tenemos las siguientes funciones para <strong>comprobar unidades</strong>:</p>
+<ul>
+<li>ispixel</li>
+<li>isem</li>
+<li>ispercentage</li>
+<li>isunit</li>
+</ul></li>
+</ul>
+<h2 id="loops"><span class="header-section-number">8.8</span> Loops</h2>
+<ul>
+<li>Los Mixins se pueden llamar así mismos. Con esta <strong>recursividad</strong> se pueden crear loops:</li>
+</ul>
+<pre><code>.loop(@counter)
+  when (@counter &gt; 0) {
+
+    // next iteration
+    .loop((@counter - 1));
+
+    // code for each iteration
+    width: (10px * @counter);
+}
+
+div {
+  .loop(5); // launch the loop
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>div {
+  width: 10px;
+  width: 20px;
+  width: 30px;
+  width: 40px;
+  width: 50px;
+}</code></pre>
+<ul>
+<li>Podríamos hacer un <strong>grid de CSS</strong>:</li>
+</ul>
+<pre><code>.generate-columns(4);
+
+.generate-columns(@n, @i: 1)
+  when (@i =&lt; @n) {
+
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}</code></pre>
+<h1 id="merge"><span class="header-section-number">9</span> Merge</h1>
+<h2 id="qué-es-1"><span class="header-section-number">9.1</span> ¿Qué es?</h2>
+<ul>
+<li>Permite <strong>combinar propiedades</strong> con coma (,) o con espacio ( ), en una sola propiedad.</li>
+</ul>
+<h2 id="coma-1"><span class="header-section-number">9.2</span> Coma</h2>
+<ul>
+<li>Ejemplo con coma (,):</li>
+</ul>
+<pre><code>.mixin() {
+  box-shadow+: inset 0 0 10px #555;
+}
+.myclass {
+  .mixin();
+  box-shadow+: 0 0 20px black;
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.myclass {
+  box-shadow:
+    inset 0 0 10px #555,
+    0 0 20px black;
+}</code></pre>
+<h2 id="espacio"><span class="header-section-number">9.3</span> Espacio</h2>
+<ul>
+<li>Ejemplo con espacio ( ):</li>
+</ul>
+<pre><code>.mixin() {
+  transform+_: scale(2);
+}
+.myclass {
+  .mixin();
+  transform+_: rotate(15deg);
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.myclass {
+  transform: scale(2) rotate(15deg);
+}</code></pre>
+<h2 id="explicito"><span class="header-section-number">9.4</span> Explicito</h2>
+<ul>
+<li>Para prevenir cualquier join involuntario, merge <strong>requiere que pongas + o +_ de forma explícita</strong> en la declaración de cada uno de los jois.</li>
+</ul>
+<h1 id="selector-padre"><span class="header-section-number">10</span> Selector Padre</h1>
+<h2 id="el-operador"><span class="header-section-number">10.1</span> El operador &amp;</h2>
+<ul>
+<li>El <strong>operador &amp; representa el selector padre</strong>, y suele ser usado para modificar clases o usar pseudoclases:</li>
+</ul>
+<pre><code>a {
+  color: blue;
+  &amp;:hover {
+    color: green;
+  }
+}</code></pre>
+<ul>
+<li>Less locompila a:</li>
+</ul>
+<pre><code>a {
+  color: blue;
+}
+
+a:hover {
+  color: green;
+}</code></pre>
+<h2 id="clases-repetitivas"><span class="header-section-number">10.2</span> Clases repetitivas</h2>
+<ul>
+<li>Otro uso, a parte de las pseudoclases, es el de producir nombres de clases repetitivos:</li>
+</ul>
+<pre><code>.button {
+  &amp;-ok {
+    background-image:
+      url(&quot;ok.png&quot;);
+  }
+  &amp;-cancel {
+    background-image:
+      url(&quot;cancel.png&quot;);
+  }
+  &amp;-custom {
+    background-image:
+      url(&quot;custom.png&quot;);
+  }
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.button-ok {
+  background-image: url(&quot;ok.png&quot;);
+}
+.button-cancel {
+  background-image: url(&quot;cancel.png&quot;);
+}
+.button-custom {
+  background-image: url(&quot;custom.png&quot;);
+}</code></pre>
+<h2 id="multiples"><span class="header-section-number">10.3</span> Multiples &amp;</h2>
+<ul>
+<li>Se puede repetir el padre:</li>
+</ul>
+<pre><code>.link {
+  &amp; + &amp; {
+    color: red;
+  }
+  &amp; &amp; {
+    color: green;
+  }
+  &amp;&amp; {
+    color: blue;
+  }
+  &amp;, &amp;ish {
+    color: cyan;
+  }
+}</code></pre>
+<ul>
+<li>Less lo compila a :</li>
+</ul>
+<pre><code>.link + .link {
+  color: red;
+}
+.link .link {
+  color: green;
+}
+.link.link {
+  color: blue;
+}
+.link, .linkish {
+  color: cyan;
+}</code></pre>
+<ul>
+<li>Otro ejemplo:</li>
+</ul>
+<pre><code>.grand {
+  .parent {
+    &amp; &gt; &amp; {
+      color: red;
+    }
+    &amp; &amp; {
+      color: green;
+    }
+    &amp;&amp; {
+      color: blue;
+    }
+    &amp;, &amp;ish {
+      color: cyan;
+    }
+  }
+}</code></pre>
+<ul>
+<li>Less lo compila a :</li>
+</ul>
+<pre><code>.grand .parent &gt; .grand .parent {
+  color: red;
+}
+.grand .parent .grand .parent {
+  color: green;
+}
+.grand .parent.grand .parent {
+  color: blue;
+}
+.grand .parent, .grand .parentish {
+  color: cyan;
+}</code></pre>
+<h2 id="cambiar-el-orden"><span class="header-section-number">10.4</span> Cambiar el orden</h2>
+<ul>
+<li>En algunos caso puede ser util cambiar el orden del hijo con respecto al padre:</li>
+</ul>
+<pre><code>.header {
+  .menu {
+    border-radius: 5px;
+    .no-borderradius &amp; {
+      background-image:
+        url(&#39;img.png&#39;);
+    }
+  }
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.header .menu {
+  border-radius: 5px;
+}
+.no-borderradius .header .menu {
+  background-image:
+    url(&#39;img.png&#39;);
+}</code></pre>
+<h2 id="explosión-combinatoria"><span class="header-section-number">10.5</span> Explosión combinatoria</h2>
+<ul>
+<li>El operador &amp; puede ser usado para generar todas las posibles permutaciones de los selectores padre:</li>
+</ul>
+<pre><code>a, ul, li {
+  border-top: 2px dotted #366;
+  &amp; + &amp; {
+    border-top: 0;
+  }
+}</code></pre>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>a, ul, li {
+  border-top: 2px dotted #366;
+}
+
+a + a, a + ul, a + li,
+ul + a, ul + ul, ul + li,
+li + a, li + ul, li + li {
+  border-top: 0;
+}</code></pre>
+<h1 id="funciones"><span class="header-section-number">11</span> Funciones</h1>
+<h2 id="resumen"><span class="header-section-number">11.1</span> Resumen</h2>
+<ul>
+<li>Less dispone de una variedad de <strong>funciones matemáticas, que manipulan cadenas, y que transforman los colores</strong>:</li>
+</ul>
+<pre><code>@base: #f04615;
+@list: 200, 500, 1200;
+
+.class {
+  width: extract(@list, 3);
+  color: saturate(@base, 5%);
+  background-color:
+    lighten(@base, 25%);
+}</code></pre>
+<ul>
+<li><p><a href="http://lesscss.org/functions/" class="uri">http://lesscss.org/functions/</a></p>
+<ul>
+<li>Misc Functions</li>
+<li>String Functions</li>
+<li>List Functions</li>
+<li>Math Functions</li>
+<li>Type Functions</li>
+<li>Color Functions</li>
+</ul></li>
+</ul>
+<h2 id="misc-functions"><span class="header-section-number">11.2</span> Misc Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#misc-functions" class="uri">http://lesscss.org/functions/#misc-functions</a></p>
+<ul>
+<li>color</li>
+<li>convert</li>
+<li>data-uri</li>
+<li>default</li>
+<li>unit</li>
+<li>get-unit</li>
+<li>svg-gradient</li>
+</ul></li>
+</ul>
+<h2 id="string-functions"><span class="header-section-number">11.3</span> String Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#string-functions" class="uri">http://lesscss.org/functions/#string-functions</a>:</p>
+<ul>
+<li>escape</li>
+<li>e</li>
+<li>% format</li>
+<li>replace</li>
+</ul></li>
+</ul>
+<h2 id="list-functions"><span class="header-section-number">11.4</span> List Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#list-functions" class="uri">http://lesscss.org/functions/#list-functions</a></p>
+<ul>
+<li>length</li>
+<li>extract</li>
+</ul></li>
+</ul>
+<h2 id="math-functions"><span class="header-section-number">11.5</span> Math Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#math-functions" class="uri">http://lesscss.org/functions/#math-functions</a></p>
+<ul>
+<li>ceil</li>
+<li>floor</li>
+<li>percentage</li>
+<li>round</li>
+<li>sqrt</li>
+<li>abs</li>
+<li>pow</li>
+<li>mod</li>
+<li>min</li>
+<li>max</li>
+</ul></li>
+<li><p><a href="http://lesscss.org/functions/#math-functions" class="uri">http://lesscss.org/functions/#math-functions</a></p>
+<ul>
+<li>sin</li>
+<li>asin</li>
+<li>cos</li>
+<li>acos</li>
+<li>tan</li>
+<li>atan</li>
+<li>pi</li>
+</ul></li>
+</ul>
+<h2 id="type-functions"><span class="header-section-number">11.6</span> Type Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#type-functions" class="uri">http://lesscss.org/functions/#type-functions</a></p>
+<ul>
+<li>isnumber</li>
+<li>isstring</li>
+<li>iscolor</li>
+<li>iskeyword</li>
+<li>isurl</li>
+<li>ispixel</li>
+<li>isem</li>
+<li>ispercentage</li>
+<li>isunit</li>
+</ul></li>
+</ul>
+<h2 id="color-definition-functions"><span class="header-section-number">11.7</span> Color Definition Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-definitions" class="uri">http://lesscss.org/functions/#color-definitions</a></p>
+<ul>
+<li>rgb</li>
+<li>rgba</li>
+<li>argb</li>
+<li>hsl</li>
+<li>hsla</li>
+<li>hsv</li>
+<li>hsva</li>
+</ul></li>
+</ul>
+<h2 id="color-channel-functions"><span class="header-section-number">11.8</span> Color Channel Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-channel" class="uri">http://lesscss.org/functions/#color-channel</a></p>
+<ul>
+<li>hue</li>
+<li>saturation</li>
+<li>lightness</li>
+<li>hsvhue</li>
+<li>hsvsaturation</li>
+<li>hsvvalue</li>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+<li>alpha</li>
+<li>luma</li>
+<li>luminance</li>
+</ul></li>
+</ul>
+<h2 id="color-operation-functions"><span class="header-section-number">11.9</span> Color Operation Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-operations" class="uri">http://lesscss.org/functions/#color-operations</a></p>
+<ul>
+<li>saturate</li>
+<li>desaturate</li>
+<li>lighten</li>
+<li>darken</li>
+<li>fadein</li>
+<li>fadeout</li>
+<li>fade</li>
+<li>spin</li>
+<li>mix</li>
+<li>greyscale</li>
+<li>contrast</li>
+</ul></li>
+</ul>
+<h2 id="color-blending-functions"><span class="header-section-number">11.10</span> Color Blending Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-blending" class="uri">http://lesscss.org/functions/#color-blending</a></p>
+<ul>
+<li>multiply</li>
+<li>screen</li>
+<li>overlay</li>
+<li>softlight</li>
+<li>hardlight</li>
+<li>difference</li>
+<li>exclusion</li>
+<li>average</li>
+<li>negation</li>
+</ul></li>
+</ul>
+<h1 id="acerca-de"><span class="header-section-number">12</span> Acerca de</h1>
+<h2 id="licencia"><span class="header-section-number">12.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+<h2 id="fuentes"><span class="header-section-number">12.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src</a></li>
+</ul></li>
+</ul>
+<h2 id="bibliografía"><span class="header-section-number">12.3</span> Bibliografía</h2>
+<ul>
+<li>Documentación oficial de Less
+<ul>
+<li><a href="http://lesscss.org" class="uri">http://lesscss.org</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

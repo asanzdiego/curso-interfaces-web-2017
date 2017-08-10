@@ -1,0 +1,3 @@
+@for $i from 1 to 4	{
+  .item-#{$i} { font-size: 2em * $i; }
+}

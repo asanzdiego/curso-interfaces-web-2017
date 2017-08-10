@@ -1,0 +1,366 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="Access Educational Application">
+    <Task Identifier="Access Educational Application" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>null</Type>
+        <Description>null</Description>
+        <SubTask>
+            <Task Identifier="Login Application" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>null</Type>
+                <Description>null</Description>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Access Educational Application"/>
+                <SiblingRight name="Access Application"/>
+                <SubTask>
+                    <Task Identifier="Enter Login data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>Edit</Type>
+                        <Description>null</Description>
+                        <TemporalOperator name="Disabling"/>
+                        <Parent name="Login Application"/>
+                        <SiblingRight name="Trigger Login"/>
+                        <SubTask>
+                            <Task Identifier="Enter Login" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>Edit</Type>
+<Description>null</Description>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Enter Login data"/>
+<SiblingRight name="Enter Password"/>
+                            </Task>
+                            <Task Identifier="Enter Password" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>Edit</Type>
+<Description>null</Description>
+<Parent name="Enter Login data"/>
+<SiblingLeft name="Enter Login"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Trigger Login" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>Control</Type>
+                        <Description>null</Description>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Login Application"/>
+                        <SiblingLeft name="Enter Login data"/>
+                        <SiblingRight name="Check Login Data"/>
+                    </Task>
+                    <Task Identifier="Check Login Data" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>Login</Type>
+                        <Description>null</Description>
+                        <Parent name="Login Application"/>
+                        <SiblingLeft name="Trigger Login"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Access Application" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>null</Type>
+                <Description>null</Description>
+                <Parent name="Access Educational Application"/>
+                <SiblingLeft name="Login Application"/>
+                <SubTask>
+                    <Task Identifier="Deny Login" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>Feedback</Type>
+                        <Description>null</Description>
+                        <Precondition operator="and">
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="loggedIn"/>
+<ConditionLiteral value="false"/>
+                            </ConditionGroup>
+                        </Precondition>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Access Application"/>
+                        <SiblingRight name="Login ok"/>
+                        <Object name="loggedIn" class="Boolean"/>
+                    </Task>
+                    <Task Identifier="Login ok" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Type>None</Type>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Access Application"/>
+                        <SiblingLeft name="Deny Login"/>
+                        <SubTask>
+                            <Task Identifier="Show initial overview" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="Login ok"/>
+<SiblingRight name="Navigate application"/>
+<SubTask>
+    <Task Identifier="Get student data" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Feedback</Type>
+        <Description>null</Description>
+        <Precondition operator="and">
+            <ConditionGroup operator="eq">
+                <ConditionLiteral object="loggedIn"/>
+                <ConditionLiteral value="true"/>
+            </ConditionGroup>
+        </Precondition>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="Show initial overview"/>
+        <SiblingRight name="Show last login"/>
+        <Object name="loggedIn" class="Boolean"/>
+    </Task>
+    <Task Identifier="Show last login" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Visualise</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Interleaving"/>
+        <Parent name="Show initial overview"/>
+        <SiblingLeft name="Get student data"/>
+        <SiblingRight name="show student timetable"/>
+    </Task>
+    <Task Identifier="show student timetable" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Visualise</Type>
+        <Description>null</Description>
+        <Parent name="Show initial overview"/>
+        <SiblingLeft name="Show last login"/>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="Navigate application" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<Parent name="Login ok"/>
+<SiblingLeft name="Show initial overview"/>
+<SubTask>
+    <Task Identifier="Overview" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>null</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Choice"/>
+        <Parent name="Navigate application"/>
+        <SiblingRight name="Subscribe course"/>
+        <SubTask>
+            <Task Identifier="Select overview" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>Control</Type>
+                <Description>null</Description>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Overview"/>
+                <SiblingRight name="Show overview"/>
+            </Task>
+            <Task Identifier="Show overview" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>Visualise</Type>
+                <Description>null</Description>
+                <Parent name="Overview"/>
+                <SiblingLeft name="Select overview"/>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="Subscribe course" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>null</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Choice"/>
+        <Parent name="Navigate application"/>
+        <SiblingLeft name="Overview"/>
+        <SiblingRight name="UnSubscribe course"/>
+        <SubTask>
+            <Task Identifier="Select subscribe" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>Control</Type>
+                <Description>null</Description>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="Subscribe course"/>
+                <SiblingRight name="Select course to subscribe"/>
+            </Task>
+            <Task Identifier="Select course to subscribe" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>null</Type>
+                <Description>null</Description>
+                <Parent name="Subscribe course"/>
+                <SiblingLeft name="Select subscribe"/>
+                <SubTask>
+                    <Task Identifier="Show courses to subscribe" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>null</Type>
+                        <Description>null</Description>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Select course to subscribe"/>
+                        <SiblingRight name="Access course"/>
+                    </Task>
+                    <Task Identifier="Access course" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>null</Type>
+                        <Description>null</Description>
+                        <Parent name="Select course to subscribe"/>
+                        <SiblingLeft name="Show courses to subscribe"/>
+                        <SubTask>
+                            <Task Identifier="Select courses to subscribe" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<TemporalOperator name="Choice"/>
+<Parent name="Access course"/>
+<SiblingRight name="Subscribe selected course"/>
+<SubTask>
+    <Task Identifier="Select course to subscribe info" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Selection/Single_Choice</Type>
+        <Description>null</Description>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="Select courses to subscribe"/>
+        <SiblingRight name="Show course to subscribe info"/>
+    </Task>
+    <Task Identifier="Show course to subscribe info" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Visualise</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Disabling"/>
+        <Parent name="Select courses to subscribe"/>
+        <SiblingLeft name="Select course to subscribe info"/>
+        <SiblingRight name="Close course info"/>
+    </Task>
+    <Task Identifier="Close course info" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Control</Type>
+        <Description>null</Description>
+        <Parent name="Select courses to subscribe"/>
+        <SiblingLeft name="Show course to subscribe info"/>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="Subscribe selected course" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>Selection/Single_Choice</Type>
+<Description>null</Description>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="Access course"/>
+<SiblingLeft name="Select courses to subscribe"/>
+<SiblingRight name="Insert selected course"/>
+                            </Task>
+                            <Task Identifier="Insert selected course" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<Parent name="Access course"/>
+<SiblingLeft name="Subscribe selected course"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="UnSubscribe course" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>null</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Disabling"/>
+        <Parent name="Navigate application"/>
+        <SiblingLeft name="Subscribe course"/>
+        <SiblingRight name="Logout"/>
+        <SubTask>
+            <Task Identifier="Select unsubscribe" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>Control</Type>
+                <Description>null</Description>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="UnSubscribe course"/>
+                <SiblingRight name="Select course to unsubscribe"/>
+            </Task>
+            <Task Identifier="Select course to unsubscribe" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name </Name>
+                <Type>null</Type>
+                <Description>null</Description>
+                <Parent name="UnSubscribe course"/>
+                <SiblingLeft name="Select unsubscribe"/>
+                <SubTask>
+                    <Task Identifier="Show courses to unsubscribe" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>Visualise</Type>
+                        <Description>null</Description>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Select course to unsubscribe"/>
+                        <SiblingRight name="Access Course to Unsubscribe"/>
+                    </Task>
+                    <Task Identifier="Access Course to Unsubscribe" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name </Name>
+                        <Type>null</Type>
+                        <Description>null</Description>
+                        <Parent name="Select course to unsubscribe"/>
+                        <SiblingLeft name="Show courses to unsubscribe"/>
+                        <SubTask>
+                            <Task Identifier="Select Courses to unsubscribe" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<TemporalOperator name="Choice"/>
+<Parent name="Access Course to Unsubscribe"/>
+<SiblingRight name="UnSubscribe selected course"/>
+<SubTask>
+    <Task Identifier="Select course info" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Selection/Single_Choice</Type>
+        <Description>null</Description>
+        <TemporalOperator name="SequentialEnablingInfo"/>
+        <Parent name="Select Courses to unsubscribe"/>
+        <SiblingRight name="Show course info"/>
+    </Task>
+    <Task Identifier="Show course info" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Visualise</Type>
+        <Description>null</Description>
+        <TemporalOperator name="Disabling"/>
+        <Parent name="Select Courses to unsubscribe"/>
+        <SiblingLeft name="Select course info"/>
+        <SiblingRight name="Close"/>
+    </Task>
+    <Task Identifier="Close" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Control</Type>
+        <Description>null</Description>
+        <Parent name="Select Courses to unsubscribe"/>
+        <SiblingLeft name="Show course info"/>
+    </Task>
+</SubTask>
+                            </Task>
+                            <Task Identifier="UnSubscribe selected course" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>Selection/Single_Choice</Type>
+<Description>null</Description>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="Access Course to Unsubscribe"/>
+<SiblingLeft name="Select Courses to unsubscribe"/>
+<SiblingRight name="Remove selected course"/>
+                            </Task>
+                            <Task Identifier="Remove selected course" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name </Name>
+<Type>null</Type>
+<Description>null</Description>
+<Parent name="Access Course to Unsubscribe"/>
+<SiblingLeft name="UnSubscribe selected course"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+    <Task Identifier="Logout" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+        <Name>name </Name>
+        <Type>Control</Type>
+        <Description>null</Description>
+        <Parent name="Navigate application"/>
+        <SiblingLeft name="UnSubscribe course"/>
+    </Task>
+</SubTask>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

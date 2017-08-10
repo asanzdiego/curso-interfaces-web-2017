@@ -1,0 +1,217 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns:coop="http://giove.isti.cnr.it/cttcoop" xmlns="http://giove.isti.cnr.it/ctt" NameTaskModelID="Búscar y comprar billetes de avión">
+    <Task Identifier="Búscar y comprar billetes de avión" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Búscar billete" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="Búscar y comprar billetes de avión"/>
+                <SiblingRight name="Comprar billetes de avión"/>
+                <SubTask>
+                    <Task Identifier="Pensar viaje" Category="user" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Búscar billete"/>
+                        <SiblingRight name="Introducir parámetros del viaje"/>
+                    </Task>
+                    <Task Identifier="Introducir parámetros del viaje" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Búscar billete"/>
+                        <SiblingLeft name="Pensar viaje"/>
+                        <SiblingRight name="Mostrar billetes"/>
+                        <SubTask>
+                            <Task Identifier="Introducir origen" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir parámetros del viaje"/>
+<SiblingRight name="Introducir destino"/>
+                            </Task>
+                            <Task Identifier="Introducir destino" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir parámetros del viaje"/>
+<SiblingLeft name="Introducir origen"/>
+<SiblingRight name="Introducir fechas "/>
+                            </Task>
+                            <Task Identifier="Introducir fechas " Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir parámetros del viaje"/>
+<SiblingLeft name="Introducir destino"/>
+<SiblingRight name="Introducir número de pasajeros"/>
+                            </Task>
+                            <Task Identifier="Introducir número de pasajeros" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="Introducir parámetros del viaje"/>
+<SiblingLeft name="Introducir fechas "/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Mostrar billetes" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Búscar billete"/>
+                        <SiblingLeft name="Introducir parámetros del viaje"/>
+                        <SiblingRight name="Pensar mejor billete"/>
+                    </Task>
+                    <Task Identifier="Pensar mejor billete" Category="user" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="Búscar billete"/>
+                        <SiblingLeft name="Mostrar billetes"/>
+                        <SiblingRight name="Seleccionar billete"/>
+                    </Task>
+                    <Task Identifier="Seleccionar billete" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Búscar billete"/>
+                        <SiblingLeft name="Pensar mejor billete"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Comprar billetes de avión" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="Búscar y comprar billetes de avión"/>
+                <SiblingLeft name="Búscar billete"/>
+                <SubTask>
+                    <Task Identifier="Introducir datos personales de los pasajeros" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Type>None</Type>
+                        <TemporalOperator name="Disabling"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingRight name="Introducir datos de facturacion"/>
+                        <SubTask>
+                            <Task Identifier="Introducir nombre pasajero" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos personales de los pasajeros"/>
+<SiblingRight name="Introducir apellidos pasajero"/>
+                            </Task>
+                            <Task Identifier="Introducir apellidos pasajero" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos personales de los pasajeros"/>
+<SiblingLeft name="Introducir nombre pasajero"/>
+<SiblingRight name="Introducir NIF pasajero"/>
+                            </Task>
+                            <Task Identifier="Introducir NIF pasajero" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="Introducir datos personales de los pasajeros"/>
+<SiblingLeft name="Introducir apellidos pasajero"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Introducir datos de facturacion" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Introducir datos personales de los pasajeros"/>
+                        <SiblingRight name="Introducir datos de pago"/>
+                        <SubTask>
+                            <Task Identifier="Introducir nombre" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingRight name="Introducir apellidos"/>
+                            </Task>
+                            <Task Identifier="Introducir apellidos" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingLeft name="Introducir nombre"/>
+<SiblingRight name="Introducir NIF"/>
+                            </Task>
+                            <Task Identifier="Introducir NIF" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingLeft name="Introducir apellidos"/>
+<SiblingRight name="Introducir mail"/>
+                            </Task>
+                            <Task Identifier="Introducir mail" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingLeft name="Introducir NIF"/>
+<SiblingRight name="Introducir teléfono"/>
+                            </Task>
+                            <Task Identifier="Introducir teléfono" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingLeft name="Introducir mail"/>
+<SiblingRight name="Introducir dirección"/>
+                            </Task>
+                            <Task Identifier="Introducir dirección" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="Introducir datos de facturacion"/>
+<SiblingLeft name="Introducir teléfono"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Introducir datos de pago" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Introducir datos de facturacion"/>
+                        <SiblingRight name="Mostrar resumen"/>
+                        <SubTask>
+                            <Task Identifier="Introducir número de tarjeta" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de pago"/>
+<SiblingRight name="Introducir mes caducidad tarjeta"/>
+                            </Task>
+                            <Task Identifier="Introducir mes caducidad tarjeta" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de pago"/>
+<SiblingLeft name="Introducir número de tarjeta"/>
+<SiblingRight name="Introducir año caducidad tarjeta"/>
+                            </Task>
+                            <Task Identifier="Introducir año caducidad tarjeta" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<TemporalOperator name="Interleaving"/>
+<Parent name="Introducir datos de pago"/>
+<SiblingLeft name="Introducir mes caducidad tarjeta"/>
+<SiblingRight name="Introducir código seguridad tarjeta"/>
+                            </Task>
+                            <Task Identifier="Introducir código seguridad tarjeta" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="Introducir datos de pago"/>
+<SiblingLeft name="Introducir año caducidad tarjeta"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="Mostrar resumen" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Introducir datos de pago"/>
+                        <SiblingRight name="Confirmar compra"/>
+                    </Task>
+                    <Task Identifier="Confirmar compra" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Mostrar resumen"/>
+                        <SiblingRight name="Mostrar resultado"/>
+                    </Task>
+                    <Task Identifier="Mostrar resultado" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Confirmar compra"/>
+                        <SiblingRight name="Imprimir billetes"/>
+                    </Task>
+                    <Task Identifier="Imprimir billetes" Category="interaction" Iterative="false" Optional="true" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Comprar billetes de avión"/>
+                        <SiblingLeft name="Mostrar resultado"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

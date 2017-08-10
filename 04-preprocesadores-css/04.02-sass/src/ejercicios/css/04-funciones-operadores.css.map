@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAG;EACF,UAAU,EAAE,GAAG;EACf,MAAM,EAAE,mBAAmB;;AAE5B,CAAE;EACD,UAAU,EAAE,OAAO;EACnB,MAAM,EAAE,eAAe",
+"sources": ["../scss/04-funciones-operadores.scss"],
+"names": [],
+"file": "04-funciones-operadores.css"
+}

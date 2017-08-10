@@ -1,0 +1,487 @@
+<?xml version= '1.0'?>
+<!DOCTYPE TaskModel PUBLIC "http://giove.cnuce.cnr.it/CTTDTD.dtd" "..\..\..\..\..\Documenti\NetBeansProjects\ctte\ctte.config\CTTDTD.dtd">
+
+<TaskModel NameTaskModelID="C:\Documents and Settings\ari\Desktop\hiis tools\ctte\Examples\xml\virtual-museum.xml">
+<Task Identifier="AccessVirtualMuseum" Category="Abstraction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="AccessMuseumInfo" Category="Abstraction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Disabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessVirtualMuseum"/>
+  <SiblingRight name="Close"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="SelArtWorksType" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessMuseumInfo"/>
+  <SiblingRight name="FurtherSelection"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="FurtherSelection" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessMuseumInfo"/>
+  <SiblingLeft name="SelArtWorksType"/>
+  <SiblingRight name="AccessArtistsInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="SelPeriod" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Choice"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="FurtherSelection"/>
+  <SiblingRight name="SelAlphabetList"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="SelAlphabetList" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="FurtherSelection"/>
+  <SiblingLeft name="SelPeriod"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="AccessArtistsInfo" Category="Abstraction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Disabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessMuseumInfo"/>
+  <SiblingLeft name="FurtherSelection"/>
+  <SiblingRight name="CloseHandleArtists"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <SubTask>
+<Task Identifier="ShowArtistsList" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessArtistsInfo"/>
+  <SiblingRight name="SelectArtist"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="SelectArtist" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnablingInfo"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessArtistsInfo"/>
+  <SiblingLeft name="ShowArtistsList"/>
+  <SiblingRight name="ShowCardInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="ShowCardInfo" Category="Application Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="SequentialEnabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessArtistsInfo"/>
+  <SiblingLeft name="SelectArtist"/>
+  <SiblingRight name="AccessArtistInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="AccessArtistInfo" Category="Interaction Task" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TemporalOperator name="Disabling"/>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessArtistsInfo"/>
+  <SiblingLeft name="ShowCardInfo"/>
+  <SiblingRight name="CloseArtistInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+<Task Identifier="CloseArtistInfo" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessArtistsInfo"/>
+  <SiblingLeft name="AccessArtistInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="CloseHandleArtists" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessMuseumInfo"/>
+  <SiblingLeft name="AccessArtistsInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+<Task Identifier="Close" Category="Interaction Task" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+  <Name> null </Name>
+  <Type> null </Type>
+  <Description> null </Description>
+  <Precondition> null </Precondition>
+  <TimePerformance> 
+   <Max> null </Max>
+   <Min> null </Min>
+   <Average> null </Average>
+  </TimePerformance> 
+  <Parent name="AccessVirtualMuseum"/>
+  <SiblingLeft name="AccessMuseumInfo"/>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  <Object name="" class="" type="" access_mode="" cardinality="">
+  <InputAction Description="null" From="null"/>
+  <OutputAction Description="null" To="null"/>
+  </Object>
+  </Task>
+  </SubTask>
+  </Task>
+</TaskModel>

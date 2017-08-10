@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<coop:COOPConcurTaskTrees xmlns:coop="http://giove.isti.cnr.it/cttcoop" xmlns="http://giove.isti.cnr.it/ctt">
+    <coop:TaskModelCOOP>
+        <coop:TaskCOOP Identifier="Sales Order" Category="cooperation" Iterative="false" Optional="false">
+            <coop:SubTaskCOOP>
+                <coop:TaskCOOP Identifier="Manage Connection" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Sales Order"/>
+                    <coop:SiblingRight name="Manage Session"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Insert Data to Connect" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Manage Connection"/>
+                            <coop:SiblingRight name="Receive notification about Customer conncetion"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Receive notification about Customer conncetion" Category="application" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Connection"/>
+                            <coop:SiblingLeft name="Insert Data to Connect"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Manage Session" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Disabling"/>
+                    <coop:Parent name="Sales Order"/>
+                    <coop:SiblingLeft name="Manage Connection"/>
+                    <coop:SiblingRight name="Close connection"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Share Draft with Customer" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnablingInfo"/>
+                            <coop:Parent name="Manage Session"/>
+                            <coop:SiblingRight name="Manage Sold To BP"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCOOP Identifier="Manage Sold To BP" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:TemporalOperator name="Disabling"/>
+                            <coop:Parent name="Manage Session"/>
+                            <coop:SiblingLeft name="Share Draft with Customer"/>
+                            <coop:SiblingRight name="Saving Operations"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCOOP Identifier="Handle New Draft" Category="cooperation" Iterative="false" Optional="false">
+    <coop:TemporalOperator name="Interleaving"/>
+    <coop:Parent name="Manage Sold To BP"/>
+    <coop:SiblingRight name="Handle operation"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCOOP Identifier="Edit New Draft" Category="cooperation" Iterative="false" Optional="false">
+            <coop:TemporalOperator name="Disabling"/>
+            <coop:Parent name="Handle New Draft"/>
+            <coop:SiblingRight name="Conversion Operation"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCOOP Identifier="Manage Edit Sold To BP" Category="cooperation" Iterative="true" Optional="false">
+                    <coop:TemporalOperator name="Interleaving"/>
+                    <coop:Parent name="Edit New Draft"/>
+                    <coop:SiblingRight name="Manage Draft lines"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Edit Data of Sold-To BP" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="Interleaving"/>
+                            <coop:Parent name="Manage Edit Sold To BP"/>
+                            <coop:SiblingRight name="Edit Data of Sold-To BP"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Edit Data of Sold-To BP" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Edit Sold To BP"/>
+                            <coop:SiblingLeft name="Edit Data of Sold-To BP"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Manage Draft lines" Category="cooperation" Iterative="true" Optional="false">
+                    <coop:TemporalOperator name="Interleaving"/>
+                    <coop:Parent name="Edit New Draft"/>
+                    <coop:SiblingLeft name="Manage Edit Sold To BP"/>
+                    <coop:SiblingRight name="Manage Draft Header"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Entering Draft Lines" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="Interleaving"/>
+                            <coop:Parent name="Manage Draft lines"/>
+                            <coop:SiblingRight name="Edit Draft Line"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Edit Draft Line" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Draft lines"/>
+                            <coop:SiblingLeft name="Entering Draft Lines"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Manage Draft Header" Category="cooperation" Iterative="true" Optional="false">
+                    <coop:Parent name="Edit New Draft"/>
+                    <coop:SiblingLeft name="Manage Draft lines"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Editing a Draft Header" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="Interleaving"/>
+                            <coop:Parent name="Manage Draft Header"/>
+                            <coop:SiblingRight name="Edit Data in Draft Header"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Edit Data in Draft Header" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Draft Header"/>
+                            <coop:SiblingLeft name="Editing a Draft Header"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Conversion Operation" Category="cooperation" Iterative="false" Optional="false">
+            <coop:Parent name="Handle New Draft"/>
+            <coop:SiblingLeft name="Edit New Draft"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCOOP Identifier="Convert Order" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Choice"/>
+                    <coop:Parent name="Conversion Operation"/>
+                    <coop:SiblingRight name="Convert Quotation"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Request Convert New Draft Into Order" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Convert Order"/>
+                            <coop:SiblingRight name="Convert New Draft into Order"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Convert New Draft into Order" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Convert Order"/>
+                            <coop:SiblingLeft name="Request Convert New Draft Into Order"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Convert Quotation" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:Parent name="Conversion Operation"/>
+                    <coop:SiblingLeft name="Convert Order"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Request Convert New Draft Into Quotation" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Convert Quotation"/>
+                            <coop:SiblingRight name="Convert New Draft into Quotation"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Convert New Draft into Quotation" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Convert Quotation"/>
+                            <coop:SiblingLeft name="Request Convert New Draft Into Quotation"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+<coop:TaskCOOP Identifier="Handle operation" Category="cooperation" Iterative="false" Optional="false">
+    <coop:Parent name="Manage Sold To BP"/>
+    <coop:SiblingLeft name="Handle New Draft"/>
+    <coop:SubTaskCOOP>
+        <coop:TaskCOOP Identifier="Manage Existing Drafts" Category="cooperation" Iterative="true" Optional="false">
+            <coop:TemporalOperator name="Interleaving"/>
+            <coop:Parent name="Handle operation"/>
+            <coop:SiblingRight name="Manage Existing Quotation"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Open Drafts" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Sales Representative" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Manage Existing Drafts"/>
+                    <coop:SiblingRight name="See Existing Drafts"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="See Existing Drafts" Category="user" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Customer" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Manage Existing Drafts"/>
+                    <coop:SiblingLeft name="Open Drafts"/>
+                    <coop:SiblingRight name="Manage Convertion Drafts Into Orders"/>
+                </coop:TaskCONN>
+                <coop:TaskCOOP Identifier="Manage Convertion Drafts Into Orders" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Choice"/>
+                    <coop:Parent name="Manage Existing Drafts"/>
+                    <coop:SiblingLeft name="See Existing Drafts"/>
+                    <coop:SiblingRight name="Mnage Convertion Quotations Into Orders"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Request Convert Drafts into Orders" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Manage Convertion Drafts Into Orders"/>
+                            <coop:SiblingRight name="Convert Draft into Orders"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Convert Draft into Orders" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Convertion Drafts Into Orders"/>
+                            <coop:SiblingLeft name="Request Convert Drafts into Orders"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCOOP Identifier="Mnage Convertion Quotations Into Orders" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Choice"/>
+                    <coop:Parent name="Manage Existing Drafts"/>
+                    <coop:SiblingLeft name="Manage Convertion Drafts Into Orders"/>
+                    <coop:SiblingRight name="Close Drafts"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Request Convert Drafts into Quotations" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Mnage Convertion Quotations Into Orders"/>
+                            <coop:SiblingRight name="Convert Drafts into Quotations"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Convert Drafts into Quotations" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Mnage Convertion Quotations Into Orders"/>
+                            <coop:SiblingLeft name="Request Convert Drafts into Quotations"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCONN Identifier="Close Drafts" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Sales Representative" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Manage Existing Drafts"/>
+                    <coop:SiblingLeft name="Mnage Convertion Quotations Into Orders"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+        <coop:TaskCOOP Identifier="Manage Existing Quotation" Category="cooperation" Iterative="true" Optional="false">
+            <coop:Parent name="Handle operation"/>
+            <coop:SiblingLeft name="Manage Existing Drafts"/>
+            <coop:SubTaskCOOP>
+                <coop:TaskCONN Identifier="Open Quotations" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Sales Representative" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Manage Existing Quotation"/>
+                    <coop:SiblingRight name="See Existing Quotations"/>
+                </coop:TaskCONN>
+                <coop:TaskCONN Identifier="See Existing Quotations" Category="user" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Customer" instance=""/>
+                    </coop:Connection>
+                    <coop:TemporalOperator name="SequentialEnabling"/>
+                    <coop:Parent name="Manage Existing Quotation"/>
+                    <coop:SiblingLeft name="Open Quotations"/>
+                    <coop:SiblingRight name="Manage Convertion Quotaion Into Orders"/>
+                </coop:TaskCONN>
+                <coop:TaskCOOP Identifier="Manage Convertion Quotaion Into Orders" Category="cooperation" Iterative="false" Optional="false">
+                    <coop:TemporalOperator name="Choice"/>
+                    <coop:Parent name="Manage Existing Quotation"/>
+                    <coop:SiblingLeft name="See Existing Quotations"/>
+                    <coop:SiblingRight name="Close Quotations"/>
+                    <coop:SubTaskCOOP>
+                        <coop:TaskCONN Identifier="Request Convert Quotations into Orders" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Customer" instance=""/>
+                            </coop:Connection>
+                            <coop:TemporalOperator name="SequentialEnabling"/>
+                            <coop:Parent name="Manage Convertion Quotaion Into Orders"/>
+                            <coop:SiblingRight name="Convert Quotations into Orders"/>
+                        </coop:TaskCONN>
+                        <coop:TaskCONN Identifier="Convert Quotations into Orders" Category="interaction" Iterative="false" Optional="false">
+                            <coop:Connection>
+<coop:Belong name="Sales Representative" instance=""/>
+                            </coop:Connection>
+                            <coop:Parent name="Manage Convertion Quotaion Into Orders"/>
+                            <coop:SiblingLeft name="Request Convert Quotations into Orders"/>
+                        </coop:TaskCONN>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCONN Identifier="Close Quotations" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Sales Representative" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Manage Existing Quotation"/>
+                    <coop:SiblingLeft name="Manage Convertion Quotaion Into Orders"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:SubTaskCOOP>
+</coop:TaskCOOP>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                        <coop:TaskCOOP Identifier="Saving Operations" Category="cooperation" Iterative="false" Optional="false">
+                            <coop:Parent name="Manage Session"/>
+                            <coop:SiblingLeft name="Manage Sold To BP"/>
+                            <coop:SubTaskCOOP>
+<coop:TaskCONN Identifier="Request Save New Draft" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="Customer" instance=""/>
+    </coop:Connection>
+    <coop:TemporalOperator name="SequentialEnabling"/>
+    <coop:Parent name="Saving Operations"/>
+    <coop:SiblingRight name="Save Current Draft"/>
+</coop:TaskCONN>
+<coop:TaskCONN Identifier="Save Current Draft" Category="interaction" Iterative="false" Optional="false">
+    <coop:Connection>
+        <coop:Belong name="Sales Representative" instance=""/>
+    </coop:Connection>
+    <coop:Parent name="Saving Operations"/>
+    <coop:SiblingLeft name="Request Save New Draft"/>
+</coop:TaskCONN>
+                            </coop:SubTaskCOOP>
+                        </coop:TaskCOOP>
+                    </coop:SubTaskCOOP>
+                </coop:TaskCOOP>
+                <coop:TaskCONN Identifier="Close connection" Category="interaction" Iterative="false" Optional="false">
+                    <coop:Connection>
+                        <coop:Belong name="Sales Representative" instance=""/>
+                    </coop:Connection>
+                    <coop:Parent name="Sales Order"/>
+                    <coop:SiblingLeft name="Manage Session"/>
+                </coop:TaskCONN>
+            </coop:SubTaskCOOP>
+        </coop:TaskCOOP>
+    </coop:TaskModelCOOP>
+    <TaskModel>
+        <Task Identifier="Customer" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <SubTask>
+                <Task Identifier="Insert Data to Connect" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnabling"/>
+                    <Parent name="Customer"/>
+                    <SiblingRight name="Editing Operation"/>
+                </Task>
+                <Task Identifier="Editing Operation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Disabling"/>
+                    <Parent name="Customer"/>
+                    <SiblingLeft name="Insert Data to Connect"/>
+                    <SiblingRight name="Closing Opertions"/>
+                    <SubTask>
+                        <Task Identifier="Edit Data of Sold-To BP" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Editing Operation"/>
+                            <SiblingRight name="Edit Draft Line"/>
+                        </Task>
+                        <Task Identifier="Edit Draft Line" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Editing Operation"/>
+                            <SiblingLeft name="Edit Data of Sold-To BP"/>
+                            <SiblingRight name="Edit Data in Draft Header"/>
+                        </Task>
+                        <Task Identifier="Edit Data in Draft Header" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Interleaving"/>
+                            <Parent name="Editing Operation"/>
+                            <SiblingLeft name="Edit Draft Line"/>
+                            <SiblingRight name="Manage other Draft Quotation Order"/>
+                        </Task>
+                        <Task Identifier="Manage other Draft Quotation Order" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                            <Parent name="Editing Operation"/>
+                            <SiblingLeft name="Edit Data in Draft Header"/>
+                            <SubTask>
+<Task Identifier="Manage Existing Drafts" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Interleaving"/>
+    <Parent name="Manage other Draft Quotation Order"/>
+    <SiblingRight name="Manage Existing Quotations"/>
+    <SubTask>
+        <Task Identifier="See Existing Drafts" Category="user" Iterative="true" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Disabling"/>
+            <Parent name="Manage Existing Drafts"/>
+            <SiblingRight name="Request Convert Drafts into Orders"/>
+        </Task>
+        <Task Identifier="Request Convert Drafts into Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Choice"/>
+            <Parent name="Manage Existing Drafts"/>
+            <SiblingLeft name="See Existing Drafts"/>
+            <SiblingRight name="Request Convert Drafts into Quotations"/>
+        </Task>
+        <Task Identifier="Request Convert Drafts into Quotations" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <Parent name="Manage Existing Drafts"/>
+            <SiblingLeft name="Request Convert Drafts into Orders"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Manage Existing Quotations" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Manage other Draft Quotation Order"/>
+    <SiblingLeft name="Manage Existing Drafts"/>
+    <SubTask>
+        <Task Identifier="See Existing Quotations" Category="user" Iterative="true" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Disabling"/>
+            <Parent name="Manage Existing Quotations"/>
+            <SiblingRight name="Request Convert Quotations into Orders"/>
+        </Task>
+        <Task Identifier="Request Convert Quotations into Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+            <Parent name="Manage Existing Quotations"/>
+            <SiblingLeft name="See Existing Quotations"/>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Closing Opertions" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Customer"/>
+                    <SiblingLeft name="Editing Operation"/>
+                    <SubTask>
+                        <Task Identifier="Request Save New Draft" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Closing Opertions"/>
+                            <SiblingRight name="Request Convert New Draft Into Quotation"/>
+                        </Task>
+                        <Task Identifier="Request Convert New Draft Into Quotation" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Closing Opertions"/>
+                            <SiblingLeft name="Request Save New Draft"/>
+                            <SiblingRight name="Request Convert New Draft Into Order"/>
+                        </Task>
+                        <Task Identifier="Request Convert New Draft Into Order" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Closing Opertions"/>
+                            <SiblingLeft name="Request Convert New Draft Into Quotation"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </TaskModel>
+    <TaskModel>
+        <Task Identifier="Sales representative" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <SubTask>
+                <Task Identifier="Receive notification about Customer conncetion" Category="application" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Sales representative"/>
+                    <SiblingRight name="Manage Customer"/>
+                </Task>
+                <Task Identifier="Manage Customer" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Sales representative"/>
+                    <SiblingLeft name="Receive notification about Customer conncetion"/>
+                    <SubTask>
+                        <Task Identifier="Identify Customer in (Sold-To BP)" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Manage Customer"/>
+                            <SiblingRight name="Manage Sold-To BP"/>
+                        </Task>
+                        <Task Identifier="Manage Sold-To BP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Disabling"/>
+                            <Parent name="Manage Customer"/>
+                            <SiblingLeft name="Identify Customer in (Sold-To BP)"/>
+                            <SiblingRight name="Close connection"/>
+                            <SubTask>
+<Task Identifier="Manage Sold-To BP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage Sold-To BP"/>
+    <SiblingRight name="Share Draft with Customer"/>
+    <SubTask>
+        <Task Identifier="Manage Unclear Sold-To BP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="Choice"/>
+            <Parent name="Manage Sold-To BP"/>
+            <SiblingRight name="Create New Empty Draft"/>
+            <SubTask>
+                <Task Identifier="Create New Draft with unclear data" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Manage Unclear Sold-To BP"/>
+                    <SiblingRight name="Provide List of Possible Sold to BP"/>
+                </Task>
+                <Task Identifier="Provide List of Possible Sold to BP" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="SequentialEnablingInfo"/>
+                    <Parent name="Manage Unclear Sold-To BP"/>
+                    <SiblingLeft name="Create New Draft with unclear data"/>
+                    <SiblingRight name="Choice Sold-To BP"/>
+                </Task>
+                <Task Identifier="Choice Sold-To BP" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Manage Unclear Sold-To BP"/>
+                    <SiblingLeft name="Provide List of Possible Sold to BP"/>
+                    <SubTask>
+                        <Task Identifier="Manage Query to BP" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Disabling"/>
+                            <Parent name="Choice Sold-To BP"/>
+                            <SiblingRight name="Terminate Query"/>
+                            <SubTask>
+<Task Identifier="Edit Query to DB" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="Disabling"/>
+    <Parent name="Manage Query to BP"/>
+    <SiblingRight name="Submit Query"/>
+</Task>
+<Task Identifier="Submit Query" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage Query to BP"/>
+    <SiblingLeft name="Edit Query to DB"/>
+    <SiblingRight name="Provide query result"/>
+</Task>
+<Task Identifier="Provide query result" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage Query to BP"/>
+    <SiblingLeft name="Submit Query"/>
+    <SiblingRight name="Evaluate Query"/>
+</Task>
+<Task Identifier="Evaluate Query" Category="user" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Manage Query to BP"/>
+    <SiblingLeft name="Provide query result"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Terminate Query" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Choice Sold-To BP"/>
+                            <SiblingLeft name="Manage Query to BP"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Create New Empty Draft" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="Choice"/>
+            <Parent name="Manage Sold-To BP"/>
+            <SiblingLeft name="Manage Unclear Sold-To BP"/>
+            <SiblingRight name="Create New NOT empty Draft"/>
+        </Task>
+        <Task Identifier="Create New NOT empty Draft" Category="application" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Manage Sold-To BP"/>
+            <SiblingLeft name="Create New Empty Draft"/>
+        </Task>
+    </SubTask>
+</Task>
+<Task Identifier="Share Draft with Customer" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="SequentialEnablingInfo"/>
+    <Parent name="Manage Sold-To BP"/>
+    <SiblingLeft name="Manage Sold-To BP"/>
+    <SiblingRight name="Manage Current Draft"/>
+</Task>
+<Task Identifier="Manage Current Draft" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+    <Parent name="Manage Sold-To BP"/>
+    <SiblingLeft name="Share Draft with Customer"/>
+    <SubTask>
+        <Task Identifier="Editing a Draft Header" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Interleaving"/>
+            <Parent name="Manage Current Draft"/>
+            <SiblingRight name="Entering Draft Lines"/>
+        </Task>
+        <Task Identifier="Entering Draft Lines" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Interleaving"/>
+            <Parent name="Manage Current Draft"/>
+            <SiblingLeft name="Editing a Draft Header"/>
+            <SiblingRight name="Edit Data of Sold-To BP"/>
+        </Task>
+        <Task Identifier="Edit Data of Sold-To BP" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="true">
+            <TemporalOperator name="Interleaving"/>
+            <Parent name="Manage Current Draft"/>
+            <SiblingLeft name="Entering Draft Lines"/>
+            <SiblingRight name="Opening Operations"/>
+        </Task>
+        <Task Identifier="Opening Operations" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <TemporalOperator name="Disabling"/>
+            <Parent name="Manage Current Draft"/>
+            <SiblingLeft name="Edit Data of Sold-To BP"/>
+            <SiblingRight name="Saving Operation"/>
+            <SubTask>
+                <Task Identifier="Handle Existing Quotations" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Interleaving"/>
+                    <Parent name="Opening Operations"/>
+                    <SiblingRight name="Handle Existing Drafts "/>
+                    <SubTask>
+                        <Task Identifier="Open Quotations" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnablingInfo"/>
+                            <Parent name="Handle Existing Quotations"/>
+                            <SiblingRight name="Convert Quotations into Orders"/>
+                        </Task>
+                        <Task Identifier="Convert Quotations into Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Handle Existing Quotations"/>
+                            <SiblingLeft name="Open Quotations"/>
+                            <SiblingRight name="Close Quotations"/>
+                        </Task>
+                        <Task Identifier="Close Quotations" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Handle Existing Quotations"/>
+                            <SiblingLeft name="Convert Quotations into Orders"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Handle Existing Drafts " Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <TemporalOperator name="Interleaving"/>
+                    <Parent name="Opening Operations"/>
+                    <SiblingLeft name="Handle Existing Quotations"/>
+                    <SiblingRight name="Manage Existing Orders"/>
+                    <SubTask>
+                        <Task Identifier="Open Drafts" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Handle Existing Drafts "/>
+                            <SiblingRight name="Convert Drafts"/>
+                        </Task>
+                        <Task Identifier="Convert Drafts" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Handle Existing Drafts "/>
+                            <SiblingLeft name="Open Drafts"/>
+                            <SiblingRight name="Close Drafts"/>
+                            <SubTask>
+<Task Identifier="Convert Drafts into Quotations" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <TemporalOperator name="Choice"/>
+    <Parent name="Convert Drafts"/>
+    <SiblingRight name="Convert Draft into Orders"/>
+</Task>
+<Task Identifier="Convert Draft into Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+    <Parent name="Convert Drafts"/>
+    <SiblingLeft name="Convert Drafts into Quotations"/>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Close Drafts" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Handle Existing Drafts "/>
+                            <SiblingLeft name="Convert Drafts"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+                <Task Identifier="Manage Existing Orders" Category="interaction" Iterative="true" Optional="false" PartOfCooperation="false">
+                    <Parent name="Opening Operations"/>
+                    <SiblingLeft name="Handle Existing Drafts "/>
+                    <SubTask>
+                        <Task Identifier="Open Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <TemporalOperator name="SequentialEnabling"/>
+                            <Parent name="Manage Existing Orders"/>
+                            <SiblingRight name="Close Orders"/>
+                        </Task>
+                        <Task Identifier="Close Orders" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                            <Parent name="Manage Existing Orders"/>
+                            <SiblingLeft name="Open Orders"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+        <Task Identifier="Saving Operation" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+            <Parent name="Manage Current Draft"/>
+            <SiblingLeft name="Opening Operations"/>
+            <SubTask>
+                <Task Identifier="Save Current Draft" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                    <TemporalOperator name="Choice"/>
+                    <Parent name="Saving Operation"/>
+                    <SiblingRight name="Convert"/>
+                </Task>
+                <Task Identifier="Convert" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false">
+                    <Parent name="Saving Operation"/>
+                    <SiblingLeft name="Save Current Draft"/>
+                    <SubTask>
+                        <Task Identifier="Convert New Draft into Quotation" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <TemporalOperator name="Choice"/>
+                            <Parent name="Convert"/>
+                            <SiblingRight name="Convert New Draft into Order"/>
+                        </Task>
+                        <Task Identifier="Convert New Draft into Order" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Convert"/>
+                            <SiblingLeft name="Convert New Draft into Quotation"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </SubTask>
+</Task>
+                            </SubTask>
+                        </Task>
+                        <Task Identifier="Close connection" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="true">
+                            <Parent name="Manage Customer"/>
+                            <SiblingLeft name="Manage Sold-To BP"/>
+                        </Task>
+                    </SubTask>
+                </Task>
+            </SubTask>
+        </Task>
+    </TaskModel>
+</coop:COOPConcurTaskTrees>

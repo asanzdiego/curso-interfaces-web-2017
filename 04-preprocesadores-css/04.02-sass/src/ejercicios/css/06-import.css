@@ -1,0 +1,9 @@
+h1 {
+  width: grid-width(10);
+  background: red; }
+
+p {
+  width: grid-width(5);
+  background: green; }
+
+/*# sourceMappingURL=06-import.css.map */

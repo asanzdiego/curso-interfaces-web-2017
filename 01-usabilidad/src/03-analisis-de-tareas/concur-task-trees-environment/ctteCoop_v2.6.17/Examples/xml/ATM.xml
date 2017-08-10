@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns:coop="http://giove.isti.cnr.it/cttcoop" xmlns="http://giove.isti.cnr.it/ctt" NameTaskModelID="AccessATM">
+    <Task Identifier="AccessATM" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="EnableAccess" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnabling"/>
+                <Parent name="AccessATM"/>
+                <SiblingRight name="Access"/>
+                <SubTask>
+                    <Task Identifier="InsertCard" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="EnableAccess"/>
+                        <SiblingRight name="RequirePassword"/>
+                    </Task>
+                    <Task Identifier="RequirePassword" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="SequentialEnabling"/>
+                        <Parent name="EnableAccess"/>
+                        <SiblingLeft name="InsertCard"/>
+                        <SiblingRight name="InsertPassword"/>
+                    </Task>
+                    <Task Identifier="InsertPassword" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <Parent name="EnableAccess"/>
+                        <SiblingLeft name="RequirePassword"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Access" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <TemporalOperator name="Disabling"/>
+                <Parent name="AccessATM"/>
+                <SiblingLeft name="EnableAccess"/>
+                <SiblingRight name="CloseAccess"/>
+                <SubTask>
+                    <Task Identifier="WithdrawCash" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Access"/>
+                        <SiblingRight name="DepositCash"/>
+                        <SubTask>
+                            <Task Identifier="SelectWithdrawn" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnabling"/>
+<Parent name="WithdrawCash"/>
+<SiblingRight name="ShowPossibleAmounts"/>
+                            </Task>
+                            <Task Identifier="ShowPossibleAmounts" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="WithdrawCash"/>
+<SiblingLeft name="SelectWithdrawn"/>
+<SiblingRight name="DecideAmount"/>
+                            </Task>
+                            <Task Identifier="DecideAmount" Category="user" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="WithdrawCash"/>
+<SiblingLeft name="ShowPossibleAmounts"/>
+<SiblingRight name="SelectAmount"/>
+                            </Task>
+                            <Task Identifier="SelectAmount" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="WithdrawCash"/>
+<SiblingLeft name="DecideAmount"/>
+<SiblingRight name="ProvideCash"/>
+                            </Task>
+                            <Task Identifier="ProvideCash" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="WithdrawCash"/>
+<SiblingLeft name="SelectAmount"/>
+<SiblingRight name="Checkcash"/>
+                            </Task>
+                            <Task Identifier="Checkcash" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+<Name>name</Name>
+<Parent name="WithdrawCash"/>
+<SiblingLeft name="ProvideCash"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="DepositCash" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Access"/>
+                        <SiblingLeft name="WithdrawCash"/>
+                        <SiblingRight name="GetInformation"/>
+                    </Task>
+                    <Task Identifier="GetInformation" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                        <Name>name</Name>
+                        <Parent name="Access"/>
+                        <SiblingLeft name="DepositCash"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="CloseAccess" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency="null">
+                <Name>name</Name>
+                <Parent name="AccessATM"/>
+                <SiblingLeft name="Access"/>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

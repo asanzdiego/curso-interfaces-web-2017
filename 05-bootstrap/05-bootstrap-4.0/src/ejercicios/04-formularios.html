@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formalarios</title>
+
+    <!-- Bootstrap -->
+    <link href="../bootstrap-4.0.0-alpha.4/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Formalarios</h1>
+
+        <h2>Básico</h2>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+
+        <h2>form-inline</h2>
+
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label class="" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label class="" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+            </div>
+            <div class="">
+                <label class="">
+                    <input class="" type="checkbox"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+
+        <h2>form-horizontal</h2>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2">Email</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="inputEmail3" placeholder="Enter Email" type="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2">Password</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="inputPassword3" placeholder="Password" type="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <div class="">
+                        <label class="">
+                            <input class="" type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn">Sign in</button>
+                </div>
+            </div>
+        </form>
+
+        <h2>checkbox y radiobouttons</h2>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="check1" checked> checked
+            </label>
+        </div>
+        <div class="checkbox disabled">
+            <label>
+                <input type="checkbox" value="check2" disabled> disabled
+            </label>
+        </div>
+
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> checked
+            </label>
+        </div>
+        <div class="radio disabled">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled> disabled
+            </label>
+        </div>
+
+        <h2>checkbox y radiobouttons inline</h2>
+
+        <div class="checkbox-inline">
+            <label>
+                <input type="checkbox" value="check1" checked> checked
+            </label>
+        </div>
+        <div class="checkbox-inline disabled">
+            <label>
+                <input type="checkbox" value="check2" disabled> disabled
+            </label>
+        </div>
+        <br />
+        <div class="radio-inline">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> checked
+            </label>
+        </div>
+        <div class="radio-inline disabled">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled> disabled
+            </label>
+        </div>
+
+        <h2>Validaciones</h2>
+
+        <div class="form-group">
+            <label class="" for="inputSuccess2">Input with success</label>
+            <input type="text" class="form-control" id="inputSuccess2">
+        </div>
+        <div class="form-group">
+            <label class="" for="inputWarning2">Input with warning</label>
+            <input type="text" class="form-control" id="inputWarning2">
+        </div>
+        <div class="form-group">
+            <label class="" for="inputDanger2">Input with error</label>
+            <input type="text" class="form-control" id="inputDanger2">
+        </div>
+
+        <h2>Tamaños</h2>
+
+        <input class="form-control" type="text" placeholder=".form-control-lg">
+        <input class="form-control" type="text" placeholder="Default input">
+        <input class="form-control" type="text" placeholder=".form-control-sm">
+
+        <br />
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2" for="formGroupInputLarge">Large label</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2" for="formGroupInputSmall">Small label</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Small input">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+div {
+  box-sizing: border-box;
+}
+.row {
+    border: 10px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.row:after {
+
+}
+.element {
+    border: 10px solid green;
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
+    float:left
+}
+.image {
+    border: 10px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+.text {
+    border: 10px solid red;
+    padding: 10px;
+    margin: 10px;
+}

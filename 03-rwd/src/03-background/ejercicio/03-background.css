@@ -1,0 +1,29 @@
+div {
+    width: 550px;
+    height: 350px;
+    color: #777;
+    font-size: 2em;
+    background-color: yellow;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin: 1%;
+    float: left;
+}
+br {
+    clear: both;
+}
+.img1 {
+    background-image: url(img/disenio-fluido.jpg);
+}
+.img2 {
+    background-image: url(img/content-is-like-water.jpg);
+}
+.div1 {
+
+}
+.div2 {
+
+}
+.div3 {
+
+}

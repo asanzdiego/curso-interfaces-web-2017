@@ -1,0 +1,166 @@
+<?xmp version="1.0" encoding="UTF-8" standalone="yes"?>
+<TaskModel xmlns="http://giove.isti.cnr.it/ctt" xmlns:coop="http://giove.isti.cnr.it/cttcoop" NameTaskModelID="CMS">
+    <Task Identifier="CMS" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+        <Name>name</Name>
+        <SubTask>
+            <Task Identifier="Login" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="SequentialEnablingInfo"/>
+                <Parent name="CMS"/>
+                <SiblingRight name="Access Content"/>
+                <SubTask>
+                    <Task Identifier="Insert user data" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Precondition operator="and">
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="loggedIn"/>
+<ConditionLiteral value="false"/>
+                            </ConditionGroup>
+                        </Precondition>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Login"/>
+                        <SiblingRight name="Check User Data"/>
+                        <Object name="Login" class="String"/>
+                        <Object name="Password" class="String"/>
+                        <Object name="loggedIn" class="Boolean"/>
+                    </Task>
+                    <Task Identifier="Check User Data" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Postcondition operator="or">
+                            <ConditionGroup operator="and">
+<ConditionGroup operator="neq">
+    <ConditionLiteral object="Role"/>
+    <ConditionLiteral value=""/>
+</ConditionGroup>
+<ConditionGroup operator="eq">
+    <ConditionLiteral object="loggedIn"/>
+    <ConditionLiteral value="true"/>
+</ConditionGroup>
+                            </ConditionGroup>
+                            <ConditionGroup operator="and">
+<ConditionGroup operator="eq">
+    <ConditionLiteral object="Role"/>
+    <ConditionLiteral value=""/>
+</ConditionGroup>
+<ConditionGroup operator="eq">
+    <ConditionLiteral object="loggedIn"/>
+    <ConditionLiteral value="false"/>
+</ConditionGroup>
+                            </ConditionGroup>
+                        </Postcondition>
+                        <Parent name="Login"/>
+                        <SiblingLeft name="Insert user data"/>
+                        <Object name="Role" class="String"/>
+                        <Object name="loggedIn" class="Boolean"/>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Access Content" Category="abstraction" Iterative="true" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <TemporalOperator name="Disabling"/>
+                <Parent name="CMS"/>
+                <SiblingLeft name="Login"/>
+                <SiblingRight name="Logout"/>
+                <SubTask>
+                    <Task Identifier="Read Content" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <TemporalOperator name="Choice"/>
+                        <Parent name="Access Content"/>
+                        <SiblingRight name="New Content"/>
+                        <SubTask>
+                            <Task Identifier="Select content" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Precondition operator="and">
+    <ConditionGroup operator="eq">
+        <ConditionLiteral object="loggedIn"/>
+        <ConditionLiteral value="true"/>
+    </ConditionGroup>
+</Precondition>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="Read Content"/>
+<SiblingRight name="Show content"/>
+<Object name="loggedIn" class="Boolean"/>
+                            </Task>
+                            <Task Identifier="Show content" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="Read Content"/>
+<SiblingLeft name="Select content"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                    <Task Identifier="New Content" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Parent name="Access Content"/>
+                        <SiblingLeft name="Read Content"/>
+                        <SubTask>
+                            <Task Identifier="Insert content" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Precondition operator="and">
+    <ConditionGroup operator="and">
+        <ConditionLiteral object="loggedIn"/>
+        <ConditionLiteral value="true"/>
+    </ConditionGroup>
+    <ConditionGroup operator="eq">
+        <ConditionLiteral object="Role"/>
+        <ConditionLiteral value="admin"/>
+    </ConditionGroup>
+</Precondition>
+<TemporalOperator name="SequentialEnablingInfo"/>
+<Parent name="New Content"/>
+<SiblingRight name="Store content"/>
+<Object name="loggedIn" class="Boolean"/>
+<Object name="Role" class="String"/>
+                            </Task>
+                            <Task Identifier="Store content" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+<Name>name</Name>
+<Parent name="New Content"/>
+<SiblingLeft name="Insert content"/>
+                            </Task>
+                        </SubTask>
+                    </Task>
+                </SubTask>
+            </Task>
+            <Task Identifier="Logout" Category="abstraction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                <Name>name</Name>
+                <Parent name="CMS"/>
+                <SiblingLeft name="Access Content"/>
+                <SubTask>
+                    <Task Identifier="Select Logout" Category="interaction" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Precondition operator="and">
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="loggedIn"/>
+<ConditionLiteral value="true"/>
+                            </ConditionGroup>
+                        </Precondition>
+                        <TemporalOperator name="SequentialEnablingInfo"/>
+                        <Parent name="Logout"/>
+                        <SiblingRight name="Reset data"/>
+                        <Object name="loggedIn" class="Boolean"/>
+                    </Task>
+                    <Task Identifier="Reset data" Category="application" Iterative="false" Optional="false" PartOfCooperation="false" Frequency=" ">
+                        <Name>name</Name>
+                        <Postcondition operator="and">
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="loggedIn"/>
+<ConditionLiteral value="false"/>
+                            </ConditionGroup>
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="loggedIn"/>
+<ConditionLiteral value="false"/>
+                            </ConditionGroup>
+                            <ConditionGroup operator="eq">
+<ConditionLiteral object="Role"/>
+<ConditionLiteral value=""/>
+                            </ConditionGroup>
+                        </Postcondition>
+                        <Parent name="Logout"/>
+                        <SiblingLeft name="Select Logout"/>
+                        <Object name="loggedIn" class="Boolean"/>
+                        <Object name="Role" class="String"/>
+                    </Task>
+                </SubTask>
+            </Task>
+        </SubTask>
+    </Task>
+</TaskModel>

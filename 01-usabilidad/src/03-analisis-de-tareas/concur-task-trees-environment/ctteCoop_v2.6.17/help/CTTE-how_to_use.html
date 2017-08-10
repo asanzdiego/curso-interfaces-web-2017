@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title>MARIAE-how_to</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/">
+</head>
+
+<body>
+<h1>How to Use CTTE</h1>
+
+<p>Please note that these explanation notes basically refer to CTTE version
+2.6.2 onward.</p>
+<ol>
+  <li><a href="#L5529">General </a> 
+    <ol>
+      <li><a href="#install">How to Install and Run the Tool</a><a
+        href="#L4622"></a></li>
+      <li><a href="#L4622">The Formats in Which You Can Save a CTT Task
+        Model</a></li>
+      <li><a href="#L869">CTT Temporal Operators</a></li>
+      <li><a href="#L779">CTTE Menus</a> </li>
+    </ol>
+  </li>
+  <li><a href="#L5535">How To:</a> 
+    <ol>
+      <li><a href="#install1">Build a New Single-User Task Model</a></li>
+      <li><a href="#L3545">Add New Tasks to a Task Model</a></li>
+      <li><a href="#L3555">Add Operators Between Tasks</a></li>
+      <li><a href="#L3559">Change the Properties of a Task</a></li>
+      <li><a href="#Build">Build a New Cooperative Task Model</a></li>
+      <li><a href="#L3568">Edit an Existing Single-User/Cooperative Task
+        Model</a></li>
+      <li><a href="#L3572">Save a Single-User/Cooperative Task Model in
+        Different Formats</a></li>
+      <li><a href="#L3576">Check the Single-User/Cooperative Task Model
+        Structure</a></li>
+      <li><a href="#L3580">Obtain a CTT Task Model Starting from an Informal
+        Description of the System</a></li>
+      <li style="margin-left:0;"><a href="#L3584">Simulate the Behaviour of a
+        Task Model</a></li>
+    </ol>
+  </li>
+  <li><a href="#L2034">Advanced Features </a> 
+    <ol>
+      <li><a href="#L5784">Add preconditions and postcondition</a></li>
+      <li><a href="#L5786">Simulation of Task models with Precondition and
+        Postcondition</a></li>
+    </ol>
+  </li>
+</ol>
+<hr>
+
+<h2><a name="L5529" id="L5529">1. General</a></h2>
+
+<h3><a name="install" id="install">1.1 - How to Install and Run the
+Tool</a></h3>
+<ol>
+  <li>Download the latest version of the tool from its <a
+    href="http://giove.isti.cnr.it/tools/CTTE/download">download page.</a>
+    Please note that CTTE is a Java-based tool, so you should have installed a
+    Java Runtime Environment in your system to run CTTE</li>
+  <li>Unzip the downloaded file into a distribution folder (from now on, we
+    call this folder as "<em>ctte_home</em>")</li>
+  <li>Run the tool. There are two possible ways to do this: 
+    <ul>
+      <li>(via command line) Open a shell, go to the mariae_home folder, then
+        run the following command: <code
+        style="font-family: Courier New,Courier,monospace">java -jar
+        "ctteCoop.jar"</code></li>
+      <li>Alternatively, if you use a Windows OS, you can double-click on the
+        "<em>run_win.bat</em>" file</li>
+    </ul>
+  </li>
+</ol>
+
+<h3><a name="L4622" id="L4622">1.2 - The Formats in Which You Can Save a CTT
+Task Model</a></h3>
+
+<p>The task models created by the CTTE environment are all compliant with the
+specification of the <a
+href="http://giove.isti.cnr.it/tools/CTT/home">ConcurTaskTrees</a> language.
+However, they can be saved by using different file extensions, which might
+depend both on the type of content the task model has (for instance, whether it
+is a single task model or a cooperative task model), and the type of format
+that has been used for representing the information (e.g. XML). We can identify
+the following file extensions for the CTT task model that can be generated with
+the CTTE:</p>
+<ul>
+  <li><span style="font-family: Courier New,Courier,monospace">.ctt/.ctte <span
+    style="font-family: Times New Roman,Times,serif"></span></span> 
+    <p><span style="font-family: Courier New,Courier,monospace"><span
+    style="font-family: Times New Roman,Times,serif">These are the
+    <em>default</em> extensions for CTT task models. The only difference is
+    that from version 2.0 onward, the .<span
+    style="font-family: Courier New,Courier,monospace">ctte</span> has been
+    used instead of the .<span
+    style="font-family: Courier New,Courier,monospace">ctt</span>
+    extension</span></span></p>
+  </li>
+  <li style="font-family: Courier New,Courier,monospace">.cctt <span
+    style="font-family: Times New Roman,Times,serif"></span> 
+    <p><span style="font-family: Times New Roman,Times,serif">This extension is
+    used for <em>cooperative</em> CTT task models, namely, CTT task models in
+    which you can define different roles acting in a collaborative way. If you
+    are not interested in modelling a collaborative application (where you have
+    more than one role/user involved), you should use <em>single-role (</em>or
+    <em>single-user)</em><em></em> CTT task models<em></em></span></p>
+  </li>
+  <li><span style="font-family: Courier New,Courier,monospace">.xml </span> 
+    <p><span style="font-family: Courier New,Courier,monospace"><span
+    style="font-family: Times New Roman,Times,serif">Both single-role and
+    cooperative CTT task models can be saved using a XML-based format, to
+    enhance the interchange with other commonly-used notations and
+    formats</span></span></p>
+  </li>
+</ul>
+
+<p>We also mention the possibility to save CTT task models as JPG files, which
+can be very handy to read task model specifications:</p>
+<ul>
+  <li><span style="font-family: Courier New,Courier,monospace">.jpg</span> 
+    <p>Select <span style="font-family: Courier New,Courier,monospace">File|
+    Save Tree as JPG</span> to save a whole tree, or <span
+    style="font-family: Courier New,Courier,monospace">File| Save Subtree as
+    JPG</span> to save the subtree whose root is the current task. </p>
+  </li>
+</ul>
+
+<p></p>
+
+<h3><a name="L869" id="L869">1.3 - CTT Temporal Operators</a></h3>
+
+<p>With the CTT notation, it is possible to include different temporal
+relationships (or temporal operators), which have different priority levels.
+The CTT temporal operators (from the operators with the highest priority to the
+ones with the lowest) are : </p>
+<ul>
+  <li><em>Choice</em> <strong>[] </strong></li>
+  <li><em>Order Independence</em> <strong>|=|</strong></li>
+  <li><em>Interleaving</em> <strong>|||</strong></li>
+  <li><em>Synchronisation</em> <strong>|[]|</strong></li>
+  <li><em>Disabling</em> <strong>[&gt;</strong></li>
+  <li><em>Suspend-Resume</em> <strong>|&gt;</strong></li>
+  <li><em>Sequential Enabling</em> <strong>&gt;&gt;</strong></li>
+  <li><em>Sequential Enabling Info</em> <strong>[]&gt;&gt;</strong></li>
+</ul>
+
+<p>Please note that, differently from the above CTT temporal operators, which
+are all operators to be applied to two tasks (e.g. T1&gt;&gt;T2), the following
+CTT operators are unary operators:</p>
+<ul>
+  <li><em>Iteration</em> <strong>T*</strong> (where "T*" means that task T is
+    <em>iterative</em>)</li>
+  <li><em>Optionality</em> <strong>[T]</strong> (where [T] means that task T is
+    <em>optional</em>)</li>
+</ul>
+
+<p>For further information about CTT notation please refer to <a
+href="http://giove.isti.cnr.it/tools/CTT/home">this page</a></p>
+
+<h3><a name="L779" id="L779">1.4 - CTTE Menus</a></h3>
+<ul>
+  <li><em><strong>File</strong> - </em>General operations available in the tool 
+    <ul>
+      <li><em><strong>New</strong> - </em>To create a new CTT task model</li>
+      <li><em><strong>Open</strong></em> - To open a CTT task model (saved with
+        a .<span
+        style="font-family: Courier New,Courier,monospace">ctt</span>/.<span
+        style="font-family: Courier New,Courier,monospace">ctte</span> or <span
+        style="font-family: Courier New,Courier,monospace">.xml</span> file
+        extension)</li>
+      <li><em><strong>Save</strong></em> - To save the currently loaded CTT
+        task model </li>
+      <li><strong>Save as</strong> - To save the currently loaded CTT task
+        model with and possibly provide a name and an extension for the
+        concerned file (.<span
+        style="font-family: Courier New,Courier,monospace">ctt</span>/.<span
+        style="font-family: Courier New,Courier,monospace">ctte</span> or <span
+        style="font-family: Courier New,Courier,monospace">.xml</span>)</li>
+      <li><strong>Save SubTree As</strong> - When you want to separately save
+        only a subtree of the current task model, you will have to use this
+        functiionality. First select a (non-elementary) task which represents
+        the root of the subtree you want to save, then select it: the tool will
+        give you the possibility to save it in your hard disk.</li>
+      <li><strong>Save Tree as JPG</strong> - To save the current CTT task
+        model as a JPG image</li>
+      <li><strong>Save SubTree as JPG</strong> - To save a subtree of the
+        current CTT task model as a JPG image</li>
+      <li><strong>Print</strong> - To print the current CTT task model </li>
+      <li><strong>Print in Multiple Pages</strong> - When you have very large
+        CTT task model specification, you might want to have the possiiblity to
+        print it by using multiple pages. This option will offer this
+      feature</li>
+      <li><strong>Quit</strong> - To quit the tool</li>
+    </ul>
+  </li>
+  <li><em><strong>Edit</strong></em> - To edit CTT models in the tool 
+    <ul>
+      <li><em><strong>Undo</strong> - To undo the last action</em></li>
+      <li><em><strong>Redo</strong></em> - To redo the last action</li>
+      <li><em><strong>Cut Selection</strong></em> - To cut the current task
+        selection. Please note that, once you have selected a task in the CTT
+        task tree this feature will cut only that task and not the connected
+        subtree)</li>
+      <li><em><strong>Cut Subtree</strong></em> - To cut the entire subtree
+        that has, as its root, the task currently selected</li>
+      <li><em><strong>Copy Selection</strong></em> - To copy the current task
+        selection</li>
+      <li><em><strong>Copy SubTree</strong></em> - To copy the subtree which
+        has, as its root, the task currently selected</li>
+      <li><em><strong>Paste</strong></em> - To past the last copied/cut
+        selection</li>
+      <li><em><strong>Delete</strong></em> - To delete the current
+      selection</li>
+      <li><em><strong>Find</strong></em>.. - When the size of a task model
+        becomes quite large, you may want to quickly find a task having a
+        certain name within the task tree. With this functionality you can do
+        this.</li>
+    </ul>
+  </li>
+  <li><strong>View</strong> - To view CTT models in the tool 
+    <ul>
+      <li><strong><em>Task Properties - </em></strong>This will provide you
+        with the possiiblity to edit the properties of the currently selected
+        task</li>
+      <li><em><strong>Icon Representation</strong> - </em>You may want to
+        change the set of icons used for representing CTT tasks: this
+        functioanlity allows you to do that</li>
+      <li><em><strong>Priority Tree</strong> - </em>Sometimes it might occur
+        that different temporal operators can be combined together at the same
+        task level. In this case, you should carefully understanding and
+        managing task priorities, in order to correctly understand whether the
+        modelled behaviour is the expected one. For instance the task
+        expression (T1 </li>
+      <li><em><strong>Task Model by Levels</strong> -</em> It enables to see
+        only a certain number of task levels in the tree hierarchy of the
+        current task model shown<em></em></li>
+      <li><em><strong>Cooperative Mode</strong> -</em> It enables to switch
+        between cooperative mode (where you can specify a cooperative task
+        model) and a single-role task model<em></em></li>
+      <li><em><strong>Fold/UnFold SubTree</strong> - </em>It enables to
+        fold/unfold the specification of a certain subtree (which is the one
+        having as a root the selected task)<em></em></li>
+      <li><em><strong>Unfold all</strong> - </em>It enables to unfold the
+        entire task model specification (this feature might be useful after
+        having carries out a folding action, when you want to ensure that all
+        the tasks have been unfolded)<em></em></li>
+    </ul>
+  </li>
+  <li><strong>Info</strong> - To obtain some information on the currently
+    displayed task model 
+    <ul>
+      <li><em><strong>Task Model Statistics</strong> - </em>To obtain some
+        statistical information of the task model currently open in the
+        tool<em></em></li>
+    </ul>
+  </li>
+  <li><strong>Insert</strong> - To include some tasks in the current task model 
+    <ul>
+      <li><em><strong>Below (child)</strong> - </em>To include a new task as a
+        child of the currently selected task<em></em></li>
+      <li><strong><em>To the left (sibling) - </em></strong>To include a new
+        task as the left-hand sibling of the currently selected
+        task<strong><em></em></strong></li>
+      <li><strong><em>Subtree from File - </em></strong>To include (as a child
+        of the currently selected task) a subtree selected from a
+        file<strong><em></em></strong></li>
+      <li><strong><em>New Level - </em></strong>To insert a new level of
+        tasks<strong><em></em></strong></li>
+    </ul>
+  </li>
+  <li><strong>Tools -</strong> A group of additional functionalities to be used
+    with task models<strong></strong> 
+    <ul>
+      <li><strong><em>Model Filter - </em></strong>With CTTE you can specify
+        multi-platform tasks, namely for each task, you can specify which are
+        the platforms on which such task should be supported. Therefore, you
+        can end up having a task model in which mutliple platforms are
+        involved. If you want to have the task model that refers to
+        <em>one</em> specific platform, you can filter out the information
+        associated to the remaining platforms. Therefore, you have to filter
+        out your model by using this functionality, which allows you to obtain
+        the task model referring only to the platform that you are interested
+        in.</li>
+      <li><em><strong>Informal to Formal Description</strong> - </em>This
+        functionality allows you to more easily build a task model starting
+        from an informal description of the considered application</li>
+      <li><strong><em>Check Model Structure - </em></strong>This functionality
+        allows you to check the structure of the task model</li>
+      <li><em><strong>Start Task Model Simulator</strong> - </em>This
+        functionality enables you to start the task model simulator, which
+        allows to interactively simulate the behaviour of the task model,
+        according to the provided specification<em></em></li>
+      <li><em><strong>Reachability Analysis</strong> - </em>This feature
+        enables you to verify reachability properties within the task
+        model<em></em></li>
+    </ul>
+  </li>
+</ul>
+
+<p></p>
+
+<h2><a name="L5535" id="L5535">2. How To</a></h2>
+
+<h3><a name="install1" id="install1">2.1 - Build a New Single-User Task
+Model</a></h3>
+
+<p>When you start CTTE, the "root" node of a new single-user task model is
+shown, and its category is set by default to "abstraction" (a cloud-shaped icon
+is used). At that moment the root is the only node in the task model: within
+the editor panel it is highlighted as the "current" task (see the black frame
+around its icon). Generally, any time you use CTTE there should be one task
+will be highlighted as the "current" task, meaning that every action you do
+will be referred to this task. Changing the current task is easy: just select
+the icon of the concerned task. </p>
+
+<h3><a name="L3545" id="L3545">2.2 - Add New Tasks to a Task Model</a></h3>
+
+<p>A new task can be added to a certain task model, by selecting the proper
+icon in the graphical toolbar visualised in the left-hand part of the tool.
+Such task can be included in the task model according to two insertion modes
+that depend on where the new task will be added with respect to the currently
+selected task, namely:</p>
+<ul>
+  <li><em>Below</em>: as the farthest right child of the currently selected
+    task. This insertion mode is the <em>default</em> </li>
+  <li><em>To the left</em>: as the left sibling of the currently selected task.
+  </li>
+</ul>
+
+<p>The current insertion mode is visualised by selecting, from the CTTE
+menubar, the menu "<span
+style="font-family: Courier New,Courier,monospace">Insert</span>". In order to
+change the insertion mode you can use that button again and change
+appropriately the insertion mode.</p>
+<ul>
+  <li><p><strong>An Example</strong></p>
+    <p>If you want to add a new task as the farthest right child of a task T,
+    you should do the following steps:</p>
+    <ul>
+      <li>make sure that the "<span
+        style="font-family: Courier New,Courier,monospace">Below</span>"
+        insertion mode is selected within the tool </li>
+      <li>select task T (namely, click on its icon in the task tree);</li>
+      <li>in the graphical toolbar in the left hand part of the tool, select
+        the icon associated with the appropriate task category within the CTTE
+        toolbar: this action will insert, within the task model, a new task
+        having that category</li>
+    </ul>
+  </li>
+</ul>
+
+<p></p>
+
+<h3><a name="L3555" id="L3555">2.3 - Add Operators Between Tasks</a></h3>
+
+<p>You can add a temporal operator on the right side of the currently selected
+task. Thus, if you have two sibling tasks, <em>Task1</em> and <em>Task2</em>
+and you want to specify <em>Task1 op Task2</em> (where <em>op</em> is a CTT
+operator) you have to click on the icon associated with <em>Task1</em>, then
+select (within the operator toolbar) the button associated with the desired
+operator.</p>
+
+<p></p>
+
+<h3><a name="L3559" id="L3559">2.4 - Change the Properties of a Task</a></h3>
+
+<p>To change the properties of a task, double-click on its icon. A new window
+will be displayed making you able to change the properties you are interested
+in. A subset of relevant properties about the current task is also displayed
+within the main window in order to give you quick access to them.</p>
+
+<p></p>
+
+<h3>2.5 - <a name="Build" id="Build">Build a New Cooperative Task Model</a></h3>
+<ol>
+  <li><p><em>Step 1: Enable "Cooperative mode" option</em></p>
+    <p>When you start CTTE, by default you are supposed to build a single-user
+    task model. If you want to create a cooperative task model you have to
+    enable the cooperative mode by selecting <span
+    style="font-family: Courier New,Courier,monospace">View|Cooperative
+    mode</span> in the tool menubar. As a result, the root of the Cooperative
+    task model ("Cooperative root") will be displayed in the editor panel and
+    the "Cooperative" label is displayed in the tabbed panel within the main
+    window, meaning that the task of the "Cooperative" task model is currently
+    shown.</p>
+  </li>
+  <li><p><em>Step 2: Add new roles</em></p>
+    <p>Before building the cooperative task model, you should specify the task
+    model of the involved "roles", so you have to add new roles to the
+    cooperative task model. In order to do it, select the "<span
+    style="font-family: Courier New,Courier,monospace">New Role</span>" button
+    in the bottom-right hand corner of the window displayed when the the
+    "Cooperative" task model is shown. After selecting that button, the tabbed
+    panel is automatically switched to the task model that has been just
+    created and associated with the new role.</p>
+  </li>
+  <li><p><em>Step 3: Focus on the "connection tasks"</em></p>
+    <p>If you are building a cooperative task model, you are supposed to have
+    specified -within the task model of each role- some "connection tasks" Such
+    tasks are displayed -for each role- when the Cooperative task model is
+    selected in the right-hand part of the main window and they are useful to
+    build easily the cooperative task model. Connection tasks are used to
+    connect the tasks specified in the task model of each role and which are
+    involved in a cooperation, with the related tasks existing in the
+    cooperative task model</p>
+  </li>
+  <li><p><em>Step 4: Building the cooperative task model: set connection
+    tasks</em></p>
+    <p>All the leaves of the cooperative task model have to be connection tasks
+    previously defined in the task model of each involved role. If you want to
+    add a (connection) task in the cooperative task model you have to add the
+    task in the cooperative task model as usual (that is by selecting the
+    appropriate icon in the left-hand part of the window). Then, make this task
+    the current task and select the appropriate role/task in the lists
+    displayed in the right-hand part of the window, then click "<span
+    style="font-family: Courier New,Courier,monospace">Set Connection</span>"
+    button.</p>
+  </li>
+</ol>
+
+<h3><a name="L3568" id="L3568">2.6 - Edit an Existing Single-User/Cooperative
+Task Model</a></h3>
+
+<p>Some general, commonly-used editing operations are available within the
+CTTE:</p>
+<ul>
+  <li>Cut/copy either the current selected task (<span
+    style="font-family: Courier New,Courier,monospace">Edit|Cut
+    Selection</span>) or the whole task tree having the current task as its
+    root (<span style="font-family: Courier New,Courier,monospace">Edit|Cut
+    Subtree</span>); Paste the task currently saved in the clipboard (<span
+    style="font-family: Courier New,Courier,monospace">Edit | Paste</span>)</li>
+  <li>Undo the last editing action performed (<span
+    style="font-family: Courier New,Courier,monospace">Edit | Undo</span>)</li>
+  <li>Insert a task whose specification is stored in a separate file (<span
+    style="font-family: Courier New,Courier,monospace">Insert|Subtree from
+    File</span>)</li>
+  <li>Make a new task father of a number of tasks: with the "^Control" key
+    pressed, select such tasks, then <span
+    style="font-family: Courier New,Courier,monospace">Insert | New
+  Level</span></li>
+</ul>
+
+<p></p>
+
+<p>Some other features are available in order to support users while editing
+their task models:</p>
+<ul>
+  <li>Find a task (Edit | Find...)</li>
+  <li>Hide some parts of a task model (Edit | Hide Subtree), justify a task
+    tree, line up different tasks at the same level,</li>
+  <li>Drag a task (select the task with the left button of the mouse and drag
+    it) or a whole task tree (select the root of the concerned task tree with
+    the right button of the mouse and drag)</li>
+</ul>
+
+<p>You might also want to obtain some information about the task models (e.g.
+get general information about the number/type of tasks): in order to do this
+select (<span style="font-family: Courier New,Courier,monospace">Info| Task
+Model Statistics</span>...)</p>
+
+<p></p>
+
+<h3><a name="L3572" id="L3572">2.7 - Save a Single-User/Cooperative Task Model
+in Different Formats</a></h3>
+
+<p>There are some formats in which you can save a task model (or a part of
+it):</p>
+<ul>
+  <li><p>.<span
+    style="font-family: Courier New,Courier,monospace">ctt/.ctte</span> formats
+    (single-user) and <span
+    style="font-family: Courier New,Courier,monospace">.cctt</span> format
+    (cooperative)</p>
+    <p><span style="font-family: Courier New,Courier,monospace"><span
+    style="font-family: Times New Roman,Times,serif">The</span>
+    .ctt/.ctte</span> are the <em>default</em> extensions for CTT task models.
+    The only difference is that from version 2.0 onward, the .<span
+    style="font-family: Courier New,Courier,monospace">ctte</span> has been
+    used instead of the .<span
+    style="font-family: Courier New,Courier,monospace">ctt</span> extension.
+    Rather, .<span
+    style="font-family: Courier New,Courier,monospace">cctt</span> extension is
+    used for <em>cooperative</em> CTT task models, namely, CTT task models in
+    which you can define different roles acting in a collaborative way.
+    Regardless of the type of task model (single/cooperative), you can save the
+    entire CTT task model (by selecting <span
+    style="font-family: Courier New,Courier,monospace">File |Save <span
+    style="font-family: Times New Roman,Times,serif">or</span> File |Save
+    as</span> ), but you can also save only a part of the task model by
+    selecting the root of the concerned subtree, and then doing <span
+    style="font-family: Courier New,Courier,monospace">File | Save Subtree
+    as</span></p>
+  </li>
+</ul>
+<ul>
+  <li><p>.<span style="font-family: Courier New,Courier,monospace">xml</span>
+    format</p>
+    <p>A CTT specification can be saved also in XML format to enhance the
+    interchange with other commonly-used notations and formats <span
+    style="font-family: Courier New,Courier,monospace">(File | Save as
+    </span>and select the <span
+    style="font-family: Courier New,Courier,monospace">.xml</span> file
+    extension).</p>
+  </li>
+  <li><p>.<span style="font-family: Courier New,Courier,monospace">jpg</span>
+    format</p>
+    <p>CTTE give the users the possibility to save their task models in ".jpg"
+    format (select <span
+    style="font-family: Courier New,Courier,monospace">File| Save Tree as
+    JPG</span> to save a whole tree; select <span
+    style="font-family: Courier New,Courier,monospace">File| Save Subree as
+    JPG</span> to save the subtree whose root is the current task). </p>
+  </li>
+</ul>
+
+<p></p>
+
+<h3><a name="L3576" id="L3576">2.8 - Check the Structure of a
+Single-User/Cooperative Task Model </a></h3>
+
+<p>In order to facilitate the users to build correct task model specifications,
+the CTTE offers the possibility to perform some automatic checks on the
+specification itself, regarding all the possible errors which might make the
+specification incomplete or ambiguous (i.e.: a task with only one child, lack
+of temporal operators between two children, a connection task which does not
+appear in the cooperative task model, ...). To enable such functionality select
+<span style="font-family: Courier New,Courier,monospace">Tools | Check Model
+Structure</span>. A window appears with the list of errors (if any) together
+with the possibility of having quick access to the task referred by a specific
+error (by double-click on the error itself)</p>
+
+<p></p>
+
+<h3><a name="L3580" id="L3580">2.9 - Obtain a CTT Task Model starting from an
+Informal Description of the System</a></h3>
+
+<p>Sometimes users might have available an informal description of a system, or
+some sample scenarios describing tipical behaviour of the system itself. The
+CTT Environment offers the useful capability of supporting users while they
+extract relevant information from such scenarios in order to build a more
+formal specification (<span
+style="font-family: Courier New,Courier,monospace">Tools | Informal to Formal
+Description</span>). </p>
+
+<p></p>
+
+<h3><a name="L3584" id="L3584">2.10 - Simulate the Behaviour of a Task
+Model</a></h3>
+
+<p>Especially with large specifications it is very useful to have the
+possibility to generate and follow some specific execution sequences/paths that
+are admittable with the current task model specification. Once you have
+specified the behaviour of a specific system, the tool allows you to
+intercatively "simulate" some behaviour by means of the Task Model Simulator
+(which can be activated by selecting <span
+style="font-family: Courier New,Courier,monospace">Tools | Start Task Model
+Simulator</span>). The Task Model Simulator enables, from time to time, and
+depending on the previously selected tasks, only the tasks that can be executed
+according to the model specification.</p>
+
+<h2><a name="L2034" id="L2034">3 Advanced Features</a></h2>
+
+<h3><a name="L5784" id="L5784">3.1 Add preconditions and postcondition</a></h3>
+
+<p>A precondition specifies a predicate for establishing whether it is possible
+to execute a task or not, even if it should be enabled according to the
+temporal relationships. </p>
+
+<p>Instead, a postcondition specifies a predicate that has to be verified after
+the execution of a given task. If such postcondition is not verified, the state
+is not consistent. </p>
+
+<p>It is possible to specify both preconditions and postconditions with CTTE.
+Double clicking on a task icon, the task property popup appears. From this
+window, it is possible to edit the precondition or postcondition of the
+selected task by clicking respectively on the <span
+style="font-family: Courier New,Courier,monospace">Edit</span> button of the
+<span style="font-family: Courier New,Courier,monospace">Precondition </span>or
+<span style="font-family: Courier New,Courier,monospace">Postcondition
+</span>row (at the bottom of the window).</p>
+
+<p>After that, the interface for editing the predicate will appear. It is
+possible to specify two types of elements in order to define a precondition: a
+<em>Rule </em>or a <em>RuleGroup.</em> The first is a simple boolean expression
+where it is possible compare a Task object with a predefined value or to
+another Task object. The second is used to combine <em>Rule</em> with the usual
+boolean operators (<span
+style="font-family: Courier New,Courier,monospace">and, or,xor</span>).</p>
+
+<p>Once finished editing click on <span
+style="font-family: Courier New,Courier,monospace">Apply</span> for saving the
+changes on the Task definition. </p>
+
+<h3><a name="L5786" id="L5786">3.2 Simulation of Task models with Precondition
+and Postcondition</a></h3>
+
+<p>The CTTE Simulator is able to check preconditions and postconditions in
+order to ease the simulation of different scenarios. If you specified some
+preconditions and/or postcondition in your task model, it is possible to edit
+the actual value of the Task objects during the simulation, in order to see
+what happens with the specified state. The simulator will automatically disable
+the Tasks whose precondition is not verified, and it will warn you if some
+postcondition does not hold.</p>
+
+<p>After having activated the Task Model Simulator by selecting <span
+style="font-family: Courier New,Courier,monospace">Tools | Start Task Model
+Simulator</span>, you can access the current state of the Task objects by
+clicking the <span style="font-family: Courier New,Courier,monospace">Task
+Objects</span> button. If you defined some Task objects, you will them
+represented as a table. In order to edit the value of an object you have to
+modify the content of the <span
+style="font-family: Courier New,Courier,monospace">Value</span> column. </p>
+
+<p>It is possible to see the preconditions associated with the currently
+enabled tasks by clicking the <span
+style="font-family: Courier New,Courier,monospace">Task Preconditions</span>
+button. In addition, it is possible to see the postcondition associated to the
+previously executed task by clicking the <span
+style="font-family: Courier New,Courier,monospace">Task Postconditions -
+Executed Task</span> button<span
+style="font-family: Times New Roman,Times,serif">, or the postconditions
+evaluated on the currently enabled tasks by clicking</span> <span
+style="font-family: Courier New,Courier,monospace">Task Postconditions -
+Enabled Tasks</span>.</p>
+
+<p>We encluded a simple example that shows the simulator capabilities in the
+<span
+style="font-family: Courier New,Courier,monospace">Examples/cmsConditionSample.ctte</span>
+file. The Task Model represents a Content Management System application at a
+very high level. It is possible for the user to login, read some content and
+then logout. For administrator users (identified by the <em>admin</em> role) it
+is also possible to add content. </p>
+
+<p>In order to model this simple application basically used two shared Task
+Objects (a shared object is defined in two or more different tasks using the
+same name):</p>
+<ol>
+  <li><span style="font-family: Courier New,Courier,monospace">loggedIn</span>,
+    which indicates whether the login was successful or not</li>
+  <li><span style="font-family: Courier New,Courier,monospace">role</span>,
+    which indicates wheter the user is an administrator (admin) or a simple
+    user (every other value).</li>
+</ol>
+
+<p>The Tasks in the Model have the following preconditions:</p>
+<ul>
+  <li><span style="font-family: Courier New,Courier,monospace">loggedIn =
+    true</span> for the <span
+    style="font-family: Courier New,Courier,monospace">Select content
+    </span>and <span style="font-family: Courier New,Courier,monospace">Select
+    Logout</span> tasks. They can be executed only if the login in <span
+    style="font-family: Courier New,Courier,monospace">Check User Data</span>
+    was successful. </li>
+  <li><span style="font-family: Courier New,Courier,monospace">loggedIn = true
+    AND role = admin</span> for the <span
+    style="font-family: Courier New,Courier,monospace">Insert Content</span>
+    task. In this case we want to specify that such task can be executed only
+    by administrators.</li>
+</ul>
+
+<p>The Tasks in the Model have the followin postconditions:</p>
+<ul>
+  <li><span style="font-family: Courier New,Courier,monospace">(loggedIn = true
+    AND role != '') OR (loggedIn = false AND role = '')</span> for the <span
+    style="font-family: Courier New,Courier,monospace">Check User Data</span>
+    task. In this case we want to specify that after this task the simulation
+    environment is valid either if the user was logged-in and his/her role was
+    assigned or if s/he was not logged-in and his/her role remains
+  undefined.</li>
+  <li><span style="font-family: Courier New,Courier,monospace">(loggedIn =
+    false AND role = '')</span> for the <span
+    style="font-family: Courier New,Courier,monospace">Reset Data</span> task.
+    In this case we want to specify that, after the logout request, the user is
+    not logged-in anymore and his/her role is undefined.</li>
+</ul>
+
+<p>With such configuration it is possible to simulate the following
+scenarios:</p>
+<ul>
+  <li>Failure of the login procedure (setting <span
+    style="font-family: Courier New,Courier,monospace">loggedIn <span
+    style="font-family: Times New Roman,Times,serif">to</span> false <span
+    style="font-family: Times New Roman,Times,serif">after executing</span>
+    <span style="font-family: Courier New,Courier,monospace">Insert User
+    Data</span><span
+    style="font-family: Times New Roman,Times,serif">)</span></span></li>
+  <li>Normal user (setting <span
+    style="font-family: Courier New,Courier,monospace">loggedIn <span
+    style="font-family: Times New Roman,Times,serif">to</span> true <span
+    style="font-family: Times New Roman,Times,serif">and <span
+    style="font-family: Courier New,Courier,monospace">role</span> to <span
+    style="font-family: Courier New,Courier,monospace">normal</span> after
+    executing</span> <span
+    style="font-family: Courier New,Courier,monospace">Insert User
+    Data</span><span
+    style="font-family: Times New Roman,Times,serif">)</span></span></li>
+  <li>Administrator user (setting <span
+    style="font-family: Courier New,Courier,monospace">loggedIn <span
+    style="font-family: Times New Roman,Times,serif">to</span> true <span
+    style="font-family: Times New Roman,Times,serif">and <span
+    style="font-family: Courier New,Courier,monospace">role</span> to <span
+    style="font-family: Courier New,Courier,monospace">admin</span> after
+    executing</span> <span
+    style="font-family: Courier New,Courier,monospace">Insert User
+    Data</span><span
+    style="font-family: Times New Roman,Times,serif">)</span></span></li>
+</ul>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+</body>
+</html>

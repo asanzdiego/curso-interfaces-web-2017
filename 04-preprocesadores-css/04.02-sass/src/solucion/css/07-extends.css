@@ -1,0 +1,15 @@
+.animal, .leon, .pinguino, .tux {
+  background-color: black;
+  color: white; }
+
+.leon {
+  background-color: red; }
+
+.pinguino, .tux {
+  background-color: blue; }
+
+.tux {
+  color: orange;
+  font-weight: bold; }
+
+/*# sourceMappingURL=07-extends.css.map */

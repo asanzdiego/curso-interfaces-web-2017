@@ -1,0 +1,61 @@
+    Componentes
+        Placas Base
+        Procesadores
+        Discos Duros
+        Tarjetas Gráficas
+        Memoria RAM
+        Grabadoras DVD/Blu Ray
+        Tarjetas de Sonido
+        Torres/Cajas/Carcasas
+        Ventilación
+        Fuentes Alimentación
+        Frontales/Multiconectores
+
+    Periféricos
+        Monitores
+        Proyectores
+        Impresoras
+        Multifunciones
+        Altavoces
+        Teclados
+        Ratones
+        Auriculares
+        Webcam/Cámaras Web
+        Gamespads/Joysticks
+        Micrófonos
+        Tabletas Digitales
+        Regletas
+        SAIS
+        Escaners
+
+    Almacenamiento
+        Memorias USB
+        Tarjetas de Memoria
+        Almacenamiento Inalámbrico
+        Discos Duros Externos
+        Discos Duros Multimedia
+        Discos Duros de Red/NAS
+        Carcasas de Disco Duro
+        Carcasas Multimedia
+
+    Redes
+        Antenas
+        Cable de red
+        Hubs/Switchs
+        Puntos de acceso
+        Redes Home Plug
+        Routers
+        Tarjetas Red
+        Armarios Rack
+
+    Otros
+        Cables de audio
+        Cables de vídeo
+        
+    Ordenadores
+        Portátiles
+        Ultrabooks
+        Portátiles Gaming
+        Portátiles WorkStation
+        Sobremesa
+        Mini PCs

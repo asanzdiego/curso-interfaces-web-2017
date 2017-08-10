@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc">
+  <meta name="description" content="Novedades en Bootstrap 4.0" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Novedades en Bootstrap 4.0</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js-menu-master/menu.css">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/league.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js-master/css/print/pdf.css' : '../lib/reveal.js-master/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <style type="text/css">
+    code{
+      white-space: pre;
+    }
+    .reveal pre code {
+      background: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 350% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print {
+      #only-print-parent { display: table !important; }
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 400% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="../lib/reveal.js-master/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Novedades en Bootstrap 4.0</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Septiembre 2016</h3>
+    </div>
+</section>
+
+<section><section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="novedades" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Novedades</h1></section><section id="navegadores-soportados" class="slide level2">
+<h2><span class="header-section-number">2.1</span> Navegadores soportados</h2>
+<ul>
+<li><p>Deja de soportar IE 8 e iOS 6.</p></li>
+<li><p>Soporta <strong>IE 9+ e iOS 7+</strong>.</p></li>
+</ul>
+</section><section id="cambios-globales" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Cambios globales</h2>
+<ul>
+<li><p>Remplazado LESS por <strong>SASS</strong>.</p></li>
+<li><p>Remplazado PX por <strong>REM</strong> (salvo en los puntos de ruptura de los Media Query)</p></li>
+</ul>
+</section><section id="diseño" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Diseño</h2>
+<ul>
+<li><p>Tamaño de la fuente por defecto inrementada de 14px a <strong>16px</strong>.</p></li>
+<li><p>Nuevos colores más actuales.</p></li>
+</ul>
+</section><section id="flexbox" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Flexbox</h2>
+<ul>
+<li><p>Soporte opcional (<strong>hay que activarlo y recompilar</strong>)</p></li>
+<li><p>Si activado: soporte alineación horizontal y vertical.</p></li>
+</ul>
+</section><section id="sistema-de-rejilla-i" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Sistema de rejilla (I)</h2>
+<ul>
+<li>Añadido <strong>un tamaño más</strong> (xs, xm, md, lg y xl)</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Extra small</td>
+<td style="text-align: left;">(XS)</td>
+<td style="text-align: left;">&lt;544px</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small</td>
+<td style="text-align: left;">(SM)</td>
+<td style="text-align: left;">≥544px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">(MD)</td>
+<td style="text-align: left;">≥768px</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Large</td>
+<td style="text-align: left;">(LG)</td>
+<td style="text-align: left;">≥992px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Extra large</td>
+<td style="text-align: left;">(XL)</td>
+<td style="text-align: left;">≥1200px</td>
+</tr>
+</tbody>
+</table>
+</section><section id="sistema-de-rejilla-i-1" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Sistema de rejilla (I)</h2>
+<ul>
+<li>Remplada las clases .col-{breakpoint}-{modifier}-{size} por <strong>.{modifier}-{breakpoint}-{size}</strong></li>
+</ul>
+</section><section id="margin-y-padding" class="slide level2">
+<h2><span class="header-section-number">2.7</span> Margin y padding</h2>
+<ul>
+<li>Nuevas clases <strong>.{m,p}-{a,t,l,b,r,x,y}-{0,auto,md,lg}</strong>
+<ul>
+<li>&quot;m&quot; para margin, &quot;p&quot; para padding</li>
+<li>&quot;a&quot; para todo</li>
+<li>&quot;t&quot; top, &quot;l&quot; left, &quot;r&quot; right, &quot;b&quot; bottom</li>
+<li>&quot;x&quot; para left y right y &quot;y&quot; para top y bottom</li>
+<li>&quot;0&quot; cero, &quot;auto&quot; auto, &quot;md&quot; mediano, &quot;lg&quot; grande</li>
+</ul></li>
+</ul>
+</section><section id="cabeceras" class="slide level2">
+<h2><span class="header-section-number">2.8</span> Cabeceras</h2>
+<ul>
+<li>Nuevas clases <strong>.display-{1,2,3,4}</strong> para aumentar el tamaño a las cabeceras.</li>
+</ul>
+</section><section id="cards" class="slide level2">
+<h2><span class="header-section-number">2.9</span> Cards</h2>
+<ul>
+<li><strong>Nuevo componente</strong> que sustituye a: paneles, thumbnails y wells</li>
+</ul>
+</section><section id="iconos" class="slide level2">
+<h2><span class="header-section-number">2.10</span> Iconos</h2>
+<ul>
+<li>Ahora hay que elegir una librería de terceros:
+<ul>
+<li><a href="http://fontawesome.io/" class="uri">http://fontawesome.io/</a></li>
+<li><a href="https://octicons.github.com/" class="uri">https://octicons.github.com/</a></li>
+<li><a href="https://materialdesignicons.com/" class="uri">https://materialdesignicons.com/</a></li>
+</ul></li>
+</ul>
+</section><section id="varios" class="slide level2">
+<h2><span class="header-section-number">2.11</span> Varios</h2>
+<ul>
+<li><p>Uso de &quot;non-responsive&quot; no soportado.</p></li>
+<li><p>Remplazado &quot;Customizer online&quot; por una mejora documentación sobre el setup.</p></li>
+</ul>
+</section><section id="tipografía" class="slide level2">
+<h2><span class="header-section-number">2.12</span> Tipografía</h2>
+<ul>
+<li><p><strong>Eliminada clase .dl-horizontal</strong> -&gt; usar .row.</p></li>
+<li><p>La clase .list-inline tiene que estar seguido por hijos <strong>.list-inline-items</strong>.</p></li>
+</ul>
+</section><section id="imágenes" class="slide level2">
+<h2><span class="header-section-number">2.13</span> Imágenes</h2>
+<ul>
+<li>Remplazada clase .image-responsive por <strong>.image-fluid</strong>.</li>
+</ul>
+</section><section id="tablas" class="slide level2">
+<h2><span class="header-section-number">2.14</span> Tablas</h2>
+<ul>
+<li><p>Remplazado clase .table-condensed por <strong>.table-sm</strong>.</p></li>
+<li><p>Añadida la clase <strong>.table-inverse</strong>.</p></li>
+</ul>
+</section><section id="formularios-i" class="slide level2">
+<h2><span class="header-section-number">2.15</span> Formularios (I)</h2>
+<ul>
+<li><p>Remplazada clase .control-label por <strong>.form-control-label</strong>.</p></li>
+<li><p>Remplazada clases .input-lg y .input-sm por <strong>.form-control-lg y .form-control-sm</strong>.</p></li>
+<li><p>La clase <strong>.form-group ya no se coporta como .row</strong> -&gt; añadir .row si necesario</p></li>
+</ul>
+</section><section id="formularios-ii" class="slide level2">
+<h2><span class="header-section-number">2.16</span> Formularios (II)</h2>
+<ul>
+<li><p><strong>Eliminadas clases .form-group-*</strong> -&gt; usar .form-control-*</p></li>
+<li><p><strong>Eliminada clase .help-block</strong> -&gt; usar .form-text y/o .text-muted.</p></li>
+<li><p>Eliminada la necesidad de añadir icono en las validaciones.</p></li>
+</ul>
+</section><section id="botones" class="slide level2">
+<h2><span class="header-section-number">2.17</span> Botones</h2>
+<ul>
+<li><p>Remplazada clase .btn-default por <strong>.btn-secondary</strong>.</p></li>
+<li><p><strong>Eliminada clase .btn-xs</strong>.</p></li>
+<li><p>Añadida clase <strong>.btn-outline-*</strong></p></li>
+</ul>
+</section><section id="dropdowns" class="slide level2">
+<h2><span class="header-section-number">2.18</span> Dropdowns</h2>
+<ul>
+<li><p>Remplazada clase .divider por <strong>.dropdown-divider</strong>.</p></li>
+<li><p>Los items del dropdown tienen que tener la clase <strong>.dropdown-item</strong>.</p></li>
+<li><p>Ya no es necesario añadir &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;.</p></li>
+</ul>
+</section><section id="navs" class="slide level2">
+<h2><span class="header-section-number">2.19</span> Navs</h2>
+<ul>
+<li>Obligatoriedad de usar las clases <strong>.nav-item y .nav-links</strong>.</li>
+</ul>
+</section><section id="pagination" class="slide level2">
+<h2><span class="header-section-number">2.20</span> Pagination</h2>
+<ul>
+<li>Obligatoriedad de usar las clases <strong>.page-item y .page-links</strong>.</li>
+</ul>
+</section><section id="breadcrumbs" class="slide level2">
+<h2><span class="header-section-number">2.21</span> Breadcrumbs</h2>
+<ul>
+<li>Obligatoriedad de usar la clase <strong>.breadcrumb-item</strong>.</li>
+</ul>
+</section><section id="labels-badges-and-tags" class="slide level2">
+<h2><span class="header-section-number">2.22</span> Labels, badges, and tags</h2>
+<ul>
+<li><p>Remplazada clase .label por <strong>.tag</strong>.</p></li>
+<li><p>Eliminada clase .badge -&gt; usar <strong>.tag-pill</strong>.</p></li>
+</ul>
+</section><section id="panels-thumbnails-and-wells" class="slide level2">
+<h2><span class="header-section-number">2.23</span> Panels, thumbnails, and wells</h2>
+<ul>
+<li>Eliminados totalmente y remplazados por el <strong>nuevo componente card</strong>.</li>
+</ul>
+</section><section id="carousel" class="slide level2">
+<h2><span class="header-section-number">2.24</span> Carousel</h2>
+<ul>
+<li>Remplazada clase .item por <strong>.carousel-item</strong>.</li>
+</ul>
+</section><section id="utilities-i" class="slide level2">
+<h2><span class="header-section-number">2.25</span> Utilities (I)</h2>
+<ul>
+<li><p>Añadidas clases <strong>.pull-{xs,sm,md,lg,xl}-{left,right,none}</strong>.</p></li>
+<li><p><strong>Eliminadas classes .pull-left y .pull-right</strong> -&gt; .pull-xs-{left,right}.</p></li>
+<li><p>Añadidas clases <strong>.text-{xs,sm,md,lg,xl}-{left,center,right}</strong>.</p></li>
+<li><p><strong>Eliminadas clases .text-{left,center,right}</strong> -&gt; .text-xs-{left,center,right}.</p></li>
+</ul>
+</section><section id="utilities-ii" class="slide level2">
+<h2><span class="header-section-number">2.26</span> Utilities (II)</h2>
+<ul>
+<li><p>Remplazada clase .center-block por <strong>.m-x-auto</strong>.</p></li>
+<li><p>Remplazada clase .progress por el uso del elemento del mismo nombre.</p></li>
+</ul>
+</section><section id="responsive-utilities" class="slide level2">
+<h2><span class="header-section-number">2.27</span> Responsive utilities</h2>
+<ul>
+<li><p><strong>Eliminadas clases .hidden y .show</strong>.</p></li>
+<li><p>Remplazadas clases .hidden-* y .visible-* por <strong>.hidden-{xs,sm,md,lg}-{up,down}</strong>.</p></li>
+</ul>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-i" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Bibliografía (I)</h2>
+<ul>
+<li>Página oficial de Bootstrap 4.0 alpha:
+<ul>
+<li><a href="http://v4-alpha.getbootstrap.com/" class="uri">http://v4-alpha.getbootstrap.com/</a></li>
+</ul></li>
+<li>10 novedades de Bootstrap 4.0:
+<ul>
+<li><a href="https://platzi.com/blog/novedades-bootstrap/" class="uri">https://platzi.com/blog/novedades-bootstrap/</a></li>
+</ul></li>
+<li>Bootstrap 4.0, novedades y ejemplos:
+<ul>
+<li><a href="http://funnyfrontend.com/bootstrap-4-alpha-novedades-y-ejemplos/" class="uri">http://funnyfrontend.com/bootstrap-4-alpha-novedades-y-ejemplos/</a></li>
+</ul></li>
+<li>El futuro del CSS Grid Layout
+<ul>
+<li><a href="https://carlosazaustre.es/blog/css-grid-layout-css/" class="uri">https://carlosazaustre.es/blog/css-grid-layout-css/</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-ii" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Bibliografía (II)</h2>
+<ul>
+<li>El gran poder de CSS3: FlexBox
+<ul>
+<li><a href="https://filisantillan.com/el-gran-poder-de-css3-flexbox/" class="uri">https://filisantillan.com/el-gran-poder-de-css3-flexbox/</a></li>
+</ul></li>
+<li>Los 5 patrones del Responsive Design con FlexBox
+<ul>
+<li><a href="https://carlosazaustre.es/blog/los-5-patrones-del-responsive-design/" class="uri">https://carlosazaustre.es/blog/los-5-patrones-del-responsive-design/</a></li>
+</ul></li>
+<li>Learn CSS Flexbox in 3 Minutes
+<ul>
+<li><a href="https://medium.com/learning-new-stuff/learn-css-flexbox-in-3-minutes-c616c7070672" class="uri">https://medium.com/learning-new-stuff/learn-css-flexbox-in-3-minutes-c616c7070672</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js-master/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js-master/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+transition: 'convex',
+
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: false,
+
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: false,
+
+            // Add markers to the slide titles to indicate the
+            // progress through the presentation
+            markers: false,
+
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+
+            // Specifies the themes that will be available in the themes
+            // menu panel. Set to 'false' to hide themes panel.
+            themes: [
+                { name: 'Black', theme: '../lib/reveal.js-master/css/theme/black.css' },
+                { name: 'White', theme: '../lib/reveal.js-master/css/theme/white.css' },
+                { name: 'League', theme: '../lib/reveal.js-master/css/theme/league.css' },
+                { name: 'Sky', theme: '../lib/reveal.js-master/css/theme/sky.css' },
+                { name: 'Beige', theme: '../lib/reveal.js-master/css/theme/beige.css' },
+                { name: 'Simple', theme: '../lib/reveal.js-master/css/theme/simple.css' },
+                { name: 'Serif', theme: '../lib/reveal.js-master/css/theme/serif.css' },
+                { name: 'Blood', theme: '../lib/reveal.js-master/css/theme/blood.css' },
+                { name: 'Night', theme: '../lib/reveal.js-master/css/theme/night.css' },
+                { name: 'Moon', theme: '../lib/reveal.js-master/css/theme/moon.css' },
+                { name: 'Solarized', theme: '../lib/reveal.js-master/css/theme/solarized.css' }
+            ],
+
+            // Specifies if the transitions menu panel will be shown.
+            transitions: true,
+
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: true,
+
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/reveal.js-master/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../lib/reveal.js-master/plugin/zoom-js/zoom.js', async: true },
+          { src: '../lib/reveal.js-master/plugin/notes/notes.js', async: true },
+          //{ src: '../lib/reveal.js-master/plugin/search/search.js', async: true },
+          { src: '../lib/reveal.js-menu-master/menu.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

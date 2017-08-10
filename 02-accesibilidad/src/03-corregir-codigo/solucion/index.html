@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Accesibilidad Ejemplo bien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <h1 id="inicio">Accesibilidad Ejemplos bien</h1>
+
+    <h2>Elementos repetitivos - Ejemplo bien</h2>
+
+    <a class="sronly" href="#principal">Ir al contenido principal</a>
+
+    <nav>
+        <ul>
+            <li><a href="#">menu 1</a>
+                <ul>
+                    <li><a href="#">submenu 1.1</a></li>
+                    <li><a href="#">submenu 1.2</a></li>
+                    <li><a href="#">submenu 1.3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu 2</a>
+                <ul>
+                    <li><a href="#">submenu 2.1</a></li>
+                    <li><a href="#">submenu 2.2</a></li>
+                    <li><a href="#">submenu 2.3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <hr id="principal" />
+
+    <h2>Formularios - Ejemplo bien</h2>
+
+    <form name="contacto" method="post" action="#">
+        <fieldset>
+            <legend>Información personal</legend>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" tabindex="1" autofocus required />
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required />
+
+            <label for="web">Página personal:</label>
+            <input type="url" id="web" name="web" placeholder="URL de tu página web personal" />
+
+        </fieldset>
+        <fieldset>
+            <legend>Otra información</legend>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" />
+
+            <label for="mes">Mes:</label>
+            <input type="month" id="mes" name="mes" />
+
+            <label for="semana">Semana:</label>
+            <input type="week" id="semana" name="semana" />
+
+            <label for="tiempo">Tiempo:</label>
+            <input type="time" id="tiempo" name="tiempo" />
+
+            <label for="fechatiempo">Fecha y tiempo:</label>
+            <input type="time" id="fechatiempo" name="fechatiempo" />
+
+            <label for="numero">Número (min -10, max 10):</label>
+            <input type="number" id="numero" name="numero" min="-10" max="10" value="0" />
+
+            <label for="intervalo">Intervalo (min 0, max 10):</label>
+            <input type="range" id="intervalo" name="intervalo" />
+            <output for="intervalo" name="intervalo">0</output>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" />
+
+            <label for="busqueda">Búsqueda:</label>
+            <input type="search" id="busqueda" name="busqueda" />
+
+            <label for="color_favorito">Color Favorito:</label>
+            <input type="color" id="color_favorito" name="color_favorito" />
+
+        </fieldset>
+        <fieldset>
+            <legend>Controles</legend>
+
+            <input id="borrar" type="reset" name="borrar" value="Borrar" />
+            <input id="enviar" type="submit" name="enviar" value="Enviar" />
+
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <h2>Imágenes - Ejemplo bien</h2>
+
+    <p>
+        <a href="#"><img src="./img/flecha-izq.gif" alt="Anterior" /></a>
+        <a href="#">Índice</a>
+        <a href="#"><img src="./img/flecha-der.gif" alt="Siguiente" /></a>
+    </p>
+
+    <p>Menu:</p>
+
+    <ul>
+        <li><a href="#">Únete</a></li>
+        <li><a href="#">Equipo</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Síguenos</a></li>
+    </ul>
+
+    <p>
+        Teléfono de contacto: <strong>999123456</strong>
+    </p>
+
+    <hr />
+
+    <h2>Enlaces - Ejemplo bien</h2>
+
+    <h3>A mi hija mayor se le ha caido su primer diente</h3>
+
+    <p>Estabamos desayunando cuando de repente sucedió.
+        <a href="#">Más información<span class="sronly"> sobre
+    la noticia titulada "A mi hija mayor se le ha caido
+    su primer diente"</span>.</a></p>
+
+    <h3>A mi hija pequeña le ha salido su primera muela</h3>
+
+    <p>Después de comer, la pequeña dijo que le molestaba la boca.
+        <a href="#">Más información<span class="sronly"> sobre
+    la noticia titulada "A mi hija pequeña le ha salido
+    su primera muela"</span>.</a></p>
+
+    <hr />
+
+    <h2>Organización - Ejemplo bien</h2>
+
+    <section>
+        <header>
+            <h3>Nombre de la empresa</h3>
+            <p>Eslogan de la empresa</p>
+        </header>
+
+        <section id="news-list">
+
+            <h4>Noticias</h4>
+
+            <article>
+                <h5>Noticia 1</h5>
+                <p>Desarrollo de la noticia 1</p>
+            </article>
+
+            <article>
+                <h5>Noticia 2</h5>
+                <p>Desarrollo de la noticia 2</p>
+            </article>
+
+        </section>
+    </section>
+
+    <hr />
+
+    <h2>Diagramas - Ejemplo bien</h2>
+
+    <img src="./img/disenio-centrado-usuario.png" alt="Diagrama de Diseño Centrado en el Usuario" longdesc="#descripcion1" />
+    <span id="descripcion1" class="sronly">El Diseño Centrado en el usuario tiene varias fases:
+      planificación, diseño, prototipado, evaluación, implementación y lanzamiento, mantenimiento y seguimiento</span>
+
+    <hr />
+
+    <h2>Tablas - Ejemplo bien</h2>
+
+    <table aria-describedby="table-summary" border="1">
+        <caption>Horario de clase
+          <p id="table-summary">La primera columna son las horas y el resto de columnas los días de la semana</p>
+        </caption>
+        <thead>
+            <tr>
+                <th id="vacio" scope="col"></th>
+                <th id="columnaLunes" scope="col">Lunes</th>
+                <th id="columnaMartes" scope="col">Martes</th>
+                <th id="columnaMiercoles" scope="col">Miércoles</th>
+                <th id="columnaJueves" scope="col">Jueves</th>
+                <th id="columnaViernes" scope="col">Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="filaHora10" scope="row">10:00</th>
+                <td headers="columnaLunes filaHora10">Matemáticas</td>
+                <td headers="columnaMartes filaHora10">Matemáticas</td>
+                <td headers="columnaMiercoles filaHora10">Matemáticas</td>
+                <td headers="columnaJueves filaHora10">Matemáticas</td>
+                <td headers="columnaViernes filaHora10">Matemáticas</td>
+            </tr>
+            <tr>
+                <th id="filaHora11" scope="row">11:00</th>
+                <td headers="columnaLunes filaHora11">Lengua</td>
+                <td headers="columnaMartes filaHora11">Lengua</td>
+                <td headers="columnaMiercoles filaHora11">Lengua</td>
+                <td headers="columnaJueves filaHora11">Lengua</td>
+                <td headers="columnaViernes filaHora11">Lengua</td>
+            </tr>
+            <tr>
+                <th id="filaHora12" scope="row">12:00</th>
+                <td headers="columnaLunes filaHora12">C.Sociales</td>
+                <td headers="columnaMartes filaHora12">C.Naturales</td>
+                <td headers="columnaMiercoles filaHora12">C.Sociales</td>
+                <td headers="columnaJueves filaHora12">C.Naturales</td>
+                <td headers="columnaViernes filaHora12">Deporte</td>
+            </tr>
+            <tr>
+                <th id="filaHora13" scope="row">13:00</th>
+                <td headers="columnaLunes filaHora13">Inglés</td>
+                <td headers="columnaMartes filaHora13">Inglés</td>
+                <td headers="columnaMiercoles filaHora13">Inglés</td>
+                <td headers="columnaJueves filaHora13">Inglés</td>
+                <td headers="columnaViernes filaHora13">Músic</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr />
+
+    <h2>Contraste - Ejemplo Bien</h2>
+
+    <div class="importante">Este texto es importante</div>
+
+    <hr />
+
+    <h2>WAI-ARIA - Tooltips - Ejemplo bien</h2>
+
+    <form>
+        <fieldset>
+            <legend>Formulario de entrada</legend>
+            <div>
+                <label for="username" class="etiqueta">Usuario</label>
+                <input type="text" id="username" aria-describedby="username-tip" required />
+                <div class="tooltip" role="tooltip" id="username-tip">Tu usuario es tu mail</div>
+            </div>
+            <div>
+                <label for="password" class="etiqueta">Contraseña</label>
+                <input type="text" id="password" aria-describedby="password-tip" required />
+                <div class="tooltip" role="tooltip" id="password-tip">Tu contraseña es secreta</div>
+            </div>
+            <input type="submit" name="enviar" value="Enviar" />
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <h2>WAI-ARIA - Botón que actualiza valor - Ejemplo bien</h2>
+
+    <button id="obtener-random" type="button" title="Obtener Random" aria-controls="random">Obtener Random</button>
+    <span id="random" role="alert" aria-live="assertive">0</span>
+
+    <hr />
+
+    <h2>WAI-ARIA - Desplegables - Ejemplo bien</h2>
+
+    <button id="titulo-desplegable" aria-expanded="false" aria-controls="desplegable">Despliegame</button>
+    <div id="desplegable" class="hidden" aria-hidden="true">
+        <p>Aquí estoy... ^__^</p>
+    </div>
+
+    <hr />
+
+    <h2>WAI-ARIA - Tabs con keydown - Ejemplo bien</h2>
+
+    <ul class="tablist" role="tablist">
+        <li role="presentation"><a id="tab1" href="#section1" tabindex="0" class="tab selected" role="tab" aria-controls="section1" aria-selected="true">Sección 1</a></li>
+        <li role="presentation"><a id="tab2" href="#section2" tabindex="-1" class="tab" role="tab" aria-controls="section2">Sección 2</a></li>
+    </ul>
+    <div id="section1" class="tabpanel" role="tabpanel">Este es el cuerpo de la sección UNO</div>
+    <div id="section2" class="tabpanel hidden" role="tabpanel" aria-hidden="true">Este es el cuerpo de la sección DOS</div>
+
+    <script src="lib/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

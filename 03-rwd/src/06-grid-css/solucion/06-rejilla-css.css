@@ -1,0 +1,49 @@
+div {
+  box-sizing: border-box;
+}
+.row {
+    border: 10px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+.element {
+    border: 10px solid green;
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    float: left;
+}
+.image {
+    border: 10px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+.text {
+    border: 10px solid red;
+    padding: 10px;
+    margin: 10px;
+}
+@media all and (min-width: 768px) {
+    .element {
+        width: 45%;
+        color: blue;
+    }
+}
+@media all and (min-width: 992px) {
+    .element {
+        width: 29%;
+        color: green;
+    }
+}
+@media all and (min-width: 1200px) {
+    .element {
+        width: 14%;
+        color: red;
+    }
+}
