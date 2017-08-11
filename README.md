@@ -67,8 +67,8 @@ En este apartado:
 **Recursos**:
 
 - [Slides](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass#slides)
-- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass#enunciado-ejercicios)
-- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass#solución-ejercicios)
+- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/src/ejercicios)
+- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/src/solucion)
 
 
 
@@ -84,5 +84,5 @@ En el  [apartado de Bootstrap](https://github.com/asanzdiego/curso-interfaces-we
 
 **Recursos**:
 
-- [Slides](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/05-bootstrap/#slides)
-- [Ejemplos](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/05-bootstrap/#ejemplos)
+- [Slides](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/05-bootstrap-4.0/#slides)
+- [Ejemplos](https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/05-bootstrap-4.0/#ejemplos)
