@@ -59,7 +59,7 @@
 
 - Implementa un **sistema de rejillas**, que por defecto incluye 12 columnas.
 
-- Utiliza **LESS**, un preprocesador CSS. (Ahora también soporta Saas).
+- Utiliza **SASS**, un preprocesador CSS.
 
 - Es **OOCSS**, osea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.
 
@@ -85,7 +85,7 @@
 
 - Si necesitas **añadir componentes que no existen**, debes hacerlos tú mismo en CSS y cuidar de que mantenga coherencia con tu diseño y cuidando el responsive.
 
-- A veces hacer **implementar un diseño impuesto**, puede llegar a resultar bastante difícil, al menos si eres un perfeccionista.
+- A veces **implementar un diseño impuesto**, puede llegar a resultar bastante difícil, al menos si eres un perfeccionista.
 
 ## Descarga
 

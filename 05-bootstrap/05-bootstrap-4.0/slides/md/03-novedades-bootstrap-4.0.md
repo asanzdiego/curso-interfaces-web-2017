@@ -63,9 +63,81 @@
 
 ## Flexbox
 
-- Soporte opcional (**hay que activarlo y recompilar**)
+- Uso de flexbox para el sistema de rejilla.
 
-- Si activado: soporte alineación horizontal y vertical.
+- Soporte alineación horizontal y vertical.
+
+## Alinieación vertical (I)
+
+![Alineación vertical](../img/alineacion-vertical.png)
+
+## Alinieación vertical (II)
+
+~~~
+<div class="row align-items-start">
+    <div class="col">
+        ...
+    </div>
+</div>
+<div class="row align-items-center">
+    <div class="col">
+        ...
+    </div>
+</div>
+<div class="row align-items-end">
+    <div class="col">
+        ...
+    </div>
+</div>
+~~~
+
+## Alinieación horizontal (I)
+
+![Alineación horizontal 1](../img/alineacion-horizontal-1.png)
+
+## Alinieación horizontal (II)
+
+~~~
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+      One of three columns
+    </div>
+    <div class="col align-self-center">
+      One of three columns
+    </div>
+    <div class="col align-self-end">
+      One of three columns
+    </div>
+  </div>
+</div>
+~~~
+
+## Alinieación horizontal (III)
+
+![Alineación horizontal 2](../img/alineacion-horizontal-2.png)
+
+## Alinieación horizontal (IV)
+
+~~~
+<div class="container">
+  <div class="row justify-content-start">
+    ...
+  </div>
+  <div class="row justify-content-center">
+    ...
+  </div>
+  <div class="row justify-content-end">
+    ...
+  </div>
+  <div class="row justify-content-around">
+    ...
+  </div>
+  <div class="row justify-content-between">
+    ...
+  </div>
+</div>
+~~~
 
 ## Sistema de rejilla (I)
 
@@ -79,9 +151,11 @@ Large       (LG) ≥992px
 Extra large (XL) ≥1200px
 ----------- ---- -------
 
-## Sistema de rejilla (I)
+## Sistema de rejilla (OI)
 
-- Remplada las clases .col-{breakpoint}-{modifier}-{size} por **.{modifier}-{breakpoint}-{size}**
+- Remplaza las clases .col-{breakpoint}-{modifier}-{size} por **.{modifier}-{breakpoint}-{size}**.
+
+- Añadida las clases .col (sin modificadores) y el {size} "auto" para expandir contenidos.
 
 ## Margin y padding
 
