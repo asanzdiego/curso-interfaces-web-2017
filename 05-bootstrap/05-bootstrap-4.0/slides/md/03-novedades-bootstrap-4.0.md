@@ -45,9 +45,9 @@
 
 ## Navegadores soportados
 
-- Deja de soportar IE 8 e iOS 6.
+- Deja de soportar IE 9 e iOS 6.
 
-- Soporta **IE 9+ e iOS 7+**.
+- Soporta **IE 10+ e iOS 7+**.
 
 ## Cambios globales
 
@@ -67,78 +67,6 @@
 
 - Soporte alineación horizontal y vertical.
 
-## Alinieación vertical (I)
-
-![Alineación vertical](../img/alineacion-vertical.png)
-
-## Alinieación vertical (II)
-
-~~~
-<div class="row align-items-start">
-    <div class="col">
-        ...
-    </div>
-</div>
-<div class="row align-items-center">
-    <div class="col">
-        ...
-    </div>
-</div>
-<div class="row align-items-end">
-    <div class="col">
-        ...
-    </div>
-</div>
-~~~
-
-## Alinieación horizontal (I)
-
-![Alineación horizontal 1](../img/alineacion-horizontal-1.png)
-
-## Alinieación horizontal (II)
-
-~~~
-<div class="container">
-  <div class="row">
-    <div class="col align-self-start">
-      One of three columns
-    </div>
-    <div class="col align-self-center">
-      One of three columns
-    </div>
-    <div class="col align-self-end">
-      One of three columns
-    </div>
-  </div>
-</div>
-~~~
-
-## Alinieación horizontal (III)
-
-![Alineación horizontal 2](../img/alineacion-horizontal-2.png)
-
-## Alinieación horizontal (IV)
-
-~~~
-<div class="container">
-  <div class="row justify-content-start">
-    ...
-  </div>
-  <div class="row justify-content-center">
-    ...
-  </div>
-  <div class="row justify-content-end">
-    ...
-  </div>
-  <div class="row justify-content-around">
-    ...
-  </div>
-  <div class="row justify-content-between">
-    ...
-  </div>
-</div>
-~~~
-
 ## Sistema de rejilla (I)
 
 - Añadido **un tamaño más** (xs, xm, md, lg y xl)
@@ -151,11 +79,11 @@ Large       (LG) ≥992px
 Extra large (XL) ≥1200px
 ----------- ---- -------
 
-## Sistema de rejilla (OI)
+## Sistema de rejilla (II)
 
 - Remplaza las clases .col-{breakpoint}-{modifier}-{size} por **.{modifier}-{breakpoint}-{size}**.
 
-- Añadida las clases .col (sin modificadores) y el {size} "auto" para expandir contenidos.
+- Añadida las clases .col (sin modificadores que equivale a .col-xs) y el {size} "auto" para expandir contenidos.
 
 ## Margin y padding
 
@@ -177,8 +105,10 @@ Extra large (XL) ≥1200px
 ## Iconos
 
 - Ahora hay que elegir una librería de terceros:
+    - https://getbootstrap.com/docs/4.0/extend/icons/>
+
+- Hay otras:
     - <http://fontawesome.io/>
-    - <https://octicons.github.com/>
     - <https://materialdesignicons.com/>
 
 ## Varios
@@ -198,19 +128,25 @@ Extra large (XL) ≥1200px
 
 - Remplazada clase .image-responsive por **.image-fluid**.
 
+- Remplazada clase .img-rounded por **.rounded**.
+
+- Remplazada clase .img-circle por **.rounded-circle****
+
 ## Tablas
+
+- Las tablas responsive no necesitan contenedor.
 
 - Remplazado clase .table-condensed por **.table-sm**.
 
-- Añadida la clase **.table-inverse**.
+- Añadida la clase **.table-inverse**, y **table-{state}** (.table-active, .table-success, .table-warning, .table-danger y .table-info)
 
 ## Formularios (I)
 
 - Remplazada clase .control-label por **.form-control-label**.
 
-- Remplazada clases .input-lg y .input-sm por **.form-control-lg y .form-control-sm**.
+- Remplazadas clases .input-lg y .input-sm por **.form-control-lg y .form-control-sm**.
 
-- La clase **.form-group ya no se coporta como .row** -> añadir .row si necesario
+- Remplazada clase .has-error por **.has-danger**.
 
 ## Formularios (II)
 
@@ -220,13 +156,23 @@ Extra large (XL) ≥1200px
 
 - Eliminada la necesidad de añadir icono en las validaciones.
 
+## Formularios (III)
+
+- **Eliminada clase .radio-inline y .checkbox-inline**.
+
+- **Eliminada clase .form-horizontal**.
+
+- La clase **.form-group ya no se coporta como .row** -> añadir .row si necesario
+
 ## Botones
 
 - Remplazada clase .btn-default por **.btn-secondary**.
 
-- **Eliminada clase .btn-xs**.
+- Remplazada clase .btn-xs por **.btn-sm**.
 
 - Añadida clase **.btn-outline-\***
+
+- **Eliminadas las clases .btn-group-justified y .btn-group-xs**
 
 ## Dropdowns
 
@@ -307,9 +253,6 @@ Extra large (XL) ≥1200px
     - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src>
 
 ## Bibliografía (I)
-
-- Página oficial de Bootstrap 4.0 alpha:
-    - <http://v4-alpha.getbootstrap.com/>
 
 - 10 novedades de Bootstrap 4.0:
     - <https://platzi.com/blog/novedades-bootstrap/>
