@@ -186,19 +186,31 @@ Extra large (XL) ≥1200px
 
 - Obligatoriedad de usar las clases **.nav-item y .nav-links**.
 
+## Navbar
+
+- Posibilidad de decidir cuando colapsa con la clase **.navbar-expand-{breakpoint}**.
+
+- Remplazada clase .navbar-default por **.navbar-light o .navbar-dark**.
+
+- Remplazada clase .navbar-toggle por **.navbar-toggler**.
+
+- **Eliminada la clase .navbar-form class** -> usar .form-inline si necesario.
+
 ## Pagination
 
-- Obligatoriedad de usar las clases **.page-item y .page-links**.
+- Obligatoriedad de usar las clases **.page-item y .page-links** descendiente de **.pagination**.
+
+- **Eliminada la clase .pager** -> usar botones outline si necesario.
 
 ## Breadcrumbs
 
-- Obligatoriedad de usar la clase **.breadcrumb-item**.
+- Obligatoriedad de usar la clase **.breadcrumb-item** descendiente de **.breadcrumb**.
 
 ## Labels, badges, and tags
 
-- Remplazada clase .label por **.tag**.
+- Remplazada clase .label por **.badge**.
 
-- Eliminada clase .badge -> usar **.tag-pill**.
+- Añadida la clase **.badge-pill**.
 
 ## Panels, thumbnails, and wells
 
@@ -206,7 +218,11 @@ Extra large (XL) ≥1200px
 
 ## Carousel
 
-- Remplazada clase .item por **.carousel-item**.
+- Todas las clases empiezan ahora por **.carousel-**.
+
+- Añadidas pues .carousel-item, .carousel-item-next, .carousel-item-prev, .carousel-item-left, .carousel-item-right
+
+- Añadidos también .carousel-control-right y .carousel-control-left.
 
 ## Utilities (I)
 
@@ -228,7 +244,7 @@ Extra large (XL) ≥1200px
 
 - **Eliminadas clases .hidden y .show**.
 
-- Remplazadas clases .hidden-* y .visible-* por **.hidden-{xs,sm,md,lg}-{up,down}**.
+- Remplazadas clases .hidden-* y .visible-* por **.d-{sm,md,lg,xl}-none)**.
 
 
 

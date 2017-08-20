@@ -9,6 +9,7 @@ En este apartado:
 - Y para terminar, se comenta **como se puede personalizar**, ya sea usando tu propio CSS, modificando el CSS de Bootstrap desde la página destinada a tal efecto, o directamente compilando los ficheros Less del core.
 
 ## Slides
+
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/slides/export/01-bootstrap-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/slides/export/01-bootstrap-reveal-slides-alternative.pdf)
 - [html](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/slides/export/01-bootstrap.html)
@@ -16,5 +17,5 @@ En este apartado:
 
 ## Ejercicios
 
-- [Enunciado Ejercicios](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/src/ejercicios)
-- [Solución Ejercicios](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/src/ejercicios-solucion)
+- [Enunciado Ejercicios](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/src/ejercicios/ejercicios)
+- [Solución Ejercicios](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-3.0/src/ejercicios/ejercicios-solucion)
