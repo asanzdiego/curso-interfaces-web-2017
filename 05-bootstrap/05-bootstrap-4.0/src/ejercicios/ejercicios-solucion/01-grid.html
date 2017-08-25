@@ -8,10 +8,10 @@
     <title>Grid</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../ejemplos/ejemplos/grid/grid.css" rel="stylesheet">
+    <link href="../../ejemplos/ejemplos/ejemplos/grid/grid.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,77 +30,146 @@
         <h2>1 columna de un tamaño de 12</h2>
 
         <div class="row">
-            <div class="col-xs-12">1</div>
-            <div class="col-xs-12">2</div>
-            <div class="col-xs-12">3</div>
-            <div class="col-xs-12">4</div>
+            <div class="col">1</div>
         </div>
 
         <h2>2 columnas de un tamaño de 6</h2>
 
         <div class="row">
-            <div class="col-xs-6">1</div>
-            <div class="col-xs-6">2</div>
-            <div class="col-xs-6">3</div>
-            <div class="col-xs-6">4</div>
+            <div class="col">1</div>
+            <div class="col">2</div>
         </div>
 
         <h2>3 columnas de un tamaño de 4</h2>
 
         <div class="row">
-            <div class="col-xs-4">1</div>
-            <div class="col-xs-4">2</div>
-            <div class="col-xs-4">3</div>
-            <div class="col-xs-4">4</div>
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
         </div>
 
         <h2>4 columnas de un tamaño de 3</h2>
 
         <div class="row">
-            <div class="col-xs-3">1</div>
-            <div class="col-xs-3">2</div>
-            <div class="col-xs-3">3</div>
-            <div class="col-xs-3">4</div>
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+        </div>
+
+        <h2>2 filas con 2 columnas de un tamaño de 6</h2>
+        
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="w-100"></div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+        </div>
+
+        <h2>Fijando el tamaño de la columna central</h2>
+        
+        <div class="row">
+            <div class="col text-right">izquierda</div>
+            <div class="col-10 text-center">centro</div>
+            <div class="col">derecha</div>
+            <div class="w-100"></div>
+            <div class="col text-right">izquierda</div>
+            <div class="col-8 text-center">centro</div>
+            <div class="col">derecha</div>
+            <div class="w-100"></div>
+            <div class="col text-right">izquierda</div>
+            <div class="col-6 text-center">centro</div>
+            <div class="col">derecha</div>
+            <div class="w-100"></div>
+            <div class="col text-right">izquierda</div>
+            <div class="col text-center">centro</div>
+            <div class="col">derecha</div>
+        </div>
+
+        <h2>Ajustando el tamaño al contenido</h2>
+
+        <div class="row justify-content-md-center">
+            <div class="col-2">tamaño 2</div>
+            <div class="col-md-auto">tamaño ajustado al contenido</div>
+            <div class="col-2">tamaño 2</div>
+        </div>
+        <div class="row">
+            <div class="col">tamaño que se expande</div>
+            <div class="col-md-auto">tamaño ajustado al contenido</div>
+            <div class="col-2">tamaño 2</div>
         </div>
 
         <h2>Multidispositivo normal</h2>
 
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">1 Resize your viewport or check it out on your phone for an example.</div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">2</div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">3</div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">1 Resize your viewport or check it out on your phone for an example.</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">5</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">6</div>
         </div>
 
-        <h2>Multidispositivo con clearfix</h2>
+        <h2>Alineación vertical</h2>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">1 Resize your viewport or check it out on your phone for an example.</div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">2</div>
-            <div class="clearfix hidden-lg-up"></div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">3</div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">4</div>
+        <div class="row align-items-start" style="height: 7em; border: 1px solid grey;">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+        <div class="row align-items-center" style="height: 7em; border: 1px solid grey;">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+        <div class="row align-items-end" style="height: 7em; border: 1px solid grey;">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+        <div class="row" style="height: 7em; border: 1px solid grey;">
+            <div class="col align-self-start">1</div>
+            <div class="col align-self-center">2</div>
+            <div class="col align-self-end">3</div>
         </div>
 
+        <h2>Alineación horizontal</h2>
+
+        <div class="row justify-content-start" style="height: 7em; border: 1px solid grey;">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+        </div>
+        <div class="row justify-content-center" style="height: 7em; border: 1px solid grey;">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+        </div>
+        <div class="row justify-content-end" style="height: 7em; border: 1px solid grey;">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+        </div>
+        <div class="row justify-content-around" style="height: 7em; border: 1px solid grey;">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+        </div>
+        <div class="row justify-content-between" style="height: 7em; border: 1px solid grey;">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+        </div>
+            
         <h2>Huecos con offset</h2>
 
         <div class="row">
             <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
         </div>
         <div class="row">
-            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+            <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
+            <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
         </div>
         <div class="row">
-            <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
-        </div>
-
-        <h2>push & pull</h2>
-
-        <div class="row">
-            <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
-            <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+            <div class="col-auto mr-auto">.col-auto .mr-auto</div>
+            <div class="col-auto">.col-auto</div>
         </div>
 
     </div>

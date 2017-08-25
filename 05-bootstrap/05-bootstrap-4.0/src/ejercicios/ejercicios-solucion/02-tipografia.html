@@ -8,7 +8,7 @@
     <title>Tipografía</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +33,15 @@
         <h5>h5.Cabeceras con Bootstrap <small>Texto secundario con small</small></h5>
         <h6>h6.Cabeceras con Bootstrap <small>Texto secundario con small</small></h6>
 
+        <h1 class="display-1">h1 con display 1</h1>
+        <h2 class="display-1">h2 con display 1</h2>
+        <h1 class="display-2">h1 con display 2</h1>
+        <h2 class="display-2">h2 con display 2</h2>
+        <h1 class="display-3">h1 con display 3</h1>
+        <h2 class="display-3">h2 con display 3</h2>
+        <h1 class="display-4">h1 con display 4</h1>
+        <h2 class="display-4">h2 con display 4</h2>
+
         <h2>PÁRRAFOS</h2>
 
         <p class="lead">Párrafo con class="lead"
@@ -41,13 +50,15 @@
             <br />bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
         <p class="small">Párrafo con class="small"
             <br />bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+        <p class="mark">Párrafo con class="mark"
+                <br />bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
 
         <h2>TEXTOS EN LÍNEA</h2>
 
         <p>Puedes usar el tag strong para darle <strong>mucho émfasis</strong> a un texto</p>
         <p>Puedes usar el tag em para darle <em>émfasis</em> a un texto</p>
-        <p>Puedes usar el tag mark para
-            <mark>marcar</mark> un texto</p>
+        <p>Puedes usar el tag small para <small>empequeñecer</small> un texto</p>
+        <p>Puedes usar el tag mark para <mark>marcar</mark> un texto</p>
         <p>Puedes usar el tag ins para <ins>insertar</ins> un texto</p>
         <p>Puedes usar el tag del para <del>borrar</del> un texto</p>
 
@@ -58,6 +69,11 @@
         <p class="text-right">Texto alineado a la derecha.</p>
         <p class="text-justify">Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. </p>
         <p class="text-nowrap">Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. </p>
+
+        <p class="text-sm-right">Texto alineado a la derecha para viewports SM o mayores.</p>
+        <p class="text-md-right">Texto alineado a la derecha para viewports MD o mayores.</p>
+        <p class="text-lg-right">Texto alineado a la derecha para viewports LG o mayores.</p>
+        <p class="text-xl-right">Texto alineado a la derecha para viewports XL o mayores.</p>
 
         <h2>CAPITALIZACIÓN</h2>
 
@@ -72,25 +88,38 @@
         <h2>DIRECCIONES</h2>
 
         <address>
-        <strong>Twitter, Inc.</strong><br>
-        795 Folsom Ave, Suite 600<br>
-        San Francisco, CA 94107<br>
-        <abbr title="Phone">P:</abbr> (123) 456-7890
-      </address>
+            <strong>Twitter, Inc.</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
 
         <address>
-        <strong>Full Name</strong><br>
-        <a href="mailto:#">first.last@example.com</a>
-      </address>
+            <strong>Full Name</strong><br>
+            <a href="mailto:#">first.last@example.com</a>
+        </address>
 
         <h2>CITAS</h2>
 
-        <blockquote class="blockquote-reverse">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        <blockquote class="blockquote text-right">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
         </blockquote>
 
         <h2>LISTAS</h2>
+
+        <ul class="list-unstyled">
+            <li>Peras</li>
+            <li>Manzanas
+                <ul>
+                    <li>Fuji</li>
+                    <li>Goldem</li>
+                    <li>Ambrosía</li>
+                </ul>
+            </li>
+            <li>Naranjas</li>
+            <li>Platanos</li>
+        </ul>
 
         <ul class="list-inline">
             <li class="list-inline-item">Peras</li>
