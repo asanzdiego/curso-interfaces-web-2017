@@ -8,7 +8,7 @@
     <title>Helpers</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,44 +18,76 @@
     <![endif]-->
 </head>
 
+<style>
+    [class^="border"] {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        margin: .25rem;
+        background-color: #f5f5f5;
+        border: 1px solid;
+    }
+</style>
+
 <body>
 
     <div class="container">
 
         <h1>Helpers</h1>
 
+        <div class="fixed-top">.fixed-top</div>
+        <div class="fixed-bottom">.fixed-bottom</div>
+
+        <h2>Bordes</h2>
+
+        <span class="border"></span>
+        <span class="border-0"></span>
+        <span class="border-top-0"></span>
+        <span class="border-right-0"></span>
+        <span class="border-bottom-0"></span>
+        <span class="border-left-0"></span>
+
+        <h2>Bordes coloreados</h2>
+        
+        <span class="border border-primary"></span>
+        <span class="border border-secondary"></span>
+        <span class="border border-success"></span>
+        <span class="border border-danger"></span>
+        <span class="border border-warning"></span>
+        <span class="border border-info"></span>
+        <span class="border border-light"></span>
+        <span class="border border-dark"></span>
+        <span class="border border-white"></span>
+
         <h2>Textos coloreados</h2>
 
-        <p class="text-muted">text-muted</p>
-        <p class="text-primary">text-primary</p>
-        <p class="text-success">text-success</p>
-        <p class="text-info">text-info</p>
-        <p class="text-warning">text-warning</p>
-        <p class="text-danger">text-danger</p>
+        <p class="text-primary">.text-primary</p>
+        <p class="text-secondary">.text-secondary</p>
+        <p class="text-success">.text-success</p>
+        <p class="text-danger">.text-danger</p>
+        <p class="text-warning">.text-warning</p>
+        <p class="text-info">.text-info</p>
+        <p class="text-light">.text-light</p>
+        <p class="text-dark">.text-dark</p>
 
         <h2>Colores de fondo</h2>
 
-        <p class="bg-primary">bg-primary</p>
-        <p class="bg-success">bg-success</p>
-        <p class="bg-info">bg-info</p>
-        <p class="bg-warning">bg-warning</p>
-        <p class="bg-danger">bg-danger</p>
+        <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+        <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+        <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+        <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+        <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
+        <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+        <div class="p-3 mb-2 bg-light text-gray-dark">.bg-light</div>
+        <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+        <div class="p-3 mb-2 bg-white text-gray-dark">.bg-white</div>
 
         <h2>float y clearfix</h2>
 
-        <div class="pull-xs-left">pull-left</div>
-        <div class="pull-xs-right">pull-right</div>
-        <p class="text-danger">antes del clearfix</p>
-        <div class="clearfix"></div>
-        <p class="text-success">después del clearfix</p>
-
-        <h2>Mostrar y ocultar</h2>
-
-        <p>class=invisible > visibility: hidden (no desaparece del dom) </p>
-        <div class="invisible">invisible</div>
-
-        <p>class=text-hide útil cuando quieres una imagen de fondo</p>
-        <div class="text-hide">text-hide</div>
+        <div class="bg-info clearfix">
+            <button class="btn btn-secondary float-left">Example Button floated left</button>
+            <button class="btn btn-secondary float-right">Example Button floated right</button>
+        </div>
 
         <h2>Accesibilidad</h2>
 
@@ -63,6 +95,24 @@
 
         <p>class=sr-only > solo aparece en los lectores de pantalla</p>
         <p>class=sr-only-focusable > aparece cuando se hace foco sobre él</p>
+
+        <h2>Tamaños</h2>
+
+        <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
+        <div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
+        <div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
+        <div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
+        
+        <br />
+        <br />
+        
+        <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+            <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
+            <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
+            <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
+            <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+        </div>
+            
     </div>
 
 
