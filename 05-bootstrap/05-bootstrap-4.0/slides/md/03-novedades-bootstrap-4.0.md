@@ -126,7 +126,7 @@ Extra large (XL) ≥1200px
 
 ## Imágenes
 
-- Remplazada clase .image-responsive por **.image-fluid**.
+- Remplazada clase .image-responsive por **.img-fluid**.
 
 - Remplazada clase .img-rounded por **.rounded**.
 
