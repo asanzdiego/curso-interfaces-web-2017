@@ -165,6 +165,18 @@ bootstrap/
     - El contenido se debe colocar entre .row y deben de ser **hijos inmediatos**.
     - Si hay más de 12 columnas en una .row, esta son desplazadas abajo.
 
+## Grid system (III)
+
+- Se puede configurar dependiendo del tamaño de la pantalla.
+
+----------- ---- -------
+Extra small (XS) <544px
+Small       (SM) ≥544px
+Medium      (MD) ≥768px
+Large       (LG) ≥992px
+Extra large (XL) ≥1200px
+----------- ---- -------
+
 
 
 # Acerca de

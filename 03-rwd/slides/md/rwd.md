@@ -165,7 +165,7 @@ body {
 
 h1 {
   font-size: 1.3846 em;
-  /* 18px/13px = 1.3846em */
+  /* 18px/13px = 1.3846 em */
 }
 ~~~
 
@@ -186,10 +186,11 @@ h1 {
 
 ## Ejemplo
 
-- 1 columna para xs (\<768px)
-- 2 columnas para sm (≥768px)
-- 3 columnas para md (≥992px)
-- 4 columnas para lg (≥1200px)
+- 1 columna para xs (\<544px)
+- 2 columnas para sm (≥544px)
+- 3 columnas para md (≥768px)
+- 4 columnas para lg (≥992px)
+- 6 columnas para xl (≥1200px)
 
 ## Uso de clases
 
@@ -200,10 +201,12 @@ h1 {
 
 ~~~
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">1</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">2</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">3</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">4</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">1</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">2</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">3</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">4</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">5</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">6</div>
 </div>
 ~~~
 

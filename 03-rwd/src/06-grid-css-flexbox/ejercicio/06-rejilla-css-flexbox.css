@@ -1,0 +1,23 @@
+div {
+  box-sizing: border-box;
+}
+.row {
+    
+}
+.element {
+    border: 10px solid green;
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
+    float:left
+}
+.image {
+    border: 10px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+.text {
+    border: 10px solid red;
+    padding: 10px;
+    margin: 10px;
+}

@@ -268,24 +268,13 @@ Extra large (XL) ≥1200px
 - Ejercicios:
     - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src>
 
-## Bibliografía (I)
-
-- 10 novedades de Bootstrap 4.0:
-    - <https://platzi.com/blog/novedades-bootstrap/>
-
-- Bootstrap 4.0, novedades y ejemplos:
-    - <http://funnyfrontend.com/bootstrap-4-alpha-novedades-y-ejemplos/>
-
-- El futuro del CSS Grid Layout
-    - <https://carlosazaustre.es/blog/css-grid-layout-css/>
-
-## Bibliografía (II)
+## Bibliografía
 
 - El gran poder de CSS3: FlexBox
     - <https://filisantillan.com/el-gran-poder-de-css3-flexbox/>
 
+- El futuro del CSS Grid Layout
+    - <https://carlosazaustre.es/blog/css-grid-layout-css/>
+
 - Los 5 patrones del Responsive Design con FlexBox
     - <https://carlosazaustre.es/blog/los-5-patrones-del-responsive-design/>
-
-- Learn CSS Flexbox in 3 Minutes
-    - <https://medium.com/learning-new-stuff/learn-css-flexbox-in-3-minutes-c616c7070672>
