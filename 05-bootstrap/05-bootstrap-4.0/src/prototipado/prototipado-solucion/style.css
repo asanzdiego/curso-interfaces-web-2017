@@ -1,0 +1,53 @@
+  .wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .arrow {
+    position: relative;
+    background: white;
+    height: 1px;
+    top: 15px;
+  }
+  
+  .arrow:after,
+  .arrow:before {
+    right: 100%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .arrow.left:after,
+  .arrow.left:before {
+    right: 100%;
+  }
+  
+  .arrow.right:after,
+  .arrow.right:before {
+    left: 100%;
+  }
+  
+  .arrow.left:after {
+    border-color: transparent;
+    border-right-color: white;
+    border-width: 5px;
+    margin-top: -5px;
+  }
+  
+  .arrow.left:before,
+  .arrow.right:before {
+    border-color: transparent;
+    border-width: 5px;
+    margin-top: -5px;
+  }
+  
+  .arrow.right:after,
+  .arrow.right:before {
+    border-left-color: white;
+  }
+  
