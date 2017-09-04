@@ -19,12 +19,12 @@
     <div class="text-right">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#filtrar">
             <img src="./../img/ic_filter_list_white_24px.svg" alt="Filtrar" />
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#ayuda">
             <img src="./../img/ic_help_outline_white_24px.svg" alt="Ayuda" />
           </a>
         </li>
@@ -32,13 +32,192 @@
     </div>
   </nav>
 
+  <div class="modal fade" id="filtrar" tabindex="-1" role="dialog" aria-labelledby="filtrarLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header sr-only">
+          <h5 class="modal-title" id="filtrarLabel">Ventana de filtrado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <p><strong>Horarios de salida del vuelo:</strong></p>
+            <div class="row mb-1">
+              <div class="col ml-3">Horarios de mañana:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="mañanasi" autocomplete="off">No
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="mañanano" autocomplete="off" checked>Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col ml-3">Horarios de tarde:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="tardesi" autocomplete="off" checked>No
+                  </label>
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="tardeno" autocomplete="off">Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col ml-3">Horarios de noche:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="nochesi" autocomplete="off">No
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="nochesno" autocomplete="off" checked>Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <p><strong>Tipos de billete:</strong></p>
+            <div class="row mb-1">
+              <div class="col ml-3">Mostrar con escalas:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="escalassi" autocomplete="off">No
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="escalasno" autocomplete="off" checked>Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col ml-3">Clase turista:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="turistasi" autocomplete="off">No
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="turistano" autocomplete="off" checked>Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col ml-3">Clase business:</div>
+              <div class="col text-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="businesssi" autocomplete="off">No
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="businessno" autocomplete="off" checked>Si
+                  </label>
+                </div>
+              </div>
+            </div>
+            <p><strong>Ordenar por:</strong></p>
+            <div class="row mb-1">
+              <div class="col ml-3 text-center">
+                <div data-toggle="buttons">
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="salida" autocomplete="off">Salida
+                  </label>
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="llegada" autocomplete="off">Llegada
+                  </label>
+                  <label class="btn btn-info active">
+                    <input type="radio" name="options" id="precio" autocomplete="off" checked>Precio
+                  </label>
+                  <label class="btn btn-info">
+                    <input type="radio" name="options" id="Llegada" autocomplete="off">Llegada
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="ayudaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header sr-only">
+          <h5 class="modal-title" id="ayudaLabel">Ventana de ayuda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="input-group">
+              <label for="buscar" class="sr-only">Buscar</label>
+              <input type="text" class="form-control" id="buscar" placeholder="Busca en toda la FAQ">
+              <div class="input-group-addon btn btn-danger">
+                <img src="./../img/ic_search_white_24px.svg" alt="Buscar" />
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row border border-secondary border-bottom pb-3">
+              <div class="col-1">
+                <img src="./../img/ic_warning_black_24px.svg" alt="Atención" />
+              </div>
+              <div class="col">
+                <strong>Solo se muestran las preguntas relacionadas con esta página. Si tienes otras dudas utiliza 
+                  el buscador de arriba o ponte en contacto con nuestro servicio de atencion al cliente.</strong>
+              </div>
+            </div>
+            <div class="row border border-secondary border-bottom mt-3">
+              <div class="col">
+                <p><strong>¿Cómo utilizo el buscador?</strong></p>
+                <p>Rellena origen, destino, fecha, número de pasajeros y pulsa sobre el botón rosa y redondo con la lupa para
+                  buscar.
+                </p>
+                <p><strong>¿Qué está incluido en el precio?</strong></p>
+                <p>En nuestros precios tienes incluido todo: el billete, la facturación de una maleta de hasta 18KG, las tasas
+                  y los impuestos.</p>
+                <p><strong>¿Puedo cancelar/cambiar el billete una vez comprado?</strong></p>
+                <p>No, nuestros precios son los más baratos del mercado, pero una vez comprados, no se pueden ni cancelar ni
+                  cambiar.
+                </p>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <p><strong>Ponte en contacto con nuestro servicio de atención al cliente:</strong></p>
+                <p><a href="tel:+34912123123"><img src="./../img/ic_phone_black_24px.svg" alt="" /> +34 912 123 123</a></p>
+                <p><a href="mailto:help@myflyghtfinder.com"><img src="./../img/ic_mail_black_24px.svg" alt="" /> help@myflyghtfinder.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="card text-white bg-info m-3">
     <div class="card-body">
       <div class="row text-center">
         <div class="col">
           MAD<br /> Madrid
           <br /> (España)<br />
-          <img src="./../img/ic_date_range_white_24px.svg" alt="Fecha"/> 01/06/2016
+          <img src="./../img/ic_date_range_white_24px.svg" alt="Fecha" /> 01/06/2016
         </div>
         <div class="col">
           <img src="./../img/ic_flight_white_24px_bis.svg" alt="" /><br />
@@ -47,10 +226,103 @@
         <div class="col">
           BCN<br /> Barcelona
           <br /> (España)<br />
-          <img src="./../img/ic_supervisor_account_white_24px.svg" alt="Pasajeros"/> 2 Pasajeros
+          <img src="./../img/ic_supervisor_account_white_24px.svg" alt="Pasajeros" /> 2 Pasajeros
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="list-group m-3 text-dark">
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Ryanair 06:45 Turista">
+      <div class="row text-center">
+        <div class="col">
+          MAD 06:45<br /> Ryanair - 1 escala
+        </div>
+        <div class="col">
+          1h 15min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 08:00<br /> Turista - 90 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Iberia 06:45 Turista">
+      <div class="row text-center">
+        <div class="col">
+          MAD 06:45<br /> Iberia - Vuelo Directo
+        </div>
+        <div class="col">
+          1h 15min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 08:00<br /> Turista - 120 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Iberia 21:40 Turista">
+      <div class="row text-center">
+        <div class="col">
+          MAD 21:40<br /> Iberia - Vuelo Directo
+        </div>
+        <div class="col">
+          1h 15min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 22:55<br /> Turista - 120 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Air Europa 07:30 Turista">
+      <div class="row text-center">
+        <div class="col">
+          MAD 07:30<br /> Air Europa - Vuelo Directo
+        </div>
+        <div class="col">
+          1h 20min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 08:50<br /> Turista - 130 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Iberia 06:45 Business">
+      <div class="row text-center">
+        <div class="col">
+          MAD 06:45<br /> Iberia - Vuelo Directo
+        </div>
+        <div class="col">
+          1h 15min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 08:00<br /> Business - 160 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
+    <a href="03-pasajeros.html" class="list-group-item list-group-item-action list-group-item-info" title="Comprar Iberia 21:40 Business">
+      <div class="row text-center">
+        <div class="col">
+          MAD 21:40<br /> Iberia - Vuelo Directo
+        </div>
+        <div class="col">
+          1h 15min
+          <div class="arrow right dark">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN 22:55<br /> Business - 160 €
+          <img src="./../img/ic_shopping_cart_danger_24px.svg" alt="Comprar" />
+        </div>
+      </div>
+    </a>
   </div>
 
   <!-- Optional JavaScript -->
