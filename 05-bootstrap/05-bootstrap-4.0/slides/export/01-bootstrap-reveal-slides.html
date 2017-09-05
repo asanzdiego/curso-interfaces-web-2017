@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc">
+  <meta name="description" content="Bootstrap, un framework CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Bootstrap, un framework CSS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js-menu/menu.css">
+  <link rel="stylesheet" href="../lib/reveal.js/css/theme/league.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
+  
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js/css/print/pdf.css' : '../lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <style type="text/css">
+    code{
+      white-space: pre;
+    }
+    .reveal pre code {
+      background: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 350% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print {
+      #only-print-parent { display: table !important; }
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 400% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="../lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Bootstrap, un framework CSS</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Septiembre 2016</h3>
+    </div>
+</section>
+
+<section><section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Boostrap es un <strong>framework CSS, liberado por Twitter</strong> y muy popular hoy en día.</p></li>
+<li><p>Está pensado para hacer un desarrollo <strong>Mobile First</strong></p></li>
+</ul>
+</section><section id="ventajas-i" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Ventajas (I)</h2>
+<ul>
+<li><p>Utiliza un conjunto de <strong>buenas prácticas</strong> que perdurarán en el tiempo.</p></li>
+<li><p>Utiliza <strong>HTML5 y CSS3</strong></p></li>
+</ul>
+</section><section id="ventajas-ii" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Ventajas (II)</h2>
+<ul>
+<li><p>Implementa un <strong>sistema de rejillas</strong>, que por defecto incluye 12 columnas.</p></li>
+<li><p>Utiliza <strong>SASS</strong>, un preprocesador CSS.</p></li>
+<li><p>Es <strong>OOCSS</strong>, osea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.</p></li>
+</ul>
+</section><section id="ventajas-iii" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Ventajas (III)</h2>
+<ul>
+<li><p>Hay una enorme <strong>comunidad detrás</strong>.</p></li>
+<li><p>Herramienta <strong>sencilla y ágil</strong> para construir sitios web e interfaces.</p></li>
+<li><p>Tiene un <strong>theme</strong> por defecto bastante optimizado y que puedes modificar fácilmente.</p></li>
+</ul>
+</section><section id="desventajas-i" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Desventajas (I)</h2>
+<ul>
+<li><p>Es necesario <strong>adaptarse a su forma de trabajo</strong>, si bien su curva de aprendizaje es liviana, deberás comprender y familiarizarte con su estructura y nomenclatura.</p></li>
+<li><p>Debes adaptar tu diseño a un grid de <strong>12 columnas</strong>.</p></li>
+<li><p>Trae <strong>anchos y márgenes por defecto</strong>, que a veces son un poco tediosos de cambiar.</p></li>
+</ul>
+</section><section id="desventajas-ii" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Desventajas (II)</h2>
+<ul>
+<li><p>Es complicado <strong>cambiar de versión</strong> si has realizado modificaciones profundas sobre el core.</p></li>
+<li><p>Si necesitas <strong>añadir componentes que no existen</strong>, debes hacerlos tú mismo en CSS y cuidar de que mantenga coherencia con tu diseño y cuidando el responsive.</p></li>
+<li><p>A veces <strong>implementar un diseño impuesto</strong>, puede llegar a resultar bastante difícil, al menos si eres un perfeccionista.</p></li>
+</ul>
+</section></section>
+<section><section id="utilización" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Utilización</h1></section><section id="documentación" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Documentación</h2>
+<ul>
+<li><p>La documentación de Bootstrap es muy buena.</p></li>
+<li><p>Para aprender Bootstrap lo mejor es hacer ejercicios y utilizar dicha documentación.</p></li>
+</ul>
+</section><section id="descarga" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Descarga</h2>
+<ul>
+<li><a href="https://github.com/twbs/bootstrap/releases" class="uri">https://github.com/twbs/bootstrap/releases</a></li>
+</ul>
+<pre><code>bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   ├── bootstrap-theme.css
+│   └── bootstrap-theme.min.css
+├── js/
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+└── fonts/</code></pre>
+</section><section id="plantilla-básica" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Plantilla básica</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript --&gt;
+    &lt;!-- jQuery first, then Popper.js, then Bootstrap JS --&gt;
+    &lt;script src=&quot;jquery-3.2.1.slim.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;umd/popper.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section><section id="html5-doctype" class="slide level2">
+<h2><span class="header-section-number">3.4</span> HTML5 doctype</h2>
+<ul>
+<li>Bootstrap necesita un <strong>doctype de HTML5</strong>:</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  ...
+&lt;/html&gt;</code></pre>
+</section><section id="grid-system-i" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Grid system (I)</h2>
+<ul>
+<li>Bootstrap incluye un <strong>sistema de rejilla responsive y mobile first de 12 columnas</strong>.</li>
+</ul>
+</section><section id="grid-system-ii" class="slide level2">
+<h2><span class="header-section-number">3.6</span> Grid system (II)</h2>
+<ul>
+<li><p>El sistema de rejilla de Bootstrap <strong>funciona así</strong>:</p>
+<ul>
+<li>Se deben colocar .row dentro de un <strong>.container</strong> (ancho fijo) o <strong>.container-fluid</strong> (ancho completo).</li>
+<li>Utilice <strong>.row</strong> para crear grupos horizontales.</li>
+<li>El contenido se debe colocar entre .row y deben de ser <strong>hijos inmediatos</strong>.</li>
+<li>Si hay más de 12 columnas en una .row, esta son desplazadas abajo.</li>
+</ul></li>
+</ul>
+</section><section id="grid-system-iii" class="slide level2">
+<h2><span class="header-section-number">3.7</span> Grid system (III)</h2>
+<ul>
+<li>Se puede configurar dependiendo del tamaño de la pantalla.</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Extra small</td>
+<td style="text-align: left;">(XS)</td>
+<td style="text-align: left;">&lt;544px</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small</td>
+<td style="text-align: left;">(SM)</td>
+<td style="text-align: left;">≥544px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">(MD)</td>
+<td style="text-align: left;">≥768px</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Large</td>
+<td style="text-align: left;">(LG)</td>
+<td style="text-align: left;">≥992px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Extra large</td>
+<td style="text-align: left;">(XL)</td>
+<td style="text-align: left;">≥1200px</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">4.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">4.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía" class="slide level2">
+<h2><span class="header-section-number">4.3</span> Bibliografía</h2>
+<ul>
+<li>Página oficial de Bootstrap:
+<ul>
+<li><a href="http://getbootstrap.com" class="uri">http://getbootstrap.com</a></li>
+</ul></li>
+<li>Bootstrap sí, pero no
+<ul>
+<li><a href="http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation" class="uri">http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation</a></li>
+</ul></li>
+<li>Ventajas y desventajas de usar Bootstrap
+<ul>
+<li><a href="http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap" class="uri">http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        pdfMaxPagesPerSlide: 1,
+transition: 'convex',
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1024,
+        height: 576,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.3,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 1.9,
+
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: false,
+
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: false,
+
+            // Add markers to the slide titles to indicate the
+            // progress through the presentation
+            markers: false,
+
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+
+            // Specifies the themes that will be available in the themes
+            // menu panel. Set to 'false' to hide themes panel.
+            themes: [
+                { name: 'Black', theme: '../lib/reveal.js/css/theme/black.css' },
+                { name: 'White', theme: '../lib/reveal.js/css/theme/white.css' },
+                { name: 'League', theme: '../lib/reveal.js/css/theme/league.css' },
+                { name: 'Sky', theme: '../lib/reveal.js/css/theme/sky.css' },
+                { name: 'Beige', theme: '../lib/reveal.js/css/theme/beige.css' },
+                { name: 'Simple', theme: '../lib/reveal.js/css/theme/simple.css' },
+                { name: 'Serif', theme: '../lib/reveal.js/css/theme/serif.css' },
+                { name: 'Blood', theme: '../lib/reveal.js/css/theme/blood.css' },
+                { name: 'Night', theme: '../lib/reveal.js/css/theme/night.css' },
+                { name: 'Moon', theme: '../lib/reveal.js/css/theme/moon.css' },
+                { name: 'Solarized', theme: '../lib/reveal.js/css/theme/solarized.css' }
+            ],
+
+            // Specifies if the transitions menu panel will be shown.
+            transitions: true,
+
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: true,
+
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
+          //{ src: '../lib/reveal.js/plugin/search/search.js', async: true },
+          { src: '../lib/reveal.js-menu/menu.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

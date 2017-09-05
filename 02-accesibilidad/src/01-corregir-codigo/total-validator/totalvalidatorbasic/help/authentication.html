@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Authentication Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Authentication tab of the Pro tool are described below.</p>
+
+<p class="centered"><img alt="Authentication tab" src="../images/tool_authtab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="user"></a>Web server user/password</h2>
+<p>Many websites have secure areas that use BASIC, DIGEST or Windows (NTLM)
+authentication to protect them. In order to validate pages
+within these areas, enter the required user name and password here.</p>
+<p>
+When connecting to a server using Windows (NTLM) authentication you
+may need to supply a domain name. In this case enter the domain name
+and user name separated by a backslash into the user name field. For
+example <code>MYDOMAIN\myuser</code>.</p>
+<p>
+Note that although the password is masked with asterisks when you type it in, it
+will still be stored as plain text if you <a href="menu.html#save">save your workspace</a> when
+you exit the tool. So you may wish to use the <a href="#interactive">interactive option</a>
+instead.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="interactive"></a>Interactive authentication</h2>
+<p>
+Rather than entering authentication details above, you can choose to be
+prompted for them each time they are needed using this option. In this case a dialog
+box will be displayed with the page you are trying to access and the 'realm' that it
+resides in, prompting you to enter a valid user/password combination.</p>
+<p>
+This may also work with some authenticating proxy servers. If so, any proxy authentication
+details you enter will be cached in memory until the tool is restarted to save you having to
+enter them more than once.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="clientcert"></a>Client certificate</h2>
+<p>
+Some websites (typically on intranets) require that the browser is authenticated with a digital
+certificate. If this is the case for your website then complete this section so that Total Validator will be
+authenticated and able to validate the website.</p>
+<p>
+Enter the path of your certificate or 'Browse' to it and then enter the password used to protect it.
+Note that this certificate must be in standard #pkcs12 format to be accepted, so you may have to
+convert it first.</p>
+<p>
+If the Certificate Authority (CA) used to sign your Client certificate is a third party such as Verisign,
+then there should be nothing else to do. However, normally organisations use their own CA and so you need
+to tell Total Validator about this using a 'Trust Store' by filling in the additional Trust Store and Password fields.</p>
+<p>
+A Trust Store is a standard Java Key Store (<code>.jks</code> file) which can be created and populated with your
+CA's public certificate to create a Trust Store. Here is an example of how to do this using the Java
+<code>keytool</code> command found in the standard Java installation folder to create a store <code>store.jks</code>
+with a password of <code>pwd</code>:</p>
+<code>keytool -importcert -keystore store.jks -alias CA -file ca.crt -v -noprompt -storepass pwd</code>
+<p>If there is a certificate chain then repeat the above for all of the internal certificates in the chain,
+using a unique alias for each one</p>
+<p>
+If your website's SSL certificate is self-signed you will also need to add the SSL certificate to the
+Trust Store as well:</p>
+<code>keytool -importcert -keystore store.jks -alias SSL -file ssl-cert.pem -v -noprompt -storepass pwd</code>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><span class="current">Authentication tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#user">Web server</a></li>
+        <li class="lhitem"><a href="#interactive">Interactive</a></li>
+        <li class="lhitem"><a href="#clientcert">Client certificate</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

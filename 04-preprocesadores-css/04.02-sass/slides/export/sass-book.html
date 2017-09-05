@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Sass, un preprocesador CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Sass, un preprocesador CSS</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Sass, un preprocesador CSS</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Septiembre 2017</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#ventajas"><span class="toc-section-number">2.2</span> Ventajas</a></li>
+</ul></li>
+<li><a href="#instalación"><span class="toc-section-number">3</span> Instalación</a><ul>
+<li><a href="#instalar-ruby"><span class="toc-section-number">3.1</span> Instalar Ruby</a></li>
+<li><a href="#instalar-sass"><span class="toc-section-number">3.2</span> Instalar Sass</a></li>
+<li><a href="#preprocesar"><span class="toc-section-number">3.3</span> Preprocesar</a></li>
+<li><a href="#probar-sin-instalar"><span class="toc-section-number">3.4</span> Probar sin instalar</a></li>
+</ul></li>
+<li><a href="#características"><span class="toc-section-number">4</span> Características</a><ul>
+<li><a href="#variables"><span class="toc-section-number">4.1</span> Variables</a></li>
+<li><a href="#valores-por-defecto"><span class="toc-section-number">4.2</span> Valores por defecto</a></li>
+<li><a href="#valores-por-defecto-1"><span class="toc-section-number">4.3</span> Valores por defecto</a></li>
+<li><a href="#scope"><span class="toc-section-number">4.4</span> Scope</a></li>
+<li><a href="#reglas-anidadas"><span class="toc-section-number">4.5</span> Reglas anidadas</a></li>
+<li><a href="#parciales"><span class="toc-section-number">4.6</span> Parciales</a></li>
+<li><a href="#imports"><span class="toc-section-number">4.7</span> Imports</a></li>
+<li><a href="#parent"><span class="toc-section-number">4.8</span> Parent</a></li>
+<li><a href="#mixins"><span class="toc-section-number">4.9</span> Mixins</a></li>
+<li><a href="#argumentos-variables"><span class="toc-section-number">4.10</span> Argumentos variables</a></li>
+<li><a href="#pasar-contenido-a-mixin"><span class="toc-section-number">4.11</span> Pasar contenido a mixin</a></li>
+<li><a href="#interpolación"><span class="toc-section-number">4.12</span> Interpolación</a></li>
+<li><a href="#extend"><span class="toc-section-number">4.13</span> Extend</a></li>
+<li><a href="#operadores"><span class="toc-section-number">4.14</span> Operadores</a></li>
+<li><a href="#funciones"><span class="toc-section-number">4.15</span> Funciones</a></li>
+<li><a href="#definir-funciones"><span class="toc-section-number">4.16</span> Definir funciones</a></li>
+<li><a href="#if"><span class="toc-section-number">4.17</span> IF</a></li>
+<li><a href="#if-1"><span class="toc-section-number">4.18</span> IF</a></li>
+<li><a href="#for"><span class="toc-section-number">4.19</span> FOR</a></li>
+<li><a href="#each"><span class="toc-section-number">4.20</span> EACH</a></li>
+<li><a href="#while"><span class="toc-section-number">4.21</span> WHILE</a></li>
+<li><a href="#logs"><span class="toc-section-number">4.22</span> logs</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">5</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">5.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">5.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">5.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><span class="header-section-number">1</span> El autor</h1>
+<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+<h2 id="algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+<h2 id="donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción"><span class="header-section-number">2</span> Introducción</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Less es un <strong>pre-procesador de CSS</strong>.</p></li>
+<li><p>Añade características como <strong>variables, mixins, funciones, etc</strong>.</p></li>
+</ul>
+<h2 id="ventajas"><span class="header-section-number">2.2</span> Ventajas</h2>
+<ul>
+<li><p>El CSS es así <strong>más fácil de mantener, personalizable y extensible</strong>.</p></li>
+<li><p>Sass tiene una <strong>sintaxis parecida a CSS</strong>.</p></li>
+<li><p>Es el preprocesador que usa Bootstrap 4.0.</p></li>
+</ul>
+<h1 id="instalación"><span class="header-section-number">3</span> Instalación</h1>
+<h2 id="instalar-ruby"><span class="header-section-number">3.1</span> Instalar Ruby</h2>
+<ul>
+<li>Ubuntu:</li>
+</ul>
+<pre><code>sudo apt-get install ruby-full</code></pre>
+<ul>
+<li><p>Windows: <a href="http://rubyinstaller.org/" class="uri">http://rubyinstaller.org/</a></p></li>
+<li><p>Mac: incluido</p></li>
+</ul>
+<h2 id="instalar-sass"><span class="header-section-number">3.2</span> Instalar Sass</h2>
+<ul>
+<li>Después de instalar Ruby, ejecutar</li>
+</ul>
+<pre><code>sudo gem install sass</code></pre>
+<h2 id="preprocesar"><span class="header-section-number">3.3</span> Preprocesar</h2>
+<ul>
+<li>Un fichero</li>
+</ul>
+<pre><code>sass --watch input.scss:output.css</code></pre>
+<ul>
+<li>Un directorio</li>
+</ul>
+<pre><code>sass --watch input/dir:output/dir</code></pre>
+<h2 id="probar-sin-instalar"><span class="header-section-number">3.4</span> Probar sin instalar</h2>
+<ul>
+<li><a href="http://www.sassmeister.com/" class="uri">http://www.sassmeister.com/</a></li>
+</ul>
+<h1 id="características"><span class="header-section-number">4</span> Características</h1>
+<h2 id="variables"><span class="header-section-number">4.1</span> Variables</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}</code></pre>
+<h2 id="valores-por-defecto"><span class="header-section-number">4.2</span> Valores por defecto</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>$content: &quot;First content&quot;;
+$content: &quot;Second content?&quot; !default;
+$new_content: &quot;First time reference&quot; !default;
+
+#main {
+  content: $content;
+  new-content: $new_content;
+}</code></pre>
+<h2 id="valores-por-defecto-1"><span class="header-section-number">4.3</span> Valores por defecto</h2>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>#main {
+  content: &quot;First content&quot;;
+  new-content: &quot;First time reference&quot;;
+}</code></pre>
+<h2 id="scope"><span class="header-section-number">4.4</span> Scope</h2>
+<ul>
+<li>Los <strong>ámbitos de las variables</strong> en Sass es muy similar a otros lenguajes:</li>
+</ul>
+<pre><code>$var: red;
+
+#page {
+  $var: white;
+  #header {
+    color: $var; // white
+  }
+}</code></pre>
+<h2 id="reglas-anidadas"><span class="header-section-number">4.5</span> Reglas anidadas</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}</code></pre>
+<h2 id="parciales"><span class="header-section-number">4.6</span> Parciales</h2>
+<ul>
+<li>Es un archivo con un guión bajo:</li>
+</ul>
+<pre><code>_partial.scss</code></pre>
+<ul>
+<li>Con esto Sass entiende que es un archivo parcial y que no debe generar CSS.</li>
+</ul>
+<h2 id="imports"><span class="header-section-number">4.7</span> Imports</h2>
+<ul>
+<li>Imaginemos el archivo <strong>_reset.scss</strong>:</li>
+</ul>
+<pre><code>html, body, ul {
+  margin: 0;
+  padding: 0;
+}</code></pre>
+<ul>
+<li>Y el archivo <strong>base.scss</strong>:</li>
+</ul>
+<pre><code>@import &#39;reset&#39;;
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}</code></pre>
+<h2 id="parent"><span class="header-section-number">4.8</span> Parent</h2>
+<ul>
+<li>El código '&amp;' hace referencia al padre:</li>
+</ul>
+<pre><code>a {
+  font-weight: bold;
+  text-decoration: none;
+  &amp;:hover { text-decoration: underline; }
+  body.firefox &amp; { font-weight: normal; }
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>a {
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+body.firefox a { font-weight: normal; }</code></pre>
+<h2 id="mixins"><span class="header-section-number">4.9</span> Mixins</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}</code></pre>
+<h2 id="argumentos-variables"><span class="header-section-number">4.10</span> Argumentos variables</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.shadows {
+  -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}</code></pre>
+<h2 id="pasar-contenido-a-mixin"><span class="header-section-number">4.11</span> Pasar contenido a mixin</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>* html #logo {
+  background-image: url(/logo.gif);
+}</code></pre>
+<h2 id="interpolación"><span class="header-section-number">4.12</span> Interpolación</h2>
+<ul>
+<li>Podemos sustituir el palor de una variable en nombre de propiedades o selectores con #{$variable}:</li>
+</ul>
+<pre><code>$position: left;
+@mixin car($brand, $color) {
+  .coche.#{$brand} {
+    border-#{$position}: 2px;
+    background-color: $color;
+    background-image: url(&#39;img/#{$brand}-#{$color}.png&#39;);
+  }
+}
+@include car(&#39;audi&#39;, &#39;green&#39;);</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.coche.audi {
+  border-left: 2px;
+  background-color: green;
+  background-image: url(&#39;img/audi-green.png&#39;);
+}</code></pre>
+<h2 id="extend"><span class="header-section-number">4.13</span> Extend</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>.message {
+  color: #333;
+}
+.success {
+  @extend .message;
+  border-color: green;
+}
+.error {
+  @extend .message;
+  border-color: red;
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.message, .success, .error, .warning {
+  color: #333;
+}
+.success {
+  border-color: green;
+}
+.error {
+  border-color: red;
+}</code></pre>
+<h2 id="operadores"><span class="header-section-number">4.14</span> Operadores</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>article[role=&quot;main&quot;] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role=&quot;complementary&quot;] {
+  float: right;
+  width: 300px / 960px * 100%;
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>article[role=&quot;main&quot;] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role=&quot;complementary&quot;] {
+  float: right;
+  width: 31.25%;
+}</code></pre>
+<h2 id="funciones"><span class="header-section-number">4.15</span> Funciones</h2>
+<ul>
+<li>Sass dispone de una variedad de <strong>funciones matemáticas, que manipulan cadenas, y que transforman los colores</strong>:</li>
+</ul>
+<pre><code>$base: #f04615;
+$list: 200, 500, 1200;
+
+.class {
+  width: nth($list, 3);
+  color: darken($base, 5%);
+  background-color:
+    lighten($base, 25%);
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.class {
+  width: 1200;
+  color: #f6430f;
+  background-color: #f8a58d;
+}</code></pre>
+<h2 id="definir-funciones"><span class="header-section-number">4.16</span> Definir funciones</h2>
+<ul>
+<li>Podemos definir nuestras propias funciones:</li>
+</ul>
+<pre><code>$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar { width: grid-width(5); }</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>#sidebar {
+  width: 240px;
+}</code></pre>
+<h2 id="if"><span class="header-section-number">4.17</span> IF</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>$animal: cat;
+p {
+  @if 1+1 == 2 { border: 2px solid black; }
+  @if $animal == cat { color: white; }
+}</code></pre>
+<h2 id="if-1"><span class="header-section-number">4.18</span> IF</h2>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>p {
+  border: 2px solid black;
+  color: white;
+}</code></pre>
+<h2 id="for"><span class="header-section-number">4.19</span> FOR</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@for $i from 1 to 4 {
+  .item-#{$i} { width: 2em * $i; }
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.item-1 { width: 2em; }
+.item-2 { width: 4em; }
+.item-3 { width: 6em; }</code></pre>
+<h2 id="each"><span class="header-section-number">4.20</span> EACH</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@each $animal in puma, tiger, salamander {
+  .#{$animal}-icon {
+    background-image: url(&#39;/images/#{$animal}.png&#39;);
+  }
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.puma-icon {
+  background-image: url(&#39;/images/puma.png&#39;); }
+.tiger-icon {
+  background-image: url(&#39;/images/tiger.png&#39;); }
+.salamander-icon {
+  background-image: url(&#39;/images/salamander.png&#39;); }</code></pre>
+<h2 id="while"><span class="header-section-number">4.21</span> WHILE</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>$i: 6;
+@while $i &gt; 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}</code></pre>
+<ul>
+<li>Se compila a:</li>
+</ul>
+<pre><code>.item-6 { width: 12em; }
+.item-4 { width: 8em; }
+.item-2 { width: 4em; }</code></pre>
+<h2 id="logs"><span class="header-section-number">4.22</span> logs</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@debug 10em + 12em;</code></pre>
+<ul>
+<li>Saca por pantalla a la hora de compilar:</li>
+</ul>
+<pre><code>Line 1 DEBUG: 22em</code></pre>
+<h1 id="acerca-de"><span class="header-section-number">5</span> Acerca de</h1>
+<h2 id="licencia"><span class="header-section-number">5.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+<h2 id="fuentes"><span class="header-section-number">5.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/src</a></li>
+</ul></li>
+</ul>
+<h2 id="bibliografía"><span class="header-section-number">5.3</span> Bibliografía</h2>
+<ul>
+<li>Documentación oficial de Sass
+<ul>
+<li><a href="http://sass-lang.com/" class="uri">http://sass-lang.com/</a></li>
+</ul></li>
+<li>Para probar Sass
+<ul>
+<li><a href="http://www.sassmeister.com/" class="uri">http://www.sassmeister.com/</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

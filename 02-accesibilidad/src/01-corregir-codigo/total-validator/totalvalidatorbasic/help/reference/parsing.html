@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="errors warnings problems" />
+  <meta name="description" content="Supported validation problems and their messages for parsing" />
+  <title>Parsing Validation Reference</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../../ReadMe.html"><img src="../../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><a href='../help.html'>Help</a> | <span class='error'>Reference</span> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="parsing"></a>Parsing problems</h2>
+<table class="border">
+<caption>These problems are due to basic formatting issues and appear with any selected validation</caption>
+<thead><tr><th>Code</th><th>Summary</th><th>Details</th></tr></thead><tbody>
+<tr><td><a id="E000">E000</a></td><td>This page was not checked as it appeared to contain a binary file</td><td>One or more characters were discovered which appear to mean that the file is a binary file and not a web page.</td></tr>
+<tr><td>E000</td><td>Page didn't contain any HTML tags to validate</td><td>The page appeared to be empty or didn't contain any HTML tags.</td></tr>
+<tr><td><a id="E001">E001</a></td><td>There is either a &gt; missing or you may have used &lt; instead of &amp;lt; in the content</td><td>A &gt; character was expected but was not found. Sometimes this error appears when you have mismatched quotes, but more often it is caused by using a &lt; character in the text. The &lt; character should only be used to start a new tag. Within text you should use the character reference &amp;lt; instead.</td></tr>
+<tr><td><a id="E002">E002</a></td><td>There is either a &lt; missing or you may have used &gt; instead of &amp;gt; in the content</td><td>A &lt; character was expected but was not found. Sometimes this error appears when you have mismatched quotes, but more often it is caused by using a &gt; character in the text. The &gt; character should only be used to end a tag. Within text you should use the character reference &amp;gt; instead.</td></tr>
+<tr><td><a id="E003">E003</a></td><td>There is either an extra &lt; or you may have used &lt; instead of &amp;lt; in the content</td><td>A &lt; character was found in an unexpected place. This is often caused by using a &lt; character in the text. The &lt; character should only be used to start a new tag. Within text you should use the character reference &amp;lt; instead.</td></tr>
+<tr><td><a id="E004">E004</a></td><td>There is either an extra &gt; or you may have used &gt; instead of &amp;gt; in the content</td><td>A &gt; character was found in an unexpected place. This is often caused by using a &gt; character in the text. The &gt; character should only be used to end a tag. Within text you should use the character reference &amp;gt; instead.</td></tr>
+<tr><td><a id="E005">E005</a></td><td>Extra quote character found or quote character missing</td><td>There is either an unnecessary extra single or double quote character or there is a missing quote. This may be caused by putting single or double quote characters within quoted text e.g. "Mary said "hello" to her friends". In this case you should replace the quote character with the character reference equivalent, e.g. "Mary said &amp;#34;hello&amp;#34; to her friends". Note that this error may cause several others to appear that can all be fixed by correcting this issue. See <a target="help" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2</a> (displayed in new window).</td></tr>
+<tr><td><a id="E006">E006</a></td><td>The attribute's value is missing</td><td>It appears that you have specified an attribute name but not supplied the attribute's value. If the value does appear to be present then this error may have been be caused by a badly formatted tag possibly with single or double quotes in the wrong place or even mismatched.</td></tr>
+<tr><td><a id="E007">E007</a></td><td>Found '&amp;'. You should use '&amp;amp;' instead</td><td>You should not use the &amp; character within attribute values as this may be confused with the start of character references. This error may also appear if you used a character reference but did not terminate it with a semicolon. Only the first problem in the attribute will be marked, so look out for others.</td></tr>
+<tr><td><a id="E008">E008</a></td><td>Found invalid character reference</td><td>A character entity reference was found in an attribute that is not defined as part of the HTML specification being validated against. This error may be caused by using an &amp; character when no character reference was intended, in which case use '&amp;amp;' instead. It may also be caused by specifying an invalid numeric reference containing non-numeric characters.</td></tr>
+<tr><td><a id="E009">E009</a></td><td>Invalid characters found in attribute's value starting at character: INDEX</td><td>It is good practice to always put quotes around an attribute's value. But if you do not use quotes then you are only allowed to use the characters (a-z and A-Z), digits (0-9), hyphen (ASCII decimal 45), period (ASCII decimal 46), underscore (ASCII decimal 95), and colon (ASCII decimal 58). See <a target="help" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2</a> (displayed in new window).</td></tr>
+<tr><td><a id="E010">E010</a></td><td>Unrecognised or malformed &lt;!DOCTYPE&gt; tag (if "auto-detecting" then a best-fit &lt;!DOCTYPE&gt; will be used)</td><td>Common reasons for this error are a misspelt declaration, the wrong case used (the declaration is case-sensitive), or an incomplete declaration. You can find a list of the &lt;!DOCTYPE&gt; " recognises <a href="https://www.totalvalidator.com/support/doctypes.html" title="E010 doctypes">here</a>.</td></tr>
+<tr><td><a id="E011">E011</a></td><td>Found '&amp;' within content without a terminating ';'</td><td>You should not use the &amp; character within content as this may be confused with the start of character references. You should use '&amp;amp;' instead.</td></tr>
+<tr><td><a id="E012">E012</a></td><td>Found invalid character reference</td><td>A character entity reference was found that is not defined as part of the HTML specification being validated against. This error may be caused by using an &amp; character when no character reference was intended, in which case use '&amp;amp;' instead. It may also be caused by specifying an invalid numeric reference containing non-numeric characters. Also note that HTML Polyglot only allows the five basic XML entity references.</td></tr>
+<tr><td><a id="E013">E013</a></td><td>Badly defined self-closing tag</td><td>A self closing tag should end with '/&gt;'. There should be no whitespace between the '/' and the '&gt;' characters. Note that in the report this extra whitespace will have been removed for you, so you need to consult the original source.</td></tr>
+<tr><td><a id="E014">E014</a></td><td>Found '&amp;' within content without a terminating ';'</td><td>This error typically appears if you used a character reference but did not terminate it with a semicolon.</td></tr>
+<tr><td><a id="E015">E015</a></td><td>Found 'X' within character entity reference</td><td>This error appears if you used a hexadecimal entity reference with a capital 'X'. In XHTML you must use a lowercase 'x'. See <a target="help" href="http://www.w3.org/TR/xhtml1/#h-4.12">http://www.w3.org/TR/xhtml1/#h-4.12</a> (displayed in new window).</td></tr>
+<tr><td><a id="E016">E016</a></td><td>The 'ATTRIBUTE NAME' attribute is duplicated</td><td>It appears that you have specified two attributes with the same case-insensitive name. The second attribute will normally be ignored but this cannot be guaranteed.</td></tr>
+<tr><td><a id="E017">E017</a></td><td>There appears to be a badly formed comment here (comment could not be displayed)</td><td>Most browsers can cope with badly formed comments but some robots may not. So it pays to define comments correctly to ensure your site is indexed properly. The definition of a valid comment in HTML5 may be found at <a target="help" href="http://www.w3.org/TR/html5/syntax.html#comments">http://www.w3.org/TR/html5/syntax.html#comments</a> (displayed in new window). For other versions of HTML see <a target="help" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4</a> (displayed in new window).</td></tr>
+<tr><td><a id="E018">E018</a></td><td>There appears to be a badly formed CDATA section on this line (only start of section shown)</td><td>The end of the CDATA section could not be found.</td></tr>
+<tr><td><a id="E019">E019</a></td><td>Comments must not contain two or more '-' characters (comment could not be displayed)</td><td>Most browsers can cope with badly formed comments but some robots may not. So it pays to define comments correctly to ensure your site is indexed properly. The definition of a valid comment in HTML may be found at <a target="help" href="http://www.w3.org/TR/html5/syntax.html#comments">http://www.w3.org/TR/html5/syntax.html#comments</a> (displayed in new window).</td></tr>
+
+<tr><td><a id="E020">E020</a></td><td>No matching start tag found</td><td>There are two common causes of this error. Either you have forgotten the start tag, or you may have tags that are improperly nested e.g. &lt;b&gt;&lt;i&gt;&lt;/b&gt;&lt;/i&gt;</td></tr>
+<tr><td><a id="E021">E021</a></td><td>Empty tag</td><td>This error may be caused by inadvertently using &lt; and &gt; characters together in the text rather than representing these characters using &amp;lt; and &amp;gt; instead</td></tr>
+<tr><td><a id="E022">E022</a></td><td>Attributes are not allowed in end tags</td><td>End tags cannot have attributes. You may have inadvertently added a '/' character at the beginning of a tag by mistake.</td></tr>
+<tr><td><a id="E023">E023</a></td><td>An attribute name is missing</td><td>It appears that you have specified an attribute value but not supplied the attribute's name. This tends to indicate a badly formatted tag possibly with single or double quotes in the wrong place or mismatched. Check that there are no extra or missing quote characters.</td></tr>
+<tr><td><a id="E024">E024</a></td><td>Extra '/' character found within tag</td><td>A '/' character was found at the start of a tag and at the end of a tag. One of the two '/' characters should be removed.</td></tr>
+
+<tr><td><a id="E027">E027</a></td><td>Found character that is not allowed in the character set</td><td>The character set being used to read the page does not support the character you are trying to use. Either replace the character with one that is valid, or change the character set to one that supports it. Note that the character shown in the results may not be the original.</td></tr>
+<tr><td><a id="E028">E028</a></td><td>Unrecognised reserved name - possibly an invalid conditional comment</td><td>Most browsers can cope with invalid tags but some robots may not. So it pays to use valid tags to ensure your site is indexed properly. In this case you may be using a Microsoft 'downlevel-revealed conditional comment'. If so, try converting this to a 'downlevel-hidden conditional comment' by hiding it within a &lt;!-- comment --&gt;</td></tr>
+<tr><td><a id="E029">E029</a></td><td>Found BOM at start of document that conflicts with the 'content-type' HTTP header</td><td>The page starts with a Byte Order Mark (BOM) that is different to the character encoding specified in the 'content-type' HTTP header. The HTTP header information always takes precedence and this may cause the entire document to be full of errors."</td></tr>
+
+<tr><td><a id="W001">W001</a></td><td>There should not be any white space at the start or end of an attribute's value</td><td>There should not be any white space at the start or end of an attribute's value. This is a minor issue and can probably be ignored. See <a target="help" href="http://www.w3.org/TR/html4/types.html#type-id" title="W001 types">here</a> (displayed in new window) for more info.</td></tr>
+<tr><td><a id="W002">W002</a></td><td>There appears to be a badly formed comment on this line (comment could not be displayed). Comments must start with "&lt;!--"</td><td>Most browsers can cope with badly formed comments but some robots may not. So it pays to define comments correctly to ensure your site is indexed properly. The definition of a valid comment in HTML may be found at <a target="help" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4</a> (displayed in new window).</td></tr>
+<tr><td><a id="W003">W003</a></td><td>Comments should not contain two or more '-' characters (comment could not be displayed)</td><td>Most browsers can cope with badly formed comments but some robots may not. So it pays to define comments correctly to ensure your site is indexed properly. The definition of a valid comment in HTML may be found at <a target="help" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4</a> (displayed in new window).</td></tr>
+</tbody>
+</table>
+<p><a href="#top"><img src="../../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Reference</div>
+  <ul>
+		<li class="lhmenu"><a href="index.html">Introduction</a></li>
+		<li class="lhmenu"><span class="current">Parsing</span></li>
+		<li class="lhmenu"><a href="spelling.html">Spell check</a></li>
+		<li class="lhmenu"><a href="links.html">Link problems</a></li>
+		<li class="lhmenu"><a href="xhtml.html">HTML</a></li>
+		<li class="lhmenu"><a href="css.html">CSS</a></li>
+		<li class="lhmenu"><a href="section508.html">US Section 508</a></li>
+		<li class="lhmenu"><a href="wai1.html">WCAG 1.0</a></li>
+		<li class="lhmenu"><a href="wai2.html">WCAG 2.0</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

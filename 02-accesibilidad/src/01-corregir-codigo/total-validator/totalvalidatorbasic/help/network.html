@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Network Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Network tab of the Pro tool are described below.</p>
+
+<p class="centered"><img alt="Cookies tab" src="../images/tool_networktab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="puser"></a>Proxy server</h2>
+<p>In order to access the Internet, either to validate pages or to check for updates to this tool, your organisation
+may require you to go through a Proxy Server. If you cannot validate any pages on the Internet, or otherwise believe
+that you use a Proxy then you must complete this section, and you may have to contact your IT provider or
+internal IT support function to find out what settings to use here.</p>
+<p>
+If you have selected the <a href="menu.html#proxy">Use System proxy</a> menu option the tool
+will try to use the operating system settings to determine which proxy server to use.
+But if this doesn't work, or if you simply wish to override these settings, you may supply the
+details here. You must supply the host name or IP address of the proxy server,
+optionally a port number (defaults to 8080, or 1080 for SOCKS) and whether it uses SOCKS.</p>
+<p>
+Many proxy servers require you to authenticate yourself, so fields are available to
+enter the required user name and password to save typing them in each time.
+When connecting to a proxy server using Windows (NTLM) authentication you
+may need to supply a domain name. In this case enter the domain name
+and user name separated by a backslash into the user name field. For
+example <code>MYDOMAIN\myuser</code>.</p>
+<p>
+Note that although the password is masked with asterisks when you type it in, it
+will still be stored as plain text when you save your workspace. So you may wish to try
+the <a href="authentication.html#interactive">interactive option</a> instead.
+You may also need to use the <a href="authentication.html#interactive">interactive option</a>
+if you go through more than one authenticating proxy which requires different, name/password combinations.</p>
+<p>
+Any proxy authentication details you enter using any method will be cached in memory until
+the tool is restarted to save you having to enter them more than once.</p>
+<p>
+You can also enter a comma-separated list of host names or IP addresses which will bypass the proxy
+server. Note that this may not always override any system proxy settings that may be used. You may
+also use a * character as a wildcard at the start or end of each host name or IP address, but not both
+and you cannot use * on it's own. Also note that "127.0.0.1" and "localhost" are automatically included
+so you do not have to list them here.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="cookies"></a>Accept cookies</h2>
+<p>This tab enables you to specify how cookies will be managed by the tool. You can specify
+whether you want to accept all cookies including third party cookies (All), only those that
+refer back to the server that set them (Server only),
+only session cookies (Session only), or ignore all cookies (None).
+</p>
+<p>Cookies that are accepted will be stored on disk for the next validation.
+You can see which cookies are currently stored using the 'Edit Cookies' button. A dialog box
+will appear that allows you to view and delete individual or groups of cookies, or all cookies
+that are stored. Note that session cookies are displayed here for convenience, but these will
+not be used when you run a validation.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="pause"></a>Page pause</h2>
+<p>If you wish to minimise the impact of validation requests on your server
+you can use this option to set the time in milliseconds to pause before retrieving
+each page. By pausing in this way the rate of requests hitting the server will
+be reduced. Normally this option is used together with the
+<a href="links.html#pause">Link pause</a> option.
+</p>
+
+<p>When validating the source, or DOM-generated source, of multiple pages using a
+<a href="https://www.totalvalidator.com/support/">browser extension</a>, the
+pause you specify here will occur <em>after</em> each page is loaded rather than before.
+This is so that this pause may be used to ensure that all
+the javascript on the page has loaded and executed before validating the
+DOM-generated source.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="identity"></a>User agent</h2>
+<p>
+When validating a website the tool identifies itself as 'TotalValidator/6.0'
+by default. If you wish the tool to identify itself as another
+user agent, then select the required identity from the drop down list.
+</p>
+<p>
+You can amend the list of identities and what they mean using the 'Edit List' button.
+This will display a dialog box for easy editing of the list of user agents and
+the corresponding text sent to the web server when the tool accesses it. You can generally
+find the user agent strings used by your website visitors by viewing your web logs. There are
+also online resources such as <a href="http://www.useragentstring.com">http://www.useragentstring.com</a>
+</p>
+<p>
+If you wish to return to the default list of identities then use the 'Reset' button
+provided on the edit screen. This also allows you to update the list with the
+identities provided in the most recent version following an upgrade.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><span class="current">Network tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#puser">Proxy server</a></li>
+        <li class="lhitem"><a href="#cookies">Accept cookies</a></li>
+        <li class="lhitem"><a href="#pause">Page pause</a></li>
+        <li class="lhitem"><a href="#identity">User agent</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

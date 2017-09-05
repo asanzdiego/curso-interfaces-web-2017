@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAQ</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="general"></a>General</h2>
+<p>
+If you have a problem that isn't covered below then complete the
+<a href="https://www.totalvalidator.com/validator/FeedbackForm">
+feedback form</a> on the main website to report it. Don't forget to leave a
+valid email address where you can be contacted.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="tool"></a>The tool doesn't start or displays an error message</h2>
+<p>Please ensure that you have the <a href="https://www.totalvalidator.com/downloads/index.html">latest version</a> of the tool
+installed.
+</p>
+<p>
+You must have Java installed and configured in order to run the tool (see <a href="#java">next section</a>). If you are using OS X, read the <a href="#osx">OS X installation notes</a> below.
+</p>
+<p>If you have any other start up issue then make a note of any error messages that
+may appear and use the <a href="https://www.totalvalidator.com/validator/FeedbackForm">
+feedback form</a> to report your problem. Don't forget to leave a
+valid email address where you can be contacted.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="java"></a>Java</h2>
+<p>Java is the computer language all of our tools are written in, and this requires that a Java Run Time (JRE) is installed on your system in order to run them. Currently our tools are compiled with Java 7, and so require at least this version or later to be installed. However, we recommend always using the latest version of Java for the best performance and fewest problems.</p>
+<p>You may have read or heard that Java is a security risk and so may not wish to install it. This information is very misleading and has confused many people. Java is just a computer language like any other (C, Basic, Pascal ...) and so programs written in it are no more insecure than any other. Any warnings you may have heard only relate to running the Java plugin within your browser. If you are concerned then <a href="http://java.com/en/download/help/disable_browser.xml">disable this plugin</a> in your browser, or remove it from your computer altogether, as it is not required for Total Validator to work.
+</p>
+<p>With most Operating Systems, you can download the latest Java Run Time for your system directly from <a href="https://www.java.com">Oracle</a>.</p>
+<p>On Windows systems, if the tool cannot find a suitable version of Java when it tries to start, it will try to open your browser and take you to the above site to download it.</p>
+<p>On Linux systems Java must be in your PATH.
+Type <code>java -version</code> at a command prompt to check this. Alternatively,
+make your own copy of the <code>*.sh</code> scripts in the installation folder and amend them to point
+to wherever you've installed Java.
+</p>
+<p>For OS X, see the installation section below for help.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="osx"></a>OS X installation notes</h2>
+<h3>Java versions</h3>
+<p>Apple used to provide Java and the last version they provided was Java 6, which we no longer support. Oracle now provide Java for OS X from Java 7 onwards. So this means that if you are running an older version of OS X which does not have Oracle Java available, then our tools will not work.
+</p>
+<p>There is no issue with installing both Apple's Java as well as Oracle's Java at the same time on your system. Oracle's Java will be used for running applets in your browser, and for running any applications which require Oracle's Java, and Apple's Java will be used for running applications that only work with Apple's Java.
+</p>
+<h3>A message appears saying Total Validator is "unidentified" or "damaged"</h3>
+<p>When you try to run Total Validator a message may appear saying that it is "unidentified" or "damaged". The fact that you've opened the .dmg file at all, means that the download was successful and it isn't damaged. This is just a warning from the OS X Gatekeeper which can be skipped as follows:</p>
+<p>Open the <code>Applications</code> folder in Finder and proceed as follows:</p>
+<ol>
+<li>Control-click (or right-click) the TotalValidator icon and choose "Open"</li>
+<li>Another warning will appear: Click the "Open" button to continue</li>
+</ol>
+<p>Alternatively, temporarily suspend the Gatekeeper as follows:</p>
+<ol>
+<li>In System Preferences: Select Security & Privacy, and if required, click the lock icon that reads "Click the lock to make changes."</li>
+<li>Change "Allow applications downloaded from: &apos;Mac App Store and identified developers&apos;" to &apos;Anywhere&apos;</li>
+<li>Start Total Validator from the Applications folder</li>
+<li>You may then reset your security settings back to &apos;Mac App Store and identified developers&apos;</li>
+</ol>
+<p>Once Total Validator has run the warning should no longer appear, although it may reappear if you download an update.
+</p>
+<h3>A message appears saying "No Java ..." or "you need Java SE 6"</h3>
+<p>Total Validator needs Java to run, so please install Java from <a href="https://www.java.com">Oracle</a>. Some systems also require Apple's Java 6 as well. So if you still see these messages install Apple's Java 6 from the App Store as well.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="symantec"></a>Symantec/Norton AV Quarantine</h2>
+<p><strong>Note:</strong> If you obtained Total Validator from anywhere other than our website, you should check that the MD5 checksum of the file matches that provided on our <a href="https://www.totalvalidator.com/downloads/index.html">download pages</a> before using it. Or if your anti-virus program  highlights a different issue than "WS.Reputation.1" or "Reputation" let us know before using it.
+</p>
+<p>When certain Symantec/Norton AV products detect a program they have never seen, this is automatically marked as WS.Reputation.1 and placed into quarantine, even though it is completely safe to use. So the first thing to note is that you already have a copy of Total Validator, and that you should not need to download it again. Please consult your Symantec/Norton documentation in order to restore this file from quarantine and exclude it from further scans. In some cases this may mean installing a tool from their installation media or website.
+</p>
+<p>We believe that each time a user takes the program out of quarantine and excludes it from further scans, the reputation of the program increases until WS.Reputation.1 is finally removed. However, Symantec's system resets with each new version, so this issue will reoccur with each new release of Total Validator. Because only a few of our users use these Symantec products, this issue may not be resolved before our next release.
+</p>
+<p>We could try to preempt this issue by sending Symantec a free copy of each new version of every product we have for them to test. But they cannot provide any timescales for this testing, nor can they guarantee that our software will be safeguarded. If Symantec were a non-profit making organisation, and there was some real evidence that this whole thing was a good idea, we would still seriously consider this. But they are not, and there is no real evidence, and so we will not be pursuing that path. Instead we suggest that you carry out one of more of the following:
+</p>
+<ul>
+	<li>Restore the downloaded file from quarantine and exclude it from further scans (see above)</li>
+	<li>If possible, configure the Symantec product to avoid this issue in future</li>
+	<li>Replace the Symantec product with an alternative</li>
+</ul>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="results"></a>Your browser doesn't show the results</h2>
+<p>When the validation is finished your browser should start up and display the results.
+If this doesn't happen, first check that 'Hide results' in the Options menu has not been
+accidentally selected.
+</p>
+<p>
+Otherwise try using the 'Last Results' button. If this doesn't work then (Pro tool only)
+check the browser you have selected on the Results tab; a blank entry implies using your default browser.
+If nothing else is obviously wrong then it's likely that you have a browser installed that
+is not set as the 'default'. You can correct this for popular browsers as follows:</p>
+<p><strong>Windows/Mac: </strong>
+If Firefox is your preferred browser then open it and go to the 'Tools' menu and select
+'Options' then 'General'
+and you will find an option which allows you to set it as the default browser.</p>
+<p>
+If Internet Explorer is your preferred browser then open it and go to the 'Tools' menu and
+select 'Internet Options' then 'Programs' and tick the box that says that IE should check
+to see if it is the
+default browser. Then restart IE and you will be prompted to confirm IE as your default
+browser. In either case then try running the Total Validator Tool again.</p>
+<p><strong>Linux: </strong>Edit the script <code>totalvalidatorpro/default_browser.sh</code> or
+<code>totalvalidatorbasic/default_browser.sh</code> as appropriate
+and check that it points to your preferred browser. As an additional check if you simply
+run this script without any parameters then your browser should just start up normally.
+</p>
+<p>
+If you are still having problems then it may be that the results are stored somewhere
+inaccessible, and you may have to navigate to the folder where the results are stored
+and manually launch your browser pointing at the first results page.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="proxy"></a>"Could not connect ..." message appears</h2>
+<p>This message appears when the tool cannot connect to the starting web page. So ensure that
+you can connect using the exact same URL in your browser first.
+</p>
+<p>If you can see the page with your browser, it may be that there are one or more proxy
+servers between you and the page, or the page requires authentication to view it. Unfortunately,
+if you are using the Basic tool there are no options available to allow
+you to authenticate yourself or to specify a proxy server, although you could use a
+<a href="https://www.totalvalidator.com/tools/extension.html">browser
+extension</a> to validate the source code of the page. Pro tool users should look to the
+options on the <a href="../help/network.html">Network</a> and
+<a href="../help/authentication.html">Authentication</a> tabs for further information.
+</p>
+<p>If you are using the Pro tool and you still can't authenticate yourself or drill through
+a proxy server, then then complete the
+<a href="https://www.totalvalidator.com/validator/FeedbackForm">
+feedback form</a> on the main website to report your issue.
+</p>
+<p>If the connection failure appears to be an SSL issue (connecting to pages starting with https://), please see the next section.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="ssl"></a>SSL connection issues</h2>
+<p>When connecting to sites starting with <strong>https://</strong>, the SSL system is used to encrypt pages over the Internet.
+</p>
+<p>Concerns over the use of weaker encryption with SSL has caused many sites to restrict the encryption protocols they will accept, and SSL certificates used by most sites now use longer key lengths. As a result older versions of Java 7 may not work with these sites, preventing Total Validator from connecting to them. So if you have any SSL issues running Total Validator using the latest version of Java should resolve them.
+</p>
+<p>Unfortunately, there is also a known bug in Java which can prevent connection to some sites using SSL which also use SNI (e.g. sites hosted on AWS). So if problems persist when using latest version of Java, you should also try a <a href="../help/menu.html#sslbug">work around</a> we have produced to see if that fixes things.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="onepage"></a>Fewer pages than expected are being validated (Pro tool only)</h2>
+<p>By default the tool will only follow links on the same site as the starting page. So pages on <em>http://mysite.com</em> will not be validated because technically-speaking <em>http://mysite.com</em> and <em>http://www.mysite.com</em> could host completely different websites.
+</p>
+<p>Note that Total Validator ignores all javascript and so any links embedded within javascript will be ignored, reducing the pages that will be checked. This is just like many accessibility aids and those people who choose to disable javascript for security reasons. So if you do rely on javascript we advise that you provide an alternative or you may lose visitors.
+</p>
+<p>Many options on the <a href="include.html">include tab</a> can be used to restrict which pages are validated, so if you've set any options on this tab ensure you've read the documentation and understood how they work.
+</p>
+<p>If you believe that the reason why so few pages are being validated is because the tool is
+not logging into a form correctly, then see the section on <a href="loginforms.html">Login forms</a>. The next
+section may be of use as well.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="multiple"></a>Validating multiple sites or areas (Pro tool only)</h2>
+<p>Because Total Validator follows links, different parts of the same website that are not connected will not be validated. Also by default it will only validate pages on the same website as the starting page.
+</p>
+<p>To get around this, create a simple web page consisting of absolute links to the various parts of your site, or listing different sites. This page may be saved to the local filesystem (i.e. no need to deploy it to a website). Then use this page as the starting page together with the <a href="include.html#remote">Follow remote</a> option.
+</p>
+<p>The <a href="include.html#remote">Follow remote</a> option tells Total Validator to follow all links <em>on the starting page only</em>
+even those on different websites. Total Validator will then treat each link (on this first page only) as if was the starting page and report on all of the results together.
+</p>
+<p>For finer control you can also use the <a href="include.html#followbelow">Follow below</a>, <a href="include.html#excludepaths">Exclude</a>, <a href="include.html#includepaths">Include</a> and <a href="include.html#depth">Depth</a> options as well.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="speed"></a>Can I make it run faster?</h2>
+<p>There could be several reasons why the tool may appear to operate slowly when checking each page.
+Obviously it could be that your system has reached the limit of its own performance in terms of
+CPU power and/or the amount of available memory. However there are several things you can try
+to improve matters as listed below:
+</p>
+<ul>
+<li>The broken links option waits for a response from the web server. If you do have any broken links
+then this will naturally slow down the tool. With the Pro tool you can reduce the timeout from the
+default of 20 seconds and raise the concurrency (or set it to 0 for unlimited).
+Alternatively turn off the broken link check altogether.</li>
+<li>The default method used to test links may send two requests and so take up to twice the timeout
+you've set before giving up. Explicitly setting the method to 'HEAD' or 'GET' will speed things up if you have any links that time out.</li>
+<li>The spell check has a double impact on performance. It uses a lot of memory loading
+the dictionaries, and it can take time to spell check each word. So try turning this option off to see if this helps.</li>
+<li>Try to limit the number of other applications that are running concurrently</li>
+<li>When checking remote pages close any other applications that may be using the network</li>
+</ul>
+<p>If none of the above work and you have sufficient memory then you could try <a href="startup.html">increasing the
+amount of memory</a> used by the tool.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="html"></a>The HTML validation results are wrong</h2>
+<p>
+Unlike many popular validation services
+Total Validator uses the official W3C and ISO DTDs for HTML
+validation and the tests are automated from these. In other words we
+haven't personally made up the validation rules or translated them.
+So if Total Validator finds a problem on your page (or fails to find one)
+then it's highly likely that it's in the W3C DTD's and not a
+mistake in Total Validator.</p>
+<p>
+Many other validators do not use the official DTDs but are interpretations
+of them. Because these validators do not use the official DTDs they tend to
+be rife with mistakes. A popular example is HTML Tidy, which as of writing
+says that the 'type' attribute in the &lt;link&gt; element is mandatory. But
+this is wrong and in most cases doesn't even make any sense.
+</p>
+<p>
+However, the official DTD's cannot encode all the rules, because of the
+limitations of the DTD language. So we've added a whole lot of additional tests
+to cover these limitations. So other validators that only use the official DTDs
+may miss errors that are there in the standards. For example the W3C validator
+doesn't check the value of attributes and so will report success even when your
+page has many mistakes.
+</p>
+<p>
+So before you report that another validator says that your page is okay,
+or reports errors that Total Validator doesn't pick up, please check the
+actual standards first, don't just assume the other validator is right.
+Note that we wrote Total Validator initially because of mistakes and limitations with other
+popular validators.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="wai"></a>How do I check for Accessibility?</h2>
+<p>
+Remember that the accessibility standards are guidelines and not rules.
+They can't possibly cover every situation and are there to guide you into
+making good decisions.</p>
+<p>
+To properly check a page for accessibility you need to understand the standard you are applying
+and manually look at the source and the output of the page.
+Automated validators (even Total Validator) can only guide you and should never be regarded as a stamp of approval.
+Never let zero errors and warnings be your only target and bear in mind that it is quite easy to write a
+web page that passes all the tests of all the validators and yet would still be difficult for people
+with disabilities to use. Equally, errors and warnings in validators are just there to alert you
+as to potential problems, and so may appear when there is actually no problem at all.</p>
+<p>So we recommend that you check your pages against the guidelines manually ensure they meet your accessibility
+requirements and only then use Total Validator to check for anything you may have missed or after making minor amendments.
+</p>
+<p>Also note that conforming to accessibility standards also means strictly validated HTML so that accessibility technology can properly read your site. So you should always validate your HTML as well, otherwise your site cannot claim to be accessible.
+</p>
+<p>
+With Total Validator we've tried to follow the spirit and meaning of the WAI and Section 508 guidelines,
+rather than blindly coding rules. So you may find many 'warnings' and 'notes' reported by other validators that
+simply don't appear in our results. Before you put pen to paper to berate us, check out
+the guidelines themselves first, as these reported items may be false positives, or not apply to the page in question at all.</p>
+<p>
+Some specific things of note: User-agents are much better than they were when the WAI guidelines were first written.
+As a result many of the WCAG 1.0 guidelines are now redundant. For example there is no longer a requirement
+to put place holding text in edit boxes and text areas. This
+was 10.4 of WCAG 1.0 (AAA). Similarly 1.5 of WCAG 1.0 (AAA) is no longer required. So always validate using the latest
+version of Total Validator.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="errors"></a>An error message is displayed</h2>
+<p>Many error messages are self explanatory and should help you to correct the problem is yourself.</p>
+<p>
+If you have a message that doesn't make sense then make a note of it and complete the
+<a href="https://www.totalvalidator.com/validator/FeedbackForm">
+feedback form</a> on the main website to report your problem. Don't forget to leave a
+valid email address where you can be contacted.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><span class="current">FAQ</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#general">General</a></li>
+        <li class="lhitem"><a href="#tool">Start up failure</a></li>
+        <li class="lhitem"><a href="#java">Java</a></li>
+        <li class="lhitem"><a href="#osx">OS X installation</a></li>
+        <li class="lhitem"><a href="#symantec">Symantec/Norton quarantine</a></li>
+        <li class="lhitem"><a href="#results">No results in browser</a></li>
+        <li class="lhitem"><a href="#proxy">Could not connect ...</a></li>
+        <li class="lhitem"><a href="#ssl">SSL issues</a></li>
+        <li class="lhitem"><a href="#onepage">Few pages validated</a></li>
+        <li class="lhitem"><a href="#multiple">Validating multiple sites</a></li>
+        <li class="lhitem"><a href="#speed">Can it run faster?</a></li>
+        <li class="lhitem"><a href="#html">HTML results are wrong</a></li>
+        <li class="lhitem"><a href="#wai">Accessibility validation</a></li>
+        <li class="lhitem"><a href="#errors">Error messages</a></li>
+      </ul>
+    </li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

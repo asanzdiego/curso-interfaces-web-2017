@@ -1,0 +1,85 @@
+ul {
+    list-style-image: url(./img/logo.png);
+    padding-left: 25px;
+}
+strong {
+    font-size: 2em
+}
+label {
+    display: block;
+}
+.sronly {
+    position: absolute;
+    left: -9999em;
+    width: 1px;
+    overflow: hidden;
+}
+a:hover, a:focus, a:active {
+    position: relative;
+}
+a:hover span.sronly, a:focus span.sronly, a:active span.sronly {
+    left: 20px;
+    top: 20px;
+    width: 100px;
+    padding: 5px;
+    line-height: 1;
+    font-size: 80%;
+    background: #ccc;
+    border: 1px solid #666;
+    color: #333;
+    text-decoration: none;
+}
+a:hover span.sronly:before, a:focus span.sronly:before, a:active span.sronly:before {
+    content: "Más información";
+}
+.importante {
+    background-color: #333;
+    color: #ccc;
+}
+.etiqueta {
+    display: block;
+}
+.tooltip {
+    display: none;
+    color: #333;
+    background: #ccc;
+}
+input:focus + .tooltip {
+    display: block;
+    position: absolute;
+}
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
+    ;
+}
+a.tab {
+    background: #333;
+    color: #ccc;
+    padding: 1em 0.5em;
+    display: inline-block;
+}
+a.selected, a.tab:focus {
+    background: #ccc;
+    color: #333;
+    border: 1px solid #333;
+    border-bottom: 0;
+    position: relative;
+}
+a.tab:focus {
+    background: #eee;
+}
+ul.tablist li {
+    display: inline-block;
+    list-style: none;
+}
+div.tabpanel {
+    margin-top: 0;
+    padding: 1.5em;
+    border: 1px solid #333;
+}
+div.tabpanel:focus {
+    background: #eee;
+}

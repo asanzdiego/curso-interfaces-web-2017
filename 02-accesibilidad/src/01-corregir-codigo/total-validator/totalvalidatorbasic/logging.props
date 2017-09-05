@@ -1,0 +1,15 @@
+############################################################
+#  	Total Validator Logging Configuration File
+############################################################
+
+############################################################
+#  	Do not change anything in this section
+############################################################
+handlers=java.util.logging.ConsoleHandler,java.util.logging.FileHandler
+java.util.logging.FileHandler.formatter=com.totalvalidator.utils.ValidatorFormatter
+java.util.logging.FileHandler.pattern=%t/totalvalidator.log
+
+############################################################
+#  	CHANGE THIS TO 'INFO' to output debug messages
+############################################################
+validator.level=SEVERE

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu Options</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="file"></a>File Menu</h2>
+<p>With the Basic tool there is a 'Save' option to save your current workspace. But with the Pro tool there are all the usual options for creating a new workspace (New), opening an existing workspace (Open), saving the current workspace (Save and Save As), and deleting the current workspace (Delete). There is also a list of the last 10 workspaces used to select from.</p>
+
+<p>You can also create your own default settings that are used whenever you create a new workspace, or use the Reset buttons. Simply save your  workspace with the name of 'defaults' and any settings this contains will then become the new defaults.</p>
+
+<p>The File menu also contains the following options: 'Validate' starts a validation. 'Reset List' clears the Starting web page dropdown on the Main Tab, 'Reset All' resets most options to their defaults, and 'Exit' closes the Tool.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="metanames"></a>Options - Edit meta names (Pro tool only)</h2>
+<p>For HTML5 documents, the 'name' attribute in the &lt;meta&gt; element is restricted to values documented in the HTML5 specification with extensions in the WHATWG Wiki. Each Total Validator release contains the latest set of valid values at that time. So Total Validator will not recognise any changes to the wiki after the release date, and may mark some 'name' values as incorrect.
+</p>
+<p>You could wait until the next release of Total Validator to automatically pick up any new names that you use, or you can use the 'Edit meta names' option to add them yourself now. But note that any changes you make will be automatically overwritten when you run a later release.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="updates"></a>Options - Check for Updates</h2>
+<p>When you use this option the tool will try to contact the Total Validator
+site to see if there is a later version of the tool available.
+</p>
+<p>If there is a more up to date version you will be prompted with a link
+that takes you to the appropriate update page.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="auto"></a>Options - Auto-update Check</h2>
+<p>If you select this option the tool will check for updates automatically
+each time you start the tool.
+</p>
+<p>Note that this is a completely silent check, so if the tool cannot
+contact the update site for any reason (such as a blocking proxy server)
+then no message will be displayed and the tool will start in the normal
+way. So it's a good idea to perform a manual test using the previous option first.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="proxy"></a>Options - Use System Proxy</h2>
+<p>By default this option is selected and will attempt to use any operating
+system proxy server settings: For example, the Windows 'Internet Options'
+control panel applet settings.
+</p>
+<p>At this time auto-proxy configuration scripts are ignored, but with the
+Pro tool you can supply the proxy server details on the
+<a href="network.html">Network tab</a> instead.
+</p>
+<p>Note that when you change this option you must restart the tool for
+it to have any effect.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="splash"></a>Options - Splashscreen</h2>
+<p>This option determines whether a splash screen
+displaying details of the current version
+is displayed at startup.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="sslbug"></a>Options - SSL Bug Fix</h2>
+<p>If you are running Total Validator with the latest version of Java and have
+SSL errors when validating pages or checking links, the issue may be due to a
+known bug in Java. This problem is known to affect sites hosted on AWS but may
+affect other sites as well.
+</p>
+<p>Selecting this option may resolve the problem. But a side-affect is that sites
+using self-certified certificates may have SSL errors when validating them. So
+only use this option when you have a problem with a specific site, and leave it turned off otherwise.
+</p>
+<p>Note that when you change this option you must restart the tool for
+it to have any effect.
+</p><p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="help"></a>Help Menu</h2>
+<p>There are four options on this menu:</p>
+<ul>
+<li>The 'Help' option displays this help</li>
+<li>The 'Updates' option (Pro tool) displays information about updates and subscriptions to the Pro tool</li>
+<li>The 'Upgrade' option (Basic tool) displays information about purchasing the Pro tool</li>
+<li>The 'Change log' option displays the online changes log</li>
+<li>The 'About' option displays the version and build details of the tool, various paths used by the tool, and allows you to turn on debugging when requested by Support.</li>
+</ul>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><span class="current">Menus</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#file">File menu</a></li>
+        <li class="lhitem"><a href="#metanames">Edit meta names</a></li>
+        <li class="lhitem"><a href="#updates">Check for updates</a></li>
+        <li class="lhitem"><a href="#auto">Auto-update check</a></li>
+        <li class="lhitem"><a href="#proxy">System proxy</a></li>
+        <li class="lhitem"><a href="#splash">Splashscreen</a></li>
+        <li class="lhitem"><a href="#sslbug">SSL Bug Fix</a></li>
+        <li class="lhitem"><a href="#help">Help menu</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

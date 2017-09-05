@@ -1,0 +1,332 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  border:0;
+  width:100%;
+}
+
+body {
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 780px;
+}
+
+div.main {
+  margin: 0 auto;
+  width: 95%;
+}
+
+div.pagehead {
+  background-color: #666699;
+  text-align: center;
+  padding: 7px;
+}
+div.pagehead img {
+  border: none;
+  vertical-align: text-bottom;
+}
+div.pagehead a:link { text-decoration: none; color: white }
+div.pagehead a:visited { text-decoration: none; color: white }
+div.pagehead a:hover { color: #ff9999 }
+
+h1 {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 90%;
+  display:inline;
+}
+
+div.topnavbar {
+  text-align: center;
+  background-color: #dfdfff;
+  font-weight: bold;
+  padding: 7px
+}
+div.pagenavbar {
+  text-align: center;
+  background-color: #dfdfff;
+  font-weight: bold;
+  padding: 7px;
+  border-top: solid 1px gray;
+}
+div.topnavbar p, div.pagenavbar p {
+  display:inline;
+}
+div.topnavbar a:link { text-decoration: none; color: blue }
+div.topnavbar a:visited { text-decoration: none; color: blue }
+div.topnavbar a:hover { color: #ff3333 }
+div.pagenavbar a:link { text-decoration: none; color: blue }
+div.pagenavbar a:visited { text-decoration: none; color: blue }
+div.pagenavbar a:hover { color: #ff3333 }
+
+div.lhmenu {
+  background-color: #dfdfff;
+  padding: 7px;
+  border: 1px solid;
+  border-color: #666699;
+  font-size: 90%;
+}
+div.lhmenu ul {
+  margin: 6px;
+  padding: 0;
+  border-bottom: solid 1px gray;
+}
+div.lhmenu ul a:link { text-decoration: none; color: blue }
+div.lhmenu ul a:visited { text-decoration: none; color: blue }
+div.lhmenu ul a:hover { color: #ff3333 }
+
+li.lhmenu {
+  margin: 0;
+  padding: 0.5ex;
+  border-top: solid 1px gray;
+/* url is relative to the .css file */
+  background:url("images/right.gif") no-repeat 4px 7px;
+  list-style-type: none;
+  list-style-position: inside;
+  min-height: 17px;
+}
+ul>li.lhmenu {
+  padding-top: 5px;
+  padding-left: 19px;
+}
+div.lhmenu ul.lhitem {
+  border-bottom-style: none;
+}
+li>ul.lhitem {
+  margin-left: -10px;
+}
+div.lhmenu li.lhitem {
+  font-weight: normal;
+  font-size: 90%;
+  background:url("images/right_sm.gif") no-repeat 3px 4px;
+  list-style-type: none;
+  min-height: 15px;
+}
+ul>li.lhitem {
+  padding-top: 1px;
+  padding-left: 17px;
+}
+span.current {
+  color: #ff3333;
+}
+.lhheader {
+  font-weight: bold;
+  font-size: 110%;
+  padding-left: 6px;
+  color: #ff3333;
+}
+
+h2 {
+  background-color: #666699;
+  color: #ffffff;
+  padding-left: 5px;
+  font-weight: normal;
+  font-size: 130%;
+}
+h3 {
+  background-color: #dfdfff;
+  padding-left: 5px;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+div.list {
+  background-color: #dfdfff;
+}
+
+img.noborder {
+  border: none;
+}
+
+a img {
+  border: none;
+}
+img.updown {
+  border: none;
+  padding-right: 5px;
+}
+a:hover { color: #ff3333 }
+
+/* column container */
+div.content {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+div.container {
+	float:left;
+	width:100%;
+	position:relative;
+}
+div.lhbox {
+  margin-top: 1em;
+  margin-bottom: 12px;
+}
+div.middle,
+div.lhbox {
+	float:left;
+	position:relative;
+	overflow:hidden;
+}
+/* 2 Column (left menu) settings */
+div.content {
+	background:#fff;		/* right column background colour */
+}
+div.content .container {
+	right:78%;			/* right column width */
+}
+div.content .middle {
+	width:78%;			/* right column content width */
+	left:100%;			/* 100% plus left column left padding */
+}
+div.content .lhbox {
+	width:20.5%;			/* left column content width (column width minus left and right padding) */
+}
+
+div.footer {
+  clear: both;
+}
+div.footer a:link { text-decoration: none; color: white }
+div.footer a:visited { text-decoration: none; color: white }
+div.footer a:hover { color: #ff9999 }
+p.footer {
+  background-color: #666699;
+  color: #ffffff;
+  font-weight: normal;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+
+span.error {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+span.problem {
+  background-color: #ff9f9f;
+  color: #000000;
+  font-weight: bold;
+}
+
+span.possible {
+  background-color: #ffcf9f;
+  color: #000000;
+  font-weight: bold;
+}
+
+span.warning {
+  background-color: #ffff9f;
+  color: #000000;
+  font-weight: bold;
+}
+
+span.strong {
+  font-weight: bold;
+}
+
+span.success {
+  font-weight: bold;
+  color: #00E000;
+}
+
+span.em {
+  font-style: italic;
+}
+
+span.hidden {
+	display: none;
+}
+
+img {
+  border: 1px solid ;
+}
+
+.centered {
+  text-align: center;
+}
+
+div.background {
+  background-color: #dfdfff;
+  margin: 6px;
+}
+
+table {
+ width: 100%;
+ text-align: left;
+ border-spacing: 2px;
+}
+th {
+ border-spacing: 2px;
+ padding: 4px; }
+td {
+ border-spacing: 2px;
+ padding: 4px;
+ vertical-align: top;
+ text-align: left; }
+td.right {
+ text-align: right; }
+td.middle {
+ width: 30% }
+td.nowrap {
+ text-align: right;
+ white-space: nowrap; }
+td.nowrapl {
+ white-space: nowrap; }
+td.rhs {
+ width: 80% }
+td a.enhance {
+  font-weight: bold;
+}
+td a:link { text-decoration: none; color: blue }
+td a:visited { text-decoration: none; color: blue }
+td a:hover { color: #ff3333 }
+
+table.border {
+ border: 1px solid black;
+}
+table.border td, table.border th {
+ border: 1px solid black;
+}
+
+a:link { text-decoration: none; color: blue }
+a:visited { text-decoration: none; color: blue }
+a:hover { color: #ff3333 }
+
+#skip a, #skip a:hover, #skip a:visited {
+	position:absolute;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+#skip a:active, #skip a:focus  {
+	position:static;
+	width:auto;
+	height:auto;
+}
+
+/* Results styling */
+span.addword { color: blue; cursor: pointer}
+span.hoverparent span.hoverblock {
+	display:none;
+}
+span.hoverparent:hover span.hoverblock {
+  position: relative;
+	display:block;
+	border:1px solid;
+	left: 8em;
+	width: 54em;
+	padding: 5px;
+	word-break: keep-all;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+span.collBlock {
+	display:block;
+}

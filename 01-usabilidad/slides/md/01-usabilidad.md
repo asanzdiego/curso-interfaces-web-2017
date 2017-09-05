@@ -465,7 +465,7 @@
 ## Prototipado
 
 - Algunas herramientas:
-    - <https://github.com/prikhi/pencil>
+    - <http://pencil.evolus.vn/>
     - <http://moqups.com>
     - <http://gomockingbird.com>
     - <http://balsamiq.com>
@@ -475,15 +475,13 @@
 
 ## Pencil (Instalación)
 
-- Descarga desde: <https://github.com/prikhi/pencil/releases>
+- Descarga desde: <http://pencil.evolus.vn/>
 
 - Instalar normalmente según plafatorma (Linux, Mac o Windows)
 
-- Las colecciones se instalan desde "Herramientas > Installar nueva colleción..."
+- Instalar las colecciones y las plantillas.
 
-- Las plantillas se instalan desde "Herramientas > Gestionar plantillas de exportación... > Instalr nueva plantilla"
-
-## Pencil (Colecciones)
+## Pencil (Colecciones I)
 
 - Font-Awesome-Icons:
   - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/FontAwesomeIcons_1.0.zip>
@@ -491,13 +489,15 @@
 - Android-Lollipop-Pencil-Stencils:
   - <https://github.com/nathanielw/Android-Lollipop-Pencil-Stencils/releases/download/v1.1.0/android-lollipop-pencil-stencils-v1.1.0.zip>
 
+## Pencil (Colecciones II)
+
 - Bootstrap-Pencil-Stencils:
   - <https://github.com/nathanielw/Bootstrap-Pencil-Stencils/releases/download/v1.1.0/bootstrap-pencil-stencils-v1.1.0.zip>
 
 - Material-Icons-for-Pencil:
   - <https://github.com/nathanielw/Material-Icons-for-Pencil/releases/download/v2.0.0/material-icons-for-pencil-v2.0.0.zip>
 
-## Pencil (Plantillas>
+## Pencil (Plantillas I)
 
 - Pencil-Material-Design-Template:
   - <https://github.com/DaniGuardiola/pencil-material-template/raw/master/build/pencil-material-template-mobile.zip>
@@ -507,6 +507,8 @@
 
 - JQUERY:
   - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/JQUERY.zip>
+
+## Pencil (Plantillas II)
 
 - GUIPrototypingSmall:
   - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/GUIPrototypingSmall.zip>

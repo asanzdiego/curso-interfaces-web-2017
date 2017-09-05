@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forms Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Forms tab of the Pro tool
+are described below.</p>
+
+<p class="centered"><img alt="Forms tab" src="../images/tool_formstab.png" /></p>
+<p>This tab allows you to look for one or more matching forms on your website and submit this form,
+together with any values you wish to send, to your web server. This allows you to validate
+the response from your server and is often used to log into a site to validate
+restricted pages.
+</p>
+<p>For more information on using login forms see the <a href="loginforms.html">Login forms</a> page and
+always ensure that you skip any <a href="loginforms.html#logoff">logoff and delete links</a>.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="action"></a>Action URL</h2>
+<p>When the tool is validating the site it will look for a form with an 'action'
+attribute, or button or input elements with a 'formaction' attribute, which matches the value entered here.
+If it finds a match it will submit the form to the server using the options on the rest of this tab.
+</p>
+<p>Note that every form that matches will be submitted as there can be more than one. But only the first match on a given page will be submitted.
+Also the 'method' or 'formmethod' attribute of the form is used to decide whether the tool will
+use a GET or POST to submit the form.</p>
+<p>The Action URL is normally an exact match for the 'action' or 'formaction' attributes, but you
+can use the 'Regular expression' checkbox to specify that the Action URL is a regular
+expression instead. This may allow you to more easily match the required form.</p>
+<p>If the Action URL is left blank, then this will match all forms that have no 'action' or 'formaction' attribute. In this case the form will be submitted to the same URL as the page itself.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="submit"></a>Submit button</h2>
+<p>Many forms have more than one 'submit' button. For example one button may be used
+to send the form details, and another to reset them.
+</p>
+<p>For normal forms, you can enter the name of the button you wish to send with the form. If a
+matching button is found with the same 'name' attribute, then the value of this
+button will be submitted with the form, and any other submit buttons ignored. If a
+match cannot be found then no submit buttons will be sent. Finally, if you do not
+enter anything in this field, then the values of all the submit buttons on the form
+will be sent.</p>
+
+<p>For forms submitted using a button or input element, only the 'name' of the element (if any)
+will be submitted with the form, and so this field is not relevant.</p>
+
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="parameters"></a>Parameters</h2>
+<p>When the form is submitted the default values of any form controls (checkboxes, menus,
+text boxes, hidden controls, etc.) will be sent to the server just like a normal browser
+would do.</p>
+<p>Normally, you will want to override some of these values with your own, such as a user id
+or password value, or add some extra parameters using the table provided.
+</p>
+<p>Double-click on the Name or Value to enter the parameter details. You can add extra lines
+or delete the currently selected one using the Add and Delete buttons at the bottom. When
+you've finished editing the text make sure that you click outside the table cell to finish,
+or your changes may not be saved.</p>
+<p>Note that any parameter with a blank value will be ignored, and you may enter more than
+one parameter with the same name (this is a valid thing to do). Also, all parameters will be
+submitted using <code>application/x-www-form-urlencoded</code> encoding, no matter what encoding
+is specified on the form.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="formbuttons"></a>Bottom buttons</h2>
+<p>More than one form may be specified using the buttons along the bottom of the tab. Use Add Form
+to add a new tab to enter another forms' details. Reset Form will reset all of the fields of the
+currently selected form to blank. Delete Form will delete the currently selected form and Reset Tab
+will delete all of the forms.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="saml"></a>SAML Authentication</h2>
+<p>If this option is selected then Total Validator assumes that all of the forms are part of an attempt to authenticate using a SAML-based system such as Shibboleth or Athens. Please see our dedicated <a href="saml.html">SAML</a> page to ensure you configure Total Validator correctly.
+</p>
+<p>Note that setting this option when not using SAML will almost certainly cause your forms to fail to work properly.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><span class="current">Forms tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#action">Action URL</a></li>
+        <li class="lhitem"><a href="#submit">Submit button</a></li>
+        <li class="lhitem"><a href="#parameters">Parameters</a></li>
+        <li class="lhitem"><a href="#formbuttons">Bottom buttons</a></li>
+        <li class="lhitem"><a href="#saml">SAML authentication</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

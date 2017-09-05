@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Forms</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>Many websites restrict access to parts of their site to authorised users. So Total Validator
+needs to be authenticated in order to validate these parts of websites. The old method
+of doing this is to use HTTP Authentication, in which case the options on the
+<a href="authentication.html">Authentication tab</a> can be used for authentication.
+</p>
+<p>A more modern approach is to use a 'login form', where the user enters an id and password
+and the server sends back a session cookie to say that user has been authenticated.
+</p>
+<p>Total Validator supports two ways of authenticating using login forms. The easiest is to login
+through your browser and use one of our <a href="#extensions">extensions</a> to start the validation.
+Alternatively, you can enter the login details into the <a href="#protool">Pro tool</a> so that it logs in whilst
+validating. In both cases you must skip any <a href="#logoff">logoff and delete links</a> and set any
+<a href="#options">other form related options</a> in the Pro tool.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="extensions"></a>Using a browser extension</h2>
+<p>This is by far the easiest way to work with login forms, and should work with almost every type there is.
+</p>
+<p>In Chrome or Firefox log into the site. Your browser should now hold a session
+cookie containing a reference to your login session.
+</p>
+<p>You can now use one of our <a href="https://www.totalvalidator.com/tools/extension.html">
+browser extensions</a> to start the validation. The browser extension will pass the session cookie to the
+Pro tool so that it will have access to the secure pages of the website. But you still need ensure that you
+configure the Pro tool to skip any <a href="#logoff">logoff and delete links</a>, and set any
+<a href="#options">other form related options</a>.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="protool"></a>Using the Pro tool</h2>
+<p>If you are just using the Pro tool then the <a href="forms.html">Forms tab</a> can be used
+to detect and log into the login form whilst validating the website. When a form is found that matches
+the <a href="forms.html#action">Action URL</a>, Total Validator will effectively click the
+appropriate <a href="forms.html#submit">Submit button</a> sending any hidden or default
+form parameters together with any <a href="forms.html#parameters">parameters</a> that you've
+explicitly specified (typically your id and password).
+</p>
+<p>If successful the web server will normally return the first secure page and set a session
+cookie in the tool. The tool can then follow all the links on this page, validating all
+the secure pages in the usual way. (Note that this assumes that you have entered
+<a href="options.html#pages">Pages</a> and <a href="include.html">include</a> options
+to allow this to happen.)
+</p>
+<p>Note that you must skip any <a href="#logoff">logoff and delete links</a> and set any
+<a href="#options">other form related options</a> in the Pro tool.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="logoff"></a>Logoff and delete links</h2>
+<p>It is very common to add a link to every page behind the login page, which logs you off
+when clicked. Because Total Validator may follow these links it will be logged off.
+Any subsequent pages that are validated will
+either show as failed links or just be the logon page itself. So the number of pages
+validated will be very short and this problem easy to spot. Sometimes you will also
+see errors complaining about links that redirect to themselves when this happens.
+</p>
+<p>You may also have links on your pages that delete or otherwise destroy resources.
+A common example is to display a list of documents in a table with a column of links to
+delete each document, or even a 'delete all' link. In this case Total Validator will
+faithfully follow each link deleting all of the documents. Note that it is good programming
+practice to replace all such links with submit buttons instead, although this may not
+always be possible.
+</p>
+<p>You can solve this issue by telling Total Validator to skip these logoff and delete links using the
+<a href="include.html#excludepaths">Exclude</a> option.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="options"></a>Related options</h2>
+<p>Most login forms uses cookies to store details about the login session. So you must ensure that Pro tool is set to <a href="network.html#cookies">accept cookies</a> (the default setting will do this), and if you are using a browser extension you must have the 'Send cookies to Pro tool' option selected (again this is the default option).
+</p>
+<p>With single sign-on systems such as SAML, you log in on one site and end up at another. The Pro tool has been tested with a number of SAML based systems including Shibboleth and Athens. But there are many caveats, so please see our <a href="saml.html">dedicated SAML page</a> for more information on how to configure for SAML.
+</p>
+<p>Finally, remember that the Pro tool does not execute any javascript, so the login form must not rely on javascript for activation.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="example"></a>Example forms</h2>
+<p>We have provided an <a href="https://www.totalvalidator.com/help/examples.html">example form</a> which illustrates how you would normally configure Total Validator to work with a login form.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><span class="current">Login forms</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#extensions">Extensions</a></li>
+        <li class="lhitem"><a href="#protool">Pro tool</a></li>
+        <li class="lhitem"><a href="#logoff">Logoff and delete links</a></li>
+        <li class="lhitem"><a href="#options">Related options</a></li>
+        <li class="lhitem"><a href="#example">Example forms</a></li>
+        <li class="lhitem"><a href="saml.html">SAML forms</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

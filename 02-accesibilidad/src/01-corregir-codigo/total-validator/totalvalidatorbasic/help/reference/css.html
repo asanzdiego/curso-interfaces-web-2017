@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="errors warnings problems" />
+  <meta name="description" content="Supported validation problems and their messages for CSS" />
+  <title>CSS Validation Reference</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../../ReadMe.html"><img src="../../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><a href='../help.html'>Help</a> | <span class='error'>Reference</span> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="html"></a>CSS problems</h2>
+<table class="border">
+<caption>These are parsing problems independent of CSS specification</caption>
+<thead><tr><th>Code</th><th>Summary</th><th>Details</th></tr></thead><tbody>
+<tr><td><a id="E700">E700</a></td><td>Missing end of comment</td><td>A CSS comment was found, but the end of the comment was missing.</td></tr>
+<tr><td><a id="E701">E701</a></td><td>Closing quote is missing</td><td>An opening quote was found, but the matching end quote was missing. Outside of strings, quotes must always appears in matching pairs, and any single quotes must be escaped using '\'.</td></tr>
+<tr><td><a id="E702">E702</a></td><td>Closing brace '}' is missing</td><td>The start of a block '{' was found, but the matching end brace '}' was missing.</td></tr>
+<tr><td><a id="E703">E703</a></td><td>Mismatched pairs of '()', or '[]' found</td><td>Outside of strings, you must have matching pairs of parentheses '()' and square brackets '[]'. This error is normally displayed when there is a missing parenthesis or bracket, or an additional one has been entered by mistake, or an extra one has been deliberately added but hasn't been properly escaped using '\'.</td></tr>
+<tr><td><a id="E704">E704</a></td><td>An incomplete at-rule has been detected</td><td>The start of an at-rule was found, but the rest of the rule appears to be missing.</td></tr>
+<tr><td><a id="E705">E705</a></td><td>A block was expected but was not found</td><td>A block was expected but the opening brace '{' at the start of a block could not be found.</td></tr>
+<tr><td><a id="E706">E706</a></td><td>A selector was expected but could not be found</td><td>A selector appears to be missing. This may be caused by the complete absence of any selector, or in a complex selector one of the simple selectors is missing. This may be due to a simple error such as having an extra comma.</td></tr>
+<tr><td><a id="E707">E707</a></td><td>The block appears to have ended prematurely</td><td>The closing brace '}' of a block appears before the end of the declaration.</td></tr>
+<tr><td><a id="E708">E708</a></td><td>The property name is missing</td><td>A property name was expected but could not be found.</td></tr>
+<tr><td><a id="E709">E709</a></td><td>Incomplete declaration</td><td>The declaration appears to be incomplete. Either no property name or no values were found.</td></tr>
+<tr><td><a id="E710">E710</a></td><td>The semi-colon is missing from the end of the at-rule</td><td>at-rules should either have a block or a statement ending with a semi-colon, and in this case neither could be found.</td></tr>
+<tr><td><a id="E711">E711</a></td><td>The identifier includes a character which is not allowed</td><td>Identifiers are restricted in the characters that are allowed. Note that there are normally greater restrictions on the first character of the identifier compared to the rest of it. See <a target="help" href="http://www.w3.org/TR/CSS2/syndata.html#characters">"http://www.w3.org/TR/CSS2/syndata.html#characters</a> (displayed in new window).</td></tr>
+</tbody>
+</table>
+
+<p></p>
+<table class="border">
+<caption>These are problems due to non-conformance with the chosen CSS specification</caption>
+<thead><tr><th>Code</th><th>Summary</th><th>Details</th></tr></thead><tbody>
+<tr><td><a id="E721">E721</a></td><td>Unknown at-rule</td><td>The at-rule is not recognised as valid for the CSS Level used for the validation.</td></tr>
+<tr><td><a id="E722">E722</a></td><td>The @charset rule is not allowed here</td><td>The @charset rule can only be used in a separate CSS document and not in HTML documents.</td></tr>
+<tr><td><a id="E723">E723</a></td><td>The @charset rule must be the first line in the document</td><td>The exact 10 characters '@charset "' must be the first thing in the document. Anything, even white space, prior to this will trigger this error.See <a target="help" href="http://www.w3.org/TR/CSS2/syndata.html#charset">http://www.w3.org/TR/CSS2/syndata.html#charset</a> (displayed in new window).</td></tr>
+<tr><td><a id="E724">E724</a></td><td>The character set is not recognised</td><td>The character set specified is not recognised. This may be because it is misspelled.</td></tr>
+<tr><td><a id="E725">E725</a></td><td>The @import rule does not precede all other rules</td><td>Any @import rules must precede all other rules, except the @charset rule.See <a target="help" href="http://www.w3.org/TR/CSS2/cascade.html#at-import">http://www.w3.org/TR/CSS2/cascade.html#at-import</a> (displayed in new window).</td></tr>
+<tr><td><a id="E726">E726</a></td><td>The at-rule used is not formatted correctly</td><td>The at-rule used does not follow the accepted format for this rule.Please consult the relevant documentation for details.</td></tr>
+<tr><td><a id="E727">E727</a></td><td>Invalid characters found in URI</td><td>URIs can only contain a limited set of US-ASCII characters. See <a target="help" href="http://www.ietf.org/rfc/rfc2396.txt">http://www.ietf.org/rfc/rfc2396.txt</a> (displayed in new window).</td></tr>
+<tr><td><a id="E728">E728</a></td><td>An item is not allowed here</td><td>An at-rule, property or other item was used which is not allowed in this context.</td></tr>
+<tr><td><a id="E729">E729</a></td><td>Invalid @page selector used</td><td>The @page rule can only be used with a restricted number of selectors. In this case the selector used was not recognised as valid for the @page rule.</td></tr>
+<tr><td><a id="E730">E730</a></td><td>Missing font family</td><td>With the @font-feature-values rule, one or more font family names should be provided.</td></tr>
+<tr><td><a id="E731">E731</a></td><td>One or more of the listed font families is badly formatted</td><td>One or more of the font family names listed do not meet the requirements of the specification.</td></tr>
+<tr><td><a id="E732">E732</a></td><td>Missing feature value list</td><td>With font variant value definitions, a list of feature values must be provided.</td></tr>
+<tr><td><a id="E733">E733</a></td><td>Invalid feature value list</td><td>The list of feature values does not meet the requirements of the specification.</td></tr>
+<tr><td><a id="E734">E734</a></td><td>One or more required font descriptors are missing</td><td>The @font-face at-rule must have both a 'font-family' and a 'src' descriptor.</td></tr>
+<tr><td><a id="E735">E735</a></td><td>The @namespace rule does not precede all other rules</td><td>Any @namespace rules must precede all other rules, except the @charset and @import rules. See <a target="help" href="http://www.w3.org/TR/css3-namespace/#syntax">http://www.w3.org/TR/css3-namespace/#syntax</a> (displayed in new window).</td></tr>
+<tr><td><a id="E736">E736</a></td><td>The namespace NAMESPACE has not been not declared</td><td>A @namespace rule declaring the namespace used in the selector was not found.</td></tr>
+<tr><td><a id="E737">E737</a></td><td>A counter-style type descriptor is required</td><td>MISSING_FEATURE_VALUE_LIST</td></tr>
+<tr><td><a id="E738">E738</a></td><td>The counter-style name has an invalid name</td><td>The @counter-style at-rule cannot have any of these names: 'decimal', 'default', 'hanging', 'inherit', 'initial', 'inline', 'inside', 'none', or 'outside'.</td></tr>
+
+<tr><td><a id="E755">E755</a></td><td>Pseudo-elements can only appear at the end of a selector</td><td>Pseudo-elements may only be appended after the last simple selector of the selector. See <a target="help" href="http://www.w3.org/TR/CSS2/selector.html#pseudo-elements">http://www.w3.org/TR/CSS2/selector.html#pseudo-elements</a> (displayed in new window).</td></tr>
+<tr><td><a id="E756">E756</a></td><td>The pseudo-element/pseudo-class used was not recognised</td><td>Each CSS standard allows different pseudo-elements and pseudo-classes to be used, and one used here does not match the list of allowed pseudo-classes/pseudo-elements for this CSS Level.</td></tr>
+<tr><td><a id="E757">E757</a></td><td>A media type is missing</td><td>A media type was expected but appears to be missing. This can be caused by an extra comma in a list of media types.</td></tr>
+<tr><td><a id="E758">E758</a></td><td>The media type MEDIA_TYPE was not recognised</td><td>Each CSS standard allows different media types to be used, and the type used here does not match the list of allowed types for this CSS Level.</td></tr>
+<tr><td><a id="E759">E759</a></td><td>A media query contains a parsing error</td><td>The media query contains a colon (:) in the wrong place.</td></tr>
+<tr><td><a id="E760">E760</a></td><td>Unknown media feature: MEDIA_FEATURE</td><td>The media feature name is not recognised as valid for the CSS Level used for the validation.</td></tr>
+<tr><td><a id="E761">E761</a></td><td>TEXT_DESCRIBING_PROBLEM: RULES_FOR_THIS_FEATURE</td><td>The value used is invalid for this media feature, because the value does not follow the allowed rules for this feature. A list of valid rules will be displayed for the feature.</td></tr>
+<tr><td><a id="E762">E762</a></td><td>The 'to' and 'from' keywords must appear only once</td><td>The 'to' and 'from' keywords must appear only once in a keyframe selector. See <a target="help" href="http://www.w3.org/TR/css3-animations/#keyframes">http://www.w3.org/TR/css3-animations/#keyframes</a> (displayed in new window).</td></tr>
+<tr><td><a id="E763">E763</a></td><td>Invalid percentage found in keyframe selector</td><td>Percentages must contain the '%' character and the value must be between 0% and 100%. See <a target="help" href="http://www.w3.org/TR/css3-animations/#keyframes">http://www.w3.org/TR/css3-animations/#keyframes</a> (displayed in new window).</td></tr>
+
+<tr><td><a id="E776">E776</a></td><td>Unknown property: PROPERTY_NAME</td><td>The property name is not recognised as a valid name for the CSS Level used for the validation.</td></tr>
+<tr><td><a id="E777">E777</a></td><td>TEXT_DESCRIBING_PROBLEM: RULES_FOR_THIS_PROPERTY</td><td>The value used is invalid for this property, because the value does not follow the allowed rules for this property. A list of valid rules will be displayed for the property using the format used in the chosen standard.</td></tr>
+<tr><td><a id="E778">E778</a></td><td>TEXT_DESCRIBING_PROBLEM: RULES_FOR_THIS_DESCRIPTOR</td><td>The value used is invalid for this descriptor, because the value does not follow the allowed rules for this descriptor. A list of valid rules will be displayed for the descriptor using the format used in the chosen standard.</td></tr>
+<tr><td><a id="E779">E779</a></td><td>The '!important' keyword is not allowed here</td><td>The '!important' keyword is only allowed in property values and not in declaration values.</td></tr>
+<tr><td><a id="W776">W776</a></td><td>A vendor extension has been used</td><td>Authors should avoid using vendor extensions where possible. See <a target="help" href="http://www.w3.org/TR/CSS2/syndata.html#vendor-keywords">http://www.w3.org/TR/CSS2/syndata.html#vendor-keywords</a> (displayed in new window).</td></tr>
+</tbody>
+</table>
+<p><a href="#top"><img src="../../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Reference</div>
+  <ul>
+		<li class="lhmenu"><a href="index.html">Introduction</a></li>
+		<li class="lhmenu"><a href="parsing.html">Parsing</a></li>
+		<li class="lhmenu"><a href="spelling.html">Spell check</a></li>
+		<li class="lhmenu"><a href="links.html">Link problems</a></li>
+		<li class="lhmenu"><a href="xhtml.html">HTML</a></li>
+		<li class="lhmenu"><span class="current">CSS</span></li>
+		<li class="lhmenu"><a href="section508.html">US Section 508</a></li>
+		<li class="lhmenu"><a href="wai1.html">WCAG 1.0</a></li>
+		<li class="lhmenu"><a href="wai2.html">WCAG 2.0</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

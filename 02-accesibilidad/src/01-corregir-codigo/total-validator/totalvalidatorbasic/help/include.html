@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Include Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Include tab of the Pro tool are described below.</p>
+
+<p class="centered"><img alt="Include tab" src="../images/tool_incltab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="excludepaths"></a>Exclude</h2>
+<p>
+You may not always wish to check certain parts of your site. This option allows
+you to exclude parts of the site by specifying one or more paths to ignore.</p>
+<p>
+When you click on the 'Exclude' button a dialog appears to allow you to add,
+remove, and update a list of paths to exclude.</p>
+<p>
+The paths that you enter here must start with a '/'. Any pages that start with this path will then be ignored.
+You can use regular expression syntax here, but you must always start with
+'/' as the first character and note that .* is always automatically added to the
+end of whatever you enter.</p>
+<p>When checking local pages on Windows, always use '/' and not '\'. Also the same drive as the starting page
+will be automatically added, and all paths will be to the start of this drive.
+</p>
+<p>You can use this option with the <a href="#includepaths">Include</a> option to provide
+further restrictions on what to check. For example you could set a path to exclude
+of '/' to exclude everything except the starting page, and then use <a href="#includepaths">Include</a> to
+specify exactly which paths should be validated. You can also use the <a href="#robots" title="Link to robots.txt option">robots.txt</a>
+option at the same time for further fine-grained selection of what to validate.
+</p>
+<p>
+<strong>Note: </strong>When using this with the <a href="#followbelow">Follow below</a> option all paths you specify are
+relative to the starting page.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="includepaths"></a>Include</h2>
+<p>
+If you specify some <a href="#excludepaths">paths to exclude</a>, or use 'Disallow' within
+your <a href="#robots" title="Link to robots.txt option">robots.txt</a> file, you may
+wish to override this to include some paths within these areas of your website that you do wish to check. Note that
+it only makes sense for these include paths to be 'below' the <a href="#excludepaths">paths
+to exclude</a> or 'below' paths disallowed in the
+<a href="#robots" title="Link to robots.txt option">robots.txt</a> file.</p>
+<p>
+When you click on the 'Include' button a dialog appears to allow you to add,
+remove, and update a list of paths to include.</p>
+<p>
+The paths that you enter here must start with a '/' and be more than just
+a single '/'. You can use regular expression syntax here, but you must always start with
+'/' as the first character and note that .* is always automatically added to the
+end of whatever you enter.</p>
+<p>
+For example if you specify an exclude path of <em>/some_path/</em>, and an include path of <em>/some_path/sub_path/</em>
+then pages such as <em>http://www.mysite.com/some_path/index.html</em> will be excluded,
+but pages such as <em>http://www.mysite.com/some_path/sub_path/index.html</em> will be
+included (as long as you have a link to them from the pages that are validated).
+</p>
+<p>
+<strong>Note: </strong>When using this with the <a href="#followbelow">Follow below</a> option all paths are
+relative to the starting page.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="followbelow"></a>Follow below</h2>
+<p>By default Total Validator will follow all the links it finds and validates those pages. Use this option to restrict it to just validating pages 'below' the starting page so you can validate
+just a portion of your website.</p>
+<p>For example if your starting page is <em>http://www.mysite.com/some_path/index.html</em> then only links that resolve to URLs that begin with
+<em>http://www.mysite.com/some_path/</em> will be validated.
+</p>
+<p>
+<strong>Note: </strong>Using this option significantly modifies how the the <a href="#excludepaths">Exclude</a>, <a href="#includepaths">Include</a>,
+<a href="#remote">Follow remote</a> and <a href="#depth">depth</a> options operate.</p>
+
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+<h2><a id="remote"></a>Follow remote</h2>
+<p>
+Normally Total Validator will ignore pages on remote sites. Selecting this option will cause it to ignore this restriction
+<em>on the starting page only</em>. Each link on the starting page is treated as if it is the starting page itself.</p>
+<p>
+Use this option with care otherwise you may end up checking far more pages than
+intended. It is expected that in most cases this option will be used with a
+specially constructed starting page that references different parts of the
+same website or different websites. See <a href="faq.html#multiple">Validating multiple sites</a>
+for further details.</p>
+
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+<h2><a id="ignorecase"></a>Ignore case</h2>
+<p>
+The path component of URLs are case-sensitive. So mypage.html and MyPage.html are references to completely different web
+pages. However, because Windows uses a case-insensitive file system many web authors mistakenly assume they point
+to the same page. This is a mistake and should be corrected, and most web servers will generate
+broken links where it occurs. However, IIS masks this problem and so if you use IIS you may not
+be aware of it.</p>
+<p>
+This problem will make your site slower, affect your page rankings in search engines, and skew any web site analytics you
+run. It may also cause Total Validator to validate the same page more than once and miss other pages altogether. As such it is in your interest to correct this error as soon as possible.</p>
+<p>
+If you are running a server on Windows and suspect that you have this problem, then look for duplicated pages in the results and use the 'ignore case' option to work around it until your site is fixed.</p>
+
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="robots"></a>Use robots.txt</h2>
+<p>
+An alternative way of specifying which parts of your site to exclude is to add a standard
+<a href="http://www.robotstxt.org/robotstxt.html" title="Link to official robots.txt site">robots.txt</a> file to you website.
+Total Validator will use any rules marked for all user agents with a *, as well as
+those specifically marked with a user agent of 'TotalValidator'. For example:
+</p>
+<pre>
+User-agent: *
+Disallow: /blogs
+
+User-agent: TotalValidator
+Allow: /support/
+Disallow: /support/resources/
+</pre>
+<p>
+Total Validator supports all of the features supported by
+<a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=156449">Google</a>
+including multiple 'Disallow:' and 'Allow:' statements in any order, wildcards and suffixes.</p>
+<p>
+Note that the starting
+page itself will always be validated even if the robots.txt file disallows it. This
+option can also be used in combination with the <a href="#excludepaths">Exclude</a> and <a href="#includepaths">Include</a> options for fine-grained
+selection of what to validate.</p>
+<p>Also note that when used with the 'Follow remote' option the robots.txt files for each
+site on the starting page will be applied to that site only.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="validate"></a>Validate errors</h2>
+<p>
+If you select this option then whenever your web server returns an error status code
+such as 404 (page not found), then the error page sent by the web server
+will be validated.</p>
+<p>
+This is a useful way of checking that your error pages also conform to standards.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="errors"></a>Ignore problems</h2>
+<p>If you use the tool and it reports that there are problems with your
+site that you are happy to live with, then use this option to stop them
+appearing. You could also ignore any problems that
+you think are errors in the tool itself, although we would prefer
+it if you could <a
+ href="mailto:support@totalvalidator.com?subject=errors">let us
+know</a> so we can fix them for everyone's benefit.</p>
+<p>
+This must be a comma separated list of problem codes
+to ignore. For example: E601, W600, E404, P861.
+See the online <a href="https://www.totalvalidator.com/support/reference/index.html">Validation reference</a>
+for a full list of all the codes which may appear.</p>
+<p>
+This option applies to all pages/css validated. If you need finer control
+then you can <a href="ignore.html">add special instructions</a> to your
+pages/css instead.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="checkonly"></a>Check only these</h2>
+<p>
+Normally the tool will check for all problems for all of the validations you have selected.
+But with this option you can list specific problems you only wish to check for.
+This must be a comma separated list of problem codes
+to include. For example: E601, W600, E404, P861.
+See the online <a href="https://www.totalvalidator.com/support/reference/index.html">Validation reference</a>
+for a full list of all the codes which may appear.</p>
+<p>
+The tool will only check for the problems you've listed. But you must
+ensure that you have the corresponding validation turned on. For example if
+you list the HTML error 'E602', then you must ensure that you have selected
+a HTML validation on the Main tab, otherwise the 'E602' validation will never
+be performed.</p>
+<p>
+Conversely, if you do not list any problems for a particular validation then you should
+turn this validation off on the Main tab otherwise it will still run, slowing the process unnecessarily.
+This is particularly important for Broken Links or Spell Check validations which have
+the greatest impact on performance.</p>
+<p>
+You must also ensure that the <a href="options.html#level">Validation level on the Main tab</a>
+is set appropriately. For example, if you set the Validation level to 'Ignore warnings',
+any warnings you list here will be ignored.</p>
+<p>
+Any problems listed here that also appear in the <a href="#errors">Ignore problems</a> option
+will also be ignored and so there is little point in using the
+<a href="#errors">Ignore problems</a> option at the same time as this one.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="depth"></a>Depth</h2>
+<p>This option allows you to restrict how many folders 'below' the website root
+(or filesystem for local pages) to check, based on the number of '/' characters in the link. So if you just
+wish to check the top few levels then enter a value here.</p>
+<p>
+The value that you enter here must be an integer (whole number) greater than
+zero. Leave blank to ignore this option.</p>
+<p>
+If you use this with the <a href="#followbelow">Follow below</a> option, the the depth is relative to the starting page instead.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="stopafter"></a>Stop after problems</h2>
+<p>This option allows you to specify the maximum number of problems to be
+reported before the validation is automatically halted. This is especially
+useful on large sites, where the same problems may be reported again and again.
+Instead of waiting for the whole site to be validated you can fix these common
+problems after validating only a few pages and then validate the entire site.
+</p>
+<p>The value that you enter here must be an integer (whole number) greater
+than 0. Leave it blank for this option to be ignored.
+</p>
+<p>Note that the number of problems reported could be slightly higher
+than the figure you enter, as all problems for the last tag validated
+will be reported.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="stopafterpg"></a>Stop after pages</h2>
+<p>This option allows you to specify the maximum number of pages with problems
+to be reported before the validation is automatically halted. This is an
+alternative to the 'Stop after problems' option, although both can be used
+at the same time if required.
+</p>
+<p>The value that you enter here must be an integer (whole number) greater
+than 0. Leave it blank to ignore this option.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><span class="current">Include tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#excludepaths">Exclude</a></li>
+        <li class="lhitem"><a href="#includepaths">Include</a></li>
+        <li class="lhitem"><a href="#followbelow">Follow below</a></li>
+        <li class="lhitem"><a href="#remote">Follow remote</a></li>
+        <li class="lhitem"><a href="#ignorecase">Ignore case</a></li>
+        <li class="lhitem"><a href="#robots">Use robots.txt</a></li>
+        <li class="lhitem"><a href="#validate">Validate errors</a></li>
+        <li class="lhitem"><a href="#errors">Ignore problems</a></li>
+        <li class="lhitem"><a href="#checkonly">Check only these</a></li>
+        <li class="lhitem"><a href="#depth">Depth</a></li>
+        <li class="lhitem"><a href="#stopafter">Stop after problems</a></li>
+        <li class="lhitem"><a href="#stopafterpg">Stop after pages</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

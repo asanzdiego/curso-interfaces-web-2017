@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spell Check Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Spell check tab of the Pro tool
+are described below. For a further explanation of what these options mean and how to
+use them, see the <a href="spellchecking.html">Spell checking</a> page.</p>
+<p class="centered"><img alt="Spell check tab" src="../images/tool_spelltab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="spelloptions"></a>What to check</h2>
+<p>By default certain types of words are not spell checked. This includes
+words that are all upper case (e.g. NASA), words that are mixed case (e.g.
+SpellCheck), words that contain digits (e.g. Homer6), words surrounded by
+characters other than quote marks (e.g. &lt;table&gt;), and words within
+&lt;samp&gt;, &lt;code&gt;, and &lt;kbd&gt; tags. Use the 'UPPER CASE words',
+'MixeD CaSe words', and so on, options to include these types of words in the
+spell checking.</p>
+<p>
+Words within attributes are also not normally checked. However you can use the
+'Include attributes' option to spell check text within displayable
+attributes such as: alt, title, summary, label, prompt, and standby.</p>
+<p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="misspelt"></a>Save misspelt words</h2>
+<p>Using this option has the same effect as clicking on every misspelt word on
+the results pages: It will save all of the words not found by the spell
+checker into separate dictionary files for each language code.
+</p>
+<p>These files are saved to the <a href="#corrections">Corrections folder</a>
+and so may be used for future validations. So you may wish to edit them before they are used.
+When editing note that a dictionary file must be a plain text file consisting of
+one word per line, with no duplicates, and must be saved using UTF-8 encoding.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="foreign"></a>Save foreign words</h2>
+<p>Instead of ignoring any words for unrecognised language codes, all of the
+words in these sections will be saved into separate dictionary files for
+each unrecognised language code. You can then point to these files using the
+<a href="#dictionary">Own dictionaries</a> option, and they can then be used
+to spell check new languages.
+</p>
+<p>These files are saved to the <a href="#corrections">Corrections folder</a>, but you may
+wish to move them elsewhere to save them being overwritten. You may also wish to edit them
+before they are used, but please note that a dictionary file must be a plain text file consisting of
+one word per line, with no duplicates, and must be saved using UTF-8 encoding.
+</p>
+<p>Note that for most glyph-based languages, like Chinese, all the words are upper case.
+So you may need to use the 'UPPER CASE words' option to ensure that words are saved.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="british"></a>Use British</h2>
+<p>By default any English words (language codes starting with 'en'), except those marked as British (en-GB),
+will be spell checked using the American (en-US) dictionary.
+</p>
+<p>If the majority of the English on your site is closer to British, then use this option to reverse
+the default: So that any English words (language codes starting with 'en'), except those marked
+as American (en-US), will be spell checked using the British (en-GB) dictionary.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="suggestions"></a>Ignore suggestions</h2>
+<p>When a word is not found in the dictionary a list of suggestions is normally
+presented in the results. But with this option you can suppress this list.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="showlanguage"></a>Show language code</h2>
+<p>When you click on misspelt words on the results pages they will be saved to a dictionary
+for the specific language the word was spell-checked with. If your pages have multiple languages
+on them it may not always be clear which dictionary will be used. So use this option to display
+the language code used for the spell checking next to the word in the results.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="dictionary"></a>Own dictionaries</h2>
+<p>This is a comma-separated list of dictionaries. These will normally be for 'foreign' languages
+other than the ones supplied with the tool (English, French, German, Italian, Spanish). But they may
+also be for specific language country codes or even be used to replace the internal dictionaries.
+</p>
+<p>Note that dictionary files must be plain text files consisting of
+one word per line, with no duplicates, and must be saved using UTF-8 encoding.
+Only file names starting with a valid language code and ending with <code>.dic</code> will be used and the
+language code prefix itself must end with a ".". For example: <code>fr-ca.dic</code> or <code>pt-PT.mydictionary.dic</code>,
+but not <code>fr-CA</code> nor <code>fr-CA-dic</code>.
+</p>
+<p>The language code is treated as case-insensitive so if you supply
+<code>fr-ca.dic</code> and <code>fr-CA.dic</code>, only one of these will be used (no guarantee which).
+</p>
+<p>Any files that match the names of the internal ones, will be used instead of them. For example: <code>fr.dic</code>, <code>en-GB.dic</code>
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="ignorelang"></a>Ignore languages</h2>
+<p>This is a comma-separated list of language codes to ignore when checking. All words within the
+section of the pages matching these language codes will be ignored. This includes words that would
+normally be checked using an internal dictionary or those matching languages specified using the
+<a href="#dictionary">Own dictionaries</a> option.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="defaultlang"></a>Default language</h2>
+<p>When checking each page the tool will try to determine the default language to use to check words.
+It first checks the &lt;html&gt; tag for a 'lang' attribute, failing that it looks for 'content-language'
+within a &lt;meta&gt; tag, and finally for a 'content-language' HTTP header. If no default can be found
+then words that are not specifically marked with a language code will be ignored.
+</p>
+<p>You can use this option to enter a language code to use as the default when none can be found.
+The drop-down lists the internal languages that we provide, but you can enter any valid language code here.
+But note that unless there is a dictionary for this language (internal or specified with
+<a href="#dictionary">Own dictionaries</a>) then matching words will still not be checked.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="corrections"></a>Corrections folder</h2>
+<p>When spelling mistakes are highlighted on the results pages but you think that the words are spelt correctly, you can
+add these words to correction dictionaries by <a href="results.html#spelling">clicking on them</a>.
+These dictionaries are automatically be saved the the 'Corrections folder' and automatically used
+the next time you run a spell check.
+</p>
+<p>By default the 'Corrections folder' is a sub-folder called 'dics' within the folder where all the
+<a href="resultstab.html#sresults">results pages</a> are saved. But you can use this option to
+select another folder to use to store corrections to and read corrections from.
+</p>
+<p>Because the tool listens for spell check corrections as soon as it is started, if you
+wish to change this folder you must restart the tool or click the 'Restart' button next to the
+'Port' field to have any affect.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="port"></a>Port</h2>
+<p>As soon as you start the Pro tool it will start to listen on the 'Port' specified for
+<a href="results.html#spelling">clicks on results pages</a>. The port is set to 9890 by
+default but can be any number in the range 1-65535, but you must choose a number that does not conflict
+<a href="http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">with
+any other service</a> on your PC otherwise an error message will appear when you start the tool.
+</p>
+<p>Because the tool listens for spell check corrections as soon as it is started, if you
+wish to change the 'Port' you must restart the tool or click the 'Restart' button next to the
+'Port' field to have any affect.
+</p>
+<p>Also note that when you run a validation the value of the 'Port' is embedded in the results pages.
+So if you change the value of the 'Port' you must re-run your validation or when you click on the
+results it will not find the Pro tool.
+</p>
+<p>Finally, if you do not wish to use this feature then you can turn it off using the 'Listen' checkbox.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><span class="current">Spell check tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#spelloptions">What to check</a></li>
+        <li class="lhitem"><a href="#misspelt">Save misspelt words</a></li>
+        <li class="lhitem"><a href="#foreign">Save foreign words</a></li>
+        <li class="lhitem"><a href="#british">Use British</a></li>
+        <li class="lhitem"><a href="#suggestions">Ignore suggestions</a></li>
+        <li class="lhitem"><a href="#showlanguage">Show language code</a></li>
+        <li class="lhitem"><a href="#dictionary">Own dictionaries</a></li>
+        <li class="lhitem"><a href="#ignorelang">Ignore languages</a></li>
+        <li class="lhitem"><a href="#defaultlang">Default language</a></li>
+        <li class="lhitem"><a href="#corrections">Corrections folder</a></li>
+        <li class="lhitem"><a href="#port">Port</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

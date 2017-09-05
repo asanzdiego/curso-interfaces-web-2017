@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Example Login Forms</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top">
+
+<div class="pagehead">
+<h1><img src="../images/tvheader2.gif" alt="Total Validator"/>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="nomenus">
+<h2><a id="content"></a><a id="example1"></a>Example form</h2>
+<p>Here is a simple form you can use to practice on:</p>
+<form method="post" action="/validator/ExampleForm">
+  <p><label title="User ID" for="theUser1">User ID:</label> <input id="theUser1" name="user" size="25" value="The User ID"/>
+  <label title="Password" for="thePassword1">Password:</label> <input id="thePassword1" name="pwd" type="password" size="25" value="The Password"/>
+  <input type="hidden" name="formname" value="example1" /> <!-- Hidden parameters are automatically found and sent for you -->
+  <input value="Submit" name="example1" type="submit"/></p>
+</form>
+<p>In the Pro tool create a new workspace using 'File &gt; New', then 'Save' this. Enter a 'Starting web page' of <code>https://www.totalvalidator.com/help/examples.html</code>, and set the 'Number of pages' to blank, so that all pages are validated. To see all the pages that are validated go to the 'Results' tab and set the 'Show on success' option.
+</p>
+<p>If you now 'Validate', it will just validate <em>this</em> page. So we need to configure it to log in ...
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h3><a id="step1"></a>Configure the Forms tab</h3>
+<p>The first step is always to view the source of the page and look for the <code>&lt;form&gt;</code> tag. For most browsers right mouse click and choose the appropriate 'View source' option.
+</p>
+<p>On our page we see: <code>&lt;form method="post" action="/validator/ExampleForm"&gt;</code>. So set the 'Action URL' on the 'Forms' tab to <code>/validator/ExampleForm</code>. This must be <em>exactly</em> what appears in the <code>action</code> attribute, anything else and it will not work.
+</p>
+<p>Next we need to add 'Parameters' for all of the fields that the user needs to complete. Here, we just have the 'User ID' and 'Password' fields, but in practice you may also have checkboxes or other input fields that need to be filled in for the form to work. Note that you do not have to add parameters for any hidden fields or the submit button as these will be automatically read and sent by the Pro tool.
+</p>
+<p>Always use the value of the <code>name</code> attribute and not the <code>id</code> attribute. So on the 'Forms' tab enter 'Parameters' for <code>user</code> with a value of <code>The User ID</code>, and <code>pwd</code> with a value of <code>The Password</code>.
+</p>
+<p>If you now 'Validate', it will log into the form and validate the starting page, the logged-in page and the stylesheet. But it is not validating any other pages. So we need to investigate further ...
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h3><a id="step2"></a>Manually log into the form</h3>
+<p>You should always manually log into the form and look at the page that appears, as there are some important things to learn.
+</p>
+<p>First, check the URL of the page displayed. If the URL refers to a completely different website to the form then by default the Pro tool will ignore any links on it. If you're using SAML authentication then please see our dedicated SAML page for further help. If not, then you'll have to login manually and use a browser extension to start the validation.
+</p>
+<p>In our case the website is the same, but it is still not validating other pages such as <code>SubPage1.html</code> or <code>SubPage2.html</code>. So we need to investigate further ...
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h3><a id="step3"></a>Exclude any links that log you out</h3>
+<p>Use your browser's 'View source' option to inpsect the source of the page, and you'll see a link saying 'Sign Off'. On your own site it may be 'Sign Out' or 'Log Off' or something similar.
+</p>
+<p>Looking at this link. We see: <code>&lt;a href="LogOff"&gt;Sign Off&lt;/a&gt;</code>. When the Pro tool tests this link it will be immediately logged off. So that's why it can't validate <code>SubPage1.html</code> or <code>SubPage2.html</code>, because it's being logged off before it gets to them.
+</p>
+<p>To fix this, on the 'Include' tab we need to add an 'Exclude' path to ignore the 'Sign Off' link by entering the full path to the sign off link relative to the website root: <code>/validator/LogOff</code>.</p>
+
+<p>If you now run the Pro tool you'll see everything is now validated (5 items).
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

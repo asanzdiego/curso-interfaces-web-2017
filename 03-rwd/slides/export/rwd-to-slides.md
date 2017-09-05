@@ -1,6 +1,6 @@
 % Responsive Web Design
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -45,15 +45,18 @@
 
 ## Esto no es la web
 
-![Esto no es la web. Fuente: bradfostweb.com](../img/brad_frost_1.png)
+![Esto no es la web. Fuente: bradfostweb.com](../img/brad_frost_1.png){ width=50% text-align=center }
+
 
 ## Esto es la web
 
-![Esto es la web. Fuente: bradfostweb.com](../img/brad_frost_2.png)
+![Esto es la web. Fuente: bradfostweb.com](../img/brad_frost_2.png){ width=50% text-align=center }
+
 
 ## ¿Será esto la web?
 
-![¿Será esto la web?. Fuente: bradfostweb.com](../img/brad_frost_3.png)
+![¿Será esto la web?. Fuente: bradfostweb.com](../img/brad_frost_3.png){ width=50% text-align=center }
+
 
 ## Estadísticas
 
@@ -61,27 +64,32 @@
 
 ## El desarrollador
 
-![El desarrollador atual. Fuente: globalmoxie.com](../img/globalmoxie.png)
+![El desarrollador atual. Fuente: globalmoxie.com](../img/globalmoxie.png){ width=50% text-align=center }
+
 
 ## Responsive Web Design
 
-![Responsive Web Design. Fuente: flickr.com/photos/zergev/](../img/rwd.png)
+![Responsive Web Design. Fuente: flickr.com/photos/zergev/](../img/rwd.png){ width=50% text-align=center }
+
 
 ## Content is like water
 
-![Content is like water. Fuente: fr.wikipedia.org/wiki/Site_web_adaptatif](../img/content-is-like-water-bis.jpg)
+![Content is like water. Fuente: fr.wikipedia.org/wiki/Site_web_adaptatif](../img/content-is-like-water-bis.jpg){ width=50% text-align=center }
+
 
 ## Graceful degradation
 
 - Se **desarrolla para los últimos navegadores**, con la posibilidad de que funcione en navegadores antiguos.
 
-![Graceful degradation.  Fuente: bradfostweb.com](../img/responsive-design-graceful-degradation.png)
+![Graceful degradation.  Fuente: bradfostweb.com](../img/responsive-design-graceful-degradation.png){ width=50% text-align=center }
+
 
 ## Progessive enhancement
 
 - Se **desarrolla una versión básica** completamente operativa, con la posibilidad de ir añadiendo mejoras para los últimos navegadores.
 
-![Progressive enhancement. Fuente: bradfostweb.com](../img/responsive-design-progressive-enhancement.png)
+![Progressive enhancement. Fuente: bradfostweb.com](../img/responsive-design-progressive-enhancement.png){ width=50% text-align=center }
+
 
 ## Beneficios (I)
 
@@ -106,31 +114,36 @@
 
 - <http://mattkersley.com/responsive>
 
-![Página de testeo de Matt Kersley](../img/pagina-de-testeo-de-matt-kersley.png)
+![Página de testeo de Matt Kersley](../img/pagina-de-testeo-de-matt-kersley.png){ width=50% text-align=center }
+
 
 ## dConstruct 2011
 
 - <http://2011.dconstruct.org>
 
-![Ejemplo RWD: dConstruct 2011. Fuente:ecbloguer.com](../img/dConstruct-2011-ejemplo-de-Responsive-Web-Design.jpg)
+![Ejemplo RWD: dConstruct 2011. Fuente:ecbloguer.com](../img/dConstruct-2011-ejemplo-de-Responsive-Web-Design.jpg){ width=50% text-align=center }
+
 
 ## Boston Globe
 
 - <http://www.bostonglobe.com>
 
-![Ejemplo RWD: Boston Globe. Fuente:ecbloguer.com](../img/Boston-Globe-ejemplo-de-Responsive-Web-Design.jpg)
+![Ejemplo RWD: Boston Globe. Fuente:ecbloguer.com](../img/Boston-Globe-ejemplo-de-Responsive-Web-Design.jpg){ width=50% text-align=center }
+
 
 ## Food Sense
 
 - <http://foodsense.is>
 
-![Ejemplo RWD: Food Sense. Fuente:ecbloguer.com](../img/Food-Sense-ejemplo-de-Responsive-Web-Design.jpg)
+![Ejemplo RWD: Food Sense. Fuente:ecbloguer.com](../img/Food-Sense-ejemplo-de-Responsive-Web-Design.jpg){ width=50% text-align=center }
+
 
 ## Deren Keskin
 
 - <http://www.deren.me>
 
-![Ejemplo RWD: Deren Keskin. Fuente:ecbloguer.com](../img/Deren-Keskin-ejemplo-de-Responsive-Web-Design.jpg)
+![Ejemplo RWD: Deren Keskin. Fuente:ecbloguer.com](../img/Deren-Keskin-ejemplo-de-Responsive-Web-Design.jpg){ width=50% text-align=center }
+
 
 
 
@@ -152,7 +165,8 @@
 
 - <http://pxtoem.com>
 
-![px to em](../img/pxtoem.png)
+![px to em](../img/pxtoem.png){ width=50% text-align=center }
+
 
 ## Ejemplo
 
@@ -165,7 +179,7 @@ body {
 
 h1 {
   font-size: 1.3846 em;
-  /* 18px/13px = 1.3846em */
+  /* 18px/13px = 1.3846 em */
 }
 ~~~
 
@@ -177,7 +191,8 @@ h1 {
 
 ## De PX a %
 
-![Cálculo porcentajes. Fuente:aloud.es](../img/porcentajes.jpg)
+![Cálculo porcentajes. Fuente:aloud.es](../img/porcentajes.jpg){ width=50% text-align=center }
+
 
 
 
@@ -186,10 +201,11 @@ h1 {
 
 ## Ejemplo
 
-- 1 columna para xs (\<768px)
-- 2 columnas para sm (≥768px)
-- 3 columnas para md (≥992px)
-- 4 columnas para lg (≥1200px)
+- 1 columna para xs (\<544px)
+- 2 columnas para sm (≥544px)
+- 3 columnas para md (≥768px)
+- 4 columnas para lg (≥992px)
+- 6 columnas para xl (≥1200px)
 
 ## Uso de clases
 
@@ -200,10 +216,12 @@ h1 {
 
 ~~~
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">1</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">2</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">3</div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">4</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">1</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">2</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">3</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">4</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">5</div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">6</div>
 </div>
 ~~~
 
@@ -513,7 +531,8 @@ Un Media Query **no sólo nos permite seleccionar el tipo de medio** (all, brail
 
 ## Desktop VS Mobile
 
-![Desktop first VS Mobile first. Fuente: brettjankord.com](../img/desktop-first-vs-mobile-first.png)
+![Desktop first VS Mobile first. Fuente: brettjankord.com](../img/desktop-first-vs-mobile-first.png){ width=50% text-align=center }
+
 
 ## Desktop First
 
@@ -598,10 +617,10 @@ Un Media Query **no sólo nos permite seleccionar el tipo de medio** (all, brail
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/03-rwd/src>
 
 ## Bibliografía (I)
 

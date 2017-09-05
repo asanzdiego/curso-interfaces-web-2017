@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spell Checking</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>Selecting the <a href="options.html#spellcheck">spell check option</a> on the Main tab turns on Total Validator's spell checking system. By default Total Validator detects the language used for every word on every web page that is validated, and then uses a <a href="#dictionaries">dictionary</a> for that language, together with some rules, to spell check it.
+</p>
+<p>If a word isn't found in the matching dictionary then a <a href="results.html#spelling">spelling mistake</a> is displayed in the results. A list suggested corrections may also be displayed as well.
+</p>
+<p>The following page details how to get the best out of the spell checking system, using the many options available on the <a href="spellcheck.html">Spell check</a> tab. These have changed considerably since v10, so users of older versions of Total Validator may also need to check the <a href="#migration">Migration</a> section.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="dictionaries"></a>Internal dictionaries</h2>
+<p>Six internal dictionaries are built into Total Validator to cover five West European languages: English, French, German, Italian and Spanish. The six internal dictionaries are named after the <a href="https://www.w3.org/International/articles/language-tags/">language codes</a> they apply to: <code>en-US</code>, <code>en-GB</code>, <code>fr</code>, <code>de</code>, <code>it</code>, <code>es</code>. These will also be used to check words for any country or region specific languages codes such as <code>fr-CA</code> and <code>fr-FR</code> as well. English is a special case in that the <code>en-US</code> dictionary will be used for <code>en</code> words (except for <code>en-GB</code>). But you can <a href="spellcheck.html#british">switch</a> to using the <code>en-GB</code> dictionary for <code>en</code> words instead (except for <code>en-US</code> of course).
+</p>
+<p>All dictionaries used for spell checking are just plain, UTF-8 encoded, text files consisting of one word per line. But to save having to list every possible variation of each word for each language, rules are used specific to each supported language to detect plurals, apostrophes, and other similar features. So that a single word in the dictionary may match many actual words that are found on web pages. For example 'address' will match 'addresses'.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="detection"></a>Language detection</h2>
+<p>In order to work out which dictionary to use to spell check a word, the system looks at the <a href="https://www.w3.org/International/articles/language-tags/">language code</a> in the 'lang' attribute of the element containing it. For example:
+</p>
+<pre>&lt;p lang='en-CA'&gt;This will be detected as Canadian English&lt;/p&gt;</pre>
+<p>If there is no 'lang' attribute, it looks at the parent element, and then it's parent, right up to the &lt;html&gt; element:
+</p>
+<pre>&lt;div lang='en-CA'&gt;&lt;p&gt;&lt;span&gt;This will still be detected as Canadian English&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;</pre>
+<p>If none of the parent elements right up to &lt;html&gt; has a 'lang' attribute, then the system looks for a &lt;meta&gt; tag specifying the language: <code>&lt;meta http-equiv='Content-Language' content='en'&gt;</code>. If that doesn't exist, it then looks for a Content-Language HTTP header in the page response. If nothing is still found then, if it has been set, it will use the <a href="spellcheck.html#defaultlang">Default language</a> option. If it fails to find any matching language code then the word will not be spell checked.
+</p>
+<p>Note that if the detected language code is blank (<code>''</code>), malformed (<code>!rubbish!</code>), or one for which there is no dictionary (<code>zh-Hans-CN</code>), then the word will also be ignored. Special words such as upper-case words, words in attributes, and words with digits in, will also be ignored, unless you set the appropriate <a href="spellcheck.html#spelloptions">What to check</a> option to include them.
+</p>
+<p>As mentioned above, dictionaries for the top-level language are special in that they will match any subset of that language. So the French <code>fr</code> dictionary, will match <code>fr-CA</code> and <code>fr-FR</code> as well as <code>fr</code>. But the <a href="spellcheck.html#ignorelang">Ignore languages</a> option can be used to prevent specific language codes, such as <code>fr-CA</code>, being checked. Better still, if you provide your <a href="spellcheck.html#dictionary">Own dictionary</a> for <code>fr-CA</code>, this will be used in place of the top-level one for that specific code. But if you provide your <a href="spellcheck.html#dictionary">Own dictionary</a> for <code>fr</code> it will be used for all subsets such as <code>fr-CA</code> and <code>fr-FR</code>.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="results"></a>Results</h2>
+<p>When a word is checked against a dictionary and no match found, it will be marked as 'misspelt' on the <a href="results.html#spelling">results pages</a>. But if you think that the word is correct, you can click on it to add it to a correction dictionary in the <a href="spellcheck.html#corrections">Corrections folder</a>. Future validations will then use these correction dictionaries, so these words will no longer be marked as misspelt.
+</p>
+<p>Also as you view each results page any words that you have already clicked on will not be marked as misspelt on any page you view, making it quicker to correct mistakes.
+</p>
+<p>If you have a lot of specialist words on your website, then to save clicking on every misspelt word on every page. Then as a one-off you could use the <a href="spellcheck.html#misspelt">Save misspelt words</a> option to automatically save every misspelt word to a correction dictionary. In this case your validation results will show no spelling errors at all. You should then check these dictionaries to ensure that all the words in them really are correctly spelt.
+</p>
+<p>Correction dictionaries are named (in lower-case) after the language code used the check the words within them, together with a <code>.dic</code> suffix. For example <code>fr-CA</code> words will be saved in a file called <code>fr-ca.dic</code> (even if the <code>fr</code> dictionary was actually used to check them). The <a href="spellcheck.html#showlanguage">Show language code</a> option may be used to display the language code (and hence the file a word will be saved to) on the results page. This may be useful if you have pages with lots of different languages on them and you wish to know which files words will be saved to, which may be useful as described in the next section.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="corrections"></a>Correction dictionaries</h2>
+<p>As described above, correction dictionaries will be automatically created as you click on 'misspelt' words on the results pages, or use the <a href="spellcheck.html#misspelt">Save misspelt words</a> option. You may also manually add words to these files, or create your own files. But please note that these must be plain text files consisting of one word per line, ideally with no duplicates, and must be saved using UTF-8 encoding, otherwise some of the words within them may be ignored.
+</p>
+<p>When a spell check is run the words in any file in the <a href="spellcheck.html#corrections">Corrections folder</a> prefixed with a valid language code, and with the suffix <code>.dic</code>, such as <code>fr-ca.dic</code>, will be added to the matching dictionary. So words in <code>fr-ca.dic</code> will be added to the <code>fr-ca</code> dictionary, assuming there is a <code>fr-ca</code> dictionary. Note that the physical dictionaries themselves are never actually changed. The corrections words are added in memory each time a spell check is run.
+</p>
+<p>For top-level languages such as the internal ones (en, fr, de, es, it) things work slightly differently because these are used to check all the country and region specific language codes as well. So for these all the words from country and region specific correction dictionaries are added to the top level dictionary. So words in <code>fr.dic</code>, <code>fr-fr.dic</code>, and <code>fr-ca.dic</code> will be added to the <code>fr</code> dictionary, unless you've provided your own specific <code>fr-fr</code> dictionary, in which case words from <code>fr-fr.dic</code> will just be added to that one instead.
+</p>
+<p>If a file is found in the corrections folder which ends with the suffix <code>.dic</code>, but has no prefix, or uses an invalid code, then it is added to all of the dictionaries. This is so you can create one correction dictionaries for global words like "Google". If a corrections dictionary has a valid code, but there is no matching dictionary, then it is simply ignored. Also any files which are on the list of <a href="spellcheck.html#dictionary">Own dictionaries</a> are also ignored, so they are not added twice.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="owndics"></a>Supplying your own dictionaries</h2>
+<p>As well as using the dictionaries supplied with Total Validator you can also add your own dictionaries for other languages, for specific country codes such as <code>fr-CA</code>, or even replace the internal dictionaries with your own. To do this add a list of paths to your own dictionaries using the <a href="spellcheck.html#dictionary">Own dictionaries</a> option.
+</p>
+<p>As with all dictionaries these must be plain text files consisting of one word per line, ideally with no duplicates, and must be saved using UTF-8 encoding. Dictionary file names must also start with a valid language code prefix ending with a ".", and the whole file name must end with the suffix <code>.dic</code>, otherwise they will be ignored. For example <code>fr-ca.dic</code> and <code>pt-PT.mydictionary.dic</code>, but not <code>fr-CA</code>, nor <code>fr-CA-dic</code>, nor <code>fr-CA-mydictionary.dic</code>. Any which also appear on the <a href="spellcheck.html#ignorelang">Ignore languages</a> option, will be completely ignored.
+</p>
+<p>Dictionary file names are also case-insensitive. So if you list <code>fr-ca.dic,fr-CA.dic</code> only one of these will be used (with no guarantee which one). Also if there is a naming conflict such as <code>fr.mydic.dic,fr.mydic2.dic</code>, only one of these will be used. Also any dictionaries with names which match the internal ones will be used in place of them, such as <code>fr.dic</code> and <code>en-GB.dic</code>.
+</p>
+<p>Just like the internal dictionaries, any dictionary with a language code which is just the name of the language, such as <code>pt.dic</code> will be used to check words in any country or region specific languages codes such as <code>pt-BR</code> as well as <code>pt</code>, unless you supply a specific dictionary for the specific code like <code>pt-br.dic</code>.
+</p>
+<p>If you supply a dictionary for a language matching one the five West European languages, such as <code>fr-CA</code>, then the special language specific rules we have, such as detecting plurals will also be applied. But for other languages you will have to list every variation of every word. Also we have only tested the system with Western languages so there is no guarantee our system will work with languages which are significantly different (please let us know if they don't and we will try to fix things).
+</p>
+<h3><a id="creatingdics"></a>Creating your own dictionaries</h3>
+<p>A quick way of creating your own dictionary is to use the <a href="spellcheck.html#foreign">Save foreign words</a> option. With this option, all of the words which are marked with a valid language code, but for which no matching dictionary exists, will be saved to the <a href="spellcheck.html#corrections">Corrections folder</a>. Just like corrections, these are saved in files named after the matching language code with a <code>.dic</code> suffix. For example <code>pt-br.dic</code>.
+</p>
+<p>You can also do this for country specific or regional language codes for which there is a top-level dictionary by listing the code in the <a href="spellcheck.html#ignorelang">Ignore languages</a> option. For example, to create your own dictionary for <code>fr-CA</code>, list <code>fr-CA</code> in the <a href="spellcheck.html#ignorelang">Ignore languages</a> option and then use the <a href="spellcheck.html#foreign">Save foreign words</a> option. Then the top-level <code>fr</code> dictionary will ignore <code>fr-CA</code> words, and they will be saved to a <code>fr-ca.dic</code> dictionary file.
+</p>
+<p>Note that for some glyph-based languages like Chinese, all the words are upper case. So you may need to set the "UPPER CASE words" option to ensure that words are saved, and use the same option when spell checking them.
+</p>
+<p>As these dictionaries are stored in the <a href="spellcheck.html#corrections">Corrections folder</a>, it may be better to move them somewhere else where they are less likely to be overwritten. Also you will still need to list them in the <a href="spellcheck.html#dictionary">Own dictionaries</a> option for them to be used, and remember to remove the language code from the <a href="spellcheck.html#ignorelang">Ignore languages</a> option, so they are no longer ignored.
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="ignoring"></a>Ignoring words</h2>
+<p>You can skip spell checking for any words where there is a matching dictionary, using one of three methods:</p>
+<ul>
+	<li>Add the matching language code to the <a href="spellcheck.html#ignorelang">Ignore languages</a> option. Note that adding a top-level language code such as <code>fr</code> will skip all country and region specific codes as well</li>
+	<li>Mark the section with the HTML5 <code>spellcheck="false"</code> attribute</li>
+	<li>Mark the section using the <code>-tv-ignore:E031</code> or <code>-tv-ignore-spellcheck</code> class attributes as described in <a href="ignore.html">Ignoring problems</a></li>
+</ul>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="migration"></a>Migrating from pre v11 versions of Total Validator</h2>
+<p>The internal dictionaries are now stored in the <code>dics</code> folder, rather than the <code>dicts</code> folder in the installation folder. So if you've changed any of these you may need to move them into the new folder and rename them to match the new names.
+</p>
+<p>Similarly corrections are now stored by default in the <code>dics</code> folder, rather than the <code>dicts</code> folder in the results folder. So you may need to move these and rename them using the new filename format in order for them to be used.
+</p>
+<p>The <a href="commandline.html">Command line</a> options have changed so that using some of the old ones will throw an error and stop the validation from running. This has been done so that confusing results are not produced. So you will need to change any existing scripts that using spell checking. This also applies to the <a href="embedded.html">Embedded tool</a>.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><span class="current">Spell checking</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#dictionaries">Internal dictionaries</a></li>
+        <li class="lhitem"><a href="#detection">Language detection</a></li>
+        <li class="lhitem"><a href="#results">Results</a></li>
+        <li class="lhitem"><a href="#corrections">Correction dictionaries</a></li>
+        <li class="lhitem"><a href="#owndics">Your own dictionaries</a></li>
+        <li class="lhitem"><a href="#ignoring">Ignoring words</a></li>
+        <li class="lhitem"><a href="#migration">Migration</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

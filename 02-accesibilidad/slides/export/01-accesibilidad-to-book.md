@@ -1,6 +1,6 @@
 % Accesibilidad Web
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -355,56 +355,56 @@
 
 - Indicado para personas pérdida de movilidad en las extremidades superiores, pero con un buen control del movimiento de la cabeza.
 
-<div style="text-align:center">![Apuntador. Fuente: accesibilidadweb.dlsi.ua.es](../img/apuntador.jpg)</div>
+![Apuntador. Fuente: accesibilidadweb.dlsi.ua.es](../img/apuntador.jpg){ width=50% text-align=center }
 
 
 ## Conmutadores
 
 - Activados por **presión**. En la imagen se aprecia para la boca, pero los hay para el puño.
 
-<div style="text-align:center">![Conmutador por soplido. Fuente: ability-world.com](../img/conmutador.jpg)</div>
+![Conmutador por soplido. Fuente: ability-world.com](../img/conmutador.jpg){ width=50% text-align=center }
 
 
 ## Teclados
 
 - Los hay con **teclas grandes**, con protectores para **impedir la pulsación errónea**, con **reguladores de repetición**, incluso diseñados **para una sola mano**.
 
-<div style="text-align:center">![Teclado. Fuente: accesibilidadweb.dlsi.ua.es](../img/teclado.jpg)</div>
+![Teclado. Fuente: accesibilidadweb.dlsi.ua.es](../img/teclado.jpg){ width=50% text-align=center }
 
 
 ## Webcams
 
 - Permiten reconocer los **movimientos de la cara**.
 
-<div style="text-align:center">![Webcam. Fuente: accesibilidadweb.dlsi.ua.es](../img/webcam.png)</div>
+![Webcam. Fuente: accesibilidadweb.dlsi.ua.es](../img/webcam.png){ width=50% text-align=center }
 
 
 ## Líneas braille
 
 - Permiten **leer** el lenguaje braille.
 
-<div style="text-align:center">![Línea braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/linea-braille.jpg)</div>
+![Línea braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/linea-braille.jpg){ width=50% text-align=center }
 
 
 ## Teclados braille
 
 - Permiten **escribir** el lenguaje braille.
 
-<div style="text-align:center">![Teclados braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/teclado-braille.jpg)</div>
+![Teclados braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/teclado-braille.jpg){ width=50% text-align=center }
 
 
 ## Línea + teclado
 
 - Permiten **leer y escribir** el lenguaje braille.
 
-<div style="text-align:center">![Línea braille con teclado braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/linea-y-teclado-braille.jpg)</div>
+![Línea braille con teclado braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/linea-y-teclado-braille.jpg){ width=50% text-align=center }
 
 
 ## PDAs braille
 
 - Permiten **escuchar y escribir**, pues son teclados braille con un lector de pantallas (en vez de la línea braille)
 
-<div style="text-align:center">![PDA braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/pda-braille.png)</div>
+![PDA braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/pda-braille.png){ width=50% text-align=center }
 
 
 
@@ -442,7 +442,7 @@
 
 - Casi todos los sistemas operativos vienen hoy en día equipados con un software de este tipo.
 
-<div style="text-align:center">![Onboard on-screen keyboard. Fuente: asandiego](../img/onboard.png)</div>
+![Onboard on-screen keyboard. Fuente: asandiego](../img/onboard.png){ width=50% text-align=center }
 
 
 
@@ -662,7 +662,7 @@
 
 ## Ejemplo de página con imágenes
 
-<div style="text-align:center">![Ejemplo de página con imágenes.](../img/img-ejemplo.png)</div>
+![Ejemplo de página con imágenes.](../img/img-ejemplo.png){ width=50% text-align=center }
 
 
 ## Mal uso de alt
@@ -701,7 +701,7 @@
 
 - En **Fangs** no se visiona correctamente
 
-<div style="text-align:center">![Resultado de Fangs mal.](../img/img-ejemplo-fangs-mal.png)</div>
+![Resultado de Fangs mal.](../img/img-ejemplo-fangs-mal.png){ width=50% text-align=center }
 
 
 ## Problemas
@@ -756,7 +756,7 @@
 
 - Y ahora en **Fangs** se visiona mejor...
 
-<div style="text-align:center">![Resultado de Fangs bien.](../img/img-ejemplo-fangs-bien.png)</div>
+![Resultado de Fangs bien.](../img/img-ejemplo-fangs-bien.png){ width=50% text-align=center }
 
 
 ## Problemas menores
@@ -807,7 +807,7 @@ strong {
 
 - Y ahora en **Fangs** se visiona mucho mejor...
 
-<div style="text-align:center">![Resultado de Fangs rebien.](../img/img-ejemplo-fangs-rebien.png)</div>
+![Resultado de Fangs rebien.](../img/img-ejemplo-fangs-rebien.png){ width=50% text-align=center }
 
 
 
@@ -840,7 +840,7 @@ strong {
 
 - Así **Fangs** no muestra nada.
 
-<div style="text-align:center">![Resultado de Fangs mal.](../img/img-map-area-fangs-mal.png)</div>
+![Resultado de Fangs mal.](../img/img-map-area-fangs-mal.png){ width=50% text-align=center }
 
 
 ## Ejemplo bien
@@ -858,7 +858,7 @@ strong {
 
 - En **Fangs** ahora se ve correctamente:
 
-<div style="text-align:center">![Resultado de Fang bien.](../img/img-map-area-fangs-bien.png)</div>
+![Resultado de Fang bien.](../img/img-map-area-fangs-bien.png){ width=50% text-align=center }
 
 
 
@@ -885,21 +885,21 @@ strong {
 
 - En YouTube, se puede emplear **"Filtros" de búsqueda** para indicar que se quiere buscar vídeos que tengan subtítulos.
 
-<div style="text-align:center">![Opciones de búsqueda en YouTube.](../img/youtube-filtros-busqueda.png)</div>
+![Opciones de búsqueda en YouTube.](../img/youtube-filtros-busqueda.png){ width=50% text-align=center }
 
 
 
 
 - Los vídeos que tienen subtítulos aparecen en los resultados de una búsqueda con el marcador **"CC"** (del término inglés "Closed Captions" que significa "Subtítulos Cerrados")
 
-<div style="text-align:center">![Resultados de una búsqueda en YouTube.](../img/youtube-listado.png)</div>
+![Resultados de una búsqueda en YouTube.](../img/youtube-listado.png){ width=50% text-align=center }
 
 
 
 
 - Los subtítulos aparecen sobreimpresos sobre el vídeo.
 
-<div style="text-align:center">![Ejemplo de visualización de subtítulos en YouTube.](../img/youtube-con-subtitulos.png)</div>
+![Ejemplo de visualización de subtítulos en YouTube.](../img/youtube-con-subtitulos.png){ width=50% text-align=center }
 
 
 
@@ -910,7 +910,7 @@ strong {
 
 - YouTube permite añadir subtítulos en diferentes idiomas, y también permite emplear un servicio de **traducción automática** de los subtítulos.
 
-<div style="text-align:center">![Subtítulos traducidos de forma automática en YouTube.](../img/youtube-con-subtitulos-traducidos.png)</div>
+![Subtítulos traducidos de forma automática en YouTube.](../img/youtube-con-subtitulos-traducidos.png){ width=50% text-align=center }
 
 
 
@@ -929,7 +929,7 @@ strong {
 
 - Intenta **evitar los enlaces tipo "Pincha aquí"**:
 
-<div style="text-align:center">![Evitar los enlaces tipo "Pincha aquí"](../img/enlaces-mal.png)</div>
+![Evitar los enlaces tipo "Pincha aquí"](../img/enlaces-mal.png){ width=50% text-align=center }
 
 
 ## Ejemplo mal
@@ -961,7 +961,7 @@ span {
 
 ## Ejemplo rebien
 
-<div style="text-align:center">![Enlaces tipo "Pincha aquí" accesibles](../img/enlaces-rebien.png)</div>
+![Enlaces tipo "Pincha aquí" accesibles](../img/enlaces-rebien.png){ width=50% text-align=center }
 
 
 ## Ejemplo rebien (HTML)
@@ -1313,14 +1313,14 @@ span {
 
 - Se crea una página web **para los últimos navegadores**, con la posibilidad de que funcione en navegadores antiguos.
 
-<div style="text-align:center">![Graceful degradation](../img/responsive-design-graceful-degradation.png)</div>
+![Graceful degradation](../img/responsive-design-graceful-degradation.png){ width=50% text-align=center }
 
 
 ## Progressive enhancement
 
 - Se parte de una **versión básica completamente operativa**, con la posibilidad de ir añadiendo mejoras para los últimos navegadores. Es la opción más utilizada hoy en día.
 
-<div style="text-align:center">![Progressive enhancement](../img/responsive-design-progressive-enhancement.png)</div>
+![Progressive enhancement](../img/responsive-design-progressive-enhancement.png){ width=50% text-align=center }
 
 
 ## Capas
@@ -1335,7 +1335,7 @@ span {
 
 - Separar contenido (HTML), de presentación (CSS), de comportamiento (Javascript)
 
-<div style="text-align:center">![Separación de contenido, presentación y comportamiento](../img/html5-css3-javascript.jpg)</div>
+![Separación de contenido, presentación y comportamiento](../img/html5-css3-javascript.jpg){ width=50% text-align=center }
 
 
 
@@ -1674,10 +1674,10 @@ window.onload = function() {
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/02-accesibilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/02-accesibilidad/src>
 
 ## Bibliografía
 

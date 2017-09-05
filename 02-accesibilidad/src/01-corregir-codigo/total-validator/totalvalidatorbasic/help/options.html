@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Options</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Main tab are described below. Note that some are only available with the Pro tool.</p>
+
+<p class="centered"><img alt="Main tab" src="../images/tool_maintab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="url"></a>Starting web page</h2>
+<p>Total Validator will validate the page you specify using the
+validation options you've chosen. The starting page can either be a URL or a reference to a local file</p>
+<p>
+If you have the Pro tool you can validate more than one page using the <a href="#pages">Pages</a>
+option. Total Validator will begin at the starting web page and follow every link on the same website/filesystem, validating each page it finds.
+</p>
+<p>
+If the starting page is a URL, then this must be a full URL including the <em>http://</em> or <em>https://</em> part. You
+cannot supply a relative URL such as <em>../forms.html</em>.</p>
+<p>
+If you are testing a local web page then you can either type in (or cut and paste)
+the path to the page, or use the Browse button to select the page you want to validate.
+</p>
+<p>Use the Reset List menu option on the <a href="menu.html#file">File menu</a> to clear the
+dropdown list of recent entries.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="pages"></a>Number of pages (Pro tool only)</h2>
+<p>If you specify a value greater than 1, Total Validator
+will follow any links on the starting web page, and keep on validating until it has checked the number of pages specified.
+But note that we ignore any links in javascript.
+</p>
+<p>If you have selected a CSS validation then external <span class="-tv-ignore-spellcheck">stylesheets</span> are included
+in the total count of pages validated.
+</p>
+<p>The fewer pages you check the quicker the validation will take.
+You often don't need to check your entire website, especially
+if most of the website uses templates and is essentially the same on every page.
+So just checking a portion of it should give you everything you need to
+correct your site, or give you confidence that it is still okay after
+deploying any changes. See the <A href="faq.html#multiple">FAQ entry</a>
+for how to create a list of disconnected links to validate.</p>
+<p>
+The value that you enter here must be an integer (whole number) greater than
+zero, or leave the value blank to validate all the pages linked from your
+starting page.</p>
+<p>
+Total Validator works
+by checking every link in the order it finds them on each page. So it will
+check all the pages linked to the starting page before checking all the
+pages linked to the first page referenced by the starting page.
+Also because it is checking links even though you may not have selected the
+<a href="#checklinks">Check for broken links</a> option, the <a href="links.html#timeout">Timeout</a>
+and <a href="links.html#concurrency">Concurrency</a> options
+are still valid and will influence how quickly the validation is performed</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="dtd"></a>HTML validation</h2>
+<p>Select the specification you wish to test against from the drop down, or
+select the blank option if you do not wish to perform a HTML validation.</p>
+<p>
+The Auto-detect option is often the best option to select as this uses the &lt;!DOCTYPE&gt;
+declaration on each page to determine what specification to check against. If the &lt;!DOCTYPE&gt; is missing
+or unrecognised a best-fit algorithm will calculate the option that produces the fewest
+errors and will test against that instead.</p>
+<p>
+The Best-fit option ignores any existing &lt;!DOCTYPE&gt; and uses
+the DTD that produces the fewest errors. This is a useful way of determining the
+best &lt;!DOCTYPE&gt; to attach to any page.</p>
+<p>
+Note that Auto-detect and Best-fit will never choose a Polyglot validation.
+These must always be selected manually.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="wai"></a>Accessibility validation</h2>
+<p>Select this option if you wish to validate each page against the <a
+ href="http://www.w3.org/WAI/">W3C Web Accessibility Guidelines
+(1.0 or 2.0)</a> or <a href="http://section508.gov/content/quick-reference-guide#1194.22">US Section 508</a>.
+There are three WAI levels to choose from for WCAG 1.0 covering the Priority 1,
+2 and 3 guidelines: A, AA, and AAA. And three levels for the WCAG 2.0 guidelines: A2, AA2 and AAA2</p>
+<p>
+Note that many of the published accessibility guidelines
+can only properly be tested through manual checking of your pages. That is why most
+accessibility validators typically display lots of largely irrelevant warnings with
+every page that is tested. Total Validator keeps things nice and simple
+and just displays errors and warnings for those tests that can be
+automated. But you must still manually check that your pages are accessible, as
+passing any automated test isn't normally good enough. Tools such as Total Validator
+are best used to check your pages once you've made them accessible or following
+any minor changes to them.</p>
+<p>Further information on our recommendations regarding accessibility testing
+may be found <a href="faq.html#wai" title="link to accessibility recommendations">here</a>.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="css"></a>CSS validation</h2>
+<p>
+Select the CSS Level you wish to test against from the drop down, or select the blank option
+if you do not wish to validate your CSS.</p>
+<p>
+This option allows you to validate the contents of &lt;style&gt; tags,
+'style' attributes and style sheets against the selected W3C standard.</p>
+<p>If you do not select this validation then the contents of &lt;style&gt; tags will
+not appear on the results pages, external style sheets will not be read,
+and any embedded links within &lt;style&gt; tags, 'style' attributes and style sheets
+will not be validated, or followed.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="vendor"></a>Ignore vendor</h2>
+<p>
+Normally CSS vendor extensions such as <em><span class="-tv-ignore-spellcheck">-moz-box-shadow</span></em>
+will raise a warning, but will still be validated against the chosen CSS level.
+But some vendor extensions do not conform to the latest specifications and may
+also report an error.</p>
+<p>With the 'ignore vendor' option any vendor extension will be ignored completely
+so that no warnings or errors are reported.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="checklinks"></a>Check for broken links</h2>
+<p>If you choose this option (selected by default) the tool will
+check each link to ensure that it isn't broken. But note that we ignore any links in javascript.</p>
+<p>
+Links to all resources such as CSS files, images, and scripts are checked
+as well as links to other web pages. Note that checking links can often be
+a time consuming process, especially
+if there are broken links on your pages, and especially if you are checking more than one page,
+so please be patient. However, use of the <a href="links.html#timeout">timeout
+</a> and <a href="links.html#concurrency">concurrency</a> options may help speed things up.</p>
+<p>
+Links within &lt;style&gt; tags, 'style' attributes and style sheets are only
+tested if you select a CSS validation.</p>
+<p>
+If you are testing a local file then you may find a number of broken links
+on the results page. This is because relative links will be followed as if
+they are local files on your computer. So if you don't have the file
+the link will appear broken. Similarly absolute URLs will be tested, and
+these may appear broken if you
+are working off-line or the URLs are inaccessible for any reason.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="spellcheck"></a>Spell check</h2>
+<p>Select this option if you wish to check the content of your page for
+spelling mistakes. It will use the language codes on your pages to detect the languages used and
+can check against an English dictionary of over 150,000 words, French of over 130,000 words, Spanish
+of over 85,000 words, German of over 160,000 words, and Italian of over 60,000 words.</p>
+<p>You can also include additional words that are not found in the supplied dictionaries, or use
+your own alternative dictionary for these or other languages using options the
+<a href="spellcheck.html">Spell Check tab</a>. See the dedicated <a href="spellchecking.html">Spell checking</a>
+page for details on how best to use this option.</p>
+<p>
+Note that when you use the Spell check option it may take substantially longer to check each
+web page.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="level"></a>Validation level</h2>
+<p>
+There are three types of problems which may be reported. The first are
+'Errors', which are violations of one of the validations you have selected.
+The second are 'Probable Errors', which are typically errors in the majority of cases
+but can be ignored if they are done deliberately (these most often occur
+with Accessibility validations). The last are 'Warnings', which are possibly
+errors or just changes worthwhile considering as they may help to improve
+your pages.</p>
+<p>
+This option allows to to select which type of problems will be reported.
+The default is to report everything, but you can also choose to
+ignore Warnings, or both Warnings and Probable Errors
+(the 'Only report errors' selection).</p>
+<p>
+Note that you can also exclude individual problems by listing
+them in the <a href="include.html#errors">Ignore errors/warnings</a> option
+or by <a href="ignore.html">adding special instructions</a> instead.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="results"></a>Last results button</h2>
+<p>This will open a window or tab in your default browser to display
+the results of the last successful validation.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="reset"></a>Reset tab button (Pro tool only)</h2>
+<p>
+The Reset Tab button on each tab resets all the options on that
+particular tab to their defaults. If you wish to reset all of the options
+on all tabs then use the Reset All button at the bottom instead.</p>
+<p>
+Note that a confirmation dialog will appear just in case you press this button by mistake</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="listen"></a>Listen mode</h2>
+<p>
+This option is for use with the <a href="https://www.totalvalidator.com/tools/extension.html">browser extensions</a>.</p>
+<p>
+Set all the validation options you require (except for the starting page), then click the Listen Mode button.
+The tool will then shrink into your System Tray and start listening for incoming validation requests from
+your browser extensions. Click the System Tray button to stop listening for requests and resume normal use. </p>
+<p>
+The tool listens on a <em>port</em>. You can enter the port number to listen on in the field next to
+the Listen Mode button. This is set to 9889 by default but can be any number in the range 1-65535.
+You must choose a number that does not conflict <a href="http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">with
+any other service</a> you use, and it must match what is <a href="https://www.totalvalidator.com/support/chrome_addon.html#option">set in the browser extension</a>.</p>
+
+<p>If you wish to start Total Validator and go straight into listen mode (such as when starting your computer), then use the listen mode version of Total Validator provided. This should be found where the normal Total Validator program/script resides for your particular operating system.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="buttons"></a>Bottom buttons</h2>
+<p>Once you have selected your web page and options use the Validate button to
+start the validation process. At the end of the process your default browser
+should be launched displaying the results of the validation.</p>
+<p>
+During the validation process you can use the Cancel button to stop the
+process. Note that this may take a while to respond when validating broken
+links.</p>
+<p>
+The Reset All button resets all of the options on all of the tabs to their defaults.
+If you wish to reset just the options on an individual tab then use the Reset Tab
+button on that tab. Note that a confirmation dialog will appear just in case you
+press the Reset button by mistake</p>
+<p>
+There is also a Save button to save the current workspace, and an Exit button to exit the tool.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><span class="current">Main tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#url">Starting page</a></li>
+        <li class="lhitem"><a href="#pages">Pages</a></li>
+        <li class="lhitem"><a href="#dtd">HTML validation</a></li>
+        <li class="lhitem"><a href="#wai">Accessibility</a></li>
+        <li class="lhitem"><a href="#css">CSS validation</a></li>
+        <li class="lhitem"><a href="#vendor">Ignore vendor</a></li>
+        <li class="lhitem"><a href="#checklinks">Broken links</a></li>
+        <li class="lhitem"><a href="#spellcheck">Spell check</a></li>
+        <li class="lhitem"><a href="#level">Validation level</a></li>
+        <li class="lhitem"><a href="#results">Last results button</a></li>
+        <li class="lhitem"><a href="#reset">Reset tab button</a></li>
+        <li class="lhitem"><a href="#listen">Listen mode</a></li>
+        <li class="lhitem"><a href="#buttons">Bottom buttons</a></li>
+	  </ul>
+    </li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

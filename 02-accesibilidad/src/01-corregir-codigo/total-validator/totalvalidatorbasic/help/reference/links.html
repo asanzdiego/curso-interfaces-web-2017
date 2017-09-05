@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="errors warnings problems" />
+  <meta name="description" content="Supported validation problems and their messages for the broken links checker" />
+  <title>Links Validation Reference</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../../ReadMe.html"><img src="../../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><a href='../help.html'>Help</a> | <span class='error'>Reference</span> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="links"></a>Link problems</h2>
+<table class="border">
+<caption>These problems are due to hypertext link issues</caption>
+<thead><tr><th>Code</th><th>Summary</th><th>Details</th></tr></thead><tbody>
+<tr><td><a id="P040">P040</a></td><td>URL appears invalid</td><td>The link being tested was not recognised as a valid URL. You should test this link manually.</td></tr>
+<tr><td><a id="P041">P041</a></td><td>Connection failure: MESSAGE FROM WEB SERVER</td><td>The link could not be tested due to a connection failure. You should test this link manually.</td></tr>
+<tr><td><a id="E042">E042</a></td><td>Bad character(s) found in link in attribute</td><td>One or more characters were found in the link that are invalid according to <a target="help" href="http://www.ietf.org/rfc/rfc2396.txt">rfc2396</a> (displayed in new window). A common mistake is to include spaces. An invalid &lt;base&gt; tag, will also cause this error.</td></tr>
+<tr><td><a id="E043">E043</a></td><td>Bad character(s) found in redirected link in attribute</td><td>One or more characters were found in the redirect link that are invalid according to <a target="help" href="http://www.ietf.org/rfc/rfc2396.txt">rfc2396</a> (displayed in new window). A common mistake is to include spaces.</td></tr>
+<tr><td><a id="E044">E044</a></td><td>File not found</td><td>The page links to a file that could not be found. Check that the page referred to exists and is in the correct folder, and it, and its parent folders, have sufficient permissions.</td></tr>
+<tr><td><a id="E045">E045</a></td><td>File could not be read</td><td>A link referred to a file that was found but there were insufficient permissions to allow this file to be read.</td></tr>
+<tr><td><a id="E046">E046</a></td><td>Not a recognisable file</td><td>This error is normally caused when a link refers to a folder and not to a file.</td></tr>
+<tr><td><a id="P047">P047</a></td><td>Link cannot be tested as it redirects more than 7 times</td><td>This error is often caused by pages that redirect to each other in an infinite loop.</td></tr>
+<tr><td><a id="W048">W048</a></td><td>Link cannot be tested as it uses an unsupported protocol</td><td>Java only supports a subset of all Internet protocols and this link uses one of the unsupported ones and so cannot be tested. You should test this link manually.</td></tr>
+<tr><td><a id="E049">E049</a></td><td>No matching anchor name</td><td>A link was found to an anchor in the same page, but that anchor could could not be found. You need to either remove the link or add a matching anchor name.</td></tr>
+<tr><td><a id="E050">E050</a></td><td>No matching anchor name</td><td>A link was found in a redirect that points to an anchor in the same page, but that anchor could could not be found. You need to amend the redirect or add a matching anchor name.</td></tr>
+<tr><td><a id="P051">P051</a></td><td>Link cannot be tested as it redirects to itself</td><td>This error is caused when a page redirects to itself in an infinite loop.</td></tr>
+<tr><td><a id="W1xx">W1xx</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Check your web server logs to determine the cause.</td></tr>
+<tr><td><a id="W2xx">W2xx</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Check your web server logs to determine the cause.</td></tr>
+<tr><td><a id="W300">W300</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Multiple choices: The server has responded that there is more than one item that matches the link. You should manually view this link and if necessary change it to point directly to the required item.</td></tr>
+<tr><td><a id="W301">W301</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Item moved permanently: The item has been moved elsewhere, and you should change your link to point to the new location as your existing link may become invalid without your knowledge.</td></tr>
+<tr><td><a id="W302">W302</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Item moved temporarily: The item has been moved elsewhere, but there should be no reason to change your link.</td></tr>
+<tr><td><a id="W303">W303</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>See other location: The item resides at a different location, and you should change your link to point to the new location.</td></tr>
+<tr><td><a id="W3xx">W3xx</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Check your web server logs to determine the cause.</td></tr>
+<tr><td><a id="E400">E400</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Bad Request: The remote server reported a syntax error in the URL. You should check the link manually to determine the error.</td></tr>
+<tr><td><a id="E401">E401</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Unauthorized: The remote server requires authorisation in order to access this document. You may be able to set the user/password for this link on the Advanced Form.</td></tr>
+<tr><td><a id="E403">E403</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Forbidden: The remote server denied access to the document for an unknown reason.</td></tr>
+<tr><td><a id="E404">E404</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Not Found: The remote server could not find a document at the URL provided. The link may refer to a document that no longer exists, or is pointing to the wrong place.</td></tr>
+<tr><td><a id="E410">E410</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Gone: The document no longer exists and has been permanently removed from the remote server.</td></tr>
+<tr><td><a id="E4xx">E4xx</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Check your web server logs to determine the cause.</td></tr>
+<tr><td><a id="E500">E500</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Internal Server Error: This appears when a link to a document caused part of the remote server to fail (e.g. a CGI program) or encountered a configuration error.</td></tr>
+<tr><td><a id="E503">E503</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Service Unavailable: The document referred to in the link is temporarily unavailable.</td></tr>
+<tr><td><a id="E5xx">E5xx</a></td><td>Problem with link: MESSAGE FROM WEB SERVER</td><td>Check your web server logs to determine the cause.</td></tr>
+</tbody>
+</table>
+<p><a href="#top"><img src="../../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Reference</div>
+  <ul>
+		<li class="lhmenu"><a href="index.html">Introduction</a></li>
+		<li class="lhmenu"><a href="parsing.html">Parsing</a></li>
+		<li class="lhmenu"><a href="spelling.html">Spell check</a></li>
+		<li class="lhmenu"><span class="current">Link problems</span></li>
+		<li class="lhmenu"><a href="xhtml.html">HTML</a></li>
+		<li class="lhmenu"><a href="css.html">CSS</a></li>
+		<li class="lhmenu"><a href="section508.html">US Section 508</a></li>
+		<li class="lhmenu"><a href="wai1.html">WCAG 1.0</a></li>
+		<li class="lhmenu"><a href="wai2.html">WCAG 2.0</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

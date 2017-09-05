@@ -1,6 +1,6 @@
 % Sass, un preprocesador CSS
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -668,10 +668,10 @@ Line 1 DEBUG: 22em
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.02-sass/src>
 
 ## Bibliografía
 

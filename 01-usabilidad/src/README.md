@@ -10,10 +10,6 @@ En el ejercicio de análisis de tareas y posterior prototipado, se podría escog
 - comprar ticket para el cine seleccionando butaca
 - etc.
 
-Estaría bien que antes de hacer el prototipo con pencil, los alumnos hicieran
-el prototipo en papel que es mucho más rápido y menos pesado
-y que luego lo pasaran al pencil.
-
 Para los ejercicios de prototipado, se podría empezar con ejercicios individuales:
 - interfaz de página pequeña en papel
 - prototipado en móvil, tablet y ordenador

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Bootstrap, un framework CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Bootstrap, un framework CSS</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Bootstrap, un framework CSS</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Septiembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#ventajas"><span class="toc-section-number">2.2</span> Ventajas</a></li>
+<li><a href="#desventajas"><span class="toc-section-number">2.3</span> Desventajas</a></li>
+</ul></li>
+<li><a href="#utilización"><span class="toc-section-number">3</span> Utilización</a><ul>
+<li><a href="#documentación"><span class="toc-section-number">3.1</span> Documentación</a></li>
+<li><a href="#descarga"><span class="toc-section-number">3.2</span> Descarga</a></li>
+<li><a href="#plantilla-básica"><span class="toc-section-number">3.3</span> Plantilla básica</a></li>
+<li><a href="#html5-doctype"><span class="toc-section-number">3.4</span> HTML5 doctype</a></li>
+<li><a href="#grid-system"><span class="toc-section-number">3.5</span> Grid system</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">4</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">4.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">4.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">4.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><span class="header-section-number">1</span> El autor</h1>
+<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
+<li><p>Actualmente soy <strong>Asesor Técnico Docente</strong> en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.</p></li>
+<li><p>Además colaboro como <strong>formador especializado en tecnologías de desarrollo</strong>.</p></li>
+</ul>
+<h2 id="algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
+<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+</ul>
+<h2 id="donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción"><span class="header-section-number">2</span> Introducción</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Boostrap es un <strong>framework CSS, liberado por Twitter</strong> y muy popular hoy en día.</p></li>
+<li><p>Está pensado para hacer un desarrollo <strong>Mobile First</strong></p></li>
+</ul>
+<h2 id="ventajas"><span class="header-section-number">2.2</span> Ventajas</h2>
+<ul>
+<li><p>Utiliza un conjunto de <strong>buenas prácticas</strong> que perdurarán en el tiempo.</p></li>
+<li><p>Utiliza <strong>HTML5 y CSS3</strong></p></li>
+<li><p>Implementa un <strong>sistema de rejillas</strong>, que por defecto incluye 12 columnas.</p></li>
+<li><p>Utiliza <strong>SASS</strong>, un preprocesador CSS.</p></li>
+<li><p>Es <strong>OOCSS</strong>, osea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.</p></li>
+<li><p>Hay una enorme <strong>comunidad detrás</strong>.</p></li>
+<li><p>Herramienta <strong>sencilla y ágil</strong> para construir sitios web e interfaces.</p></li>
+<li><p>Tiene un <strong>theme</strong> por defecto bastante optimizado y que puedes modificar fácilmente.</p></li>
+</ul>
+<h2 id="desventajas"><span class="header-section-number">2.3</span> Desventajas</h2>
+<ul>
+<li><p>Es necesario <strong>adaptarse a su forma de trabajo</strong>, si bien su curva de aprendizaje es liviana, deberás comprender y familiarizarte con su estructura y nomenclatura.</p></li>
+<li><p>Debes adaptar tu diseño a un grid de <strong>12 columnas</strong>.</p></li>
+<li><p>Trae <strong>anchos y márgenes por defecto</strong>, que a veces son un poco tediosos de cambiar.</p></li>
+<li><p>Es complicado <strong>cambiar de versión</strong> si has realizado modificaciones profundas sobre el core.</p></li>
+<li><p>Si necesitas <strong>añadir componentes que no existen</strong>, debes hacerlos tú mismo en CSS y cuidar de que mantenga coherencia con tu diseño y cuidando el responsive.</p></li>
+<li><p>A veces <strong>implementar un diseño impuesto</strong>, puede llegar a resultar bastante difícil, al menos si eres un perfeccionista.</p></li>
+</ul>
+<h1 id="utilización"><span class="header-section-number">3</span> Utilización</h1>
+<h2 id="documentación"><span class="header-section-number">3.1</span> Documentación</h2>
+<ul>
+<li><p>La documentación de Bootstrap es muy buena.</p></li>
+<li><p>Para aprender Bootstrap lo mejor es hacer ejercicios y utilizar dicha documentación.</p></li>
+</ul>
+<h2 id="descarga"><span class="header-section-number">3.2</span> Descarga</h2>
+<ul>
+<li><a href="https://github.com/twbs/bootstrap/releases" class="uri">https://github.com/twbs/bootstrap/releases</a></li>
+</ul>
+<pre><code>bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   ├── bootstrap-theme.css
+│   └── bootstrap-theme.min.css
+├── js/
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+└── fonts/</code></pre>
+<h2 id="plantilla-básica"><span class="header-section-number">3.3</span> Plantilla básica</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript --&gt;
+    &lt;!-- jQuery first, then Popper.js, then Bootstrap JS --&gt;
+    &lt;script src=&quot;jquery-3.2.1.slim.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;umd/popper.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="html5-doctype"><span class="header-section-number">3.4</span> HTML5 doctype</h2>
+<ul>
+<li>Bootstrap necesita un <strong>doctype de HTML5</strong>:</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  ...
+&lt;/html&gt;</code></pre>
+<h2 id="grid-system"><span class="header-section-number">3.5</span> Grid system</h2>
+<ul>
+<li><p>Bootstrap incluye un <strong>sistema de rejilla responsive y mobile first de 12 columnas</strong>.</p></li>
+<li><p>El sistema de rejilla de Bootstrap <strong>funciona así</strong>:</p>
+<ul>
+<li>Se deben colocar .row dentro de un <strong>.container</strong> (ancho fijo) o <strong>.container-fluid</strong> (ancho completo).</li>
+<li>Utilice <strong>.row</strong> para crear grupos horizontales.</li>
+<li>El contenido se debe colocar entre .row y deben de ser <strong>hijos inmediatos</strong>.</li>
+<li>Si hay más de 12 columnas en una .row, esta son desplazadas abajo.</li>
+</ul></li>
+<li><p>Se puede configurar dependiendo del tamaño de la pantalla.</p></li>
+</ul>
+<hr />
+<p>Small (SM) ≥544px Medium (MD) ≥768px Large (LG) ≥992px</p>
+<hr />
+<h1 id="acerca-de"><span class="header-section-number">4</span> Acerca de</h1>
+<h2 id="licencia"><span class="header-section-number">4.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es" class="uri">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+<h2 id="fuentes"><span class="header-section-number">4.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/slides</a></li>
+</ul></li>
+<li>Ejercicios:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src" class="uri">https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/05-bootstrap-4.0/src</a></li>
+</ul></li>
+</ul>
+<h2 id="bibliografía"><span class="header-section-number">4.3</span> Bibliografía</h2>
+<ul>
+<li>Página oficial de Bootstrap:
+<ul>
+<li><a href="http://getbootstrap.com" class="uri">http://getbootstrap.com</a></li>
+</ul></li>
+<li>Bootstrap sí, pero no
+<ul>
+<li><a href="http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation" class="uri">http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation</a></li>
+</ul></li>
+<li>Ventajas y desventajas de usar Bootstrap
+<ul>
+<li><a href="http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap" class="uri">http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

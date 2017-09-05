@@ -9,6 +9,27 @@
   <!-- Bootstrap CSS -->
   <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <style>
+    #project-label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    #project-icon {
+      float: left;
+      height: 32px;
+      width: 32px;
+    }
+
+    #project-description {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
   <title>My Flight Finder</title>
 </head>
 
@@ -94,7 +115,7 @@
             <img src="./../img/ic_flight_takeoff_white_36px.svg" alt="Desde"/>
           </label>
           <div class="col-11">
-            <input type="text" class="form-control" id="desde" placeholder="Desde ciudad o país de origen">
+            <input type="text" class="form-control" id="desde" placeholder="Desde ciudad o país de origen" required>
           </div>
         </div>
         <div class="form-group col-12 col-lg-6 row">
@@ -110,19 +131,20 @@
             <img src="./../img/ic_date_range_white_36px.svg" alt="Fecha"/>
           </label>
           <div class="col-11">
-            <input type="date" class="form-control" id="fecha" placeholder="Fecha del vuelo">
+            <input type="text" class="form-control" id="fecha" placeholder="Fecha del vuelo">
           </div>
         </div>
         <div class="form-group col-12 col-lg-6 row">
           <label for="pasajeros" class="col-1 col-form-label">
             <img src="./../img/ic_supervisor_account_white_36px.svg" alt="Pasajeros"/>
           </label>
-          <div class="col-11">
-            <div class="input-group">
-              <div class="input-group-addon btn btn-danger">-</div>
-              <input type="number" class="form-control" id="pasajeros" placeholder="Número de pasajeros">
-              <div class="input-group-addon btn btn-danger">+</div>
+          <div class="col">
+            <div id="slider" class="mt-3">
+              <div id="handler" class="ui-slider-handle" style="background: #dc3545;"></div>
             </div>
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control" id="pasajeros" placeholder="Número de pasajeros">
           </div>
         </div>
       </div>
@@ -142,6 +164,33 @@
   <script src="../lib/jquery-3.2.1.min.js"></script>
   <script src="../lib/popper.js-1.12.4/dist/umd/popper.min.js"></script>
   <script src="../../bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script>
+  <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="../lib/airports.filtered.js"></script>
+  <script>
+    $(function () {
+      $("#desde").autocomplete({
+        minLength: 2,
+        source: airports
+      });
+      $("#hasta").autocomplete({
+        minLength: 2,
+        source: airports
+      });
+      $("#fecha").datepicker();
+      var handle = $("#pasajeros");
+      $("#slider").slider({
+        min: 0,
+        max: 10,
+        value: 1,
+        create: function () {
+          handle.val($(this).slider("value"));
+        },
+        slide: function (event, ui) {
+          handle.val(ui.value);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

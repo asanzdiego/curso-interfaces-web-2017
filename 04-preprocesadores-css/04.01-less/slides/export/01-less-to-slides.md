@@ -1,6 +1,6 @@
 % Less, un preprocesador CSS
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -1508,10 +1508,10 @@ li + a, li + ul, li + li {
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.01-less/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.01-less/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/04-preprocesadores-css/04.01-less/src>
 
 ## Bibliografía
 

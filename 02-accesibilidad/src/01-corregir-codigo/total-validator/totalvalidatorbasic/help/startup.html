@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Increasing Memory</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>Total Validator is limited to using a maximum of 384Mb of
+memory. This is quite sufficient for most people. However in
+extreme circumstances the 384Mb limit may not be sufficient.
+</p>
+<p>Typical symptoms of lack of memory when checking lots
+of pages are the rate at which pages are checked slowing down
+and/or the tool stopping altogether before completing
+the check.
+</p>
+<p>If you do need to increase the memory available to the tool follow
+the instructions below carefully.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="memory"></a>Increasing memory</h2>
+<p><strong>Note: </strong>As the file discussed below is critical
+to the running of Total Validator take a copy before
+you make any changes.
+</p>
+<p><strong>Windows:</strong> Open the file <code>TotalValidator.l4j.ini</code>
+(or <code>TotalValidatorCL.l4j.ini</code> for the command line tool). This is
+located in the folder you installed the tool into. This should contain
+a single line specifying the maximum memory to use.
+</p>
+<p><strong>OS X:</strong> Open the file <code>/Applications/TotalValidatorPro.app/Contents/Info.plist</code> or
+<code>/Applications/TotalValidator.app/Contents/Info.plist</code> for the Pro and Basic tools respectively.
+and search for the text <code>-Xmx384m</code>.
+</p>
+<p><strong>Linux:</strong> Open the file <code>total_validator.sh</code>
+(or <code>commandline.sh</code> for the command line tool). This is
+located in the folder you installed the tool into.
+</p>
+<p>By default the file contains <code>-Xmx384m</code>, which represents
+384Mb. To increase the memory to 1024Mb change this to <code>-Xmx1024m</code>.
+You can use any multiple of 2 for but values smaller than 64Mb may cause the
+tool to fail to start altogether.
+</p>
+<p>The new value will come into effect the next time you run the tool. If
+you have any problems then go back to using the original value.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><span class="current">Increasing memory</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#memory">Increasing memory</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -230,7 +230,7 @@
 ## Prototipado
 
 - Algunas herramientas:
-    - <https://github.com/prikhi/pencil>
+    - <http://pencil.evolus.vn/>
     - <http://moqups.com>
     - <http://gomockingbird.com>
     - <http://balsamiq.com>
@@ -238,47 +238,13 @@
     - <http://wireframe.cc>
     - <http://www.axure.com>
 
-## Pencil (Instalación)
+## Pencil
 
-- Descarga desde: <https://github.com/prikhi/pencil/releases>
+- Descarga desde: <http://pencil.evolus.vn/>
 
 - Instalar normalmente según plafatorma (Linux, Mac o Windows)
 
-- Las colecciones se instalan desde "Herramientas > Installar nueva colleción..."
-
-- Las plantillas se instalan desde "Herramientas > Gestionar plantillas de exportación... > Instalr nueva plantilla"
-
-## Pencil (Colecciones)
-
-- Font-Awesome-Icons:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/FontAwesomeIcons_1.0.zip>
-
-- Android-Lollipop-Pencil-Stencils:
-  - <https://github.com/nathanielw/Android-Lollipop-Pencil-Stencils/releases/download/v1.1.0/android-lollipop-pencil-stencils-v1.1.0.zip>
-
-- Bootstrap-Pencil-Stencils:
-  - <https://github.com/nathanielw/Bootstrap-Pencil-Stencils/releases/download/v1.1.0/bootstrap-pencil-stencils-v1.1.0.zip>
-
-- Material-Icons-for-Pencil:
-  - <https://github.com/nathanielw/Material-Icons-for-Pencil/releases/download/v2.0.0/material-icons-for-pencil-v2.0.0.zip>
-
-## Pencil (Plantillas>
-
-- Pencil-Material-Design-Template:
-  - <https://github.com/DaniGuardiola/pencil-material-template/raw/master/build/pencil-material-template-mobile.zip>
-
-- TabNav:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/TabNav.zip>
-
-- JQUERY:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/JQUERY.zip>
-
-- GUIPrototypingSmall:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/GUIPrototypingSmall.zip>
-
-- GUIPrototypingTemplate:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/GUIPrototypingTemplate.zip>
-
+- Instalar las colecciones y las plantillas.
 
 ## Evaluación
 
@@ -416,9 +382,8 @@
 
 ## Card-sorting
 
-- Solicitar que **agrupen los conceptos representados en tarjetas** por su similitud semántica.
-
-- Su utilización nos ofrecerno una **imagen del modelo mental del usuario**.
+- Solicitar que **agrupen los conceptos en tarjetas** por su similitud semántica
+para ofrecernos una **imagen del modelo mental del usuario**.
 
 ![Card-sorting. Fuente: nosolousabilidad.com](../img/card-sorting.png)
 

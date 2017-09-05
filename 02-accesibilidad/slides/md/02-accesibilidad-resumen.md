@@ -98,19 +98,19 @@
 
 - **Website Accessibility Conformance Evaluation Methodology**
 
-- Metodología de evaluación de la accesibilidad del contenido de páginas web
+- Metodología de evaluación de la accesibilidad del contenido de páginas web.
 
 ### ATAG 2.0
 
 - **Authoring Tool Accessibility Guidelines**
 
-- Accesibilidad de editores de páginas web
+- Accesibilidad de editores de páginas web.
 
 ### UAAG 2.0
 
 - **User Agent Accessibility Guidelines**
 
-- Accesibilidad de navegadores web
+- Accesibilidad de navegadores web.
 
 
 
@@ -512,144 +512,6 @@
 ## Solución
 
 - Proporciona un método (por ejemplo un enlace **"Saltar al contenido"** en la parte superior de la página) que permita saltarse la navegación u otros elementos que se repiten en cada página.
-
-
-
-# Validadores
-
-
-
-## De HTML
-
-- W3C Markup Validation Service
-    - <http://validator.w3.org>
-
-- WDG HTML Validator
-    - <http://www.htmlhelp.com/tools/validator>
-
-## De CSS
-
-- W3C CSS Validation Service
-    - <http://jigsaw.w3.org/css-validator>
-
-- WDG CSS Check
-    - <http://www.htmlhelp.com/tools/csscheck>
-
-## De enlaces
-
-- W3C Link Checker
-    - <http://validator.w3.org/checklink>
-
-- WDG Link Valet
-    - <http://www.htmlhelp.com/tools/valet>
-
-- Link Checker
-    - <http://wummel.github.io/linkchecker>
-
-## Otros validadores
-
-- W3C mobileOK Checker
-    - <http://validator.w3.org/mobile>
-
-- W3C Feed Validation Service
-    - <http://validator.w3.org/feed>
-
-- W3C Semantic Data Extractor
-    - <http://www.w3.org/2003/12/semantic-extractor.html>
-
-## Unificados
-
-- W3C Unicorn
-    - <http://validator.w3.org/unicorn>
-
-## Accesibilidad (I)
-
-- Checkers
-  - <http://checkers.eiii.eu>
-
-- TAW
-  - <http://www.tawdis.net/>
-
-- AChecker
-    - <http://achecker.ca/checker>
-
-## Accesibilidad (II)
-
-- eXaminator
-    - <http://examinator.ws>
-
-- CynthiaSays
-    - <http://www.cynthiasays.com>
-
-- Nibbler
-    - <http://nibbler.silktide.com>
-
-## Accesibilidad (III)
-
-- WAVE Web Accessibility Tool
-    - <http://wave.webaim.org>
-
-- WAVE Web Accessibility Toolbar for Firefox
-    - <http://wave.webaim.org/toolbar>
-
-- Tingtun Checker
-    - <http://accessibility.tingtun.no/en/pagecheck2.0>
-
-## Accesibilidad (IV)
-
-- Functional Accessibility Evaluator
-    - <http://fae20.cita.illinois.edu>
-
-- SortSite - Accessibility Checker and Validator
-    - <http://www.powermapper.com/products/sortsite/checks/accessibility-checks.htmlhelp>
-
-
-
-# Otras Herramientas
-
-
-
-## Plugins
-
-- Web Developer, no ofrece **muchísima información útil** para comprobar que una página web es accesible.
-    - <https://addons.mozilla.org/es/firefox/addon/web-developer/>
-    - Ver explicación: <http://accesibilidadweb.dlsi.ua.es/?menu=hr-webdevelopertoolbar>
-
-- Fangs Screen Reader Emulator, **emula el comportamiento que tendría un lector de pantallas**.
-    - <https://addons.mozilla.org/en-us/firefox/addon/fangs-screen-reader-emulator>
-
-## Colores
-
-- Accessibility Color Wheel
-    - <http://gmazzocato.altervista.org/colorwheel/wheel.php>
-
-- Colorblind Web Page Filter
-    - <http://colorfilter.wickline.org>
-
-- Check My Colours
-    - <http://www.checkmycolours.com>
-
-## Paletas de colores
-
-- Paletton
-    - <http://paletton.com>
-
-- Color Palette Generator
-    - <http://www.degraeve.com/color-palette>
-
-## Tiempo de carga
-
-- Load Impact
-    - <http://loadimpact.com>
-
-- Pingdom Website Speed Test
-    - <http://tools.pingdom.com/fpt>
-
-- Site Speed
-    - <http://sitespeed.me>
-
-- Web Page Analyzer
-    - <http://www.webpageanalyzer.com>
 
 
 

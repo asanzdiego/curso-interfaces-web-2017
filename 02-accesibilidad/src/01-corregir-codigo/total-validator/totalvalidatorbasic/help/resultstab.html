@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Results Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Results tab of the Pro tool
+are described below.</p>
+
+<p class="centered"><img alt="Results tab" src="../images/tool_resultstab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="sresults"></a>Save results to</h2>
+<p>
+Normally results are saved to your <a href="results.html#pages">documents folder</a>. This can sometimes
+cause issues, or is just inconvenient.</p>
+<p>
+Use this option to select an alternative folder to save the results to.
+You can use the Browse button to select a folder or enter one directly.
+But note that if the folder doesn't already exist then it will be ignored.</p>
+<p>
+If you do enter a folder and but later wish to go back to saving to the default
+location then just delete whatever is entered (i.e. leave it blank).</p>
+<p>
+The Open button will open the currently selected folder, so you can quickly get to
+the results.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="unique"></a>Unique report</h2>
+<p>
+When results are saved they are normally saved with the first page called
+<code>TotalValidator.html</code> and the rest of the pages in a sub folder called
+<code>Results</code>. So each time you run a new validation the old results are
+overwritten.</p>
+<p>
+If you select this option the first page will be called <code>TV&lt;timestamp&gt;.html</code>
+and the sub folder <code>TV&lt;timestamp&gt;</code>, where <code>&lt;timestamp&gt;</code> is in the format
+<code>YYYYMMDDHHMMSS</code>. Although not guaranteed this should make the results unique
+so that they are not overwritten each time.</p>
+<p>
+It is expected that this option will be used with the 'Save Results To' option
+for people wishing to keep old results.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="browser"></a>Browser for results</h2>
+<p>
+On Windows and Linux systems if you wish to use a specific browser enter the path to the
+executable, or use the browse button to select it. On OS X just enter the name of the
+browser: "Safari", "Firefox", "Google Chrome".
+</p>
+<p>If you leave this blank, or the browser cannot be found,
+then the results will be displayed using your default browser
+(default_browser.sh will be executed for Linux).</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="hresults"></a>Hide Results</h2>
+<p>Normally when the validation is completed your default or selected browser
+will automatically open to display the validation results. If you
+do not wish to display the results then check this option. You may
+then use the 'Last Results' button on the Main tab to display the results
+at your leisure.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="details"></a>Display details</h2>
+<p>On the <a href="results.html#results">results pages</a> further details are displayed
+when you hover over the text of a problem. Instead of hovering to display this information,
+you can choose to always display it or always hide it for that particular page using the
+'Display issue details' option at the top of the page. Alternatively you can set the default value of
+this option here if you have a specific preference you wish to use every time.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="sortby"></a>Sort by</h2>
+<p>On the <a href="results.html#summary">summary results page</a> you can sort the list of
+pages with issues is various ways using the 'Sort by' option at the top of the page.
+Alternatively you can set the default value of
+this option here if you have a specific preference you wish to use every time.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="showsuccess"></a>Show on success</h2>
+<p>Normally pages with no problems are not displayed in detail. Use
+this option to display the layout of good pages. This can be useful if you
+have a redirected site and are unsure as to what has been validated.</p>
+<p>
+When checking more than one page it also provides a link to
+each page on the main report.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="short"></a>Short report</h2>
+<p>By default the report displays all the lines in the web page formatted
+so that you can quickly find where problems are and correct them.
+Use this option to automatically select the 'Short report' checkbox to
+display only the lines with problems on.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="hidecontent"></a>Hide content</h2>
+<p>By default the report displays the content as
+well as tags on the page. Use this option to automatically select the
+'Hide content' checkbox to hide the content of the web page. This may make it
+easier to locate and resolve problems.</p>
+<p>
+Note that any content with spelling mistakes will be always displayed.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><span class="current">Results tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#sresults">Save results</a></li>
+        <li class="lhitem"><a href="#unique">Unique report</a></li>
+        <li class="lhitem"><a href="#browser">Browser</a></li>
+        <li class="lhitem"><a href="#details">Display details</a></li>
+        <li class="lhitem"><a href="#sortby">Sort by</a></li>
+        <li class="lhitem"><a href="#hresults">Hide results</a></li>
+        <li class="lhitem"><a href="#showsuccess">Show on success</a></li>
+        <li class="lhitem"><a href="#short">Short report</a></li>
+        <li class="lhitem"><a href="#hidecontent">Hide content</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

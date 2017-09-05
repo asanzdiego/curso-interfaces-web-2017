@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Command Line Options</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>With the Pro tool you can run from the command line rather than through the GUI tool. You <em>must</em> run the tool from within the installation folder so that it can find all of the resource files it requires, otherwise an error will occur.
+</p>
+<p>An example Windows batch file for running the tool from the command line is provided called <code>CommandLine.bat</code>. This may be found in the folder you installed the tool into (e.g. <code>C:\Program Files\TotalValidatorTool</code>). A shell script called <code>commandline.sh</code> is provided for Linux and OS X (for OS X this is in the <code>/Applications/TotalValidatorPro.app/Contents/Resources/Java</code> folder).</p>
+<p><strong>Note that the command line is for the use of one person only as the license prevents embedding within an automated system shared by many people, for example as used in continuous integration, or as part of your own service or software.</strong> If you are interested in integrating Total Validator into a continuous integration system then check out our <a href="https://www.totalvalidator.com/tools/embtool.html">Embedded tool</a>.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="usage"></a>Command line options</h2>
+<p>The following options may be used when running from the command line. If no options are provided then it will attempt to use a default <a href="#properties">properties file</a>. Note that whenever you use the GUI tool it automatically creates a <a href="#properties">properties file</a> in the results folder. This is done to help you to translate what you select in the GUI tool into the command line properties to select from the list below.</p>
+<p>Detailed descriptions of each option are provided in the Pro tool documentation for the corresponding option.</p>
+<div class="list">
+<ul>
+  <li><strong>-help</strong> : displays the list of command line options and exits.</li>
+  <li><strong>-properties <em>Path_To_File</em></strong> : Where <em>Path_To_File</em> is <a href="#properties">properties file</a> containing the command line options. If this option is used then it must be the only one used on the command line.</li>
+  <li><strong>-interact</strong> : Will automatically launch a browser to display the results and use interactive dialogs where there are problems with the options supplied. Don't use this option if you wish to run without any user interaction (any errors will be displayed on the command line).</li>
+  <li><strong>-sslfix</strong> : Use this when you need to work around a <a href="menu.html#ssl">known SSL bug</a> in Java.</li>
+</ul>
+</div>
+<p><a href="options.html">Main tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-url <em>URL</em></strong> : Where <em>URL</em> is the starting web page e.g. http://mywebpage.com/index.html</li>
+  <li><strong>-file <em>Path_To_File</em></strong> : Where <em>Path_To_File</em> is the starting web page located on local disk e.g. c:\mysite\index.html. If both this and <strong>-url</strong> are not supplied but <strong>-interact</strong> is used, then you will be prompted to choose a starting page on disk.</li>
+  <li><strong>-pages <em>Pages</em></strong> : Where <em>Pages</em> is the number of pages to check. By default it will only check one page. Set this to zero to check all pages.</li>
+  <li><strong>-dtd <em>DTD</em></strong> : Where <em>DTD</em> represents the HTML validation you wish to apply. See below for valid values.</li>
+  <li><strong>-accessibility <em>A|AA|AAA|A2|AA2|AAA2|508</em></strong> : Supply one of the values <em>A|AA|AAA|A2|AA2|AAA2|508</em> to represent the WAI or Section 508 validation you wish to apply.</li>
+  <li><strong>-css <em>1|2.1|3</em></strong> : Supply one of the CSS levels for the standard you wish to test against.</li>
+  <li><strong>-ignorevendor</strong> : Ignore CSS vendor extensions.</li>
+  <li><strong>-spellcheck</strong> : Perform a spell check.</li>
+  <li><strong>-brokenlinks</strong> : Check for and report any broken links.</li>
+  <li><strong>-level <em>Level</em></strong> : Where <em>Level</em> is the validation level to use. This must have the value: 0 (errors + probable errors + warnings), 1 (errors + probable errors), or 2 (errors only). It defaults to the value 0.</li>
+</ul>
+</div>
+<p><a href="include.html">Include tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-excludepath <em>Path_To_Exclude</em></strong> : Where <em>Path_To_Exclude</em> is a path within the starting URL to exclude when testing more than one page (must start with a '/'). Regular expressions may be used, and you can use this option more than once.</li>
+  <li><strong>-includepath <em>Path_To_Include</em></strong> : where <em>Path_To_Include</em> is a path within the starting URL to include when testing more than one page (must start with a '/'). Regular expressions may be used, and you can use this option more than once.</li>
+  <li><strong>-followbelow</strong> : Will just follow links below the starting page.</li>
+  <li><strong>-followlinks</strong> : Will follow all links on the starting page.</li>
+  <li><strong>-ignorecase</strong> : Ignore case when deciding whether to follow links.</li>
+  <li><strong>-userobots</strong> : Exclude/include paths specified in robots.txt</li>
+  <li><strong>-validateerrors</strong> : Validate error pages when HTTP error code is returned.</li>
+  <li><strong>-E<em>NNN</em></strong> : Where <em>NNN</em> is the number of an error to suppress on the report. You can use the -E option as many times as you wish on the command line for each error you wish to suppress.</li>
+  <li><strong>-P<em>NNN</em></strong> : Where <em>NNN</em> is the number of a probable error to suppress. You can use the -P option as many times as you wish on the command line for each probable error you wish to suppress.</li>
+  <li><strong>-W<em>NNN</em></strong> : Where <em>NNN</em> is the number of a warning to suppress on the report. You can use the -W option as many times as you wish on the command line for each warning you wish to suppress.</li>
+  <li><strong>-IE<em>NNN</em></strong> : Where <em>NNN</em> is the number of an error to include on the report. You can use the -IE option as many times as you wish on the command line for each error you wish to include.</li>
+  <li><strong>-IP<em>NNN</em></strong> : Where <em>NNN</em> is the number of an probable error to include. You can use the -IP option as many times as you wish on the command line for each probable error you wish to include.</li>
+  <li><strong>-IW<em>NNN</em></strong> : Where <em>NNN</em> is the number of a warning to include. You can use the -IW option as many times as you wish on the command line for each warning you wish to include.</li>
+  <li><strong>-depth <em>Depth</em></strong> : Where <em>Depth</em> is the the directory depth below the starting page.</li>
+  <li><strong>-stopafterpg <em>Pages</em></strong> : Where <em>Pages</em> is the maximum number of pages with problems to report before stopping.</li>
+  <li><strong>-stopafter <em>Problems</em></strong> : Where <em>Problems</em> is the maximum number of errors plus warnings to report before stopping.</li>
+</ul>
+</div>
+<p><a href="links.html">Links tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-reportredirects</strong> : If checking broken links, then all 301/302/303 redirection warnings will be reported.</li>
+  <li><strong>-linkmethod <em>DEFAULT|GET|HEAD</em></strong> : The HTTP Method to use when testing links. Defaults to DEFAULT.</li>
+  <li><strong>-timeout <em>Seconds</em></strong> : If checking broken links or more than one page, then <em>Seconds</em> is the time to wait before declaring a link broken. This must be a value between 10 and 120. It defaults to 20.</li>
+  <li><strong>-concurrency <em>Maximum</em></strong> : If checking broken links or more than one page, then <em>Maximum</em> is the maximum number of links to check simultaneously. This must be a positive integer. Set to 0 to check all links simultaneously. It defaults to 100.</li>
+  <li><strong>-lpause <em>MilliSeconds</em></strong> : If concurrency is set to 1, then <em>MilliSeconds</em> is the time to pause in milliseconds before checking each link. This must be an integer, greater than 0.</li>
+  <li><strong>-noquery</strong> : Will strip off query parameters from links before testing or following them.</li>
+  <li><strong>-nosession</strong> : Will strip off session ids from links before testing or following them. e.g. http://yourdomain/page.html;session_id</li>
+</ul>
+</div>
+<p><a href="spellcheck.html">Spell check tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-uppercase</strong> : Spell check words that are all in upper case. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-mixedcase</strong> : Spell check words that are in mixed case. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-wordswithdigits</strong> : Spell check words with digits in. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-punctuated</strong> : Spell check words surrounded by characters other than quote marks. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-includecode</strong> : Spell check words within &lt;samp&gt;, &lt;code&gt;, and &lt;kbd&gt; tags. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-checkattrs</strong> : Spell check text in these attributes: alt, title, summary, label, prompt, standby. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-savebadwords</strong> : When spell checking save all the misspelt words to the corrections folder.</li>
+  <li><strong>-saveforeign</strong> : When spell checking save all words from unrecognised languages to the corrections folder.</li>
+  <li><strong>-usebritish</strong> : Use British instead of American as the default English.</li>
+  <li><strong>-ignoresuggestions</strong> : When spell checking don't supply any alternative words when a word cannot be found in the dictionary. Must appear after <strong>-spellcheck</strong></li>
+  <li><strong>-showlangcodes</strong> : Display the language codes next to each misspelt word.</li>
+  <li><strong>-owndics <em>Paths_To_Files</em></strong> : Where Paths_To_Files is a comma-separated list of paths to one or more supplementary/alternative dictionaries.</li>
+  <li><strong>-ignorelangs <em>Language_Codes</em></strong> : Where Language_Codes is a comma-separated list of language codes to ignore.</li>
+  <li><strong>-defaultlangcode <em>Language_Code</em></strong> : Where Language_Code is the default to use when a page doesn't specify one.</li>
+  <li><strong>-correctionsfolder <em>Path_To_Folder</em></strong> : Where Path_To_Folder is the folder used for correction dictionaries.</li>
+  <li><strong>-spellport <em>Port</em></strong> : Where <em>Port</em> is the port the Pro tool listens on for spell check additions to a dictionary. This must be an integer in the range (1-65535). It defaults to 9890.</li>
+</ul>
+</div>
+<p><a href="network.html">Network tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-ignoreproxy</strong> : Ignore any operating system proxy settings e.g. those set in 'internet options' control panel applet in Windows.</li>
+  <li><strong>-proxyhost <em>Host</em></strong> : Where <em>Host</em> is the name of the proxy server you need to go through to access the starting web page.</li>
+  <li><strong>-proxyport <em>Port</em></strong> : Where <em>Port</em> is the port the proxy server listens on. This must be an integer in the range (1-65535).</li>
+  <li><strong>-proxysocks</strong> : Use the SOCKS protocol to talk to the proxy server.</li>
+  <li><strong>-puser <em>UserName</em></strong> : Where <em>UserName</em> is required to traverse an authenticating proxy server.</li>
+  <li><strong>-ppassword <em>Password</em></strong> : Where <em>Password</em> is required to traverse an authenticating proxy server.</li>
+  <li><strong>-noproxyfor <em>Hosts</em></strong> : Where <em>Hosts</em> is a comma-separated list of hosts which bypass the proxy server.</li>
+  <li><strong>-cookiepolicy <em>ACCEPT_ALL|ACCEPT_SERVER|ACCEPT_SESSION|ACCEPT_NONE</em></strong> : Use this option to specify how you wish to deal with cookies received whilst validating. Defaults to <em>ACCEPT_SERVER</em>.</li>
+  <li><strong>-cookie <em>Cookie</em></strong> : Where <em>Cookie</em> is a standard set-cookie HTTP header. This cookie will be treated like a normal cookie received from the server for the starting page and subject to the policies defined above.</li>
+  <li><strong>-ppause <em>MilliSeconds</em></strong> : Where <em>MilliSeconds</em> is the time to pause in milliseconds before retrieving each page. This must be an integer, greater than 0.</li>
+  <li><strong>-identity <em>identity</em></strong> : Where <em>identity</em> is the name of a user agent as displayed on the Include tab of the Pro tool.</li>
+</ul>
+</div>
+<p><a href="authentication.html">Authentication tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-user <em>UserName</em></strong> : Where <em>UserName</em> is required for HTTP protected web pages.</li>
+  <li><strong>-password <em>Password</em></strong> : Where <em>Password</em> is required for HTTP protected web pages.</li>
+  <li><strong>-interactiveauth</strong> : If set (and <strong>-interact</strong> is set <em>before</em> this option) then display prompts when web/proxy authentication fails</li>
+</ul>
+</div>
+<p><a href="forms.html">Forms tab</a> equivalent options: (Also see <a href="#forms">Notes</a> below)</p>
+<div class="list">
+<ul>
+ <li><strong>-action<em>X</em> <em>Action</em></strong> : Where <em>Action</em> is the value of the 'action' attribute value to match for form submission. X is a number greater than zero to allow more than one form to be specified.</li>
+  <li><strong>-actionregex<em>X</em></strong> : Treat the <strong>-action</strong> option as a regular expression. X is used to match with the correct -action.</li>
+  <li><strong>-submit<em>X</em> <em>Name</em></strong> : Where <em>Name</em> is the name of the submit button to use if there is more than one. X is used to match with the correct -action.</li>
+  <li><strong>-param<em>X</em> <em>Name=Value</em></strong> : Where <em>Name</em> is the name of a parameter to submit when sending a form, and <em>Value</em> is its value e.g. '-param userid=julie', or '-param userid=' to send a blank value. X is used to match with the correct -action.</li>
+</ul>
+</div>
+<p><a href="resultstab.html">Results tab</a> equivalent options:</p>
+<div class="list">
+<ul>
+  <li><strong>-resultsfolder <em>Path_To_Folder</em></strong> : Where <em>Path_To_Folder</em> is the folder you wish to store the results in. This defaults to the <a href="results.html#pages">documents folder</a>.</li>
+  <li><strong>-uniquereport</strong> : Output the results using a unique report name.</li>
+  <li><strong>-displaybrowser <em>Browser</em></strong> : The browser you wish to display the results with. This defaults to the default browser. It should be the full browser's path for Linux or Windows, but just the browser's name for OS X.</li>
+  <li><strong>-detailsdefault <em>HOVER|SHOW_ALL|HIDE_ALL</em></strong> : The default value for the 'Display issues details' option on the Results. Defaults to <em>HOVER</em>.</li>
+  <li><strong>-sortbydefault <em>LINKS|PATH|MOST|LEAST</em></strong> : The default value for the 'Sort by' option on the Results. Defaults to <em>LINKS</em>.</li>
+  <li><strong>-hideresults</strong> : Do not display the validation results in a browser. If you have -interact set then other interactive dialogs may still appear.</li>
+  <li><strong>-showsuccess</strong> : Use this option to list pages that had no reported problems.</li>
+  <li><strong>-shortreport</strong> : Select the 'Short report' checkbox on the results.</li>
+  <li><strong>-hidecontent</strong> : Select the 'Hide content' checkbox on the results.</li>
+ </ul>
+</div>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+<h3><a id="dtd"></a>DTD values</h3>
+<p>Valid values for use with the <strong>-dtd</strong> option above are listed below. Note that these are case-sensitive:</p>
+<ul>
+  <li>Auto-detect</li>
+  <li>Best-fit</li>
+  <li>"HTML 5.1"</li>
+  <li>"XHTML 5.1"</li>
+  <li>"HTML 5.1 Polyglot"</li>
+  <li>"HTML5"</li>
+  <li>"XHTML5"</li>
+  <li>"HTML5 Polyglot"</li>
+  <li>"XHTML 1.1"</li>
+  <li>"XHTML Basic 1.1"</li>
+  <li>"XHTML+ARIA 1.0"</li>
+  <li>"XHTML+RDFa 1.1"</li>
+  <li>"XHTML+RDFa 1.0"</li>
+  <li>"XHTML 1.0 Strict"</li>
+  <li>"XHTML 1.0 Transitional"</li>
+  <li>"XHTML 1.0 Frameset"</li>
+  <li>"XHTML-Print 1.0"</li>
+  <li>"XHTML Basic 1.0"</li>
+  <li>"XHTML Mobile 1.2"</li>
+  <li>"HTML4+ARIA 1.0"</li>
+  <li>"HTML4+RDFa 1.1"</li>
+  <li>"HTML4+RDFa Lite 1.1"</li>
+  <li>"HTML4+RDFa 1.0"</li>
+  <li>"HTML 4.01 Strict"</li>
+  <li>"HTML 4.01 Transitional"</li>
+  <li>"HTML 4.01 Frameset"</li>
+  <li>"HTML 4.0 Strict"</li>
+  <li>"HTML 4.0 Transitional"</li>
+  <li>"HTML 4.0 Frameset"</li>
+  <li>"ISO/IEC 15445:2000"</li>
+  <li>"HTML 3.2"</li>
+  <li>"HTML 2.0"</li>
+</ul>
+<h3><a id="forms"></a>Forms options</h3>
+<p>With the <strong>-action, -actionregex, -submit, -param</strong> form options you may wish to supply information for more than one form. If so then add a unique number greater than zero to the option name to distinguish between each form.</p>
+<p>For example with just one form you can pass the options like this:</p>
+<code>-action authenticate/login -param userid=julie -param password=test</code>
+<p>With two forms you need to identify which parameters to use with which form action:</p>
+<pre><code>-action1 authenticate/login -param1 userid=julie -param1 password=test
+-action2 purchase -submit2 buy -param2 item=SDCard -param2 type=32GB</code></pre>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="properties"></a>Properties file</h2>
+<p>In place of a long command line with lots of options <a href="#usage">as described above</a>, you can place all these options into a properties file instead, and then just use the single <code>-properties</code> option to refer to this file</p>
+
+<p>Here's <a href="commandline.props">an example properties file</a> to help. Note that comments are prefixed with a #, each option must be on its own line, and you must add '=' between properties and their values. Blank lines are ignored.</p>
+
+<p>To help you to create this file, whenever you use the GUI tool it automatically creates a a file called <code>commandline.props</code> for you in the results folder. This contains all of the command line equivalents of the GUI tool settings you have just used.</p>
+
+<p>If no command line options are provided it will look for a file called <code>commandline.props</code> in the <code>&lt;data&gt;</code> folder:</p>
+<ul>
+  <li>For Windows Vista/7/8/10 the <code>&lt;data&gt;</code> folder is <code>&lt;user_home&gt;\AppData\Roaming\TotalValidatorTool</code></li>
+  <li>For Windows 2000/XP  the <code>&lt;data&gt;</code> folder is <code>&lt;user_home&gt;\Application Data\TotalValidatorTool</code></li>
+  <li>For Linux the <code>&lt;data&gt;</code> folder is <code>&lt;user_home&gt;/.totalvalidatortool</code></li>
+  <li>For OS X the <code>&lt;data&gt;</code> folder is <code>&lt;user_home&gt;/Library/Application Support/TotalValidatorTool</code></li>
+</ul>
+<p>The location of this folder is also displayed in the 'About' menu of the GUI tool.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="examples"></a>Examples</h2>
+<p>As an example the following line will silently check all the pages on a website for compliance against XHTML 1.1, with W3C WCAG 1.0 AAA accessibility, spell checked, also checking for broken links:</p>
+<strong>
+TotalValidatorCL.exe -url http://www.your_web_site.com/index.html -pages 0 -dtd "XHTML 1.1"
+-accessibility AAA -spellcheck -brokenlinks
+</strong>
+<p>The following example prompts for a single local web page, then check it for compliance against HTML 4.01, with Section 508 accessibility, and automatically displaying the results in a browser at the end:</p>
+<strong>
+TotalValidatorCL.exe -interact -dtd "HTML 4.01 Transitional"
+-accessibility 508
+</strong>
+<p>The next example tests a local web site for broken links, reports all redirects, but suppresses the reporting of 302 and 303 warnings, and automatically shows the results:</p>
+<strong>
+TotalValidatorCL.exe -interact -pages 0 -file c:\mysite\index.html -brokenlinks
+-reportredirects -W302 -W303
+</strong>
+<p>To supply the command line options in the default <code>commandline.props</code> properties file, simply use:</p>
+<strong>
+TotalValidatorCL.exe
+</strong>
+<p>To supply the command line options in your own properties file, use:</p>
+<strong>
+TotalValidatorCL.exe -properties myprops.props
+</strong>
+
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><span class="current">Command line</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#usage">Options</a></li>
+        <li class="lhitem"><a href="#properties">Properties file</a></li>
+        <li class="lhitem"><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

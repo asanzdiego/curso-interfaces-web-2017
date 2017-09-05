@@ -1,6 +1,6 @@
 % Usabilidad Web
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
@@ -91,7 +91,8 @@
 
 - Un elemento con **mayor tamaño**, con un **color distinto**, con una **orientación diferente**, o **en movimiento**, tendrá más probabilidad de atraer nuestra atención.
 
-![Fuente: nosolousabilidad.com](../img/inusual.png)
+![Fuente: nosolousabilidad.com](../img/inusual.png){ width=50% text-align=center }
+
 
 ## ¿Cómo piensa?
 
@@ -115,61 +116,71 @@
 
 - Siempre hay que tener en cuenta que cuantas menos opciones, menos posibilidades de error tendrá el usuario.
 
-![Limitar posibilidades. Fuente: nosolousabilidad.com](../img/limitar.png)
+![Limitar posibilidades. Fuente: nosolousabilidad.com](../img/limitar.png){ width=50% text-align=center }
+
 
 ## Orientar al usuario
 
 - Ya sea mostrándole paulatinamente las distintas opciones, o mostrándoles pequeños mensajes informativos.
 
-![Orientar al usuario. Fuente: nosolousabilidad.com](../img/orientar.png)
+![Orientar al usuario. Fuente: nosolousabilidad.com](../img/orientar.png){ width=50% text-align=center }
+
 
 ## Solicitar confirmación
 
 - Antes de realizar una acción que no tiene vuelta atrás, hay que informar al usuario.
 
-![Solicitar confirmación. Fuente: gmail.com](../img/confirmar.png)
+![Solicitar confirmación. Fuente: gmail.com](../img/confirmar.png){ width=50% text-align=center }
+
 
 ## Evitar la pérdida de información
 
 - En caso de error y vuelta atrás, el usuario no debería volver a introducir los datos.
 
-![Evitar la pérdida de información. Fuente: nosolousabilidad.com](../img/ajax.png)
+![Evitar la pérdida de información. Fuente: nosolousabilidad.com](../img/ajax.png){ width=50% text-align=center }
+
 
 ## Permitir deshacer
 
 - Siempre que sea posible, hay que ofrecer al usuario la posibilidad de volver atrás.
 
-![Permitir deshacer. Fuente: nosolousabilidad.com](../img/anterior-siguiente.png)
+![Permitir deshacer. Fuente: nosolousabilidad.com](../img/anterior-siguiente.png){ width=50% text-align=center }
+
 
 ## Ofrecer solución automática a los errores
 
 - No siempre es posible, pero si es deseable que el propio sistema sea capaz de ofrecer soluciones automáticas.
 
-![Ofrecer solución automática a los errores. Fuente: nosolousabilidad.com](../img/did-you-mean.png)
+![Ofrecer solución automática a los errores. Fuente: nosolousabilidad.com](../img/did-you-mean.png){ width=50% text-align=center }
+
 
 ## Mensajes de error para humanos
 
 - Si aparece un mensaje de error este tiene que ser entendible por el usuario.
 
-![Mensajes de error para humanos. Fuente: duckduckgo.com](../img/mensaje-error.png)
+![Mensajes de error para humanos. Fuente: duckduckgo.com](../img/mensaje-error.png){ width=50% text-align=center }
+
 
 ## Reducción
 
 - Si prescindimos de un elemento, y el cambio no afecta a la comprensión del usuario, entonces su presencia no era necesaria.
 
-![Reducción. Fuente: nosolousabilidad.com](../img/reduccion-2.png)
+![Reducción. Fuente: nosolousabilidad.com](../img/reduccion-2.png){ width=50% text-align=center }
+
 
 ## Espacios vacíos
 
 - Al separar elementos con espacios vacíos, **guiamos la atención hacia aquello que permanece y es relevante**.
 
-![Buscadores en abril de 1999. Fuente: //web.archive.org/](../img/buscadores-abril-1999.png)
+![Buscadores en abril de 1999. Fuente: //web.archive.org/](../img/buscadores-abril-1999.png){ width=50% text-align=center }
+
 
 ## Equilibrio de características
 
 - Al incrementar el número de características se observa **un efecto positivo sobre las capacidades percibidas, pero un efecto negativo sobre la usabilidad percibida**.
 
-![Gráfico de Rob Tanenn. Fuente: nosolousabilidad.com](../img/grafico-de-rob-tanenn-2.png)
+![Gráfico de Rob Tanenn. Fuente: nosolousabilidad.com](../img/grafico-de-rob-tanenn-2.png){ width=50% text-align=center }
+
 
 
 
@@ -179,7 +190,8 @@
 
 ## Fases
 
-![Fases del diseño centrado en el usuario. Fuente: upf.edu](../img/disenio-centrado-usuario.png)
+![Fases del diseño centrado en el usuario. Fuente: upf.edu](../img/disenio-centrado-usuario.png){ width=50% text-align=center }
+
 
 ## Modelado usuario
 
@@ -197,7 +209,8 @@
 
 - Definir el comportamiento interactivo del sitio web, es decir, qué **acciones se ofrecerán al usuario en cada momento, y cómo responderá la aplicación** a las acciones que realice.
 
-![Diagrama de diseño de interacción. Fuente: sopadepixels.com](../img/disenio-interaccion.png)
+![Diagrama de diseño de interacción. Fuente: sopadepixels.com](../img/disenio-interaccion.png){ width=50% text-align=center }
+
 
 ## Diseño visual
 
@@ -230,7 +243,7 @@
 ## Prototipado
 
 - Algunas herramientas:
-    - <https://github.com/prikhi/pencil>
+    - <http://pencil.evolus.vn/>
     - <http://moqups.com>
     - <http://gomockingbird.com>
     - <http://balsamiq.com>
@@ -238,47 +251,13 @@
     - <http://wireframe.cc>
     - <http://www.axure.com>
 
-## Pencil (Instalación)
+## Pencil
 
-- Descarga desde: <https://github.com/prikhi/pencil/releases>
+- Descarga desde: <http://pencil.evolus.vn/>
 
 - Instalar normalmente según plafatorma (Linux, Mac o Windows)
 
-- Las colecciones se instalan desde "Herramientas > Installar nueva colleción..."
-
-- Las plantillas se instalan desde "Herramientas > Gestionar plantillas de exportación... > Instalr nueva plantilla"
-
-## Pencil (Colecciones)
-
-- Font-Awesome-Icons:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/FontAwesomeIcons_1.0.zip>
-
-- Android-Lollipop-Pencil-Stencils:
-  - <https://github.com/nathanielw/Android-Lollipop-Pencil-Stencils/releases/download/v1.1.0/android-lollipop-pencil-stencils-v1.1.0.zip>
-
-- Bootstrap-Pencil-Stencils:
-  - <https://github.com/nathanielw/Bootstrap-Pencil-Stencils/releases/download/v1.1.0/bootstrap-pencil-stencils-v1.1.0.zip>
-
-- Material-Icons-for-Pencil:
-  - <https://github.com/nathanielw/Material-Icons-for-Pencil/releases/download/v2.0.0/material-icons-for-pencil-v2.0.0.zip>
-
-## Pencil (Plantillas>
-
-- Pencil-Material-Design-Template:
-  - <https://github.com/DaniGuardiola/pencil-material-template/raw/master/build/pencil-material-template-mobile.zip>
-
-- TabNav:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/TabNav.zip>
-
-- JQUERY:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/JQUERY.zip>
-
-- GUIPrototypingSmall:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/GUIPrototypingSmall.zip>
-
-- GUIPrototypingTemplate:
-  - <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/GUIPrototypingTemplate.zip>
-
+- Instalar las colecciones y las plantillas.
 
 ## Evaluación
 
@@ -416,11 +395,11 @@
 
 ## Card-sorting
 
-- Solicitar que **agrupen los conceptos representados en tarjetas** por su similitud semántica.
+- Solicitar que **agrupen los conceptos en tarjetas** por su similitud semántica
+para ofrecernos una **imagen del modelo mental del usuario**.
 
-- Su utilización nos ofrecerno una **imagen del modelo mental del usuario**.
+![Card-sorting. Fuente: nosolousabilidad.com](../img/card-sorting.png){ width=50% text-align=center }
 
-![Card-sorting. Fuente: nosolousabilidad.com](../img/card-sorting.png)
 
 ## Evaluación heurística
 
@@ -464,7 +443,8 @@
 
 - Consiste en **comparar dos versiones** de una misma página y ver cuál funciona mejor.
 
-![Test A/B. Fuente: elultimoblog.com](../img/test-a-b.jpg)
+![Test A/B. Fuente: elultimoblog.com](../img/test-a-b.jpg){ width=50% text-align=center }
+
 
 
 
@@ -483,10 +463,10 @@
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/01-usabilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/01-usabilidad/slides>
 
 - Ejercicios:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/01-usabilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2017/tree/master/01-usabilidad/src>
 
 ## Bibliografía (I)
 

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ignoring problems</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>Sometimes you may wish to prevent some problems from being reported, and there are two ways of doing this:
+The first is to specify the problems using the <a href="include.html#errors">Ignore errors/warnings</a> option.
+This list of problems applies to all the parts of all the pages that you validate.
+</p>
+<p>Alternatively, you can add special instructions to your pages to ignore specific problems, or even entire types of validations on  specific pages or specific parts of those pages. How to do this is described below:
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="xhtml"></a>HTML pages</h2>
+<h3>Ignoring specific problems</h3>
+<p>If you wish to ignore specific problems from being reported on specific parts of a web page you can add a 'class'
+attribute to an existing tag as follows:
+</p>
+<pre>&lt;img <em>class=&quot;-tv-ignore:E860,E800&quot; src=&quot;img.gif&quot;</em> /&gt;</pre>
+<p>The class attribute's value must consist of the keyword '-tv-ignore:' followed by a comma-separated list of
+the problems to ignore. The listed problems will not be reported on this element and any child elements.
+Note that depending on the HTML standard you are validating against, there may be restrictions on which elements
+you are allowed to use the 'class' attribute with.
+</p>
+<p>If you are already using a class attribute then simply add the '-tv-ignore:' class to the existing one:
+</p>
+<pre>&lt;img class=&quot;myClass -tv-ignore:E860&quot; src=&quot;img.gif&quot; /&gt;</pre>
+<p>Alternatively you could wrap the existing markup with a &lt;div&gt; or
+&lt;span&gt; instead:
+</p>
+<pre>&lt;div <em>class=&quot;-tv-ignore:E860&quot;</em>&gt;
+  &lt;img class=&quot;myClass&quot; src=&quot;img.gif&quot; /&gt;
+&lt;/div&gt;</pre>
+<p>You can also nest the problems to ignore. In the following example problem, E860 will not be reported for any of the
+markup between (and including) the &lt;div&gt; tags, E800 will not be reported for the first set of &lt;p&gt; and &lt;img&gt; tags,
+but could be reported for the second set.
+</p>
+<pre>&lt;div <em>class=&quot;-tv-ignore:E860&quot;</em>&gt;
+  &lt;p <em>class=&quot;-tv-ignore:E800&quot;</em>&gt;
+    &lt;img src=&quot;img.gif&quot; /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;img src=&quot;img.gif&quot; /&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+<p>You can use this system to ignore whole sections of a page, or the whole page, (with HTML5 you can add a 'class'
+attribute to the &lt;html&gt; tag). Or you could prevent single words or phrases from being spell checked as follows:</p>
+<pre>&lt;p&gt;Mary had a <em>&lt;span class="-tv-ignore:E031"&gt;lickle&lt;/span&gt;</em> lamb, its fleece
+was <em>&lt;span class="-tv-ignore:E031"&gt;wite&lt;/span&gt;</em> as snow.&lt;p&gt;</pre>
+<p>If the problem you specify does not apply to your markup, there is no harm, it will simply be ignored.
+In the examples above you may have noticed that E860 and E800 are actually mutually exclusive as they apply to WCAG 1.0 and
+WCAG 2.0 respectively.
+</p>
+<p>Note that when you specify a problem to ignore, the validation is still performed, but the problem is not reported.
+This also occurs when using the <a href="include.html#errors">Ignore errors/warnings</a> option. So if you wished to ignore
+a E404 error on a broken link, an attempt would still be made to check the link first, slowing down the validation process:
+</p>
+<pre>&lt;a <em>class="-tv-ignore:E404"</em> href="a_bad_page.html"&gt;</pre>
+<p>It would be better not to test the link at all, and you can do this as described in the next section.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h3>Ignoring all problems for a specific type of validation</h3>
+<p>Depending on your requirements, it may be more efficient to prevent an entire type of validation being carried out on a section of markup.
+For this purpose there are five special 'class' attribute values you can use:
+</p>
+<ul>
+<li>-tv-ignore-html</li>
+<li>-tv-ignore-access</li>
+<li>-tv-ignore-links</li>
+<li>-tv-ignore-spellcheck</li>
+<li>-tv-ignore-css</li>
+</ul>
+<p>For example, the following prevents accessibility testing on the enclosed markup (including the &lt;div&gt; tags):
+</p>
+<pre>&lt;div <em>class=&quot;-tv-ignore-access&quot;</em>&gt;
+  &lt;p&gt;
+    &lt;img src=&quot;img.gif&quot; /&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+<p>Because the 'class' attribute is a white-space separated list of class names, you can specify more than one of these special values at a time and mix them with problem specific values:
+</p>
+<pre>&lt;div <em>class=&quot;myClass -tv-ignore-links -tv-ignore:E860,E800 -tv-ignore-access&quot;</em>&gt;
+  &lt;img src=&quot;img.gif&quot; /&gt;
+  &lt;a href="a_bad_page.html"&gt;
+&lt;/div&gt;</pre>
+<p>Note that the special values such as '-tv-ignore-access', take precedence over any individual problem exclusions like E860.
+</p>
+<p>As mentioned in the previous section, using '-tv-ignore-links' will prevent any of the enclosed links from being tested. Also if a link appears in more than one place, you must put the ignore request at the first place Total Validator will find the link, or on all instances of the link, otherwise Total Validator will test the first one it finds.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="css"></a>CSS</h2>
+<p>As described above you can use the 'class' attribute to ignore CSS problems with any CSS used in 'style' attributes
+or &lt;style&gt; tags. Alternatively, there is a system specifically for use with CSS in style sheets, which can also be used within &lt;style&gt; tags, as described below:
+</p>
+<h3>Using at-rules to ignore problems in CSS</h3>
+<p>If you wish to ignore specific problems from being reported on a specific part of your style sheet you can add special at-rules as follows:
+</p>
+<pre><em>@-tv-ignore start E777,W776;</em>
+
+h1 { -moz-color: firefox; }
+h2 { -moz-color: thunderbird; }
+
+<em>@-tv-ignore end E777,W776;</em></pre>
+<p>In this case the problems E777 and W776 will not be reported for any of the statements that are enclosed by the 'start' and 'end' rules. As with HTML you can also ignore all CSS or Links problems, as well as specific ones. The general form of the at-rule is as follows:
+</p>
+<code>@-tv-ignore [ start | end ] [[ all-css | all-links ] || [ Exxx [,Exxx]* ]];</code>
+<p>This is completely safe to add to your style sheet because all user agents, such as browsers, will completely ignore any rules they do not recognise.
+</p>
+<p>You can use these rules as many times as you wish, you can nest them, and start/end the exclusion of individual problems:
+</p>
+<pre><em>@-tv-ignore start all-css W776;</em>
+
+h1 { -moz-color: firefox; }
+
+<em>@-tv-ignore end all-css;</em>
+
+h2 { -moz-color: firefox; }
+
+<em>@-tv-ignore end W776;</em></pre>
+<p>In the example above, the h1 declaration will not report any problems because 'start all-css' prevents any CSS validation. The 'end all-css' at-rule allows CSS validation again, but the W776 restriction is still in force, and so the 'h2' declaration does not reports a W776 problem.
+</p>
+<p>The 'start' at-rules apply until there is a corresponding 'end' rule. So if you forget to specify the 'end' rule then the rule will apply to the end of the style sheet. If you uses them within style elements, they will also apply across different style elements. But the rules are never inherited by any imported style sheets, and if you try to 'end' something you have not started, it will be silently ignored.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h3>Using a property to ignore problems in CSS</h3>
+<p>In addition to using an at-rule to ignore problems as described above, there is a corresponding property that you can use:
+</p>
+<pre>h1 {
+  color: red;
+  <em>-tv-ignore: start E777,W776;</em>
+  -moz-color: firefox;
+  <em>-tv-ignore: end W776;</em>
+  -moz-color: firefox;
+  <em>-tv-ignore: end E777;</em>
+}
+h2 { -moz-color: firefox; }</pre>
+<p>Just as with the at-rule exclusions defined using this property apply from the 'start' to the 'end'. They are not restricted to the block in which they are defined, but apply to all statements between the 'start' and 'end'.
+</p>
+<p>The general form of this property is almost identical to the at-rule and operates in the same way:
+</p>
+<code>-tv-ignore [ start | end ] [[ all-css | all-links ] || [ Exxx [,Exxx]* ]];</code>
+<p>You can mix the property with the at-rule if you wish. Here is a complex example of this:
+</p>
+<pre>1  @-tv-ignore start E777,W776;
+2  h1 {
+3    -moz-color: firefox;
+4    -tv-ignore: end E777;
+5    -moz-color: firefox;
+6    -tv-ignore: end W776;
+7    -tv-ignore: start E725;
+8  }
+9  @import "test.css";
+10 h2 { -moz-color:fred; }</pre>
+<p>No problems are reported for the '-moz-color' property on line 3, due to the at-rule on line 1. Only W776 is reported for the '-moz-color' on line 5 because of the 'end' property on line 4. The 'end' properties on lines 4 and 6, mean that both E777 and W776 are reported on line 10. Finally the property on line 7 prevents E725 on line 9.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="parsing"></a>Parsing problems</h2>
+<p>There are certain type of validation problem that you may not be able to ignore. Generally, you will not be able to
+use the above system to mask <a href="https://www.totalvalidator.com/support/reference/parsing.html">any parsing problems</a>.
+This includes certain <a href="https://www.totalvalidator.com/support/reference/css.html">CSS validation problems</a>,
+which are generated when the CSS is parsed.
+</p>
+<p>Although we expect to reduce the number of parsing problems that are currently ignored, many will remain impossible
+to ignore because by definition a parsing problem means that Total Validator cannot properly understand the markup/css
+that is being used and so cannot deal with it properly. But this also applies to any user agent trying to read your pages,
+and so it is essential that you correct such parsing problems before publishing your pages.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><span class="current">Ignoring problems</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#intro">Introduction</a></li>
+        <li class="lhitem"><a href="#xhtml">HTML pages</a></li>
+        <li class="lhitem"><a href="#css">CSS</a></li>
+        <li class="lhitem"><a href="#parsing">Parsing problems</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

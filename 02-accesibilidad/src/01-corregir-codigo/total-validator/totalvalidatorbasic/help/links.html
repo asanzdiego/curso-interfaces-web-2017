@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>Links Tab</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>Introduction</h2>
+<p>All of the options that appear on the Links tab of the Pro tool
+are described below.</p>
+
+<p class="centered"><img alt="Links tab" src="../images/tool_linkstab.png" /></p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="reportredirects"></a>Report redirects</h2>
+<p>When checking for broken links you can use this option to additionally
+report warnings for any links that are 'redirects' to another place.</p>
+
+<p>These are reported as warnings as they are not strictly errors. But
+because a redirected link can often become obsolete and so broken
+it may be wise to replace any such links with the ones being redirected to.</p>
+
+<p>Three types of redirects are reported: Permanently Moved (301),
+Temporarily Moved (302), and See Other (303).
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="method"></a>Link test method</h2>
+<p>The 'Default' option sends a HEAD request to the web server to test links. This is a fast test that asks the server if the resource exists. If this fails then the tool sends a GET request, which is the same as a browser uses, but can be much slower because the web server sends the resource back.
+</p>
+<p>Most servers will respond to HEAD requests, and if this fails then the link is broken. So sending a subsequent GET request is pointless and just slows down the link checking. So you can speed up the test by selecting the 'HEAD' option, which only sends a HEAD request.
+</p>
+<p>Some servers may not respond at all to HEAD requests, so sending a HEAD request first is pointless and may slow things down. So for these servers you can speed up the test by selecting the 'GET' option, which only sends a GET request.
+</p>
+<p>Some poorly configured servers may not even work properly if they receive HEAD requests. So if you are having issues then using the 'GET' option may work for you.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="timeout"></a>Timeout</h2>
+<p>When checking for broken links or validating more than one page,
+then if a page doesn't respond within
+20 seconds it is recorded as broken. If you link to pages on particularly
+slow Web Servers, then you can use this option to increase the time Total
+Validator waits before recording it as a broken link.</p>
+<p>
+You can also reduce the time down to 5 seconds if you wish. The
+advantage of doing this is that the whole process may finish a lot
+quicker if you do have broken links, but there is a danger that some
+slow links will be reported as broken.</p>
+<p>
+The value that you enter here must be an integer (whole number) from 5
+to 120 representing the number of seconds to wait for a response for a
+link before reporting it as broken. If you leave it blank it will
+default to 20 seconds.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="concurrency"></a>Concurrency</h2>
+<p>When checking for broken links or validating more than one page
+some routers cannot handle high numbers of concurrent requests.
+Also some web servers cannot cope with a lot of concurrent page requests.
+This option allows you to set how many simultaneous links checks will be performed.</p>
+<p>
+If you have a modern router and are checking a fast site then increasing
+this value will generally make the validation run faster. Leave blank or
+set to 0 to remove all limits for the fastest results.</p>
+<p>
+The value that you enter here must be an integer of 0 or greater.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="pause"></a>Link pause</h2>
+<p>If you really wish to minimise the impact on your server you can set the
+concurrency to 1 and then set this option to the time in milliseconds to
+pause between testing each link. By pausing in this way the rate of requests
+hitting the server will be reduced. If you are testing more than one page
+you can also use the <a href="network.html#pause">Page pause</a> option to
+set a delay between retrieving pages for validation.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="query"></a>Strip query</h2>
+<p>
+Some websites are constructed such that query parameters are dynamically added
+to links on their pages such that the links are different each time the page is served.
+This is a problem for Total Validator which treats these links as being to different
+pages because the URLs are different. This means that it will test the same page(s)
+again and again.</p>
+<p>
+If this happens to you then use this option to prevent it. The links will then be
+stripped of all query parameters before being used. Note that this may mean that
+not all pages are checked, depending on how the query parameters are used.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="session"></a>Strip session</h2>
+<p>
+Some websites are constructed such that session ids may be dynamically added
+to links on their pages. These links typically add these session ids to the end of
+the link using a semicolon ';' to separate them like so:</p>
+<pre>http://thewebsite.com/path/page.html;jsession=123456</pre>
+<p>
+This can sometime be a problem for Total Validator which may view two links to the
+same page as referring to different pages because the URLs are different. This means
+that it may test the same page(s) again and again.</p>
+<p>
+If this happens to you than use this option to prevent it. The links
+will then be stripped of the semicolon and everything following this up to the
+start of any query parameters or to the end of the URL if there are none.</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><span class="current">Links tab</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="#reportredirects">Redirects</a></li>
+        <li class="lhitem"><a href="#method">Link test method</a></li>
+        <li class="lhitem"><a href="#timeout">Timeout</a></li>
+        <li class="lhitem"><a href="#concurrency">Concurrency</a></li>
+        <li class="lhitem"><a href="#pause">Link pause</a></li>
+        <li class="lhitem"><a href="#query">Strip query</a></li>
+        <li class="lhitem"><a href="#session">Strip session</a></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><a href="loginforms.html">Login forms</a></li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

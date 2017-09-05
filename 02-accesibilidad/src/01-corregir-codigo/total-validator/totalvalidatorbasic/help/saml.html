@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>SAML Forms</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../ReadMe.html"><img src="../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><span class='error'>Help</span> | <a href='reference/index.html'>Reference</a> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="intro"></a>SAML based authentication</h2>
+<p>With SAML based authentication systems the user gains access to one system (called the 'Service Provider' or 'SP' for short) by logging into a different authentication system (called the 'Identity Provider' or 'IdP' for short). So two distinct hosts are involved; the SP and the IdP. The usual process is to start on the SP you wish to access, which redirects you to the IdP to log in, which then redirects you back to the SP where you can now access the SP system.
+</p>
+<p>Total Validator can work with such a system in order to validate pages on the SP system. But you need to understand the login system being used or you will have little chance of getting it to work and you will be better off using one of our <a href="loginforms.html#extensions">browser extensions</a> instead.
+</p>
+<p>Note that Total Validator will not validate or follow any links on any pages on the IdP. It will just respond to &lt;meta&gt; and HTTP redirects, and look for and execute any matching forms on the pages returned. Also note that Total Validator does not execute any javascript. So any processing involved must not rely on javascript being executed by a user's browser.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+
+<h2><a id="config"></a>How to configure Total Validator</h2>
+<p>Before you start we strongly advise that you have worked with our <a href="https://www.totalvalidator.com/help/examples.html">example form</a> first. Although this does not use SAML it will help familiarise you with several potential pitfalls when dealing with login forms.
+</p>
+<p>Total Validator only validates pages with the same hostname as the <a href="options.html#url">Starting page</a>. So your <a href="options.html#url">Starting page</a> must be a URL pointing to the SP system that will redirect to the IdP login page. You cannot start with the URL of the login page on the IdP. If your system doesn't have such a URL on the SP system then Total Validator cannot work.
+</p>
+<p>On the <a href = "include.html">Include tab</a> you will need to specify any <a href="loginforms.html#logoff">logoff links</a> on the SP system as you would for a normal login form. Also you should <em>never</em> set the <a href="include.html#followbelow">Follow below</a>, the <a href="include.html#remote">Follow remote</a> or the <a href="include.html#depth">Depth</a> options, as these will prevent the login process from working properly.
+</p>
+<p>Finally, because Total Validator needs to perform special processing to deal with the redirections and forms involved you must check the <a href="forms.html#saml">SAML</a> option on the <a href="forms.html">Forms tab</a>. You will also need to add Form details to match each of the forms involved: Because as well as the form where the user enters their login details, there is often a second form which is automatically posted.
+</p>
+<p><a href="#top"><img src="../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Help</div>
+  <ul>
+    <li class="lhmenu"><a href="help.html">Quick start</a></li>
+    <li class="lhmenu"><a href="results.html">The results</a></li>
+    <li class="lhmenu"><a href="menu.html">Menus</a></li>
+    <li class="lhmenu"><a href="options.html">Main tab</a></li>
+    <li class="lhmenu"><a href="include.html">Include tab</a></li>
+    <li class="lhmenu"><a href="links.html">Links tab</a></li>
+    <li class="lhmenu"><a href="spellcheck.html">Spell check tab</a></li>
+    <li class="lhmenu"><a href="network.html">Network tab</a></li>
+    <li class="lhmenu"><a href="authentication.html">Authentication tab</a></li>
+    <li class="lhmenu"><a href="forms.html">Forms tab</a></li>
+    <li class="lhmenu"><a href="resultstab.html">Results tab</a></li>
+    <li class="lhmenu"><a href="commandline.html">Command line</a></li>
+    <li class="lhmenu"><span class="current">Login forms</span>
+      <ul class="lhitem">
+        <li class="lhitem"><a href="loginforms.html#intro">Introduction</a></li>
+        <li class="lhitem"><a href="loginforms.html#extensions">Extensions</a></li>
+        <li class="lhitem"><a href="loginforms.html#protool">Pro tool</a></li>
+        <li class="lhitem"><a href="loginforms.html#logoff">Logoff and delete links</a></li>
+        <li class="lhitem"><a href="loginforms.html#options">Related options</a></li>
+        <li class="lhitem"><a href="loginforms.html#example">Example forms</a></li>
+        <li class="lhitem"><span class="current">SAML forms</span></li>
+      </ul>
+    </li>
+    <li class="lhmenu"><a href="spellchecking.html">Spell checking</a></li>
+    <li class="lhmenu"><a href="ignore.html">Ignoring problems</a></li>
+    <li class="lhmenu"><a href="startup.html">Increasing memory</a></li>
+    <li class="lhmenu"><a href="faq.html">FAQ</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>

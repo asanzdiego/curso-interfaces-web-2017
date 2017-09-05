@@ -192,7 +192,8 @@ bootstrap/
 
 - Ejemplo de 1 columna de un tamaño de 12
 
-![1 columna](../img/1-columna.png)
+![1 columna](../img/1-columna.png){ width=50% text-align=center }
+
 
 ## 1 columna (II)
 
@@ -211,7 +212,8 @@ bootstrap/
 
 - Ejemplo de 2 columnas de un tamaño de 6
 
-![2 columnas](../img/2-columnas.png)
+![2 columnas](../img/2-columnas.png){ width=50% text-align=center }
+
 
 ## 2 columnas (II)
 
@@ -230,7 +232,8 @@ bootstrap/
 
 - Ejemplo de 3 columnas de un tamaño de 4
 
-![3 columnas](../img/3-columnas.png)
+![3 columnas](../img/3-columnas.png){ width=50% text-align=center }
+
 
 
 ## 3 columnas (II)
@@ -250,7 +253,8 @@ bootstrap/
 
 - Ejemplo de 4 columnas de un tamaño de 3
 
-![4 columnas](../img/4-columnas.png)
+![4 columnas](../img/4-columnas.png){ width=50% text-align=center }
+
 
 
 ## 4 columnas (II)
@@ -288,7 +292,8 @@ bootstrap/
 
 - Problema cuando una capa tiene un alto mayor que la de los demás:
 
-![Problema clearfix](../img/clearfix.png)
+![Problema clearfix](../img/clearfix.png){ width=50% text-align=center }
+
 
 ## clearfix (II)
 
@@ -305,7 +310,8 @@ bootstrap/
 
 ## Huecos con offset (I)
 
-![Huecos con offset](../img/offset.png)
+![Huecos con offset](../img/offset.png){ width=50% text-align=center }
+
 
 ## Huecos con offset (II)
 
@@ -325,7 +331,8 @@ bootstrap/
 
 ## push & pull (I)
 
-![push & pull](../img/push-and-pull.png)
+![push & pull](../img/push-and-pull.png){ width=50% text-align=center }
+
 
 ## push & pull (II)
 
@@ -378,7 +385,8 @@ bootstrap/
 
 ## Cabeceras (I)
 
-![Cabeceras](../img/cabeceras.png)
+![Cabeceras](../img/cabeceras.png){ width=50% text-align=center }
+
 
 ## Cabeceras (II)
 
@@ -392,7 +400,8 @@ bootstrap/
 
 ## Párrafos (I)
 
-![Párrafos](../img/parrafos.png)
+![Párrafos](../img/parrafos.png){ width=50% text-align=center }
+
 
 ## Párrafos (II)
 
@@ -408,7 +417,8 @@ bootstrap/
 
 ## Textos en línea
 
-![Textos en línea](../img/textos-en-linea.png)
+![Textos en línea](../img/textos-en-linea.png){ width=50% text-align=center }
+
 
 ## strong
 
@@ -452,7 +462,8 @@ bootstrap/
 
 ## Alineación
 
-![Alineación](../img/alineacion.png)
+![Alineación](../img/alineacion.png){ width=50% text-align=center }
+
 
 ## Izquierda
 
@@ -496,7 +507,8 @@ bootstrap/
 
 ## Capitalización
 
-![Capitalización](../img/capitalizacion.png)
+![Capitalización](../img/capitalizacion.png){ width=50% text-align=center }
+
 
 ## Minúsculas
 
@@ -524,7 +536,8 @@ bootstrap/
 
 ## Abreviaturas (I)
 
-![Abreviaturas](../img/abreviaturas.png)
+![Abreviaturas](../img/abreviaturas.png){ width=50% text-align=center }
+
 
 ## Abreviaturas (II)
 
@@ -534,7 +547,8 @@ bootstrap/
 
 ## Direcciones (I)
 
-![Direcciones](../img/direcciones.png)
+![Direcciones](../img/direcciones.png){ width=50% text-align=center }
+
 
 ## Direcciones (II)
 
@@ -555,7 +569,8 @@ bootstrap/
 
 ## Citas (I)
 
-![Citas](../img/citas.png)
+![Citas](../img/citas.png){ width=50% text-align=center }
+
 
 ## Citas (II)
 
@@ -571,7 +586,8 @@ bootstrap/
 
 ## Listas (I)
 
-![Listas](../img/listas.png)
+![Listas](../img/listas.png){ width=50% text-align=center }
+
 
 ## Listas (II)
 
@@ -586,7 +602,8 @@ bootstrap/
 
 ## Descripciones (I)
 
-![Descripciones](../img/descripciones.png)
+![Descripciones](../img/descripciones.png){ width=50% text-align=center }
+
 
 ## Descripciones (II)
 
@@ -620,7 +637,8 @@ bootstrap/
 
 ## Ejemplo (I)
 
-![Tabla](../img/tabla.png)
+![Tabla](../img/tabla.png){ width=50% text-align=center }
+
 
 ## Ejemplo (II)
 
@@ -657,15 +675,18 @@ bootstrap/
 
 ## Normal
 
-![Formulario normal](../img/formulario-normal.png)
+![Formulario normal](../img/formulario-normal.png){ width=50% text-align=center }
+
 
 ## Inline
 
-![Formulario inline](../img/formulario-inline.png)
+![Formulario inline](../img/formulario-inline.png){ width=50% text-align=center }
+
 
 ## Horizontal
 
-![Formulario horizontal](../img/formulario-horizontal.png)
+![Formulario horizontal](../img/formulario-horizontal.png){ width=50% text-align=center }
+
 
 ## Ejemplo
 
@@ -709,7 +730,8 @@ bootstrap/
 
 ## Validaciones (I)
 
-![Formulario Validaciones](../img/formulario-validaciones.png)
+![Formulario Validaciones](../img/formulario-validaciones.png){ width=50% text-align=center }
+
 
 ## Validaciones (II)
 
@@ -726,7 +748,8 @@ bootstrap/
 
 ## Tamaños (I)
 
-![Tamaños](../img/formulario-tamanios.png)
+![Tamaños](../img/formulario-tamanios.png){ width=50% text-align=center }
+
 
 ## Tamaños (II)
 
@@ -769,11 +792,13 @@ bootstrap/
 
 ## Ejemplos
 
-![Ejemplos de botones](../img/botones-ejemplos.png)
+![Ejemplos de botones](../img/botones-ejemplos.png){ width=50% text-align=center }
+
 
 ## Tipos (I)
 
-![Tipos de botones](../img/botones-tipos.png)
+![Tipos de botones](../img/botones-tipos.png){ width=50% text-align=center }
+
 
 ## Tipos (II)
 
@@ -789,7 +814,8 @@ bootstrap/
 
 ## Activados (I)
 
-![Botones activados](../img/botones-activados.png)
+![Botones activados](../img/botones-activados.png){ width=50% text-align=center }
+
 
 ## Activados (II)
 
@@ -805,7 +831,8 @@ bootstrap/
 
 ## Desactivados (I)
 
-![Botones desactivados](../img/botones-desactivados.png)
+![Botones desactivados](../img/botones-desactivados.png){ width=50% text-align=center }
+
 
 ## Desactivados (II)
 
@@ -822,7 +849,8 @@ bootstrap/
 
 ## Enlaces (I)
 
-![Enlaces como botones](../img/botones-enlaces.png)
+![Enlaces como botones](../img/botones-enlaces.png){ width=50% text-align=center }
+
 
 ## Enlaces (II)
 
@@ -842,7 +870,8 @@ bootstrap/
 
 ## Tamaños (I)
 
-![Tamaños de los botones](../img/botones-tamanios.png)
+![Tamaños de los botones](../img/botones-tamanios.png){ width=50% text-align=center }
+
 
 ## Tamaños (II)
 
@@ -855,7 +884,8 @@ bootstrap/
 
 ## Expandir (I)
 
-![Expandir los botones](../img/botones-expandir.png)
+![Expandir los botones](../img/botones-expandir.png){ width=50% text-align=center }
+
 
 ## Expandir (II)
 
@@ -878,7 +908,8 @@ bootstrap/
 
 ## Efectos (I)
 
-![Efectos de imágenes](../img/imagenes.png)
+![Efectos de imágenes](../img/imagenes.png){ width=50% text-align=center }
+
 
 ## Efectos (II)
 
@@ -893,7 +924,8 @@ bootstrap/
 
 ## Textos coloreados (I)
 
-![Textos coloreados](../img/textos-coloreados.png)
+![Textos coloreados](../img/textos-coloreados.png){ width=50% text-align=center }
+
 
 ## Textos coloreados (II)
 
@@ -908,7 +940,8 @@ bootstrap/
 
 ## Colores de fondo (I)
 
-![Colores de fondo](../img/colores-de-fondo.png)
+![Colores de fondo](../img/colores-de-fondo.png){ width=50% text-align=center }
+
 
 ## Colores de fondo (II)
 
@@ -1011,7 +1044,8 @@ bootstrap/
 
 ## Iconos (II)
 
-![Ejemplo de iconos](../img/iconos.png)
+![Ejemplo de iconos](../img/iconos.png){ width=50% text-align=center }
+
 
 ## Iconos (III)
 
@@ -1023,7 +1057,8 @@ bootstrap/
 
 ## Dropdown (I)
 
-![Dropdown](../img/dropdown.png)
+![Dropdown](../img/dropdown.png){ width=50% text-align=center }
+
 
 ## Dropdown (II)
 
@@ -1041,7 +1076,8 @@ bootstrap/
 
 ## Button groups (I)
 
-![Button groups](../img/button-groups.png)
+![Button groups](../img/button-groups.png){ width=50% text-align=center }
+
 
 ## Button groups (II)
 
@@ -1055,7 +1091,8 @@ bootstrap/
 
 ## Input groups (I)
 
-![Input groups](../img/inputs-groups.png)
+![Input groups](../img/inputs-groups.png){ width=50% text-align=center }
+
 
 ## Input groups (II)
 
@@ -1068,7 +1105,8 @@ bootstrap/
 
 ## Varios
 
-![Tabs, pills, navbars, breadcrumbs](../img/varios.png)
+![Tabs, pills, navbars, breadcrumbs](../img/varios.png){ width=50% text-align=center }
+
 
 ## Tabs
 
@@ -1122,7 +1160,8 @@ bootstrap/
 
 ## Pagination (I)
 
-![Pagination](../img/pagination.png)
+![Pagination](../img/pagination.png){ width=50% text-align=center }
+
 
 ## Pagination (II)
 
@@ -1141,7 +1180,8 @@ bootstrap/
 
 ## Pager (I)
 
-![Pager](../img/pager.png)
+![Pager](../img/pager.png){ width=50% text-align=center }
+
 
 ## Pager (II)
 
@@ -1154,7 +1194,8 @@ bootstrap/
 
 ## Labels (I)
 
-![Labels](../img/labels.png)
+![Labels](../img/labels.png){ width=50% text-align=center }
+
 
 ## Labels (II)
 
@@ -1169,7 +1210,8 @@ bootstrap/
 
 ## Badges (I)
 
-![Badges](../img/badges.png)
+![Badges](../img/badges.png){ width=50% text-align=center }
+
 
 ## Badges (II)
 
@@ -1192,7 +1234,8 @@ bootstrap/
 
 ## Jumbotron (I)
 
-![Jumbotron](../img/jumbotron.png)
+![Jumbotron](../img/jumbotron.png){ width=50% text-align=center }
+
 
 ## Jumbotron (II)
 
@@ -1206,7 +1249,8 @@ bootstrap/
 
 ## Thumbnails (I)
 
-![Thumbnails](../img/thumbnails.png)
+![Thumbnails](../img/thumbnails.png){ width=50% text-align=center }
+
 
 ## Thumbnails (II)
 
@@ -1226,7 +1270,8 @@ bootstrap/
 
 ## Alerts (I)
 
-![Alerts](../img/alerts.png)
+![Alerts](../img/alerts.png){ width=50% text-align=center }
+
 
 ## Alerts (II)
 
@@ -1243,7 +1288,8 @@ bootstrap/
 
 ## Progress Bar (I)
 
-![Progress Bar](../img/progressbar.png)
+![Progress Bar](../img/progressbar.png){ width=50% text-align=center }
+
 
 ## Progress Bar (II)
 
@@ -1293,7 +1339,8 @@ bootstrap/
 
 ## Media (I)
 
-![Media](../img/media.png)
+![Media](../img/media.png){ width=50% text-align=center }
+
 
 ## Media (II)
 
@@ -1313,7 +1360,8 @@ bootstrap/
 
 ## List group (I)
 
-![List group](../img/listgroup.png)
+![List group](../img/listgroup.png){ width=50% text-align=center }
+
 
 ## List group (II)
 
@@ -1327,7 +1375,8 @@ bootstrap/
 
 ## Panel group (I)
 
-![Panel group](../img/panelgroup.png)
+![Panel group](../img/panelgroup.png){ width=50% text-align=center }
+
 
 ## Panel group (II)
 
@@ -1357,7 +1406,8 @@ bootstrap/
 
 ## Modal (I)
 
-![Dialogos modales](../img/modal.png)
+![Dialogos modales](../img/modal.png){ width=50% text-align=center }
+
 
 ## Modal (II)
 
@@ -1385,7 +1435,8 @@ bootstrap/
 
 ## Tabs (I)
 
-![Tabs](../img/tabs.png)
+![Tabs](../img/tabs.png){ width=50% text-align=center }
+
 
 ## Tabs (II)
 
@@ -1415,7 +1466,8 @@ bootstrap/
 
 ## Tooltips (I)
 
-![Tooltips](../img/tooltips.png)
+![Tooltips](../img/tooltips.png){ width=50% text-align=center }
+
 
 ## Tooltips (II)
 
@@ -1448,7 +1500,8 @@ bootstrap/
 
 ## Popover (I)
 
-![Popover](../img/popover.png)
+![Popover](../img/popover.png){ width=50% text-align=center }
+
 
 ## Popover (II)
 
@@ -1472,7 +1525,8 @@ bootstrap/
 
 ## Accordion (I)
 
-![Accordion](../img/accordion.png)
+![Accordion](../img/accordion.png){ width=50% text-align=center }
+
 
 ## Accordion (II)
 
@@ -1492,7 +1546,8 @@ bootstrap/
 
 ## Carousel (I)
 
-![Carousel](../img/carousel.png)
+![Carousel](../img/carousel.png){ width=50% text-align=center }
+
 
 ## Carousel (II)
 
@@ -1566,7 +1621,8 @@ bootstrap/
 
 - Desde la página web de bootstrap <http://getbootstrap.com/customize> se pueden **personalizar un montón de variables, y descargar una versión personaliada** de bootstrap.
 
-![Personalizar desde la página web de bootstrap](../img/customize.png)
+![Personalizar desde la página web de bootstrap](../img/customize.png){ width=50% text-align=center }
+
 
 - Esta forma es más productiva, pero **sigue siendo bastante manual**, y además no puedes tener un control de cambios eficiente.
 

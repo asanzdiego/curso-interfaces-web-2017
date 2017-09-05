@@ -192,7 +192,7 @@ bootstrap/
 
 - Ejemplo de 1 columna de un tamaño de 12
 
-<div style="text-align:center">![1 columna](../img/1-columna.png)</div>
+![1 columna](../img/1-columna.png){ width=50% text-align=center }
 
 
 
@@ -212,7 +212,7 @@ bootstrap/
 
 - Ejemplo de 2 columnas de un tamaño de 6
 
-<div style="text-align:center">![2 columnas](../img/2-columnas.png)</div>
+![2 columnas](../img/2-columnas.png){ width=50% text-align=center }
 
 
 
@@ -232,7 +232,7 @@ bootstrap/
 
 - Ejemplo de 3 columnas de un tamaño de 4
 
-<div style="text-align:center">![3 columnas](../img/3-columnas.png)</div>
+![3 columnas](../img/3-columnas.png){ width=50% text-align=center }
 
 
 
@@ -253,7 +253,7 @@ bootstrap/
 
 - Ejemplo de 4 columnas de un tamaño de 3
 
-<div style="text-align:center">![4 columnas](../img/4-columnas.png)</div>
+![4 columnas](../img/4-columnas.png){ width=50% text-align=center }
 
 
 
@@ -292,7 +292,7 @@ bootstrap/
 
 - Problema cuando una capa tiene un alto mayor que la de los demás:
 
-<div style="text-align:center">![Problema clearfix](../img/clearfix.png)</div>
+![Problema clearfix](../img/clearfix.png){ width=50% text-align=center }
 
 
 
@@ -310,7 +310,7 @@ bootstrap/
 
 ## Huecos con offset
 
-<div style="text-align:center">![Huecos con offset](../img/offset.png)</div>
+![Huecos con offset](../img/offset.png){ width=50% text-align=center }
 
 
 
@@ -331,7 +331,7 @@ bootstrap/
 
 ## push & pull
 
-<div style="text-align:center">![push & pull](../img/push-and-pull.png)</div>
+![push & pull](../img/push-and-pull.png){ width=50% text-align=center }
 
 
 
@@ -385,7 +385,7 @@ bootstrap/
 
 ## Cabeceras
 
-<div style="text-align:center">![Cabeceras](../img/cabeceras.png)</div>
+![Cabeceras](../img/cabeceras.png){ width=50% text-align=center }
 
 
 
@@ -400,7 +400,7 @@ bootstrap/
 
 ## Párrafos
 
-<div style="text-align:center">![Párrafos](../img/parrafos.png)</div>
+![Párrafos](../img/parrafos.png){ width=50% text-align=center }
 
 
 
@@ -417,7 +417,7 @@ bootstrap/
 
 ## Textos en línea
 
-<div style="text-align:center">![Textos en línea](../img/textos-en-linea.png)</div>
+![Textos en línea](../img/textos-en-linea.png){ width=50% text-align=center }
 
 
 ## strong
@@ -462,7 +462,7 @@ bootstrap/
 
 ## Alineación
 
-<div style="text-align:center">![Alineación](../img/alineacion.png)</div>
+![Alineación](../img/alineacion.png){ width=50% text-align=center }
 
 
 ## Izquierda
@@ -507,7 +507,7 @@ bootstrap/
 
 ## Capitalización
 
-<div style="text-align:center">![Capitalización](../img/capitalizacion.png)</div>
+![Capitalización](../img/capitalizacion.png){ width=50% text-align=center }
 
 
 ## Minúsculas
@@ -536,7 +536,7 @@ bootstrap/
 
 ## Abreviaturas
 
-<div style="text-align:center">![Abreviaturas](../img/abreviaturas.png)</div>
+![Abreviaturas](../img/abreviaturas.png){ width=50% text-align=center }
 
 
 
@@ -547,7 +547,7 @@ bootstrap/
 
 ## Direcciones
 
-<div style="text-align:center">![Direcciones](../img/direcciones.png)</div>
+![Direcciones](../img/direcciones.png){ width=50% text-align=center }
 
 
 
@@ -569,7 +569,7 @@ bootstrap/
 
 ## Citas
 
-<div style="text-align:center">![Citas](../img/citas.png)</div>
+![Citas](../img/citas.png){ width=50% text-align=center }
 
 
 
@@ -586,7 +586,7 @@ bootstrap/
 
 ## Listas
 
-<div style="text-align:center">![Listas](../img/listas.png)</div>
+![Listas](../img/listas.png){ width=50% text-align=center }
 
 
 
@@ -602,7 +602,7 @@ bootstrap/
 
 ## Descripciones
 
-<div style="text-align:center">![Descripciones](../img/descripciones.png)</div>
+![Descripciones](../img/descripciones.png){ width=50% text-align=center }
 
 
 
@@ -637,7 +637,7 @@ bootstrap/
 
 ## Ejemplo
 
-<div style="text-align:center">![Tabla](../img/tabla.png)</div>
+![Tabla](../img/tabla.png){ width=50% text-align=center }
 
 
 
@@ -675,17 +675,17 @@ bootstrap/
 
 ## Normal
 
-<div style="text-align:center">![Formulario normal](../img/formulario-normal.png)</div>
+![Formulario normal](../img/formulario-normal.png){ width=50% text-align=center }
 
 
 ## Inline
 
-<div style="text-align:center">![Formulario inline](../img/formulario-inline.png)</div>
+![Formulario inline](../img/formulario-inline.png){ width=50% text-align=center }
 
 
 ## Horizontal
 
-<div style="text-align:center">![Formulario horizontal](../img/formulario-horizontal.png)</div>
+![Formulario horizontal](../img/formulario-horizontal.png){ width=50% text-align=center }
 
 
 ## Ejemplo
@@ -730,7 +730,7 @@ bootstrap/
 
 ## Validaciones
 
-<div style="text-align:center">![Formulario Validaciones](../img/formulario-validaciones.png)</div>
+![Formulario Validaciones](../img/formulario-validaciones.png){ width=50% text-align=center }
 
 
 
@@ -748,7 +748,7 @@ bootstrap/
 
 ## Tamaños
 
-<div style="text-align:center">![Tamaños](../img/formulario-tamanios.png)</div>
+![Tamaños](../img/formulario-tamanios.png){ width=50% text-align=center }
 
 
 
@@ -792,12 +792,12 @@ bootstrap/
 
 ## Ejemplos
 
-<div style="text-align:center">![Ejemplos de botones](../img/botones-ejemplos.png)</div>
+![Ejemplos de botones](../img/botones-ejemplos.png){ width=50% text-align=center }
 
 
 ## Tipos
 
-<div style="text-align:center">![Tipos de botones](../img/botones-tipos.png)</div>
+![Tipos de botones](../img/botones-tipos.png){ width=50% text-align=center }
 
 
 
@@ -814,7 +814,7 @@ bootstrap/
 
 ## Activados
 
-<div style="text-align:center">![Botones activados](../img/botones-activados.png)</div>
+![Botones activados](../img/botones-activados.png){ width=50% text-align=center }
 
 
 
@@ -831,7 +831,7 @@ bootstrap/
 
 ## Desactivados
 
-<div style="text-align:center">![Botones desactivados](../img/botones-desactivados.png)</div>
+![Botones desactivados](../img/botones-desactivados.png){ width=50% text-align=center }
 
 
 
@@ -849,7 +849,7 @@ bootstrap/
 
 ## Enlaces
 
-<div style="text-align:center">![Enlaces como botones](../img/botones-enlaces.png)</div>
+![Enlaces como botones](../img/botones-enlaces.png){ width=50% text-align=center }
 
 
 
@@ -870,7 +870,7 @@ bootstrap/
 
 ## Tamaños
 
-<div style="text-align:center">![Tamaños de los botones](../img/botones-tamanios.png)</div>
+![Tamaños de los botones](../img/botones-tamanios.png){ width=50% text-align=center }
 
 
 
@@ -884,7 +884,7 @@ bootstrap/
 
 ## Expandir
 
-<div style="text-align:center">![Expandir los botones](../img/botones-expandir.png)</div>
+![Expandir los botones](../img/botones-expandir.png){ width=50% text-align=center }
 
 
 
@@ -908,7 +908,7 @@ bootstrap/
 
 ## Efectos
 
-<div style="text-align:center">![Efectos de imágenes](../img/imagenes.png)</div>
+![Efectos de imágenes](../img/imagenes.png){ width=50% text-align=center }
 
 
 
@@ -924,7 +924,7 @@ bootstrap/
 
 ## Textos coloreados
 
-<div style="text-align:center">![Textos coloreados](../img/textos-coloreados.png)</div>
+![Textos coloreados](../img/textos-coloreados.png){ width=50% text-align=center }
 
 
 
@@ -940,7 +940,7 @@ bootstrap/
 
 ## Colores de fondo
 
-<div style="text-align:center">![Colores de fondo](../img/colores-de-fondo.png)</div>
+![Colores de fondo](../img/colores-de-fondo.png){ width=50% text-align=center }
 
 
 
@@ -1044,7 +1044,7 @@ bootstrap/
 
 
 
-<div style="text-align:center">![Ejemplo de iconos](../img/iconos.png)</div>
+![Ejemplo de iconos](../img/iconos.png){ width=50% text-align=center }
 
 
 
@@ -1057,7 +1057,7 @@ bootstrap/
 
 ## Dropdown
 
-<div style="text-align:center">![Dropdown](../img/dropdown.png)</div>
+![Dropdown](../img/dropdown.png){ width=50% text-align=center }
 
 
 
@@ -1076,7 +1076,7 @@ bootstrap/
 
 ## Button groups
 
-<div style="text-align:center">![Button groups](../img/button-groups.png)</div>
+![Button groups](../img/button-groups.png){ width=50% text-align=center }
 
 
 
@@ -1091,7 +1091,7 @@ bootstrap/
 
 ## Input groups
 
-<div style="text-align:center">![Input groups](../img/inputs-groups.png)</div>
+![Input groups](../img/inputs-groups.png){ width=50% text-align=center }
 
 
 
@@ -1105,7 +1105,7 @@ bootstrap/
 
 ## Varios
 
-<div style="text-align:center">![Tabs, pills, navbars, breadcrumbs](../img/varios.png)</div>
+![Tabs, pills, navbars, breadcrumbs](../img/varios.png){ width=50% text-align=center }
 
 
 ## Tabs
@@ -1160,7 +1160,7 @@ bootstrap/
 
 ## Pagination
 
-<div style="text-align:center">![Pagination](../img/pagination.png)</div>
+![Pagination](../img/pagination.png){ width=50% text-align=center }
 
 
 
@@ -1180,7 +1180,7 @@ bootstrap/
 
 ## Pager
 
-<div style="text-align:center">![Pager](../img/pager.png)</div>
+![Pager](../img/pager.png){ width=50% text-align=center }
 
 
 
@@ -1194,7 +1194,7 @@ bootstrap/
 
 ## Labels
 
-<div style="text-align:center">![Labels](../img/labels.png)</div>
+![Labels](../img/labels.png){ width=50% text-align=center }
 
 
 
@@ -1210,7 +1210,7 @@ bootstrap/
 
 ## Badges
 
-<div style="text-align:center">![Badges](../img/badges.png)</div>
+![Badges](../img/badges.png){ width=50% text-align=center }
 
 
 
@@ -1234,7 +1234,7 @@ bootstrap/
 
 ## Jumbotron
 
-<div style="text-align:center">![Jumbotron](../img/jumbotron.png)</div>
+![Jumbotron](../img/jumbotron.png){ width=50% text-align=center }
 
 
 
@@ -1249,7 +1249,7 @@ bootstrap/
 
 ## Thumbnails
 
-<div style="text-align:center">![Thumbnails](../img/thumbnails.png)</div>
+![Thumbnails](../img/thumbnails.png){ width=50% text-align=center }
 
 
 
@@ -1270,7 +1270,7 @@ bootstrap/
 
 ## Alerts
 
-<div style="text-align:center">![Alerts](../img/alerts.png)</div>
+![Alerts](../img/alerts.png){ width=50% text-align=center }
 
 
 
@@ -1288,7 +1288,7 @@ bootstrap/
 
 ## Progress Bar
 
-<div style="text-align:center">![Progress Bar](../img/progressbar.png)</div>
+![Progress Bar](../img/progressbar.png){ width=50% text-align=center }
 
 
 
@@ -1339,7 +1339,7 @@ bootstrap/
 
 ## Media
 
-<div style="text-align:center">![Media](../img/media.png)</div>
+![Media](../img/media.png){ width=50% text-align=center }
 
 
 
@@ -1360,7 +1360,7 @@ bootstrap/
 
 ## List group
 
-<div style="text-align:center">![List group](../img/listgroup.png)</div>
+![List group](../img/listgroup.png){ width=50% text-align=center }
 
 
 
@@ -1375,7 +1375,7 @@ bootstrap/
 
 ## Panel group
 
-<div style="text-align:center">![Panel group](../img/panelgroup.png)</div>
+![Panel group](../img/panelgroup.png){ width=50% text-align=center }
 
 
 
@@ -1406,7 +1406,7 @@ bootstrap/
 
 ## Modal
 
-<div style="text-align:center">![Dialogos modales](../img/modal.png)</div>
+![Dialogos modales](../img/modal.png){ width=50% text-align=center }
 
 
 
@@ -1435,7 +1435,7 @@ bootstrap/
 
 ## Tabs
 
-<div style="text-align:center">![Tabs](../img/tabs.png)</div>
+![Tabs](../img/tabs.png){ width=50% text-align=center }
 
 
 
@@ -1466,7 +1466,7 @@ bootstrap/
 
 ## Tooltips
 
-<div style="text-align:center">![Tooltips](../img/tooltips.png)</div>
+![Tooltips](../img/tooltips.png){ width=50% text-align=center }
 
 
 
@@ -1500,7 +1500,7 @@ bootstrap/
 
 ## Popover
 
-<div style="text-align:center">![Popover](../img/popover.png)</div>
+![Popover](../img/popover.png){ width=50% text-align=center }
 
 
 
@@ -1525,7 +1525,7 @@ bootstrap/
 
 ## Accordion
 
-<div style="text-align:center">![Accordion](../img/accordion.png)</div>
+![Accordion](../img/accordion.png){ width=50% text-align=center }
 
 
 
@@ -1546,7 +1546,7 @@ bootstrap/
 
 ## Carousel
 
-<div style="text-align:center">![Carousel](../img/carousel.png)</div>
+![Carousel](../img/carousel.png){ width=50% text-align=center }
 
 
 
@@ -1621,7 +1621,7 @@ bootstrap/
 
 - Desde la página web de bootstrap <http://getbootstrap.com/customize> se pueden **personalizar un montón de variables, y descargar una versión personaliada** de bootstrap.
 
-<div style="text-align:center">![Personalizar desde la página web de bootstrap](../img/customize.png)</div>
+![Personalizar desde la página web de bootstrap](../img/customize.png){ width=50% text-align=center }
 
 
 - Esta forma es más productiva, pero **sigue siendo bastante manual**, y además no puedes tener un control de cambios eficiente.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="errors warnings problems" />
+  <meta name="description" content="Supported validation problems and their messages for US Section 508" />
+  <title>Accessibility Validation Reference</title>
+  <meta name="author" content="Total Validator" />
+  <link rel="stylesheet" href="../../mainstyle.css" />
+</head>
+<body>
+<div class="main" id="top"><div id="skip"><a href="#content">Skip navigation</a></div>
+
+<div class="pagehead">
+<h1><a href="../../ReadMe.html"><img src="../../images/tvheader2.gif" alt="Total Validator"/></a>
+<br/>HTML5 / XHTML / WCAG / Section 508 / CSS / Links / Spelling</h1>
+</div>
+
+<div class="topnavbar">
+<map id='navbar' name='navbar' title='Navigation Bar'><p><a href='../help.html'>Help</a> | <span class='error'>Reference</span> | <a href='https://www.totalvalidator.com/index.html'>Website</a> | <a href='https://www.totalvalidator.com/validator/FeedbackForm'>Feedback</a></p></map>
+</div>
+
+<div class="content">
+<div class="container">
+<div class="middle">
+<h2><a id="content"></a><a id="wai"></a>Accessibility problems</h2>
+<table class="border">
+<caption>These problems are due to failures to meet the US Section 508 web accessibility standards</caption>
+<thead><tr><th>Code</th><th>Summary</th><th>Details</th></tr></thead><tbody>
+<tr><td><a id="E800">E800</a></td><td>[US-508-a] Provide a text equivalent for non-text items using 'alt'</td><td>When using &lt;img&gt;, specify a short text equivalent with the 'alt' attribute. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22"> http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E806">E806</a></td><td>[US-508-a] Image buttons should have 'alt' text that describes them</td><td>When using image buttons, specify a short text equivalent with the 'alt' attribute. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E807">E807</a></td><td>[US-508-a] Provide a text equivalent for non-text items using 'alt'</td><td>When using &lt;applet&gt;, specify a short text equivalent with the 'alt' attribute. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E808">E808</a></td><td>[US-508-a] Provide a text equivalent for non-text items using 'alt'</td><td>When using &lt;area&gt;, specify a short text equivalent with the 'alt' attribute. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E812">E812</a></td><td>[US-508-a] Provide a text equivalent for non-text items using 'alt'</td><td>When using &lt;embed&gt;, specify a short text equivalent with the 'alt' attribute. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E813">E813</a></td><td>[US-508-a] Provide a text equivalent by placing some text in this tag</td><td>When using &lt;iframe&gt;, specify a short text equivalent by placing some text within it. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E814">E814</a></td><td>[US-508-a] When using a text alternative it must be meaningful</td><td>If the text in the 'text alternative' cannot be used in place of the non-text content without losing information or function then it fails because it is not, in fact, an alternative to the non-text content. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="P815">P815</a></td><td>[US-508-a] When using a text alternative it must not include ASCII art or smileys</td><td>If the text in the 'text alternative' when read aloud does not sound meaningful then it fails because it is not, in fact, an alternative to the non-text content. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="W802">W802</a></td><td>[US-508-a] Is the 'alt' text deliberately empty?</td><td>When using &lt;img&gt;, it is valid to have an empty 'alt' attribute for images that have no content; such as spacers and parts of larger images that have been broken up or used for other layout purposes. You may wish to check that in this case the alt-text has not simply been forgotten, in which case it would be a [US-508-a] error.</td></tr>
+<tr><td><a id="W804">W804</a></td><td>[US-508-a] The corresponding &lt;noembed&gt; element is missing or misplaced</td><td>For each &lt;embed&gt; element you should provide either a nested &lt;noembed&gt; element or a &lt;noembed&gt; element immediately following it. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (a)</a> (displayed in new window).</td></tr>
+<tr><td><a id="W803">W803</a></td><td>[US-508-d] Put all CSS styling into external style sheets</td><td>You should place all CSS styling into external style sheets. By doing so, users may override styles or ignore them completely. This also simplifies processing for screen readers. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (d)</a> (displayed in new window).</td></tr>
+<tr><td><a id="P801">P801</a></td><td>[US-508-f] If possible use a client-side instead of a server-side image map</td><td>Unless you are using regions that cannot be defined with an available geometric shape, you should use a client-side instead of a server-side image map. If you have to use a server-side map ensure that there is an accessible alternative available. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (f)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E809">E809</a></td><td>[US-508-g] For data tables identify row and column headers</td><td>No &lt;th&gt; tags where found in a table or they contain no text, suggesting that you have not clearly identified any row and column headers. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (g)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E810">E810</a></td><td>[US-508-h] For data tables use markup to associate data cells and header cells</td><td>For data tables you should use markup to associate data cells and header cells, and no such markup was found. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (h)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E805">E805</a></td><td>[US-508-i] Add a 'title' attribute to facilitate identification and navigation</td><td>Title each frame and frameset to facilitate frame identification and navigation. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (i)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E816">E816</a></td><td>[US-508-i] Add a meaningful 'title' attribute to facilitate identification and navigation</td><td>Title each frame and frameset to facilitate frame identification and navigation. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (i)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E826">E826</a></td><td>[US-508-j] Do not use this tag. Consider &lt;em&gt; or using CSS instead</td><td>Until user agents allow users to control blinking, avoid causing content to blink. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (j)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E827">E827</a></td><td>[US-508-j] Do not use this tag. Consider &lt;em&gt; or using CSS instead</td><td>Until user agents allow users to freeze moving content, avoid movement in pages. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (j)</a> (displayed in new window).</td></tr>
+<tr><td><a id="P800">P800</a></td><td>[US-508-l] Consider providing a &lt;noscript&gt; alternative after each &lt;script&gt; tag</td><td>This problem appears if you have defined a &lt;script&gt; and there is no &lt;noscript&gt; alternative following it. You should ensure that pages are usable when scripts are turned off or not supported. Using &lt;noscript&gt; is a common way of doing this, but if you have used an alternative mechanism you can ignore this problem. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (l)</a> (displayed in new window).</td></tr>
+<!-- <tr><td><a id="E840">E840</a></td><td>[US-508-l] &lt;a&gt; or &lt;area&gt; without an 'href' cannot receive keyboard focus</td><td>You should always explicitly provide a 'href' attribute for links so that they can receive keyboard focus. Note that using Javascript prevents links being read out by screen readers. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (l)</a> (displayed in new window).</td></tr> -->
+<tr><td><a id="E831">E831</a></td><td>[US-508-n] Associate form controls with &lt;label&gt; tags using the 'id' attribute</td><td>Associate labels explicitly with their controls. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td>E831</td><td>[US-508-n] No matching &lt;label&gt; tag could be found, or label is empty</td><td>Associate labels explicitly with their controls. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td>E831</td><td>[US-508-n] Associate &lt;label&gt; tags with form controls using the 'for' attribute</td><td>Associate labels explicitly with their controls. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td>E831</td><td>[US-508-n] Label text is missing</td><td>Associate labels explicitly with their controls. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td>E831</td><td>[US-508-n] Associate labels with just one form control</td><td>Associate labels explicitly with their controls. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E841">E841</a></td><td>[US-508-n] The &lt;fieldset&gt; element should only be used within a form</td><td>Using a &lt;fieldset&gt; outside of a form usually indicates it is being used for presentation effects. Tags that create a visual presentation effect should not be used. You should use style sheets to control layout and presentation. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (n)</a> (displayed in new window).</td></tr>
+<tr><td><a id="W850">W850</a></td><td>[US-508-o] Add a skip navigation link as the first link on the page</td><td>If your document has structure then you should add header elements and/or a skip navigation link to make it easier for accessible users to get to the page's content. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22"> http://section508.gov/content/quick-reference-guide#1194.22 (o)</a> (displayed in new window).</td></tr>
+<tr><td><a id="W851">W851</a></td><td>[US-508-o] Skip navigation links should be the first link on a page</td><td>A skip navigation link was detected but it was not the first link on the page. Unless it is the first link then it may defeat the point for users. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22"> http://section508.gov/content/quick-reference-guide#1194.22 (o)</a> (displayed in new window). Also <a target="help" href="http://webaim.org/techniques/skipnav/"> http://webaim.org/techniques/skipnav/</a> (displayed in new window).</td></tr>
+<tr><td><a id="W852">W852</a></td><td>[US-508-o] Skip navigation links should not be hidden</td><td>Hidden skip navigation links are not accessible for keyboard users. You should consider replacing this with a visible link and using CSS to hide it until the tab key is used. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22"> http://section508.gov/content/quick-reference-guide#1194.22 (o)</a> (displayed in new window). Also <a target="help" href="http://webaim.org/techniques/skipnav/#focus"> http://webaim.org/techniques/skipnav/#focus</a> (displayed in new window).</td></tr>
+<tr><td><a id="E828">E828</a></td><td>[US-508-p] Do not create pages that refresh</td><td>Until user agents provide the ability to stop the refresh, do not create periodically auto-refreshing pages. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (p)</a> (displayed in new window).</td></tr>
+<tr><td><a id="E842">E842</a></td><td>[US-508-p] You should not use a non-zero page redirect</td><td>Until user agents provide the ability to stop auto-redirect, do not use markup to redirect pages automatically. See <a target="help" href="http://section508.gov/content/quick-reference-guide#1194.22">http://section508.gov/content/quick-reference-guide#1194.22 (p)</a> (displayed in new window).</td></tr>
+</tbody>
+</table>
+<p><a href="#top"><img src="../../images/up.gif" alt=""/> top</a></p>
+</div>
+
+<div class="lhbox">
+<div class="lhmenu">
+<map id="lhmenu" name="lhmenu" title="Sub Navigation Bar">
+  <div class="lhheader">Reference</div>
+  <ul>
+		<li class="lhmenu"><a href="index.html">Introduction</a></li>
+		<li class="lhmenu"><a href="parsing.html">Parsing</a></li>
+		<li class="lhmenu"><a href="spelling.html">Spell check</a></li>
+		<li class="lhmenu"><a href="links.html">Link problems</a></li>
+		<li class="lhmenu"><a href="xhtml.html">HTML</a></li>
+		<li class="lhmenu"><a href="css.html">CSS</a></li>
+		<li class="lhmenu"><span class="current">US Section 508</span></li>
+		<li class="lhmenu"><a href="wai1.html">WCAG 1.0</a></li>
+		<li class="lhmenu"><a href="wai2.html">WCAG 2.0</a></li>
+  </ul>
+</map>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p class="footer">Copyright 2016 Total Validator. All rights reserved.</p>
+</div>
+
+</div>
+</body>
+</html>
