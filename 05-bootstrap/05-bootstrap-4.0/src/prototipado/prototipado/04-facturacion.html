@@ -9,15 +9,13 @@
   <!-- Bootstrap CSS -->
   <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-
   <title>My Flight Finder</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand navbar-dark bg-info justify-content-between">
-    <a class="navbar-brand" href="#">My Flight Finder</a>
+  <nav class="navbar navbar-expand navbar-dark bg-primary justify-content-between">
+    <a class="navbar-brand" href="01-inicio.html">
+      <img src="./../img/ic_arrow_back_white_24px.svg" alt="Volver"/>Compra de billetes</a>
     <div class="text-right">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -89,56 +87,85 @@
     </div>
   </div>
 
-  <div class="card text-white bg-info m-3">
+  <div class="card text-white bg-primary">
     <div class="card-body">
-      <div class="row">
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="desde" class="col-1 col-form-label">
-            <img src="./../img/ic_flight_takeoff_white_36px.svg" alt="Desde"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="desde" placeholder="Desde ciudad o país de origen" required>
-          </div>
+      <div class="row text-right">
+        <div class="col">
+          MAD<br /> Madrid
+          <br /> (España)<br />
+          <img src="./../img/ic_date_range_white_24px.svg" alt="Fecha" /> 01/06/2016
         </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="hasta" class="col-1 col-form-label">
-            <img src="./../img/ic_flight_land_white_36px.svg" alt="Hasta"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="hasta" placeholder="Hasta ciudad o país de origen">
-          </div>
+        <div class="col">
+          <img src="./../img/ic_flight_white_24px_bis.svg" alt="" /><br />
+          <div class="arrow right">&nbsp;</div>
         </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="fecha" class="col-1 col-form-label">
-            <img src="./../img/ic_date_range_white_36px.svg" alt="Fecha"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="fecha" placeholder="Fecha del vuelo">
-          </div>
+        <div class="col">
+          BCN<br /> Barcelona
+          <br /> (España)<br />
+          <img src="./../img/ic_supervisor_account_white_24px.svg" alt="Pasajeros" /> 2 Pasajeros
         </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="pasajeros" class="col-1 col-form-label">
-            <img src="./../img/ic_supervisor_account_white_36px.svg" alt="Pasajeros"/>
-          </label>
-          <div class="col">
-            <div id="slider" class="mt-3">
-              <div id="handler" class="ui-slider-handle" style="background: #dc3545;"></div>
-            </div>
-          </div>
-          <div class="col-2">
-            <input type="number" class="form-control" id="pasajeros" placeholder="Número de pasajeros">
-          </div>
+      </div>
+      <div class="row text-right">
+        <div class="col">
+          Iberia - Vuelo Directo - Turtista - 120x2 = <strong>240 €</strong>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col text-center">
-      <a href="02-resultados.html" class="btn btn-danger btn-circle">
-        <img src="./../img/ic_search_white_36px.svg" alt="Buscar">
-      </a>
+  <div class="card-group text-center">
+    <div class="card">
+      <div class="card-body"><a class="text-white" href="03-pasajeros.html">PASAJEROS</a></div>
     </div>
+    <div class="card">
+      <div class="card-body">FACTURACIÓN</div>
+    </div>
+    <div class="card">
+      <div class="card-body"><a class="text-white" href="05-pagar.html">PAGAR</a></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="nombre" class="">Nombre</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="nombre" placeholder="Introduzca el nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellidos" class="">Apellidos</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="apellidos" placeholder="Introduzca los apellidos">
+      </div>
+      <div class="form-group">
+        <label for="nif" class="">NIF</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="nif" placeholder="Introduzca el NIF">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="mail" class="">Mail</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="mail" placeholder="Introduzca el mail">
+      </div>
+      <div class="form-group">
+        <label for="telefono" class="">Teléfono</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="telefono" placeholder="Introduzca el telefono">
+      </div>
+      <div class="form-group">
+        <label for="direccion" class="">Dirección completa</label>
+        <input type="text" class="form-control border-bottom font-weight-bold" id="direccion" placeholder="Introduzca la dirección completa">
+      </div>
+    </div>
+  </div>
+
+  <div class="row m-1">
+      <div class="col text-right">
+          <a href="04-facturacion.html" class="btn btn-secondary border border-dark">ANTERIOR</a>
+      </div>
+      <div class="col">
+          <a href="05-pagar.html" class="btn btn-primary">SIGUIENTE</a>
+      </div>
   </div>
 
   <!-- Optional JavaScript -->
@@ -146,33 +173,6 @@
   <script src="../lib/jquery-3.2.1.min.js"></script>
   <script src="../lib/popper.js-1.12.4/dist/umd/popper.min.js"></script>
   <script src="../../bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script>
-  <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-  <script src="../lib/airports.filtered.js"></script>
-  <script>
-    $(function () {
-      $("#desde").autocomplete({
-        minLength: 2,
-        source: airports
-      });
-      $("#hasta").autocomplete({
-        minLength: 2,
-        source: airports
-      });
-      $("#fecha").datepicker();
-      var handle = $("#pasajeros");
-      $("#slider").slider({
-        min: 0,
-        max: 10,
-        value: 1,
-        create: function () {
-          handle.val($(this).slider("value"));
-        },
-        slide: function (event, ui) {
-          handle.val(ui.value);
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

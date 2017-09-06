@@ -9,15 +9,13 @@
   <!-- Bootstrap CSS -->
   <link href="../../bootstrap-4.0.0-beta/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-
   <title>My Flight Finder</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand navbar-dark bg-info justify-content-between">
-    <a class="navbar-brand" href="#">My Flight Finder</a>
+  <nav class="navbar navbar-expand navbar-dark bg-primary justify-content-between">
+    <a class="navbar-brand" href="01-inicio.html">
+      <img src="./../img/ic_arrow_back_white_24px.svg" alt="Volver"/>Confirmar comprar</a>
     <div class="text-right">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -54,20 +52,20 @@
                 <img src="./../img/ic_warning_black_24px.svg" alt="Atención" />
               </div>
               <div class="col">
-                <strong>Solo se muestran las preguntas relacionadas con esta página. Si tienes otras dudas utiliza 
-                  el buscador de arriba o ponte en contacto con nuestro servicio de atencion al cliente.</strong>
+                Solo se muestran las preguntas relacionadas con esta página. Si tienes otras dudas utiliza 
+                  el buscador de arriba o ponte en contacto con nuestro servicio de atencion al cliente.
               </div>
             </div>
             <div class="row border border-secondary border-bottom mt-3">
               <div class="col">
-                <p><strong>¿Cómo utilizo el buscador?</strong></p>
+                <p>¿Cómo utilizo el buscador?</p>
                 <p>Rellena origen, destino, fecha, número de pasajeros y pulsa sobre el botón rosa y redondo con la lupa para
                   buscar.
                 </p>
-                <p><strong>¿Qué está incluido en el precio?</strong></p>
+                <p>¿Qué está incluido en el precio?</p>
                 <p>En nuestros precios tienes incluido todo: el billete, la facturación de una maleta de hasta 18KG, las tasas
                   y los impuestos.</p>
-                <p><strong>¿Puedo cancelar/cambiar el billete una vez comprado?</strong></p>
+                <p>¿Puedo cancelar/cambiar el billete una vez comprado?</p>
                 <p>No, nuestros precios son los más baratos del mercado, pero una vez comprados, no se pueden ni cancelar ni
                   cambiar.
                 </p>
@@ -75,7 +73,7 @@
             </div>
             <div class="row mt-3">
               <div class="col">
-                <p><strong>Ponte en contacto con nuestro servicio de atención al cliente:</strong></p>
+                <p>Ponte en contacto con nuestro servicio de atención al cliente:</p>
                 <p><a href="tel:+34912123123"><img src="./../img/ic_phone_black_24px.svg" alt="" /> +34 912 123 123</a></p>
                 <p><a href="mailto:help@myflyghtfinder.com"><img src="./../img/ic_mail_black_24px.svg" alt="" /> help@myflyghtfinder.com</a></p>
               </div>
@@ -89,55 +87,46 @@
     </div>
   </div>
 
-  <div class="card text-white bg-info m-3">
+  <div class="card text-white bg-primary">
     <div class="card-body">
+      <div class="row text-center">
+        <div class="col">
+          MAD<br /> Madrid
+          <br /> (España)<br />
+          <img src="./../img/ic_date_range_white_24px.svg" alt="Fecha" /> 01/06/2016
+        </div>
+        <div class="col">
+          <img src="./../img/ic_flight_white_24px_bis.svg" alt="" /><br />
+          <div class="arrow right">&nbsp;</div>
+        </div>
+        <div class="col">
+          BCN<br /> Barcelona
+          <br /> (España)<br />
+          <img src="./../img/ic_supervisor_account_white_24px.svg" alt="Pasajeros" /> 2 Pasajeros
+        </div>
+      </div>
+      <div class="row text-center border border-dark border-bottom pb-3">
+        <div class="col">
+          Iberia - Vuelo Directo - Turtista - 120x2 = 240 €
+        </div>
+      </div>
       <div class="row">
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="desde" class="col-1 col-form-label">
-            <img src="./../img/ic_flight_takeoff_white_36px.svg" alt="Desde"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="desde" placeholder="Desde ciudad o país de origen" required>
-          </div>
-        </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="hasta" class="col-1 col-form-label">
-            <img src="./../img/ic_flight_land_white_36px.svg" alt="Hasta"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="hasta" placeholder="Hasta ciudad o país de origen">
-          </div>
-        </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="fecha" class="col-1 col-form-label">
-            <img src="./../img/ic_date_range_white_36px.svg" alt="Fecha"/>
-          </label>
-          <div class="col-11">
-            <input type="text" class="form-control" id="fecha" placeholder="Fecha del vuelo">
-          </div>
-        </div>
-        <div class="form-group col-12 col-lg-6 row">
-          <label for="pasajeros" class="col-1 col-form-label">
-            <img src="./../img/ic_supervisor_account_white_36px.svg" alt="Pasajeros"/>
-          </label>
-          <div class="col">
-            <div id="slider" class="mt-3">
-              <div id="handler" class="ui-slider-handle" style="background: #dc3545;"></div>
-            </div>
-          </div>
-          <div class="col-2">
-            <input type="number" class="form-control" id="pasajeros" placeholder="Número de pasajeros">
-          </div>
-        </div>
+        <div class="">Pasajaero 1<br />Adolfo Sanz De Diego (58418456K)</div>
+        <div class="">Pasajaero 2<br />María Gómez Martín (47655887H)</div>
+        <div class="">Facturación<br />Adolfo Sanz De Diego (58418456K)</div>
+        <div class="">Dirección<br />C/ Jacobeo, 9, 3ºD, 28054, Madrid</div>
+        <div class="">Contacto<br />asanzdiego@gmail.com / 648911711</div>
+        <div class="">Número de tarjeta<br />**** **** **** 4321</div>
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row m-1">
     <div class="col text-center">
-      <a href="02-resultados.html" class="btn btn-danger btn-circle">
-        <img src="./../img/ic_search_white_36px.svg" alt="Buscar">
-      </a>
+      <a href="05-pagar.html" class="btn btn-secondary border border-dark">ANTERIOR</a>
+    </div>
+    <div class="col text-center">
+      <a href="07-localizador.html" class="btn btn-primary">COMPRAR</a>
     </div>
   </div>
 
@@ -146,33 +135,6 @@
   <script src="../lib/jquery-3.2.1.min.js"></script>
   <script src="../lib/popper.js-1.12.4/dist/umd/popper.min.js"></script>
   <script src="../../bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script>
-  <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-  <script src="../lib/airports.filtered.js"></script>
-  <script>
-    $(function () {
-      $("#desde").autocomplete({
-        minLength: 2,
-        source: airports
-      });
-      $("#hasta").autocomplete({
-        minLength: 2,
-        source: airports
-      });
-      $("#fecha").datepicker();
-      var handle = $("#pasajeros");
-      $("#slider").slider({
-        min: 0,
-        max: 10,
-        value: 1,
-        create: function () {
-          handle.val($(this).slider("value"));
-        },
-        slide: function (event, ui) {
-          handle.val(ui.value);
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>
