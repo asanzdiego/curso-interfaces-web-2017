@@ -1,3 +1,7 @@
+# Ejercicios
+<http://bit.ly/interfacesweb-ejercicios>
+<https://docs.google.com/spreadsheets/d/1JccYyCnfjOGA8DtisjUmz9ZhkMMhvkbfIPRfsrRy8jg/edit?usp=sharing>
+
 # Día 1
 <http://bit.ly/interfacesweb1>
 <https://docs.google.com/forms/d/e/1FAIpQLSfgSC3sVrB9WESD4UlcHmKeUxkAzxSlTWU3Eg6yHDXO-IX3UQ/viewform>
