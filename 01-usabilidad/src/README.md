@@ -12,8 +12,9 @@ En el ejercicio de análisis de tareas y posterior prototipado, se podría escog
 - comprar ticket para el cine seleccionando butaca
 - etc.
 
+El ejercicio de prototipado empezarlo siempre primero en lápiz y papel.
+
 Para los ejercicios de prototipado, se podría empezar con ejercicios individuales:
-- interfaz de página pequeña en papel
 - prototipado en móvil, tablet y ordenador
 - corregir y luego hacer el ejercicio completo
 
