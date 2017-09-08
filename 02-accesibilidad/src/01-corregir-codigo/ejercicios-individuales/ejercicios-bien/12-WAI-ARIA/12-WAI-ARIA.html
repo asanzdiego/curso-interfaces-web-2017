@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>WAI-ARIA - Ejemplo bien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="12-WAI-ARIA.css">
+</head>
+
+<body>
+
+    <h2>WAI-ARIA - Tooltips - Ejemplo bien</h2>
+
+    <form>
+        <fieldset>
+            <legend>Formulario de entrada</legend>
+            <div>
+                <label for="username" class="etiqueta">Usuario</label>
+                <input type="text" id="username" aria-describedby="username-tip" required />
+                <div class="tooltip" role="tooltip" id="username-tip">Tu usuario es tu mail</div>
+            </div>
+            <div>
+                <label for="password" class="etiqueta">Contraseña</label>
+                <input type="text" id="password" aria-describedby="password-tip" required />
+                <div class="tooltip" role="tooltip" id="password-tip">Tu contraseña es secreta</div>
+            </div>
+            <input type="submit" name="enviar" value="Enviar" />
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <h2>WAI-ARIA - Botón que actualiza valor - Ejemplo bien</h2>
+
+    <button id="obtener-random" type="button" title="Obtener Random" aria-controls="random">Obtener Random</button>
+    <span id="random" role="alert" aria-live="assertive">0</span>
+
+    <hr />
+
+    <h2>WAI-ARIA - Desplegables - Ejemplo bien</h2>
+
+    <button id="titulo-desplegable" aria-expanded="false" aria-controls="desplegable">Despliegame</button>
+    <div id="desplegable" class="hidden" aria-hidden="true">
+        <p>Aquí estoy... ^__^</p>
+    </div>
+
+    <hr />
+
+    <h2>WAI-ARIA - Tabs con keydown - Ejemplo bien</h2>
+
+    <ul class="tablist" role="tablist">
+        <li role="presentation"><a id="tab1" href="#section1" tabindex="0" class="tab selected" role="tab" aria-controls="section1" aria-selected="true">Sección 1</a></li>
+        <li role="presentation"><a id="tab2" href="#section2" tabindex="-1" class="tab" role="tab" aria-controls="section2">Sección 2</a></li>
+    </ul>
+    <div id="section1" class="tabpanel" role="tabpanel">Este es el cuerpo de la sección UNO</div>
+    <div id="section2" class="tabpanel hidden" role="tabpanel" aria-hidden="true">Este es el cuerpo de la sección DOS</div>
+
+    <script src="lib/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="12-WAI-ARIA.js"></script>
+
+</body>
+
+</html>

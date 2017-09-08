@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>WAI-ARIA - Ejemplo mal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="12-WAI-ARIA.css">
+</head>
+
+<body>
+
+    <h2>WAI-ARIA - Tooltips - Ejemplo mal</h2>
+
+    <form>
+        <fieldset>
+            <legend>Formulario de entrada</legend>
+            <div>
+                <label for="username" class="etiqueta">Usuario</label>
+                <input type="text" id="username" required />
+                <div class="tooltip">Tu usuario es tu mail</div>
+            </div>
+            <div>
+                <label for="password" class="etiqueta">Contraseña</label>
+                <input type="text" id="password" required />
+                <div class="tooltip">Tu contraseña es secreta</div>
+            </div>
+            <button type="button">Enviar</button>
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <h2>WAI-ARIA - Botón que actualiza valor - Ejemplo mal</h2>
+
+    <button id="obtener-random" type="button" title="Obtener Random">Obtener Random</button>
+    <span id="random">0</span>
+
+    <hr />
+
+
+    <h2>WAI-ARIA - Desplegables - Ejemplo mal</h2>
+
+    <button id="titulo-desplegable">Despliegame</button>
+    <div id="desplegable" class="hidden">
+        <p>Aquí estoy... ^__^</p>
+    </div>
+
+    <hr />
+
+    <h2>WAI-ARIA - Tabs con keydown - Ejemplo mal</h2>
+
+    <ul class="tablist">
+        <li><a id="tab1" href="#section1" class="tab selected">Sección 1</a></li>
+        <li><a id="tab2" href="#section2" class="tab">Sección 2</a></li>
+    </ul>
+    <div id="section1" class="tabpanel">Este es el cuerpo de la sección UNO</div>
+    <div id="section2" class="tabpanel hidden">Este es el cuerpo de la sección DOS</div>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="12-WAI-ARIA.js"></script>
+
+</body>
+
+</html>
