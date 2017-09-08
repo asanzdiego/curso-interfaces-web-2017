@@ -76,7 +76,7 @@
 - Proporcionaban **14 directrices** y numerosos puntos de control.
 
 - Proporcionaban tres prioridades:
-    - **Nivel A** requisitos básico,
+    - **Nivel A** requisitos básicos,
     - **Nivel AA** mejor accesibilidad y la eliminación de importantes barreras,
     - **Nivel AAA** proporcionaba mejoras a la accesibilidad.
 
@@ -233,7 +233,7 @@
 
 ## Poco accesibles
 
-- Los elementos multimedia pueden ocasionar problemas de accesibilidad, ya no sólo a las personas con algún tipo de discapacidad, sino a todo el mundo en general, pues, aunque cada ve menos, en muchos casos, requieren la **instalación de plug-in**.
+- Los elementos multimedia pueden ocasionar problemas de accesibilidad, ya no sólo a las personas con algún tipo de discapacidad, sino a todo el mundo en general, pues, aunque cada vez menos, en muchos casos, requieren la **instalación de plug-in**.
 
 ## Transcripción y subtítulos
 

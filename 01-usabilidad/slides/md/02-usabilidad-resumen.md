@@ -45,7 +45,7 @@
 
 ## ¿Qué?
 
-- Vamos a ver que es la **usabilidad de un sitio web y como mejorarla**.
+- Vamos a ver qué es la **usabilidad de un sitio web y como mejorarla**.
 
 ## ¿Por qué?
 
@@ -97,7 +97,7 @@
 
 - Un usuario será capaz de identificar la función de cada elemento sólo **si ha aprendido previamente su significado**.
 
-- Además **el significado dependerá del contexto**. (“Archivos”, tendrá distinto significado en una webweb de noticias que en una tienda de informica).
+- Además **el significado dependerá del contexto**. (“Archivos”, tendrá distinto significado en una web de noticias que en una tienda de informática).
 
 ## ¿Cómo actúa?
 
