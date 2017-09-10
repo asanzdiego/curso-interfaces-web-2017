@@ -13,9 +13,9 @@ En este apartado:
 
 ## Slides
 
-- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad-reveal-slides.html)
-- [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/export/01-accesibilidad.html)
+- [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/02-accesibilidad/slides/export/01-accesibilidad-reveal-slides.html)
+- [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/02-accesibilidad/slides/export/01-accesibilidad-reveal-slides-alternative.pdf)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/02-accesibilidad/slides/export/01-accesibilidad-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/01-accesibilidad/slides/md/01-accesibilidad.md)
 
 ## Enunciado ejercicios

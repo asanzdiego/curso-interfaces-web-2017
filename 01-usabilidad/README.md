@@ -12,7 +12,7 @@ En este apartado:
 
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/01-usabilidad/slides/export/01-usabilidad-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/01-usabilidad/slides/export/01-usabilidad-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/01-usabilidad/slides/export/01-usabilidad.html)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/01-usabilidad/slides/export/01-usabilidad-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/01-usabilidad/slides/md/01-usabilidad.md)
 
 ## Enunciado ejercicios

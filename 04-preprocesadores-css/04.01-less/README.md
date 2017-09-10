@@ -11,7 +11,7 @@ En este apartado:
 
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less.html)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/export/01-less-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.01-less/slides/md/01-less.md)
 
 ## Ejercicios

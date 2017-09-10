@@ -11,7 +11,7 @@ En este apartado:
 
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd.html)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/export/rwd-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/03-rwd/slides/md/rwd.md)
 
 ## Enunciado ejercicios

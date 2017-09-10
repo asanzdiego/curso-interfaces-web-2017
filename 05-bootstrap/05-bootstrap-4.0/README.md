@@ -12,7 +12,7 @@ En este apartado:
 
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-4.0/slides/export/01-bootstrap-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-4.0/slides/export/01-bootstrap-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-4.0/slides/export/01-bootstrap.html)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-4.0/slides/export/01-bootstrap-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/05-bootstrap-4.0/slides/md/01-bootstrap.md)
 
 ## Ejercicios

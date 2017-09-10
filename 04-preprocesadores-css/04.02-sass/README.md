@@ -10,7 +10,7 @@ En este apartado:
 
 - [reveal](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.02-sass/slides/export/sass-reveal-slides.html)
 - [pdf](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.02-sass/slides/sass-reveal-slides-alternative.pdf)
-- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.02-sass/slides/export/sass.html)
+- [html](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.02-sass/slides/export/sass-book.html)
 - [md](http://asanzdiego.github.io/curso-interfaces-web-2017/04-preprocesadores-css/04.02-sass/slides/md/sass.md)
 
 ## Ejercicios
