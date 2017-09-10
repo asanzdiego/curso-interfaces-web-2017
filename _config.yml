@@ -1,1 +1,1 @@
-exclude: 05-bootstrap/05-bootstrap-4.0/src/bootstrap-4.0.0-beta/
+exclude: 05-bootstrap/05-bootstrap-4.0/src/, 05-bootstrap/05-bootstrap-3.0/src/
