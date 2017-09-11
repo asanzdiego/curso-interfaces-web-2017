@@ -15,9 +15,9 @@
 - Ejercicios individuales corregir código
 - Ejercicio informe WCAG2
 - Ejercicio informe ATAG
-- Teoría RWD
 
 # Día 4
+- Teoría RWD
 - Ejercicios individuales RWD
 - Teoría Bootstrap
 
