@@ -61,7 +61,7 @@
 
 - Utiliza **SASS**, un preprocesador CSS.
 
-- Es **OOCSS**, osea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.
+- Es **OOCSS**, o sea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.
 
 ## Ventajas (III)
 
