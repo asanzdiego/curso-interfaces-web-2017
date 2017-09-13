@@ -23,7 +23,7 @@
 
 # Día 5
 - Ejercicios individuales Bootstrap
-- Ejercicio prototipado Bootstrap
 
 # Día 6
+- Ejercicio prototipado Bootstrap
 - Teoría y ejercicios Sass (sólo si da tiempo)
