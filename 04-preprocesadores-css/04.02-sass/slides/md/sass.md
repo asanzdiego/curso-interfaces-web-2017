@@ -45,7 +45,7 @@
 
 ## ¿Qué es?
 
-- Less es un **pre-procesador de CSS**.
+- Sass es un **pre-procesador de CSS**.
 
 - Añade características como **variables, mixins, funciones, etc**.
 
