@@ -1,3 +1,7 @@
+# Biblioteca Virtual
+<http://bit.ly/interfacesweb-biblioteca>
+<http://aulavirtual2.educa.madrid.org/course/category.php?id=517>
+
 # Ejercicios
 <http://bit.ly/interfacesweb-ejercicios>
 <https://docs.google.com/spreadsheets/d/1JccYyCnfjOGA8DtisjUmz9ZhkMMhvkbfIPRfsrRy8jg/edit?usp=sharing>
