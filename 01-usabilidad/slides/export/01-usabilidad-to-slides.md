@@ -45,7 +45,7 @@
 
 ## ¿Qué?
 
-- Vamos a ver que es la **usabilidad de un sitio web y como mejorarla**.
+- Vamos a ver qué es la **usabilidad de un sitio web y como mejorarla**.
 
 ## ¿Por qué? (I)
 
