@@ -1,6 +1,6 @@
 % Novedades en Bootstrap 4.0
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Septiembre 2017
 
 
 
